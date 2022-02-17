@@ -1,0 +1,392 @@
+Automakers:
+- Germany:
+    * Volkswagen:     VOW3.XETRA
+    * Mercedes-Benz:  MBG.XETRA
+    * Daimler Trucks: DTG.XETRA
+    * BMW:            BMW.XETRA
+- USA:
+    * Tesla:          TSLA.US
+    * Ford:           FMC1.XETRA
+    * General Motors: GM.US
+- Japan:
+    * Toyota:         TOMA.F
+    * Honda:          HDMA.F
+    * Suzuki Motor:   SUK.F
+    * Subaru:         FUJHY.PINK
+    * Mazda:          MZDAF.PINK
+- China:
+    * BYD
+    * Great Wall Motors
+    * SAIC Motor
+    * Nio
+    * Li Auto
+    * XPeng
+    * Geely
+    * Chongqing Changan
+    * Dongfeng Motor
+- South Korea:
+    * Hyundai:        HYUD.IL
+    * Kia
+- India:
+    * Maruti Suzuki India:  532500.BSE
+    * Tata Motors:          570001.BSE
+    * Mahindra & Mahindra:  
+- Netherlands:
+    * Stellantis:           STLA.PA
+- Italy:
+    * Ferrari
+- Sweden:
+    * Volvo Car
+- Taiwan: 
+    * Hotai Motor 
+- France:
+    * Renault
+- UK:
+    * Aston Martin 
+
+Aircraft Manufacturer:
+- US:
+    * Lockheed Martin:  LMT.US
+    * Boeing:           BA.US
+- Airbus:
+    * Netherlands:      AIR.F
+
+Pharmaceuticals:
+- US:
+    * Johnson & Johnson: JNJ.US
+    * Merck:             MRK.US
+- Switzerland:
+    * Roche:             RO.SW
+    * Novartis:          NOVN.SW
+- China:
+    * BeiGene
+    * WuXi Biologies 
+    * Jiangsu Hengrui Meidicine
+- Japan:
+    * Astellas Pharma
+    * Takeda Pharmaceuticals
+    * Chugai Pharmaceutical
+- India:
+    * Sun Pharmaceutical
+- Australia:
+    * CSL
+
+E-Commerce:
+- US:
+    * Amazon:    AMZN.US
+- China:
+    * Alibaba:   AHLA.F, 9988.HK
+    * Meituan:   MPNGF.US, 3690.HK
+    * JD.com:    JD.US, 9618.HK
+    * Pinduoduo: 9PDA.F
+- South Korea:
+    * Coupang:   CPNG.US
+- Canada:
+    * Shopify:   SHOP.US
+- Japan:
+    * Rakuten:   4755.TSE
+- India:
+    * Nykaa
+
+Courier Companies:
+- US:
+    * UPS:   UPS.US
+    * FedEX: FDX.US
+
+Beverages:
+- US:
+    * Coca-Cola: KO.US
+    * PepsiCo:   PEP.US
+    * Starbucks: SBUX.US
+- China:
+    * Kweichow Moutai: 600519.SHG
+    * Wuliangye Yibin: 000858.SHE
+    * Nongfu Spring:   9633.HK
+- UK:
+    * Diageo:          DGE.LSE
+- Belgium:
+    * Anheuser-Busch Inbev: 1NBA.F
+- Netherlands:
+    * Heineken:        HEIA.AS
+
+Clothes:
+- France:
+    * LVMH: LVMH.MI
+    * Dior: DIO.F
+- US:
+    * Nike
+    * TJX Companies
+    * Ross Stores
+    * Burlington Stores
+    * Under Armour
+    * Tapestry
+- Canada:
+    * Lulu Lemon
+- Sweden:
+    * H&M
+- Italy:
+    * Prada
+- Germany:
+    * Adidas
+    * Puma
+    * Zalando
+- Spain:
+    * Inditex
+- Japan:
+    * Fast Retailing
+
+Mining:
+- Australia:
+    * BHP
+- UK:
+    * Rio Tinto
+- Brazil:
+    * Vale
+- Switzerland:
+    * Glencore
+- China:
+    * China Shenhua Energy
+- Canada:
+    * Barrick Gold
+
+Food:
+- Switzerland:
+    * Nestle
+- UK:
+    * Unilever
+- India:
+    * Hindustan Unilever
+- US:
+    * Mondelez
+    * Kraft Heinz
+    * General Mills
+    * McCormick & Company
+    * Kellog's
+- China:
+    * Foshan Haitian Flavouring and Food
+    * Muyuan Foods
+    * Mengniu Dairy
+- Japan:
+    * Ajinomoto
+    * Kikkoman
+- France:
+    * Danone
+- Brazil:
+    * JBS
+
+Restaurant Chains:
+- US:
+    * McDonald's 
+    * Chipotle Mexican Grill
+- Canada:
+    * Restaurant Brands International
+- China:
+    * Yum China
+
+Software:
+- US:
+    * Apple:        US0378331005
+    * Microsoft
+    * Alphabet
+    * Adobe 
+    * Salesforce
+    * ServiceNow
+    * Oracle
+    * VmWare
+    * IBM 
+    * Cisco 
+    * HP
+- Germany:
+    * SAP
+- Australia:
+    * Atlassian
+
+IT Security:
+- Germany:
+    * secunet
+- France:
+    * Exclusive Networks
+- UK:
+    * Darktrace
+- Israel:
+    * Check Point Software
+    * CyberArk 
+    * Tufin
+- India:
+    * QuickHeal 
+- Japan:
+    * Trend Micro
+- USA:
+    * Palo Alto Networks
+    * Fortinet
+    * CrowdStrike
+    * Cloudflare
+    * Zscaler
+    * Okta
+    * Akamai
+    * NortonLifeLock
+    * Leidos 
+    * F5 Networks
+    * SentinelOne
+    * Tenable
+    * Rapid7
+    * KnowBe4
+    * Qualys 
+    * McAfee
+    * Mandiant 
+    * Varonis
+    * SailPoint
+    * Datto
+    * Fastly
+    * Secureworks
+    * A10 Networks
+    * Telos
+    * Cerberus Cyber Sentinel 
+    * Iron Net
+    * Identiv
+- Czech Republic:
+    * Avast
+
+Semiconductors:
+- US:
+    * Nvidia
+    * AMD
+    * Intel
+    * Broadcom
+    * Qualcomm
+    * Texas Instruments
+    * Applied Materials
+    * Micron Technology
+    * Lam Research 
+    * Analog Devices 
+    * Marvell Technology Group
+    * KLA
+    * Synopsys
+- Taiwan:
+    * TSMC
+    * MediaTek
+    * Realtek
+- South Korea:
+    * Samsung
+    * SK Hynix
+- Netherlands:
+    * ASML
+    * NXP Semiconductors
+- Germany:
+    * Infineon
+
+Financial Services:
+- US:
+    * Visa
+    * Mastercard
+
+Chemicals:
+- UK:
+    * Linde
+- South Arabia:
+    * SABIC
+- Germany:
+    * Merck KGaA
+    * Bayer
+    * BASF
+- Japan:
+    * Shin-Etsu Chemical 
+- France:
+    * Air Liquide
+
+Investment Companies:
+- US:
+    * Berkshire Hathaway
+    * Morgan Stanley
+    * BlackRock
+
+Telecommunication:
+- US:
+    * Verizon
+    * Comcast
+    * AT&T
+    * T-Mobile US
+    * American Tower
+
+Retail:
+- US:
+    * Amazon
+    * Walmart
+    * Home Depot
+    * Costco
+    * Lowe's Companies
+    * CVS Health
+- China:
+    * Alibaba
+    * JD.com
+
+Construction:
+- US:
+    * Caterpillar
+    * Deere & Company
+
+Waste & Recycling:
+- US:
+    * Waste Management
+    * Republic Services
+    * Waste Connections
+
+Entertainment:
+- US:
+    * Netflix
+    * Disney
+    * Discovery
+    * Comcast
+    * AMC Network
+- UK:
+    * Pearson
+- Sweden:
+    * Spotify
+- South Africa:
+    * Naspers
+
+Gaming:
+- US:
+    * Microsoft
+    * Unity Software
+    * Electronic Arts
+    * Activision Blizzard
+    * Take 2 Initiative 
+    * Razer 
+    * Roblox
+    * Zynga
+- Japan:
+    * Nintendo
+    * Sony
+    * Nexon 
+    * Bandai Namco 
+    * Konami Holdings
+- China:
+    * Tencent
+    * NetEase
+- Singapore:
+    * Sea (Garena)
+- France:
+    * Ubisoft
+- Australia:
+    * Aristocrat
+- South Korea:
+    * Krafton
+- Poland:
+    * CD Project
+
+Consumer Goods:
+- US:
+    * Procter & Gamble:  PG.US
+    * Colgate-Palmolive: CL.US
+    * Church & Dwight:   CHD.US
+    * Clorox:            CXX.F
+- France:
+    * L'Oreal:           LOR.F
+- Germany:
+    * Henkel:            HEN.XETRA
+- UK:
+    * Reckitt Benkiser:  RKT.LSE
+- Japan:
+    * Shiseido:          SHD.F
+
