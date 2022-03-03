@@ -1,0 +1,97 @@
+\section{Phase 1: First Impression}
+
+\subsection{The Company}
+
+__getDescription()
+
+\subsection{General Information}
+
+\subsubsection{General Company Information}
+
+\begin{tabularx}{\textwidth}{|X|X|}
+ \hline
+ \multicolumn{2}{|c|}{General Company Information} \\
+ \hline
+ Company Name     & __getCompanyName() \\
+ Ticker Symbol    & __getCompanyCode() \\
+ ISIN             & __getISIN() \\
+ Address          & __getAddress() \\
+ Sector           & __getSector() \\
+ Industry         & __getIndustry() \\
+ Employees        & __getNumEmployees() \\
+ IPO              & __getIPODate() \\
+ Fiscal Year Ends & __getFiscalYearEnd() \\
+ \hline
+\end{tabularx}
+
+\subsubsection{General Stock Information}
+
+\begin{tabularx}{\textwidth}{|X|X|}
+ \hline
+ \multicolumn{2}{|c|}{General Stock Information} \\
+ \hline
+ Currency               & __getCurrency() \\
+ Market Capitalization  & __getMarketCapitalization() \\
+ Dividend Share         & __getDividendShare() \\
+ Dividend Yield (in \%) & __getDividendYield() \\
+ \hline
+\end{tabularx}
+
+\subsection{Shareholder Structure}
+
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    \multicolumn{2}{|c|}{General Shareholder Information} \\
+    \hline
+    Shares Outstanding            & __getSharesOutstanding() \\
+    Shares Floating               & __getSharesFloat() \\
+    Float-to-Outstanding Ratio    & __getSharesFloatToOutstandingRatio() \\
+    Owned by Institutions (in \%) & __getSharesPercentInstitutions() \\
+    Owned by Insiders (in \%)     & __getSharesPercentInsiders() \\
+    Owned by Public (in \%)       & __getSharesPercentPublic() \\
+    \hline
+\end{tabularx}
+
+\subsubsection{Institutions}
+
+__getLatexTable("Institutions","getInstitutions()")
+
+\subsubsection{Funds}
+
+__getLatexTable("Funds","getFunds()")
+
+\subsubsection{Insider Trading}
+
+__getLatexTable("Insider Trading","getInsiderTransactions()")
+
+\subsection{Circle of Competence}
+
+\subsection{Meaning}
+
+\subsection{Moat}
+
+\subsection{Management}
+
+__getLatexTable("Officers","getOfficers()")
+
+\subsection{Future}
+
+\subsection{Invert the story}
+
+\subsection{Analyst Ratings}
+
+\begin{tabularx}{\textwidth}{|X|X|}
+ \hline
+ \multicolumn{2}{|c|}{Analyst Ratings} \\
+ \hline
+ Rating       & __getAnalystRating() \\
+ Target Price & __getAnalystTargetPrice() \\
+ Strong Buy   & __getAnalystStrongBuy() \\
+ Buy          & __getAnalystBuy() \\
+ Hold         & __getAnalystHold() \\
+ Sell         & __getAnalystSell() \\
+ Strong Sell  & __getAnalystStrongSell() \\
+ \hline
+\end{tabularx}
+
+\subsection{First Decision}

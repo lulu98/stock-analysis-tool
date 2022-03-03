@@ -1,0 +1,67 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrarticle} % two-sided
+
+\include{settings}
+
+% TODO: change thesis information
+\newcommand*{\getUniversity}{}
+\newcommand*{\getFaculty}{}
+\newcommand*{\getTitle}{Financial Analysis - __getCompanyName()}
+\newcommand*{\getTitleGer}{}
+\newcommand*{\getAuthor}{Lukas Graber}
+\newcommand*{\getDoctype}{}
+\newcommand*{\getSupervisor}{}
+\newcommand*{\getAdvisor}{}
+\newcommand*{\getProfessor}{}
+\newcommand*{\getSubmissionDate}{}
+\newcommand*{\getSubmissionLocation}{}
+
+% \bibliography{bibliography}{}
+
+% \input{glossary}
+
+\begin{document}
+
+\pagenumbering{alph}
+\input{pages/cover}
+
+%\frontmatter{}
+% \input{pages/title}
+%\input{pages/disclaimer}
+%\input{pages/acknowledgments}
+%\input{pages/abstract}
+\setcounter{tocdepth}{2}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\microtypesetup{protrusion=true}
+
+\clearpage
+\pagenumbering{arabic}
+%\mainmatter{}
+\noindent
+
+\input{chapters/intro}
+\input{chapters/phase01}
+\input{chapters/phase02}
+\input{chapters/phase03}
+\input{chapters/phase04}
+\input{chapters/phase05}
+\input{chapters/conclusion}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% add more chapters here
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \appendix{}
+
+% \printunsrtglossaries
+%\microtypesetup{protrusion=false}
+%\listoffigures{}
+%\listoftables{}
+%\microtypesetup{protrusion=true}
+% \printbibliography{}
+
+%\pending{Remove list of TODOs}
+%\listoftodos{}
+
+\end{document}

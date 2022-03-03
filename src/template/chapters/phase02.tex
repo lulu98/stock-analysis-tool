@@ -1,0 +1,254 @@
+\section{Phase 2: Management}
+
+\subsection{Rule 1: Low Debt}
+
+Here, we want to find out if the debt is manageable.
+
+\subsubsection{{Rule 1.1: Debt-to-Equity (D/E) Ratio}}
+
+The Debt-to-Equity Ratio (D/E) should be $D/E = \frac{\text{Long Term Debt + Notes Payable}}{\text{Equity}} \leq 0.5$.
+This means that the company can pay back all the money it owes (i.e. Long Term Debt
+and Notes Payable) with less than half of its equity.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Debt-to-Equity (D/E)} \\
+ \hline
+ Year                       & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-11))     & __getLongTermDebt(__getYear(-10))     & __getLongTermDebt(__getYear(-9))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-11))    & __getShortTermDebt(__getYear(-10))    & __getShortTermDebt(__getYear(-9)) \\
+ Equity                     & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-11))        & __debtToEquity(__getYear(-10))        & __debtToEquity(__getYear(-9))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-8))     & __getLongTermDebt(__getYear(-7))     & __getLongTermDebt(__getYear(-6))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-8))    & __getShortTermDebt(__getYear(-7))    & __getShortTermDebt(__getYear(-6)) \\
+ Equity                     & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-8))        & __debtToEquity(__getYear(-7))        & __debtToEquity(__getYear(-6))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-5))     & __getLongTermDebt(__getYear(-4))     & __getLongTermDebt(__getYear(-3))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-5))    & __getShortTermDebt(__getYear(-4))    & __getShortTermDebt(__getYear(-3)) \\
+ Equity                     & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-5))        & __debtToEquity(__getYear(-4))        & __debtToEquity(__getYear(-3))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-2))     & __getLongTermDebt(__getYear(-1))     & __getLongTermDebt(__getYear(0))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-2))    & __getShortTermDebt(__getYear(-1))    & __getShortTermDebt(__getYear(0)) \\
+ Equity                     & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-2))        & __debtToEquity(__getYear(-1))        & __debtToEquity(__getYear(0))     \\
+ \hline
+\end{tabularx}
+
+\subsubsection{{Rule 1.2: Debt-to-FCF (D/FCF) Ratio}}
+
+The Debt-to-FCF ratio (D/FCF) should be $\text{D/FCF} = \frac{\text{Long Term Debt + Notes Payable}}{\text{FCF}} \leq 3$.
+This means that simply by operating the business we are able to pay our debtors
+in under 3 years.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Debt-to-FCF (D/FCF)} \\
+ \hline
+ Year                       & __getYear(-11)                           & __getYear(-10)                           & __getYear(-9)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-11))        & __getLongTermDebt(__getYear(-10))        & __getLongTermDebt(__getYear(-9))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-11))       & __getShortTermDebt(__getYear(-10))       & __getShortTermDebt(__getYear(-9)) \\
+ FCF                        & __getFreeCashFlow(__getYear(-11))        & __getFreeCashFlow(__getYear(-10))        & __getFreeCashFlow(__getYear(-9))  \\
+ \rowcolor{lightgray} D/FCF & __debtToFCF(__getYear(-11))              & __debtToFCF(__getYear(-10))              & __debtToFCF(__getYear(-9))        \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-8)                           & __getYear(-7)                           & __getYear(-6)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-8))        & __getLongTermDebt(__getYear(-7))        & __getLongTermDebt(__getYear(-6))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-8))       & __getShortTermDebt(__getYear(-7))       & __getShortTermDebt(__getYear(-6)) \\
+ FCF                        & __getFreeCashFlow(__getYear(-8))        & __getFreeCashFlow(__getYear(-7))        & __getFreeCashFlow(__getYear(-6))  \\
+ \rowcolor{lightgray} D/FCF & __debtToFCF(__getYear(-8))              & __debtToFCF(__getYear(-7))              & __debtToFCF(__getYear(-6))        \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-5)                           & __getYear(-4)                           & __getYear(-3)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-5))        & __getLongTermDebt(__getYear(-4))        & __getLongTermDebt(__getYear(-3))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-5))       & __getShortTermDebt(__getYear(-4))       & __getShortTermDebt(__getYear(-3)) \\
+ FCF                        & __getFreeCashFlow(__getYear(-5))        & __getFreeCashFlow(__getYear(-4))        & __getFreeCashFlow(__getYear(-3))  \\
+ \rowcolor{lightgray} D/FCF & __debtToFCF(__getYear(-5))              & __debtToFCF(__getYear(-4))              & __debtToFCF(__getYear(-3))        \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-2)                           & __getYear(-1)                           & __getYear(0)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-2))        & __getLongTermDebt(__getYear(-1))        & __getLongTermDebt(__getYear(0))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-2))       & __getShortTermDebt(__getYear(-1))       & __getShortTermDebt(__getYear(0)) \\
+ FCF                        & __getFreeCashFlow(__getYear(-2))        & __getFreeCashFlow(__getYear(-1))        & __getFreeCashFlow(__getYear(0))  \\
+ \rowcolor{lightgray} D/FCF & __debtToFCF(__getYear(-2))              & __debtToFCF(__getYear(-1))              & __debtToFCF(__getYear(0))        \\
+ \hline
+\end{tabularx}
+
+\subsubsection{{Rule 1.3: Liabilities-to-Equity (L/E) Ratio}}
+
+The Liabilities-to-Equity (L/E) should be $L/E = \frac{\text{liabilities}}{\text{equity}} \leq 0.8$.
+This means that the company can pay all its liabilities with less than 80\% of its
+equities.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Liabilities-to-Equity (L/E)} \\
+ \hline
+ Year                     & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-11)) & __getTotalLiabilities(__getYear(-10)) & __getTotalLiabilities(__getYear(-9)) \\
+ Equity                   & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-11)) & __liabilitiesToEquity(__getYear(-10)) & __liabilitiesToEquity(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-8)) & __getTotalLiabilities(__getYear(-7)) & __getTotalLiabilities(__getYear(-6)) \\
+ Equity                   & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-8)) & __liabilitiesToEquity(__getYear(-7)) & __liabilitiesToEquity(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-5)) & __getTotalLiabilities(__getYear(-4)) & __getTotalLiabilities(__getYear(-3)) \\
+ Equity                   & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-5)) & __liabilitiesToEquity(__getYear(-4)) & __liabilitiesToEquity(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-2)) & __getTotalLiabilities(__getYear(-1)) & __getTotalLiabilities(__getYear(0)) \\
+ Equity                   & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-2)) & __liabilitiesToEquity(__getYear(-1)) & __liabilitiesToEquity(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsection{Rule 2: High Current Ratio}
+The $\text{Current Ratio} = \frac{\text{Current Assets}}{\text{Current Liabilities}}$
+should be between 1.5 and 2.5.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Current Ratio} \\
+ \hline
+ Year                               & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ \hline
+ Current Assets                     & __getCurrentAssets(__getYear(-11))      & __getCurrentAssets(__getYear(-10))      & __getCurrentAssets(__getYear(-9))      \\
+ Current Liabilities                & __getCurrentLiabilities(__getYear(-11)) & __getCurrentLiabilities(__getYear(-10)) & __getCurrentLiabilities(__getYear(-9)) \\
+ \rowcolor{lightgray} Current Ratio & __currentRatio(__getYear(-11))          & __currentRatio(__getYear(-10))          & __currentRatio(__getYear(-9))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                          \\
+ \hline
+ Current Assets                     & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-7))      & __getCurrentAssets(__getYear(-6))      \\
+ Current Liabilities                & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-7)) & __getCurrentLiabilities(__getYear(-6)) \\
+ \rowcolor{lightgray} Current Ratio & __currentRatio(__getYear(-8))          & __currentRatio(__getYear(-7))          & __currentRatio(__getYear(-6))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ \hline
+ Current Assets                     & __getCurrentAssets(__getYear(-5))      & __getCurrentAssets(__getYear(-4))      & __getCurrentAssets(__getYear(-3))      \\
+ Current Liabilities                & __getCurrentLiabilities(__getYear(-5)) & __getCurrentLiabilities(__getYear(-4)) & __getCurrentLiabilities(__getYear(-3)) \\
+ \rowcolor{lightgray} Current Ratio & __currentRatio(__getYear(-5))          & __currentRatio(__getYear(-4))          & __currentRatio(__getYear(-3))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ \hline
+ Current Assets                     & __getCurrentAssets(__getYear(-2))      & __getCurrentAssets(__getYear(-1))      & __getCurrentAssets(__getYear(0))      \\
+ Current Liabilities                & __getCurrentLiabilities(__getYear(-2)) & __getCurrentLiabilities(__getYear(-1)) & __getCurrentLiabilities(__getYear(0)) \\
+ \rowcolor{lightgray} Current Ratio & __currentRatio(__getYear(-2))          & __currentRatio(__getYear(-1))          & __currentRatio(__getYear(0))          \\
+ \hline
+\end{tabularx}
+
+\subsection{Rule 3: Strong and consistent Return on Equity (ROE)}
+
+The Return on Equity $ROE = \frac{\text{Net Income}}{\text{Equity}}$ should be
+consistently above 8\% over the last years.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Return-on-Equity (ROE)} \\
+ \hline
+ Year                     & __getYear(-11)                   & __getYear(-10)                   & __getYear(-9)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-11))   & __getNetIncome(__getYear(-10))   & __getNetIncome(__getYear(-9))   \\
+ Equity                   & __getTotalEquity(__getYear(-11)) & __getTotalEquity(__getYear(-10)) & __getTotalEquity(__getYear(-9)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-11)) & __returnOnEquity(__getYear(-10)) & __returnOnEquity(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                   & __getYear(-7)                   & __getYear(-6)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-8))   & __getNetIncome(__getYear(-7))   & __getNetIncome(__getYear(-6))   \\
+ Equity                   & __getTotalEquity(__getYear(-8)) & __getTotalEquity(__getYear(-7)) & __getTotalEquity(__getYear(-6)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-8)) & __returnOnEquity(__getYear(-7)) & __returnOnEquity(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                   & __getYear(-4)                   & __getYear(-3)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-5))   & __getNetIncome(__getYear(-4))   & __getNetIncome(__getYear(-3))   \\
+ Equity                   & __getTotalEquity(__getYear(-5)) & __getTotalEquity(__getYear(-4)) & __getTotalEquity(__getYear(-3)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-5)) & __returnOnEquity(__getYear(-4)) & __returnOnEquity(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                   & __getYear(-1)                   & __getYear(0)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-2))   & __getNetIncome(__getYear(-1))   & __getNetIncome(__getYear(0))   \\
+ Equity                   & __getTotalEquity(__getYear(-2)) & __getTotalEquity(__getYear(-1)) & __getTotalEquity(__getYear(0)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-2)) & __returnOnEquity(__getYear(-1)) & __returnOnEquity(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsection{Character Traits}
+
+\subsection{Red Flags}

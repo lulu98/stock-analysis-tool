@@ -1,0 +1,898 @@
+\section{Phase 4: Deep-Dive (Ratio Analysis)}
+
+\subsection{Income Statement - Ratio Analysis}
+
+\subsubsection{Gross-Profit Margin Ratio (GPMR)}
+
+The Gross-Profit Margin Ratio (GPMR) is calculated as
+$\text{GPMR} = \frac{\text{Gross Profit}}{\text{Revenue}}$.\\
+\textbf{Meaning}: If a company's GPMR is $0.70 = 70\%$, this tells us that every
+time the company sells its products for 100\$, it makes 70\$ in gross profit.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Gross Profit Margin Ratio (GPMR)} \\
+ \hline
+ Year                      & __getYear(-11)                           & __getYear(-10)                           & __getYear(-9)                           \\
+ \hline
+ Gross Profit              & __getGrossProfit(__getYear(-11))         & __getOperatingCashFlow(__getYear(-10))   & __getOperatingCashFlow(__getYear(-9))   \\
+ Revenue                   & __getRevenue(__getYear(-11))             & __getRevenue(__getYear(-10))             & __getRevenue(__getYear(-9))             \\
+ \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-11)) & __grossProfitMarginRatio(__getYear(-10)) & __grossProfitMarginRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-8)                           & __getYear(-7)                           & __getYear(-6)                           \\
+ \hline
+ Gross Profit              & __getGrossProfit(__getYear(-8))         & __getOperatingCashFlow(__getYear(-7))   & __getOperatingCashFlow(__getYear(-6))   \\
+ Revenue                   & __getRevenue(__getYear(-8))             & __getRevenue(__getYear(-7))             & __getRevenue(__getYear(-6))             \\
+ \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-8)) & __grossProfitMarginRatio(__getYear(-7)) & __grossProfitMarginRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-5)                           & __getYear(-4)                           & __getYear(-3)                           \\
+ \hline
+ Gross Profit              & __getGrossProfit(__getYear(-5))         & __getOperatingCashFlow(__getYear(-4))   & __getOperatingCashFlow(__getYear(-3))   \\
+ Revenue                   & __getRevenue(__getYear(-5))             & __getRevenue(__getYear(-4))             & __getRevenue(__getYear(-3))             \\
+ \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-5)) & __grossProfitMarginRatio(__getYear(-4)) & __grossProfitMarginRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-2)                           & __getYear(-1)                           & __getYear(0)                           \\
+ \hline
+ Gross Profit              & __getGrossProfit(__getYear(-2))         & __getOperatingCashFlow(__getYear(-1))   & __getOperatingCashFlow(__getYear(0))   \\
+ Revenue                   & __getRevenue(__getYear(-2))             & __getRevenue(__getYear(-1))             & __getRevenue(__getYear(0))             \\
+ \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-2)) & __grossProfitMarginRatio(__getYear(-1)) & __grossProfitMarginRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{EBITDA Margin Ratio (EBITDA Margin)}
+
+Earnings before interest, taxes, depreciation, and amortization (EBITDA) is calculated as
+$\text{EBITDA} = \text{Earnings before interest and tax + depreciation + amortization}$.
+EBITDA is an earnings measures that focuses on the essentials of a business: its
+operating profitability and cash flows.\\
+The EBITDA Margin Ratio is calculated as
+$\text{EBITDA Margin} = \frac{\text{EBITDA}}{\text{Revenue}}$.
+It is a performance metric that measures a company's profitability from
+operations. That makes it easy to compare the relative profitability of two or
+more companies of different sizes in the same industry. Calculating a company's
+EBITDA margin is helpful when gauging the effectiveness of a company's cost-cutting
+efforts. The higher a company's EBITDA margin is, the lower its operating expenses
+are in relation to total revenue.\\
+\textbf{Meaning}: If a company's EBITDA margin is $0.60 = 60\%$, this tells us
+that every time the company sells its products for 100\$, it makes 60\$ in EBITDA.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{EBITDA Margin} \\
+ \hline
+ Year                               & __getYear(-11)                 & __getYear(-10)                 & __getYear(-9)                 \\
+ \hline
+ EBITDA                             & __getEBITDA(__getYear(-11))    & __getEBITDA(__getYear(-10))    & __getEBITDA(__getYear(-9))    \\
+ Revenue                            & __getRevenue(__getYear(-11))   & __getRevenue(__getYear(-10))   & __getRevenue(__getYear(-9))   \\
+ \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-11)) & __ebitdaMargin(__getYear(-10)) & __ebitdaMargin(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-8)                 & __getYear(-7)                 & __getYear(-6)                 \\
+ \hline
+ EBITDA                             & __getEBITDA(__getYear(-8))    & __getEBITDA(__getYear(-7))    & __getEBITDA(__getYear(-6))    \\
+ Revenue                            & __getRevenue(__getYear(-8))   & __getRevenue(__getYear(-7))   & __getRevenue(__getYear(-6))   \\
+ \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-8)) & __ebitdaMargin(__getYear(-7)) & __ebitdaMargin(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-5)                 & __getYear(-4)                 & __getYear(-3)                 \\
+ \hline
+ EBITDA                             & __getEBITDA(__getYear(-5))    & __getEBITDA(__getYear(-4))    & __getEBITDA(__getYear(-3))    \\
+ Revenue                            & __getRevenue(__getYear(-5))   & __getRevenue(__getYear(-4))   & __getRevenue(__getYear(-3))   \\
+ \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-5)) & __ebitdaMargin(__getYear(-4)) & __ebitdaMargin(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & __getYear(-2)                 & __getYear(-1)                 & __getYear(0)                 \\
+ \hline
+ EBITDA                             & __getEBITDA(__getYear(-2))    & __getEBITDA(__getYear(-1))    & __getEBITDA(__getYear(0))    \\
+ Revenue                            & __getRevenue(__getYear(-2))   & __getRevenue(__getYear(-1))   & __getRevenue(__getYear(0))   \\
+ \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-2)) & __ebitdaMargin(__getYear(-1)) & __ebitdaMargin(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Operating Margin Ratio (OMR)}
+
+The Operating Margin Ratio (OMR) is calculated as
+$\text{OMR} = \frac{\text{Income from Operations}}{\text{Revenue}}$.\\
+\textbf{Meaning}: If a company's OMR is $0.50 = 50\%$, this tells us that every
+time the company sells its products for 100\$, it makes 50\$ in operating profit.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Operating Margin Ratio (OMR)} \\
+ \hline
+ Year                      & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                         \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-11))   & __getOperatingIncome(__getYear(-10))   & __getOperatingIncome(__getYear(-9))   \\
+ Revenue                   & __getRevenue(__getYear(-11))           & __getRevenue(__getYear(-10))           & __getRevenue(__getYear(-9))           \\
+ \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-11)) & __operatingMarginRatio(__getYear(-10)) & __operatingMarginRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                         \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-8))   & __getOperatingIncome(__getYear(-7))   & __getOperatingIncome(__getYear(-6))   \\
+ Revenue                   & __getRevenue(__getYear(-8))           & __getRevenue(__getYear(-7))           & __getRevenue(__getYear(-6))           \\
+ \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-8)) & __operatingMarginRatio(__getYear(-7)) & __operatingMarginRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                         \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-5))   & __getOperatingIncome(__getYear(-4))   & __getOperatingIncome(__getYear(-3))   \\
+ Revenue                   & __getRevenue(__getYear(-5))           & __getRevenue(__getYear(-4))           & __getRevenue(__getYear(-3))           \\
+ \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-5)) & __operatingMarginRatio(__getYear(-4)) & __operatingMarginRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                         \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-2))   & __getOperatingIncome(__getYear(-1))   & __getOperatingIncome(__getYear(0))   \\
+ Revenue                   & __getRevenue(__getYear(-2))           & __getRevenue(__getYear(-1))           & __getRevenue(__getYear(0))           \\
+ \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-2)) & __operatingMarginRatio(__getYear(-1)) & __operatingMarginRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Net Income Margin Ratio (NIMR)}
+
+The Net Income Margin Ratio (NIMR) is calculated as
+$\text{NIMR} = \frac{\text{Net Income}}{\text{Revenue}}$.\\
+\textbf{Meaning}: If a company's NIMR is $0.30 = 30\%$, this tells us that every
+time the company sells its products for 100\$, it makes 30\$ in profit.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Net Income Margin Ratio (NIMR)} \\
+ \hline
+ Year                       & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                         \\
+ \hline
+ Net Income                 & __getNetIncome(__getYear(-11))         & __getNetIncome(__getYear(-10))         & __getNetIncome(__getYear(-9))         \\
+ Revenue                    & __getRevenue(__getYear(-11))           & __getRevenue(__getYear(-10))           & __getRevenue(__getYear(-9))           \\
+ \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-11)) & __netIncomeMarginRatio(__getYear(-10)) & __netIncomeMarginRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                         \\
+ \hline
+ Net Income                 & __getNetIncome(__getYear(-8))         & __getNetIncome(__getYear(-7))         & __getNetIncome(__getYear(-6))         \\
+ Revenue                    & __getRevenue(__getYear(-8))           & __getRevenue(__getYear(-7))           & __getRevenue(__getYear(-6))           \\
+ \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-8)) & __netIncomeMarginRatio(__getYear(-7)) & __netIncomeMarginRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                         \\
+ \hline
+ Net Income                 & __getNetIncome(__getYear(-5))         & __getNetIncome(__getYear(-4))         & __getNetIncome(__getYear(-3))         \\
+ Revenue                    & __getRevenue(__getYear(-5))           & __getRevenue(__getYear(-4))           & __getRevenue(__getYear(-3))           \\
+ \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-5)) & __netIncomeMarginRatio(__getYear(-4)) & __netIncomeMarginRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                         \\
+ \hline
+ Net Income                 & __getNetIncome(__getYear(-2))         & __getNetIncome(__getYear(-1))         & __getNetIncome(__getYear(0))         \\
+ Revenue                    & __getRevenue(__getYear(-2))           & __getRevenue(__getYear(-1))           & __getRevenue(__getYear(0))           \\
+ \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-2)) & __netIncomeMarginRatio(__getYear(-1)) & __netIncomeMarginRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Interest Coverage Ratio (ICR)}
+
+The Interest Coverage is defined as
+$\text{ICR} = \frac{\text{Income from Operations}}{\text{Interest Expense}} \geq 5$.
+This is a very important ratio for minimizing your risk. If a company cannot pay
+for its interest expenses, it is heading for trouble fast.\\
+\textbf{Meaning}: If a company's ICR is $30$, this tells us that the company would
+be able to pay the interest expenses as much as 30 times from the operating income.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Interest Coverage Ratio (ICR)} \\
+ \hline
+ Year                      & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-11))    & __getOperatingIncome(__getYear(-10))    & __getOperatingIncome(__getYear(-9))    \\
+ Interest Expense          & __getInterestExpense(__getYear(-11))    & __getInterestExpense(__getYear(-10))    & __getInterestExpense(__getYear(-9))    \\
+ \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-11)) & __interestCoverageRatio(__getYear(-10)) & __interestCoverageRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                          \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-8))    & __getOperatingIncome(__getYear(-7))    & __getOperatingIncome(__getYear(-6))    \\
+ Interest Expense          & __getInterestExpense(__getYear(-8))    & __getInterestExpense(__getYear(-7))    & __getInterestExpense(__getYear(-6))    \\
+ \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-8)) & __interestCoverageRatio(__getYear(-7)) & __interestCoverageRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-5))    & __getOperatingIncome(__getYear(-4))    & __getOperatingIncome(__getYear(-3))    \\
+ Interest Expense          & __getInterestExpense(__getYear(-5))    & __getInterestExpense(__getYear(-4))    & __getInterestExpense(__getYear(-3))    \\
+ \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-5)) & __interestCoverageRatio(__getYear(-4)) & __interestCoverageRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ \hline
+ Operating Income          & __getOperatingIncome(__getYear(-2))    & __getOperatingIncome(__getYear(-1))    & __getOperatingIncome(__getYear(0))    \\
+ Interest Expense          & __getInterestExpense(__getYear(-2))    & __getInterestExpense(__getYear(-1))    & __getInterestExpense(__getYear(0))    \\
+ \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-2)) & __interestCoverageRatio(__getYear(-1)) & __interestCoverageRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsection{Balance Sheet - Ratio Analysis}
+
+\subsubsection{Profitability Ratios}
+
+\paragraph{Return-on-Equity (ROE)}
+
+The Return-on-Equity (ROE) is given as
+$\text{ROE} = \frac{\text{Net Income}}{\text{Equity}} \geq 8\%$ for the last years.
+\begin{itemize}
+    \item Net Income is found on the Income Statement.
+    \item Equity is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: If a company's ROE is $0.15 = 15\%$, this tells us that the company
+has made a return of 15\$ for every 100\$ the company has retained from previous
+earnings or intiial investments.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Return-on-Equity (ROE)} \\
+ \hline
+ Year                     & __getYear(-11)                   & __getYear(-10)                   & __getYear(-9)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-11))   & __getNetIncome(__getYear(-10))   & __getNetIncome(__getYear(-9))   \\
+ Equity                   & __getTotalEquity(__getYear(-11)) & __getTotalEquity(__getYear(-10)) & __getTotalEquity(__getYear(-9)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-11)) & __returnOnEquity(__getYear(-10)) & __returnOnEquity(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                   & __getYear(-7)                   & __getYear(-6)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-8))   & __getNetIncome(__getYear(-7))   & __getNetIncome(__getYear(-6))   \\
+ Equity                   & __getTotalEquity(__getYear(-8)) & __getTotalEquity(__getYear(-7)) & __getTotalEquity(__getYear(-6)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-8)) & __returnOnEquity(__getYear(-7)) & __returnOnEquity(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                   & __getYear(-4)                   & __getYear(-3)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-5))   & __getNetIncome(__getYear(-4))   & __getNetIncome(__getYear(-3))   \\
+ Equity                   & __getTotalEquity(__getYear(-5)) & __getTotalEquity(__getYear(-4)) & __getTotalEquity(__getYear(-3)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-5)) & __returnOnEquity(__getYear(-4)) & __returnOnEquity(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                   & __getYear(-1)                  & __getYear(0)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-2))   & __getNetIncome(__getYear(0))   & __getNetIncome(__getYear(0))   \\
+ Equity                   & __getTotalEquity(__getYear(-2)) & __getTotalEquity(__getYear(0)) & __getTotalEquity(__getYear(0)) \\
+ \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-2)) & __returnOnEquity(__getYear(0)) & __returnOnEquity(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\paragraph{Return-on-Assets (ROA)}
+
+The Return-on-Assets (ROA) is defined as
+$\text{ROA} = \frac{\text{Net Income}}{\text{Total Assets}} \geq 6\%$ for the last years.
+\begin{itemize}
+    \item Net Income is found on the Income Statement.
+    \item Total Assets is found on the asset column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: This ratio isn't that important to calculate if the company has very little debt, e.g.
+a debt/equity ratio of 0.5 or less. It is important for a company with a lot of debt.
+The ROA will always be lower than the ROE if the company has debt.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Return-on-Assets (ROA)} \\
+ \hline
+ Year                     & __getYear(-11)                   & __getYear(-10)                   & __getYear(-9)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-11))   & __getNetIncome(__getYear(-10))   & __getNetIncome(__getYear(-9))   \\
+ Total Assets             & __getTotalAssets(__getYear(-11)) & __getTotalAssets(__getYear(-10)) & __getTotalAssets(__getYear(-9)) \\
+ \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-11)) & __returnOnAssets(__getYear(-10)) & __returnOnAssets(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                   & __getYear(-7)                   & __getYear(-6)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-8))   & __getNetIncome(__getYear(-7))   & __getNetIncome(__getYear(-6))   \\
+ Total Assets             & __getTotalAssets(__getYear(-8)) & __getTotalAssets(__getYear(-7)) & __getTotalAssets(__getYear(-6)) \\
+ \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-8)) & __returnOnAssets(__getYear(-7)) & __returnOnAssets(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                   & __getYear(-4)                   & __getYear(-3)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-5))   & __getNetIncome(__getYear(-4))   & __getNetIncome(__getYear(-3))   \\
+ Total Assets             & __getTotalAssets(__getYear(-5)) & __getTotalAssets(__getYear(-4)) & __getTotalAssets(__getYear(-3)) \\
+ \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-5)) & __returnOnAssets(__getYear(-4)) & __returnOnAssets(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                   & __getYear(-1)                   & __getYear(0)                   \\
+ \hline
+ Net Income               & __getNetIncome(__getYear(-2))   & __getNetIncome(__getYear(-1))   & __getNetIncome(__getYear(0))   \\
+ Total Assets             & __getTotalAssets(__getYear(-2)) & __getTotalAssets(__getYear(-1)) & __getTotalAssets(__getYear(0)) \\
+ \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-2)) & __returnOnAssets(__getYear(-1)) & __returnOnAssets(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Liquidity Ratios}
+
+\paragraph{Current Ratio (CR)}
+
+The Current Ratio (CR) is defined as
+$\text{CR} = \frac{\text{Current Assets}}{\text{Current Liabilities}}$ should be
+between 1.5 and 5.
+\begin{itemize}
+    \item Current Assets is found on the asset column of the Balance Sheet.
+    \item Current Liabilities is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: This key ratio compares the company's expectation for cash inflow
+(current assets) and cash outflow (current liabilities) during the next twelve
+months. This number should be greater than 1 because if we do not get more money
+in than out within the next twelve months, we will be forced to take on debt or
+relinquish more equity, i.e. selling more stock to raise money. A current ratio
+of above 5 may also indicate bad money monagament, as cash could be put ot better
+use elsewhere.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Current Ratio (CR)} \\
+ \hline
+ Year                    & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ \hline
+ Current Assets          & __getCurrentAssets(__getYear(-11))      & __getCurrentAssets(__getYear(-10))      & __getCurrentAssets(__getYear(-9))      \\
+ Current Liabilities     & __getCurrentLiabilities(__getYear(-11)) & __getCurrentLiabilities(__getYear(-10)) & __getCurrentLiabilities(__getYear(-9)) \\
+ \rowcolor{lightgray} CR & __currentRatio(__getYear(-11))          & __currentRatio(__getYear(-10))          & __currentRatio(__getYear(-9))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                    & __getYear(-8)                          & __getYear(-8)                          & __getYear(-7)                          \\
+ \hline
+ Current Assets          & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-7))      \\
+ Current Liabilities     & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-7)) \\
+ \rowcolor{lightgray} CR & __currentRatio(__getYear(-8))          & __currentRatio(__getYear(-8))          & __currentRatio(__getYear(-7))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                    & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ \hline
+ Current Assets          & __getCurrentAssets(__getYear(-5))      & __getCurrentAssets(__getYear(-4))      & __getCurrentAssets(__getYear(-3))      \\
+ Current Liabilities     & __getCurrentLiabilities(__getYear(-5)) & __getCurrentLiabilities(__getYear(-4)) & __getCurrentLiabilities(__getYear(-3)) \\
+ \rowcolor{lightgray} CR & __currentRatio(__getYear(-5))          & __currentRatio(__getYear(-4))          & __currentRatio(__getYear(-3))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                    & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ \hline
+ Current Assets          & __getCurrentAssets(__getYear(-2))      & __getCurrentAssets(__getYear(-1))      & __getCurrentAssets(__getYear(0))      \\
+ Current Liabilities     & __getCurrentLiabilities(__getYear(-2)) & __getCurrentLiabilities(__getYear(-1)) & __getCurrentLiabilities(__getYear(0)) \\
+ \rowcolor{lightgray} CR & __currentRatio(__getYear(-2))          & __currentRatio(__getYear(-1))          & __currentRatio(__getYear(0))          \\
+ \hline
+\end{tabularx}
+
+\paragraph{Acid Test Ratio (ATR)}
+
+The Acid Test Ratio (ATR) is defined as
+$\text{ATR} = \frac{\text{Current Assets - Inventory}}{\text{Current Liabilities}} > 1.5$.
+\begin{itemize}
+    \item Current Assets is found on the asset column of the Balance Sheet.
+    \item Inventory is found on the asset column of the Balance Sheet.
+    \item Current Liabilities is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: This key ratio is also called the \textit{skeptic liquidity measure}.
+It is quite conservative as we do not include the inventory. The question is: Assuming
+that we do not sell anything from our inventory, do we still expect to receive
+more in than we need to pay out during the next twelve months? The key ratio is
+for the conservative investor. The less you know about the company, the more you
+should prefer this key ratio over the current ratio.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Acid Test Ratio (ATR)} \\
+ \hline
+ Year                     & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ \hline
+ Current Assets           & __getCurrentAssets(__getYear(-11))      & __getCurrentAssets(__getYear(-10))      & __getCurrentAssets(__getYear(-9))      \\
+ Inventory                & __getInventory(__getYear(-11))          & __getInventory(__getYear(-10))          & __getInventory(__getYear(-9))          \\
+ Current Liabilities      & __getCurrentLiabilities(__getYear(-11)) & __getCurrentLiabilities(__getYear(-10)) & __getCurrentLiabilities(__getYear(-9)) \\
+ \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-11))         & __acidTestRatio(__getYear(-10))         & __acidTestRatio(__getYear(-9))         \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                          \\
+ \hline
+ Current Assets           & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-7))      & __getCurrentAssets(__getYear(-6))      \\
+ Inventory                & __getInventory(__getYear(-8))          & __getInventory(__getYear(-7))          & __getInventory(__getYear(-6))          \\
+ Current Liabilities      & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-7)) & __getCurrentLiabilities(__getYear(-6)) \\
+ \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-8))         & __acidTestRatio(__getYear(-7))         & __acidTestRatio(__getYear(-6))         \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ \hline
+ Current Assets           & __getCurrentAssets(__getYear(-5))      & __getCurrentAssets(__getYear(-4))      & __getCurrentAssets(__getYear(-3))      \\
+ Inventory                & __getInventory(__getYear(-5))          & __getInventory(__getYear(-4))          & __getInventory(__getYear(-3))          \\
+ Current Liabilities      & __getCurrentLiabilities(__getYear(-5)) & __getCurrentLiabilities(__getYear(-4)) & __getCurrentLiabilities(__getYear(-3)) \\
+ \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-5))         & __acidTestRatio(__getYear(-4))         & __acidTestRatio(__getYear(-3))         \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ \hline
+ Current Assets           & __getCurrentAssets(__getYear(-2))      & __getCurrentAssets(__getYear(-1))      & __getCurrentAssets(__getYear(0))      \\
+ Inventory                & __getInventory(__getYear(-2))          & __getInventory(__getYear(-1))          & __getInventory(__getYear(0))          \\
+ Current Liabilities      & __getCurrentLiabilities(__getYear(-2)) & __getCurrentLiabilities(__getYear(-1)) & __getCurrentLiabilities(__getYear(0)) \\
+ \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-2))         & __acidTestRatio(__getYear(-1))         & __acidTestRatio(__getYear(0))         \\
+ \hline
+\end{tabularx}\\
+
+\subsubsection{Efficiency Ratios}
+
+\paragraph{Inventory Turnover Ratio (ITR)}
+
+The Inventory Turnover Ratio (ITR) is defined as
+$\text{ITR} = \frac{\text{Cost of Revenue}}{\text{Inventory}} > 4$.
+\begin{itemize}
+    \item Cost of Revenue is found on the Income Statement.
+    \item Inventory is found on the asset column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: The higher the number, the more efficient the company is in
+turning the inventory into sales.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Inventory Turnover Ratio (ITR)} \\
+ \hline
+ Year                     & __getYear(-11)                           & __getYear(-10)                           & __getYear(-9)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-11))       & __getCostOfRevenue(__getYear(-10))       & __getCostOfRevenue(__getYear(-9))       \\
+ Inventory                & __getInventory(__getYear(-11))           & __getInventory(__getYear(-10))           & __getInventory(__getYear(-9))           \\
+ \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-11)) & __inventoryTurnoverRatio(__getYear(-10)) & __inventoryTurnoverRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                           & __getYear(-7)                           & __getYear(-6)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-8))       & __getCostOfRevenue(__getYear(-7))       & __getCostOfRevenue(__getYear(-6))       \\
+ Inventory                & __getInventory(__getYear(-8))           & __getInventory(__getYear(-7))           & __getInventory(__getYear(-6))           \\
+ \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-8)) & __inventoryTurnoverRatio(__getYear(-7)) & __inventoryTurnoverRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                           & __getYear(-4)                           & __getYear(-3)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-5))       & __getCostOfRevenue(__getYear(-4))       & __getCostOfRevenue(__getYear(-3))       \\
+ Inventory                & __getInventory(__getYear(-5))           & __getInventory(__getYear(-4))           & __getInventory(__getYear(-3))           \\
+ \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-5)) & __inventoryTurnoverRatio(__getYear(-4)) & __inventoryTurnoverRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                           & __getYear(-1)                           & __getYear(0)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-2))       & __getCostOfRevenue(__getYear(-1))       & __getCostOfRevenue(__getYear(0))       \\
+ Inventory                & __getInventory(__getYear(-2))           & __getInventory(__getYear(-1))           & __getInventory(__getYear(0))           \\
+ \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-2)) & __inventoryTurnoverRatio(__getYear(-1)) & __inventoryTurnoverRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\paragraph{Accounts Receivable Turnover Ratio (ARR)}
+
+The Accounts Receivable Turnover Ratio (ARR) is defined as
+$\text{ARR} = \frac{\text{Turnover}}{\text{Accounts Receivables}}$ should be
+between 5 and 7.
+\begin{itemize}
+    \item Turnover is actually the revenues of the business found on the Income Statement.
+    \item Accounts receivable is found on the asset column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: Suppose the turnover ratio is 3.41. This means if the company
+makes a sale, it typicalls take $\frac{\text{365}}{3.41} = 107$ days for them to
+receive payment from their customer. A higher ratio means the company gets their
+money a lot faster from vendors.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Accounts Receivable Ratio (ARR)} \\
+ \hline
+ Year                     & __getYear(-11)                             & __getYear(-10)                             & __getYear(-9)                             \\
+ \hline
+ Turnover                 & __getRevenue(__getYear(-11))               & __getRevenue(__getYear(-10))               & __getRevenue(__getYear(-9))               \\
+ Accounts Receivables     & __getAccountsReceivables(__getYear(-11))   & __getAccountsReceivables(__getYear(-10))   & __getAccountsReceivables(__getYear(-9))   \\
+ \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-11)) & __accountsReceivablesRatio(__getYear(-10)) & __accountsReceivablesRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                             & __getYear(-7)                             & __getYear(-6)                             \\
+ \hline
+ Turnover                 & __getRevenue(__getYear(-8))               & __getRevenue(__getYear(-7))               & __getRevenue(__getYear(-6))               \\
+ Accounts Receivables     & __getAccountsReceivables(__getYear(-8))   & __getAccountsReceivables(__getYear(-7))   & __getAccountsReceivables(__getYear(-6))   \\
+ \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-8)) & __accountsReceivablesRatio(__getYear(-7)) & __accountsReceivablesRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                             & __getYear(-4)                             & __getYear(-3)                             \\
+ \hline
+ Turnover                 & __getRevenue(__getYear(-5))               & __getRevenue(__getYear(-4))               & __getRevenue(__getYear(-3))               \\
+ Accounts Receivables     & __getAccountsReceivables(__getYear(-5))   & __getAccountsReceivables(__getYear(-4))   & __getAccountsReceivables(__getYear(-3))   \\
+ \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-5)) & __accountsReceivablesRatio(__getYear(-4)) & __accountsReceivablesRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                             & __getYear(-1)                             & __getYear(0)                             \\
+ \hline
+ Turnover                 & __getRevenue(__getYear(-2))               & __getRevenue(__getYear(-1))               & __getRevenue(__getYear(0))               \\
+ Accounts Receivables     & __getAccountsReceivables(__getYear(-2))   & __getAccountsReceivables(__getYear(-1))   & __getAccountsReceivables(__getYear(0))   \\
+ \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-2)) & __accountsReceivablesRatio(__getYear(-1)) & __accountsReceivablesRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\paragraph{Accounts Payable Turnover Ratio (APR)}
+
+The Accounts Payable Ratio (APR) is defined as
+$\text{APR} = \frac{\text{Cost of Revenue}}{\text{Accounts Payable}}$ should be
+between 2 and 6.
+\begin{itemize}
+    \item Cost of Revenue is found on the Income Statement.
+    \item Accounts Payable is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: This key ratio looks at how a company handles its credit
+obligations. Suppose the turnover ratio is 2.45. This means it typicalls takes
+the company $\frac{\text{365}}{2.45} = 149$ days to repay their suppliers. We want
+a high accounts payable turnover ratio. A ratio of between 2 and 6 is typically
+a sign of an efficient company that is satisfying bargaining power and at the same
+time having no problem paying its obligations to suppliers.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Accounts Payable Ratio (APR)} \\
+ \hline
+ Year                     & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-11))     & __getCostOfRevenue(__getYear(-10))     & __getCostOfRevenue(__getYear(-9))       \\
+ Accounts Payable         & __getAccountsPayable(__getYear(-11))   & __getAccountsPayable(__getYear(-10))   & __getAccountsPayable(__getYear(-9))     \\
+ \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-11)) & __accountsPayableRatio(__getYear(-10)) & __inventoryTurnoverRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-8))     & __getCostOfRevenue(__getYear(-7))     & __getCostOfRevenue(__getYear(-6))       \\
+ Accounts Payable         & __getAccountsPayable(__getYear(-8))   & __getAccountsPayable(__getYear(-7))   & __getAccountsPayable(__getYear(-6))     \\
+ \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-8)) & __accountsPayableRatio(__getYear(-7)) & __inventoryTurnoverRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-5))     & __getCostOfRevenue(__getYear(-4))     & __getCostOfRevenue(__getYear(-3))       \\
+ Accounts Payable         & __getAccountsPayable(__getYear(-5))   & __getAccountsPayable(__getYear(-4))   & __getAccountsPayable(__getYear(-3))     \\
+ \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-5)) & __accountsPayableRatio(__getYear(-4)) & __inventoryTurnoverRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                           \\
+ \hline
+ Cost of Revenue          & __getCostOfRevenue(__getYear(-2))     & __getCostOfRevenue(__getYear(-1))     & __getCostOfRevenue(__getYear(0))       \\
+ Accounts Payable         & __getAccountsPayable(__getYear(-2))   & __getAccountsPayable(__getYear(-1))   & __getAccountsPayable(__getYear(0))     \\
+ \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-2)) & __accountsPayableRatio(__getYear(-1)) & __inventoryTurnoverRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Solvency Ratios}
+
+\paragraph{Debt-to-Equity Ratio (D/E)}
+
+The Debt-to-Equity Ratio (D/E) is defined as
+$\text{D/E} = \frac{\text{Long Term Debt + Notes Payable}}{\text{Equity}} < 0.5$.
+\begin{itemize}
+    \item Long-Term Debt is found on the liability column of the Balance Sheet.
+    \item Notes Payable is found on the liability column of the Balance Sheet.
+    \item Equity is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: There is nothing wrong with a little debt. Debt can sometimes
+make things go a little faster. Too much debt, on the other hand, can undermine
+the very existence of a business. Thus, this key ratio should be as as low as
+possible. This key ratio comprises of the interest-bearing debt, i.e. the debt
+we should pay interest on. This is why this key ratio is composed of long-term
+debt and notes payable. This is debt that you typically have acquired from the
+bank. It is the most expensive debt to obtain.\\
+Suppose the D/E-ratio is $0.20 = 20\%$. This means that every time the shareholders
+own 100\$ in equity, they also owe 20\$ in debt that the company is paying interest
+on. This key ratio should definitely be below 0.5.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Debt-to-Equity (D/E)} \\
+ \hline
+ Year                       & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-11))     & __getLongTermDebt(__getYear(-10))     & __getLongTermDebt(__getYear(-9))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-11))    & __getShortTermDebt(__getYear(-10))    & __getShortTermDebt(__getYear(-9)) \\
+ Equity                     & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-11))        & __debtToEquity(__getYear(-10))        & __debtToEquity(__getYear(-9))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-8))     & __getLongTermDebt(__getYear(-7))     & __getLongTermDebt(__getYear(-6))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-8))    & __getShortTermDebt(__getYear(-7))    & __getShortTermDebt(__getYear(-6)) \\
+ Equity                     & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-8))        & __debtToEquity(__getYear(-7))        & __debtToEquity(__getYear(-6))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-5))     & __getLongTermDebt(__getYear(-4))     & __getLongTermDebt(__getYear(-3))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-5))    & __getShortTermDebt(__getYear(-4))    & __getShortTermDebt(__getYear(-3)) \\
+ Equity                     & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-5))        & __debtToEquity(__getYear(-4))        & __debtToEquity(__getYear(-3))     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                     \\
+ \hline
+ Long Term Debt             & __getLongTermDebt(__getYear(-2))     & __getLongTermDebt(__getYear(-1))     & __getLongTermDebt(__getYear(0))  \\
+ Notes Payable              & __getShortTermDebt(__getYear(-2))    & __getShortTermDebt(__getYear(-1))    & __getShortTermDebt(__getYear(0)) \\
+ Equity                     & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))   \\
+ \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-2))        & __debtToEquity(__getYear(-1))        & __debtToEquity(__getYear(0))     \\
+ \hline
+\end{tabularx}
+
+\paragraph{Liabilities-to-Equity Ratio (L/E)}
+
+The Liabilities-to-Equity (L/E) Ratio is defined as
+$\text{L/E} = \frac{\text{Total Liabilities}}{\text{Equity}} < 0.8$.
+\begin{itemize}
+    \item Total Liabilities is found on the liability column of the Balance Sheet.
+    \item Equity is found on the liability column of the Balance Sheet.
+\end{itemize}
+\textbf{Meaning}: Suppose the L/E ratio is $0.47 = 47\%$. This means that every
+time the shareholder has 100\$ in equity, the company would have to pay out 47\$
+at some point in the future. This key ratio includes all liabilities, meaning the
+intereset-bearing debt, which is the most expensive, and interest-free liabilities
+such as accounts payable. It is for more conservative investors and should be
+below 0.8 to be considered low-risk.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{Liabilities-to-Equity (L/E)} \\
+ \hline
+ Year                     & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-11)) & __getTotalLiabilities(__getYear(-10)) & __getTotalLiabilities(__getYear(-9)) \\
+ Equity                   & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-11)) & __liabilitiesToEquity(__getYear(-10)) & __liabilitiesToEquity(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-8)) & __getTotalLiabilities(__getYear(-7)) & __getTotalLiabilities(__getYear(-6)) \\
+ Equity                   & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-8)) & __liabilitiesToEquity(__getYear(-7)) & __liabilitiesToEquity(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-5)) & __getTotalLiabilities(__getYear(-4)) & __getTotalLiabilities(__getYear(-3)) \\
+ Equity                   & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-5)) & __liabilitiesToEquity(__getYear(-4)) & __liabilitiesToEquity(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                        \\
+ \hline
+ Liabilities              & __getTotalLiabilities(__getYear(-2)) & __getTotalLiabilities(__getYear(-1)) & __getTotalLiabilities(__getYear(0)) \\
+ Equity                   & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))      \\
+ \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-2)) & __liabilitiesToEquity(__getYear(-1)) & __liabilitiesToEquity(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsection{Cash Flow Statement - Ratio Analysis}
+
+\subsubsection{FCF-to-Revenue Ratio (FCFR)}
+
+The FCF-to-Revenue Ratio (FCFR) is defined as
+$\text{FCFR} = \frac{\text{FCF}}{\text{Revenue}} \geq 5\%$ for the last years.\\
+\textbf{Meaning}: If a company has a FCFR of $0.13 = 13\%$, this tells us that
+every time the company sells its products for 100\$, 13\$ will be available as
+cash for the shareholders. This key ratio measures how much cash will go directly
+to the owners. This means that as much as 13\$ from 100\$ of sales could be paid
+directly to the shareholders as dividends.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{FCF-to-Revenue Ratio (FCFR)} \\
+ \hline
+ Year                       & __getYear(-11)                      & __getYear(-10)                      & __getYear(-9)                      \\
+ \hline
+ FCF                        & __getFreeCashFlow(__getYear(-11))   & __getFreeCashFlow(__getYear(-10))   & __getFreeCashFlow(__getYear(-9))   \\
+ Revenue                    & __getRevenue(__getYear(-11))        & __getRevenue(__getYear(-10))        & __getRevenue(__getYear(-9))        \\
+ \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-11)) & __fcfToRevenueRatio(__getYear(-10)) & __fcfToRevenueRatio(__getYear(-9)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-8)                      & __getYear(-7)                      & __getYear(-6)                      \\
+ \hline
+ FCF                        & __getFreeCashFlow(__getYear(-8))   & __getFreeCashFlow(__getYear(-7))   & __getFreeCashFlow(__getYear(-6))   \\
+ Revenue                    & __getRevenue(__getYear(-8))        & __getRevenue(__getYear(-7))        & __getRevenue(__getYear(-6))        \\
+ \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-8)) & __fcfToRevenueRatio(__getYear(-7)) & __fcfToRevenueRatio(__getYear(-6)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-5)                      & __getYear(-4)                      & __getYear(-3)                      \\
+ \hline
+ FCF                        & __getFreeCashFlow(__getYear(-5))   & __getFreeCashFlow(__getYear(-4))   & __getFreeCashFlow(__getYear(-3))   \\
+ Revenue                    & __getRevenue(__getYear(-5))        & __getRevenue(__getYear(-4))        & __getRevenue(__getYear(-3))        \\
+ \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-5)) & __fcfToRevenueRatio(__getYear(-4)) & __fcfToRevenueRatio(__getYear(-3)) \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & __getYear(-2)                      & __getYear(-1)                      & __getYear(0)                      \\
+ \hline
+ FCF                        & __getFreeCashFlow(__getYear(-2))   & __getFreeCashFlow(__getYear(-1))   & __getFreeCashFlow(__getYear(0))   \\
+ Revenue                    & __getRevenue(__getYear(-2))        & __getRevenue(__getYear(-1))        & __getRevenue(__getYear(0))        \\
+ \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-2)) & __fcfToRevenueRatio(__getYear(-1)) & __fcfToRevenueRatio(__getYear(0)) \\
+ \hline
+\end{tabularx}
+
+\subsubsection{Investing-Cash-Flow-to-Operating-Cash-Flow Ratio (ICFOCF)}
+
+The Investing-Cash-Flow-to-Operating-Cash-Flow Ratio (ICFOCF) is defined as
+$\text{ICFOCF} = \frac{\text{Investing Cash Flow}}{\text{Operating Cash Flow}}$.\\
+\textbf{Meaning}: If a company has a ICFOCF of $0.53 = 53\%$, this tells us every
+time the company makes 100\$ in cash from its operations, 53\$ in cash are spent
+on maintaining and investing in the company's growth. All this cash will only be
+used for new equipment, so the investor would not get this cash out for himself.
+Thus, if we have 2 companies that are equally valuable, we should prefer the one
+with the lower ICFOCF key ratio. If the investing cash flow is negative, this means
+that the company is investing, if the investing cash flow is positive, this means
+that the company sold a formerly held asset which results in an inflow of cash.\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ \multicolumn{4}{|c|}{ICF-to-OCF Ratio (ICFOCF)} \\
+ \hline
+ Year                        & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                         \\
+ \hline
+ ICF                         & __getInvestingCashFlow(__getYear(-11))  & __getInvestingCashFlow(__getYear(-10))  & __getInvestingCashFlow(__getYear(-9)) \\
+ OCF                         & __getOperatingCashFlow(__getYear(-11))  & __getOperatingCashFlow(__getYear(-10))  & __getOperatingCashFlow(__getYear(-9)) \\
+ \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-11))           & __ICFOCFRatio(__getYear(-10))           & __ICFOCFRatio(__getYear(-9))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                        & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                         \\
+ \hline
+ ICF                         & __getInvestingCashFlow(__getYear(-8))  & __getInvestingCashFlow(__getYear(-7))  & __getInvestingCashFlow(__getYear(-6)) \\
+ OCF                         & __getOperatingCashFlow(__getYear(-8))  & __getOperatingCashFlow(__getYear(-7))  & __getOperatingCashFlow(__getYear(-6)) \\
+ \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-8))           & __ICFOCFRatio(__getYear(-7))           & __ICFOCFRatio(__getYear(-6))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                        & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                         \\
+ \hline
+ ICF                         & __getInvestingCashFlow(__getYear(-5))  & __getInvestingCashFlow(__getYear(-4))  & __getInvestingCashFlow(__getYear(-3)) \\
+ OCF                         & __getOperatingCashFlow(__getYear(-5))  & __getOperatingCashFlow(__getYear(-4))  & __getOperatingCashFlow(__getYear(-3)) \\
+ \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-5))           & __ICFOCFRatio(__getYear(-4))           & __ICFOCFRatio(__getYear(-3))          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                        & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                         \\
+ \hline
+ ICF                         & __getInvestingCashFlow(__getYear(-2))  & __getInvestingCashFlow(__getYear(-1))  & __getInvestingCashFlow(__getYear(0)) \\
+ OCF                         & __getOperatingCashFlow(__getYear(-2))  & __getOperatingCashFlow(__getYear(-1))  & __getOperatingCashFlow(__getYear(0)) \\
+ \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-2))           & __ICFOCFRatio(__getYear(-1))           & __ICFOCFRatio(__getYear(0))          \\
+ \hline
+\end{tabularx}
