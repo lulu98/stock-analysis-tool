@@ -1,0 +1,814 @@
+{
+    "AU000000BHP4":{
+        "Symbol": "BHP",
+        "ExchangeID": "AU"
+    },
+    "BE0974293251":{
+        "Symbol": "ABI",
+        "ExchangeID": "BR"
+    },
+    "BRVALEACNOR0":{
+        "Symbol": "VALE3",
+        "ExchangeID": "SA"
+    },
+    "CA82509L1076":{
+        "Symbol": "SHOP",
+        "ExchangeID": "US"
+    },
+    "CA0679011084":{
+        "Symbol": "ABX",
+        "ExchangeID": "TO"
+    },
+    "CA76131D1033":{
+        "Symbol": "QSR",
+        "ExchangeID": "TO"
+    },
+    "CA94106B1013":{
+        "Symbol": "WCN",
+        "ExchangeID": "TO"
+    },
+    "CH0012032048":{
+        "Symbol": "ROG",
+        "ExchangeID": "SW"
+    },
+    "CH0012005267":{
+        "Symbol": "NOVN",
+        "ExchangeID": "SW"
+    },
+    "CH0038863350":{
+        "Symbol": "NESN",
+        "ExchangeID": "SW"
+    },
+    "CNE100000296":{
+        "Symbol": "BYDDF",
+        "ExchangeID": "US"
+    },
+    "CNE100000338":{
+        "Symbol": "GWLLF",
+        "ExchangeID": "US"
+    },
+    "CNE000000TY6":{
+        "Symbol": "600104",
+        "ExchangeID": "SHG"
+    },
+    "CNE000000R36":{
+        "Symbol": "000625",
+        "ExchangeID": "SHE"
+    },
+    "CNE100000312":{
+        "Symbol": "DNFGF",
+        "ExchangeID": "US"
+    },
+    "CNE100000L63":{
+        "Symbol": "002352",
+        "ExchangeID": "SHE"
+    },
+    "CNE1000003W8":{
+        "Symbol": "PCCYF",
+        "ExchangeID": "US"
+    },
+    "CNE0000018R8":{
+        "Symbol": "600519",
+        "ExchangeID": "SHG"
+    },
+    "CNE000000VQ8":{
+        "Symbol": "000858",
+        "ExchangeID": "SHE"
+    },
+    "CNE100004272":{
+        "Symbol": "9633",
+        "ExchangeID": "HK"
+    },
+    "CNE100000767":{
+        "Symbol": "601088",
+        "ExchangeID": "SHG"
+    },
+    "CNE100001SL2":{
+        "Symbol": "603288",
+        "ExchangeID": "SHG"
+    },
+    "CNE100001RQ3":{
+        "Symbol": "002714",
+        "ExchangeID": "SHE"
+    },
+    "DE0007664039":{
+        "Symbol": "VOW3",
+        "ExchangeID": "XETRA"
+    },
+    "DE0007100000":{
+        "Symbol": "MBG",
+        "ExchangeID": "XETRA"
+    },
+    "DE000DTR0CK8":{
+        "Symbol": "DTG",
+        "ExchangeID": "XETRA"
+    },
+    "DE0005190003":{
+        "Symbol": "BMW",
+        "ExchangeID": "XETRA"
+    },
+    "DE0005439004":{
+        "Symbol": "CON",
+        "ExchangeID": "XETRA"
+    },
+    "DE0005552004":{
+        "Symbol": "DPW",
+        "ExchangeID": "XETRA"
+    },
+    "DE000A1EWWW0":{
+        "Symbol": "ADS",
+        "ExchangeID": "XETRA"
+    },
+    "DE0006969603":{
+        "Symbol": "PUM",
+        "ExchangeID": "XETRA"
+    },
+    "DE000ZAL1111":{
+        "Symbol": "ZAL",
+        "ExchangeID": "XETRA"
+    },
+    "DE000ZAL1111":{
+        "Symbol": "ZAL",
+        "ExchangeID": "XETRA"
+    },
+    "DE0007164600":{
+        "Symbol": "SAP",
+        "ExchangeID": "XETRA"
+    },
+    "DE0006231004":{
+        "Symbol": "IFX",
+        "ExchangeID": "XETRA"
+    },
+    "DE0006599905":{
+        "Symbol": "MRK",
+        "ExchangeID": "XETRA"
+    },
+    "DE000BAY0017":{
+        "Symbol": "BAYN",
+        "ExchangeID": "XETRA"
+    },
+    "DE000BASF111":{
+        "Symbol": "BAS",
+        "ExchangeID": "XETRA"
+    },
+    "DE0006048408":{
+        "Symbol": "HEN",
+        "ExchangeID": "XETRA"
+    },
+    "DE0008404005":{
+        "Symbol": "ALV",
+        "ExchangeID": "XETRA"
+    },
+    "DE0007236101":{
+        "Symbol": "SIE",
+        "ExchangeID": "XETRA"
+    },
+    "DE0007500001":{
+        "Symbol": "TKA",
+        "ExchangeID": "XETRA"
+    },
+    "ES0148396007":{
+        "Symbol": "ITX",
+        "ExchangeID": "MC"
+    },
+    "FR0000131906":{
+        "Symbol": "RNO",
+        "ExchangeID": "PA"
+    },
+    "FR0000121014":{
+        "Symbol": "MC",
+        "ExchangeID": "PA"
+    },
+    "FR0000130403":{
+        "Symbol": "CDI",
+        "ExchangeID": "PA"
+    },
+    "FR0000120644":{
+        "Symbol": "BN",
+        "ExchangeID": "PA"
+    },
+    "FR0000120073":{
+        "Symbol": "AI",
+        "ExchangeID": "PA"
+    },
+    "FR0000120321":{
+        "Symbol": "OR",
+        "ExchangeID": "PA"
+    },
+    "FR0000054470":{
+        "Symbol": "UBI",
+        "ExchangeID": "PA"
+    },
+    "GB00BN7CG237":{
+        "Symbol": "AML",
+        "ExchangeID": "LSE"
+    },
+    "GB00BP6MXD84":{
+        "Symbol": "SHEL",
+        "ExchangeID": "LSE"
+    },
+    "GB0002374006":{
+        "Symbol": "DGE",
+        "ExchangeID": "LSE"
+    },
+    "GB0007188757":{
+        "Symbol": "RIO",
+        "ExchangeID": "LSE"
+    },
+    "GB00B10RZP78":{
+        "Symbol": "ULVR",
+        "ExchangeID": "LSE"
+    },
+    "GB00BZ09BD16":{
+        "Symbol": "TEAM",
+        "ExchangeID": "US"
+    },
+    "GB0006776081":{
+        "Symbol": "PSON",
+        "ExchangeID": "LSE"
+    },
+    "GB00B24CGK77":{
+        "Symbol": "RKT",
+        "ExchangeID": "LSE"
+    },
+    "IE00BZ12WP82":{
+        "Symbol": "LIN",
+        "ExchangeID": "US"
+    },
+    "INE585B01010":{
+        "Symbol": "MARUTI",
+        "ExchangeID": "NSE"
+    },
+    "INE155A01022":{
+        "Symbol": "TATAMOTORS",
+        "ExchangeID": "NSE"
+    },
+    "INE101A01026":{
+        "Symbol": "M&M",
+        "ExchangeID": "NSE"
+    },
+    "INE388Y01029":{
+        "Symbol": "NYKAA",
+        "ExchangeID": "NSE"
+    },
+    "INE030A01027":{
+        "Symbol": "HINDUNILVR",
+        "ExchangeID": "NSE"
+    },
+    "IT0003874101":{
+        "Symbol": "1913",
+        "ExchangeID": "HK"
+    },
+    "JE00B4T3BW64":{
+        "Symbol": "GLCNF",
+        "ExchangeID": "US"
+    },
+    "JP3633400001":{
+        "Symbol": "TOYOF",
+        "ExchangeID": "US"
+    },
+    "JP3854600008":{
+        "Symbol": "HNDAF",
+        "ExchangeID": "US"
+    },
+    "JP3397200001":{
+        "Symbol": "7269",
+        "ExchangeID": "TSE"
+    },
+    "JP3435000009":{
+        "Symbol": "SNEJF",
+        "ExchangeID": "US"
+    },
+    "KYG3777B1032":{
+        "Symbol": "GELYF",
+        "ExchangeID": "US"
+    },
+    "KYG596691041":{
+        "Symbol": "MPNGF",
+        "ExchangeID": "US"
+    },
+    "KYG210961051":{
+        "Symbol": "2139",
+        "ExchangeID": "HK"
+    },
+    "KYG7397A1067":{
+        "Symbol": "RAZFF",
+        "ExchangeID": "US"
+    },
+    "KYG875721634":{
+        "Symbol": "TCTZF",
+        "ExchangeID": "US"
+    },
+    "KR7000270009":{
+        "Symbol": "000270",
+        "ExchangeID": "KO"
+    },
+    "KR7005930003":{
+        "Symbol": "005930",
+        "ExchangeID": "KO"
+    },
+    "KR7000660001":{
+        "Symbol": "000660",
+        "ExchangeID": "KO"
+    },
+    "LU1778762911":{
+        "Symbol": "SPOT",
+        "ExchangeID": "US"
+    },
+    "NL00150001Q9":{
+        "Symbol": "STLA",
+        "ExchangeID": "US"
+    },
+    "NL0011585146":{
+        "Symbol": "RACE",
+        "ExchangeID": "MI"
+    },
+    "NL0000235190":{
+        "Symbol": "AIR",
+        "ExchangeID": "XETRA"
+    },
+    "NL0000009165":{
+        "Symbol": "HEIA",
+        "ExchangeID": "AS"
+    },
+    "NL0010273215":{
+        "Symbol": "ASML",
+        "ExchangeID": "AS"
+    },
+    "NL0009538784":{
+        "Symbol": "NXPI",
+        "ExchangeID": "US"
+    },
+    "PLOPTTC00011":{
+        "Symbol": "CDR",
+        "ExchangeID": "WAR"
+    },
+    "SA14TG012N13":{
+        "Symbol": "2222",
+        "ExchangeID": "SR"
+    },
+    "SA0007879139":{
+        "Symbol": "2020",
+        "ExchangeID": "SR"
+    },
+    "SE0000115420":{
+        "Symbol": "VOLV-A",
+        "ExchangeID": "ST"
+    },
+    "SE0000106270":{
+        "Symbol": "HM-B",
+        "ExchangeID": "ST"
+    },
+    "TW0002207008":{
+        "Symbol": "2207",
+        "ExchangeID": "TW"
+    },
+    "TW0002454006":{
+        "Symbol": "2454",
+        "ExchangeID": "TW"
+    },
+    "TW0002379005":{
+        "Symbol": "2379",
+        "ExchangeID": "TW"
+    },
+    "US0378331005":{
+        "Symbol": "AAPL",
+        "ExchangeID": "US"
+    },
+    "US88160R1014":{
+        "Symbol": "TSLA",
+        "ExchangeID": "US"
+    },
+    "US3453708600":{
+        "Symbol": "F",
+        "ExchangeID": "US"
+    },
+    "US37045V1008":{
+        "Symbol": "GM",
+        "ExchangeID": "US"
+    },
+    "US4128221086":{
+        "Symbol": "HOG",
+        "ExchangeID": "US"
+    },
+    "US86959X1072":{
+        "Symbol": "SZKMY",
+        "ExchangeID": "US"
+    },
+    "US86428V1044":{
+        "Symbol": "FUJHY",
+        "ExchangeID": "US"
+    },
+    "US5787871038":{
+        "Symbol": "MZDAY",
+        "ExchangeID": "US"
+    },
+    "US50202M1027":{
+        "Symbol": "LI",
+        "ExchangeID": "US"
+    },
+    "US98422D1054":{
+        "Symbol": "XPEV",
+        "ExchangeID": "US"
+    },
+    "USY384721251":{
+        "Symbol": "HYMTF",
+        "ExchangeID": "US"
+    },
+    "US5398301094":{
+        "Symbol": "LMT",
+        "ExchangeID": "US"
+    },
+    "US0970231058":{
+        "Symbol": "BA",
+        "ExchangeID": "US"
+    },
+    "US4781601046":{
+        "Symbol": "JNJ",
+        "ExchangeID": "US"
+    },
+    "US58933Y1055":{
+        "Symbol": "MRK",
+        "ExchangeID": "US"
+    },
+    "US0231351067":{
+        "Symbol": "AMZN",
+        "ExchangeID": "US"
+    },
+    "US01609W1027":{
+        "Symbol": "BABA",
+        "ExchangeID": "US"
+    },
+    "US47215P1066":{
+        "Symbol": "JD",
+        "ExchangeID": "US"
+    },
+    "US7223041028":{
+        "Symbol": "PDD",
+        "ExchangeID": "US"
+    },
+    "US22266T1097":{
+        "Symbol": "CPNG",
+        "ExchangeID": "US"
+    },
+    "US75102W1080":{
+        "Symbol": "RKUNY",
+        "ExchangeID": "US"
+    },
+    "US9113121068":{
+        "Symbol": "UPS",
+        "ExchangeID": "US"
+    },
+    "US31428X1063":{
+        "Symbol": "FDX",
+        "ExchangeID": "US"
+    },
+    "US30231G1022":{
+        "Symbol": "XOM",
+        "ExchangeID": "US"
+    },
+    "US1667641005":{
+        "Symbol": "CVX",
+        "ExchangeID": "US"
+    },
+    "US1912161007":{
+        "Symbol": "KO",
+        "ExchangeID": "US"
+    },
+    "US7134481081":{
+        "Symbol": "PEP",
+        "ExchangeID": "US"
+    },
+    "US8552441094":{
+        "Symbol": "SBUX",
+        "ExchangeID": "US"
+    },
+    "US6541061031":{
+        "Symbol": "NKE",
+        "ExchangeID": "US"
+    },
+    "US8725401090":{
+        "Symbol": "TJX",
+        "ExchangeID": "US"
+    },
+    "US7782961038":{
+        "Symbol": "ROST",
+        "ExchangeID": "US"
+    },
+    "US1220171060":{
+        "Symbol": "BURL",
+        "ExchangeID": "US"
+    },
+    "US9043111072":{
+        "Symbol": "UAA",
+        "ExchangeID": "US"
+    },
+    "US8760301072":{
+        "Symbol": "TPR",
+        "ExchangeID": "US"
+    },
+    "US5500211090":{
+        "Symbol": "LULU",
+        "ExchangeID": "US"
+    },
+    "US31188H1014":{
+        "Symbol": "FRCOY",
+        "ExchangeID": "US"
+    },
+    "US6092071058":{
+        "Symbol": "MDLZ",
+        "ExchangeID": "US"
+    },
+    "US5007541064":{
+        "Symbol": "KHC",
+        "ExchangeID": "US"
+    },
+    "US3703341046":{
+        "Symbol": "GIS",
+        "ExchangeID": "US"
+    },
+    "US5797802064":{
+        "Symbol": "MKC",
+        "ExchangeID": "US"
+    },
+    "US4878361082":{
+        "Symbol": "K",
+        "ExchangeID": "US"
+    },
+    "US4278661081":{
+        "Symbol": "HSY",
+        "ExchangeID": "US"
+    },
+    "US9024941034":{
+        "Symbol": "TSN",
+        "ExchangeID": "US"
+    },
+    "US0097071007":{
+        "Symbol": "AJINY",
+        "ExchangeID": "US"
+    },
+    "US49387U1034":{
+        "Symbol": "KIKOY",
+        "ExchangeID": "US"
+    },
+    "US4661101034":{
+        "Symbol": "JBSAY",
+        "ExchangeID": "US"
+    },
+    "US5801351017":{
+        "Symbol": "MCD",
+        "ExchangeID": "US"
+    },
+    "US1696561059":{
+        "Symbol": "CMG",
+        "ExchangeID": "US"
+    },
+    "US98850P1093":{
+        "Symbol": "YUMC",
+        "ExchangeID": "US"
+    },
+    "US5949181045":{
+        "Symbol": "MSFT",
+        "ExchangeID": "US"
+    },
+    "US02079K3059":{
+        "Symbol": "GOOGL",
+        "ExchangeID": "US"
+    },
+    "US00724F1012":{
+        "Symbol": "ADBE",
+        "ExchangeID": "US"
+    },
+    "US79466L3024":{
+        "Symbol": "CRM",
+        "ExchangeID": "US"
+    },
+    "US81762P1021":{
+        "Symbol": "NOW",
+        "ExchangeID": "US"
+    },
+    "US68389X1054":{
+        "Symbol": "ORCL",
+        "ExchangeID": "US"
+    },
+    "US9285634021":{
+        "Symbol": "VMW",
+        "ExchangeID": "US"
+    },
+    "US4592001014":{
+        "Symbol": "IBM",
+        "ExchangeID": "US"
+    },
+    "US17275R1023":{
+        "Symbol": "CSCO",
+        "ExchangeID": "US"
+    },
+    "US40434L1052":{
+        "Symbol": "HPQ",
+        "ExchangeID": "US"
+    },
+    "US67066G1040":{
+        "Symbol": "NVDA",
+        "ExchangeID": "US"
+    },
+    "US0079031078":{
+        "Symbol": "AMD",
+        "ExchangeID": "US"
+    },
+    "US4581401001":{
+        "Symbol": "INTC",
+        "ExchangeID": "US"
+    },
+    "US11135F1012":{
+        "Symbol": "AVGO",
+        "ExchangeID": "US"
+    },
+    "US7475251036":{
+        "Symbol": "QCOM",
+        "ExchangeID": "US"
+    },
+    "US8825081040":{
+        "Symbol": "TXN",
+        "ExchangeID": "US"
+    },
+    "US0382221051":{
+        "Symbol": "AMAT",
+        "ExchangeID": "US"
+    },
+    "US5951121038":{
+        "Symbol": "MU",
+        "ExchangeID": "US"
+    },
+    "US5128071082":{
+        "Symbol": "LRCX",
+        "ExchangeID": "US"
+    },
+    "US0326541051":{
+        "Symbol": "ADI",
+        "ExchangeID": "US"
+    },
+    "US5738741041":{
+        "Symbol": "MRVL",
+        "ExchangeID": "US"
+    },
+    "US4824801009":{
+        "Symbol": "KLAC",
+        "ExchangeID": "US"
+    },
+    "US8716071076":{
+        "Symbol": "SNPS",
+        "ExchangeID": "US"
+    },
+    "US8740391003":{
+        "Symbol": "TSM",
+        "ExchangeID": "US"
+    },
+    "US92826C8394":{
+        "Symbol": "V",
+        "ExchangeID": "US"
+    },
+    "US57636Q1040":{
+        "Symbol": "MA",
+        "ExchangeID": "US"
+    },
+    "US70450Y1038":{
+        "Symbol": "PYPL",
+        "ExchangeID": "US"
+    },
+    "US0846707026":{
+        "Symbol": "BRK-B",
+        "ExchangeID": "US"
+    },
+    "US6174464486":{
+        "Symbol": "MS",
+        "ExchangeID": "US"
+    },
+    "US09247X1019":{
+        "Symbol": "BLK",
+        "ExchangeID": "US"
+    },
+    "US92343V1044":{
+        "Symbol": "VZ",
+        "ExchangeID": "US"
+    },
+    "US20030N1019":{
+        "Symbol": "CMCSA",
+        "ExchangeID": "US"
+    },
+    "US00206R1023":{
+        "Symbol": "T",
+        "ExchangeID": "US"
+    },
+    "US8725901040":{
+        "Symbol": "TMUS",
+        "ExchangeID": "US"
+    },
+    "US03027X1000":{
+        "Symbol": "AMT",
+        "ExchangeID": "US"
+    },
+    "US9311421039":{
+        "Symbol": "WMT",
+        "ExchangeID": "US"
+    },
+    "US4370761029":{
+        "Symbol": "HD",
+        "ExchangeID": "US"
+    },
+    "US22160K1051":{
+        "Symbol": "COST",
+        "ExchangeID": "US"
+    },
+    "US5486611073":{
+        "Symbol": "LOW",
+        "ExchangeID": "US"
+    },
+    "US1266501006":{
+        "Symbol": "CVS",
+        "ExchangeID": "US"
+    },
+    "US1491231015":{
+        "Symbol": "CAT",
+        "ExchangeID": "US"
+    },
+    "US2441991054":{
+        "Symbol": "DE",
+        "ExchangeID": "US"
+    },
+    "US94106L1098":{
+        "Symbol": "WM",
+        "ExchangeID": "US"
+    },
+    "US7607591002":{
+        "Symbol": "RSG",
+        "ExchangeID": "US"
+    },
+    "US64110L1061":{
+        "Symbol": "NFLX",
+        "ExchangeID": "US"
+    },
+    "US2546871060":{
+        "Symbol": "DIS",
+        "ExchangeID": "US"
+    },
+    "US25470F3029":{
+        "Symbol": "DISCK",
+        "ExchangeID": "US"
+    },
+    "US00164V1035":{
+        "Symbol": "AMCX",
+        "ExchangeID": "US"
+    },
+    "US62914V1061":{
+        "Symbol": "NIO",
+        "ExchangeID": "US"
+    },
+    "US7427181091":{
+        "Symbol": "PG",
+        "ExchangeID": "US"
+    },
+    "US1941621039":{
+        "Symbol": "CL",
+        "ExchangeID": "US"
+    },
+    "US1713401024":{
+        "Symbol": "CHD",
+        "ExchangeID": "US"
+    },
+    "US1890541097":{
+        "Symbol": "CLX",
+        "ExchangeID": "US"
+    },
+    "US8248414075":{
+        "Symbol": "SSDOY",
+        "ExchangeID": "US"
+    },
+    "US91332U1016":{
+        "Symbol": "U",
+        "ExchangeID": "US"
+    },
+    "US2855121099":{
+        "Symbol": "EA",
+        "ExchangeID": "US"
+    },
+    "US00507V1098":{
+        "Symbol": "ATVI",
+        "ExchangeID": "US"
+    },
+    "US8740541094":{
+        "Symbol": "TTWO",
+        "ExchangeID": "US"
+    },
+    "US6544453037":{
+        "Symbol": "NTDOY",
+        "ExchangeID": "US"
+    },
+    "US64110W1027":{
+        "Symbol": "NTES",
+        "ExchangeID": "US"
+    },
+    "ZAE000015889":{
+        "Symbol": "NPN",
+        "ExchangeID": "JSE"
+    }
+}
