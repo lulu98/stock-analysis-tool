@@ -63,19 +63,19 @@ def stage02(symbol):
         print("Please execute stage01.py first.")
         return
 
-    latexFile = os.getenv('LATEX_DIR')
-    if latexFile == None:
-        print("Please set environment variable JSON_FILE.")
+    stockDir = os.getenv('STOCK_DIR')
+    if stockDir == None:
+        print("Please set environment variable STOCK_DIR.")
         return
 
     # create company-specific latex template
-    if not os.path.exists(latexFile):
-        shutil.copytree("./template", latexFile)
+    #if not os.path.exists(stockDir):
+    #    shutil.copytree("./template", stockDir)
 
     # files in chapters + main.tex
-    files = os.listdir(os.path.join(latexFile, "chapters"))
-    files = [os.path.join(latexFile, "chapters", x) for x in files]
-    files.append(os.path.join(latexFile, "main.tex"))
+    files = os.listdir(os.path.join(stockDir, "chapters"))
+    files = [os.path.join(stockDir, "chapters", x) for x in files]
+    files.append(os.path.join(stockDir, "main.tex"))
 
     for fileName in files:
         print("File {}:".format(fileName))

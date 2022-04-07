@@ -8,6 +8,7 @@ variables that can be used in later stages.
 import sys
 import os
 import json
+import shutil
 
 from scripts.web_api import *
 
@@ -44,11 +45,18 @@ def setup(api_key, isin):
     stockDir = os.path.dirname(os.path.abspath(__file__))
     stockDir = os.path.join(stockDir, "stocks", isin)
     latexDir = os.path.join(stockDir, "latex")
-    jsonFile = os.path.join(stockDir, "data.json")
+    dataDir  = os.path.join(stockDir, "data")
+    jsonFile = os.path.join(dataDir, "data.json")
 
     os.environ['STOCK_DIR'] = stockDir
     os.environ['LATEX_DIR'] = latexDir
+    os.environ['DATA_DIR']  = dataDir
     os.environ['JSON_FILE'] = jsonFile
 
+    # create company-specific latex template
     if not os.path.exists(stockDir):
-        os.makedirs(stockDir)
+        shutil.copytree("./template", stockDir)
+
+    # create data directory
+    if not os.path.exists(dataDir):
+        os.makedirs(dataDir)
