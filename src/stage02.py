@@ -13,8 +13,7 @@ import subprocess
 import json
 import shutil
 import argparse
-
-import preparation
+import filecmp
 
 from scripts.local_api import *
 from scripts.calculations import *
@@ -26,6 +25,38 @@ parser.add_argument("-k", "--apikey", required=True, help="API key")
 parser.add_argument("-i", "--isin", required=True, help="ISIN")
 
 args = parser.parse_args()
+
+def setEnvironmentVariables(isin):
+    rootDir = os.path.abspath(os.getcwd())
+    templateDir = os.path.join(rootDir, "template")
+    dataDir = os.path.join(rootDir, "data", isin)
+    companyDir = os.path.join(rootDir, "stocks", isin)
+    companyDataDir = os.path.join(companyDir, "data")
+    jsonSrc = os.path.join(dataDir, "data.json")
+    jsonDst = os.path.join(companyDataDir, "data.json")
+
+    if not os.path.exists(dataDir):
+        sys.exit("Data for company {} not available. Execute stage 1 first.".format(isin))
+
+    # setup the company folder once initially
+    if not os.path.exists(companyDir):
+        print("Initial setup started...")
+        os.makedirs(companyDir)
+        shutil.copytree(templateDir, companyDir, dirs_exist_ok=True)
+        shutil.copyfile(jsonSrc, jsonDst)
+        print("Initial setup done.")
+
+    # if the data changed, pull the changes into the data folder
+    if not filecmp.cmp(jsonSrc, jsonDst):
+        print("Changes in data detected.")
+        print("Rebuild data directory started...")
+        shutil.copytree(os.path.join(templateDir, "data"), companyDataDir, dirs_exist_ok=True)
+        shutil.copyfile(jsonSrc, jsonDst)
+        print("Rebuild data directory done.")
+
+    os.environ['ROOT_DIR'] = rootDir
+    os.environ['DATA_DIR'] = companyDataDir
+    os.environ['JSON_FILE'] = jsonDst
 
 def findPattern(regex, fileName):
     '''
@@ -41,6 +72,10 @@ def replacePattern(regex, output, fileName):
     '''
     Replace pattern regex with output in file fileName.
     '''
+    output = str(output).replace("&", "\&") # sed pattern & should be replaced
+    output = output.replace("/", "\/")      # sed pattern / should be replaced
+    output = output.replace("\n", "\\n")    # sed pattern newline should be replaced
+    output = output.replace("'", "'\"'\"'") # sed pattern ' should be replaced
     cmd = "sed 's/{}/{}/g' {}".format(regex, output, fileName)
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
     with open(fileName, "w") as f:
@@ -56,33 +91,14 @@ def findAndReplacePattern(regex, fileName):
             replacePattern(pattern, replacement, fileName)
         output = findPattern(regex, fileName)
 
-def stage02(symbol):
-    jsonFile = os.getenv('JSON_FILE')
-    if not os.path.exists(jsonFile):
-        print("data.json file {} does not exist".format(jsonFile))
-        print("Please execute stage01.py first.")
-        return
-
-    stockDir = os.getenv('STOCK_DIR')
-    if stockDir == None:
-        print("Please set environment variable STOCK_DIR.")
-        return
-
-    # create company-specific latex template
-    #if not os.path.exists(stockDir):
-    #    shutil.copytree("./template", stockDir)
-
-    # files in chapters + main.tex
-    files = os.listdir(os.path.join(stockDir, "chapters"))
-    files = [os.path.join(stockDir, "chapters", x) for x in files]
-    files.append(os.path.join(stockDir, "main.tex"))
+def stage02():
+    dataDir = os.getenv('DATA_DIR')
+    files = [os.path.join(dataDir, "fund_data.json"),
+             os.path.join(dataDir, "calc_data.json")]
 
     for fileName in files:
         print("File {}:".format(fileName))
         print("Processing started...")
-
-        # first replace all occurrences of placeholder __ticker
-        #replacePattern("__ticker", "{}".format(symbol), fileName)
 
         # second replace all occurrences of placeholder __getYear
         findAndReplacePattern("__getYear([^()]*)", fileName)
@@ -92,11 +108,15 @@ def stage02(symbol):
 
         print("Processing done.\n")
 
-preparation.setup(args.apikey, args.isin)
+    cmd = "json2latex {} fundData {}".format(os.path.join(dataDir, "fund_data.json"), os.path.join(dataDir, "fund_data.tex"))
+    output = subprocess.check_output(cmd, shell=True).decode('utf-8')
 
-symbol = os.getenv('SYMBOL')
-exchangeID = os.getenv('EXCHANGE_ID')
+    cmd = "json2latex {} calcData {}".format(os.path.join(dataDir, "calc_data.json"), os.path.join(dataDir, "calc_data.tex"))
+    output = subprocess.check_output(cmd, shell=True).decode('utf-8')
+
+
+setEnvironmentVariables(args.isin)
 
 print("Stage 2: started...")
-stage02(symbol)
+stage02()
 print("Stage 2: done...\n")

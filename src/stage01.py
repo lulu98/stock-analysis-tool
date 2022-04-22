@@ -11,36 +11,62 @@ import os
 import sys
 import argparse
 
-import preparation
 from scripts.web_api import *
 
 parser = argparse.ArgumentParser()
 
 # -k APIKEY -i ISIN
 parser.add_argument("-k", "--apikey", required=True, help="API key")
-parser.add_argument("-i", "--isin", required=True, help="ISIN")
+parser.add_argument("-i", "--isin", required=False, help="ISIN")
 
 args = parser.parse_args()
 
-def stage01(api_key, symbol, exchangeID):
-    jsonFile = os.getenv('JSON_FILE')
+def setEnvironmentVariables():
+    rootDir = os.path.abspath(os.getcwd())
+    dataDir = os.path.join(rootDir, "data")
 
-    if jsonFile == None:
-        print("Please set environment variable JSON_FILE.")
+    os.environ['ROOT_DIR'] = rootDir
+    os.environ['DATA_DIR'] = dataDir
+
+def getConfig(api_key, isin):
+    jsonFile = "./stocks.json"
+
+    with open(jsonFile, "r") as f:
+        data = json.load(f)
+
+    config = {}
+    if isin != None:
+        config[isin] = data[isin] # only get config for specific ISIN
+    else:
+        config = data # get config for all ISIN
+
+    return config
+
+def pullStockData(api_key, isin, symbol, exchangeID):
+    dataDir = os.getenv('DATA_DIR')
+    stockDir = os.path.join(dataDir, isin)
+    stockFile = os.path.join(stockDir, "data.json")
+
+    if not os.path.exists(stockDir):
+        os.makedirs(stockDir)
+
+    if os.path.exists(stockFile):
+        print("File {} does already exist.".format(stockFile))
         return
+   
+    print("Pull financial data for company {}".format(isin))
+    fundamentalsAPI_downloadData(api_key, symbol, exchangeID, stockFile)
 
-    if os.path.exists(jsonFile):
-        print("File {} already exists.".format(jsonFile))
-        return
+def stage01(api_key, isin):
+    config = getConfig(api_key, isin)
 
-    print("Pull financial data for company {}".format(symbol))
-    fundamentalsAPI_downloadData(api_key, symbol, exchangeID, jsonFile)
+    for isin in config:
+        symbol = config[isin]['Symbol']
+        exchangeID = config[isin]['ExchangeID']
+        pullStockData(api_key, isin, symbol, exchangeID)
 
-preparation.setup(args.apikey, args.isin)
-
-symbol = os.getenv('SYMBOL')
-exchangeID = os.getenv('EXCHANGE_ID')
+setEnvironmentVariables()
 
 print("Stage 1: started...")
-stage01(args.apikey, symbol, exchangeID)
+stage01(args.apikey, args.isin)
 print("Stage 1: done...\n")
