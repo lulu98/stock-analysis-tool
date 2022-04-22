@@ -80,23 +80,17 @@ def getCompanyCode():
 
 def getCompanyName():
     query = query_General + "Name"
-    companyName = str(getDataItem(query))
-    companyName = companyName.replace("&", "\\\\\&")
+    companyName = getDataItem(query)
     return companyName
 
 def getAddress():
     query = query_General + "Address"
-    address = str(getDataItem(query))
-    address = address.replace("&", "\\\\\&")
-    address = address.replace("'", "")
+    address = getDataItem(query)
     return address
 
 def getDescription():
     query = query_General + "Description"
-    description = str(getDataItem(query))
-    description = description.replace("&", "\\\\\&")
-    description = description.replace("/", "\\/")
-    description = description.replace("'", "")
+    description = getDataItem(query)
     return description
 
 def getISIN():
@@ -135,20 +129,10 @@ def getCurrency():
     return data
 
 def getOfficers():
-    subjectLine = ["Title", "Name"]
-    officerData = []
-   
     query = query_General + "Officers"
     officers = getDataItem(query)
-
-    if officers == "-":
-        return [subjectLine, officerData]
-
-    for key in officers:
-        entry = [officers[key]["Title"],
-                 officers[key]["Name"]]
-        officerData.append(entry)
-    return [subjectLine, officerData]
+    officers = json.dumps(officers, indent=4)
+    return officers
 
 ################################################################################
 ###################################  Holders  ##################################
@@ -157,68 +141,27 @@ def getOfficers():
 query_Holders = "Holders/"
 
 def getInstitutions():
-    subjectLine = ["Name", "Total Shares", "Change", "Total Assets"]
-    institutionsData = []
-    
     query = query_Holders + "Institutions"
     institutions = getDataItem(query)
-
-    if institutions == "-":
-        return [subjectLine, institutionsData]
-
-    for key in institutions:
-        entry = [institutions[key]["name"],
-                 institutions[key]["totalShares"],
-                 institutions[key]["change_p"],
-                 institutions[key]["totalAssets"]
-                ]
-        institutionsData.append(entry)
-    return [subjectLine, institutionsData]
+    institutions = json.dumps(institutions, indent=4)
+    return institutions
 
 def getFunds():
-    subjectLine = ["Name", "Total Shares", "Change", "Total Assets"]
-    fundsData = []
-    
     query = query_Holders + "Funds"
     funds = getDataItem(query)
-
-    if funds == "-":
-        return [subjectLine, fundsData]
-
-    for key in funds:
-        entry = [funds[key]["name"],
-                 funds[key]["totalShares"],
-                 funds[key]["change_p"],
-                 funds[key]["totalAssets"]
-                ]
-        fundsData.append(entry)
-    return [subjectLine, fundsData]
-
+    funds = json.dumps(funds, indent=4)
+    return funds
 
 ################################################################################
 ##############################  InsiderTransactions  ###########################
 ################################################################################
 
 def getInsiderTransactions():
-    subjectLine = ["Name", "Date", "Amount", "Price", "(A)cquired or (D)isposed"]
-    insiderData = []
-    
     query = "InsiderTransactions"
     insiderTransactions = getDataItem(query)
-
-    if insiderTransactions == "-":
-        return [subjectLine, insiderData]
-
-    for key in insiderTransactions:
-        entry = [insiderTransactions[key]["ownerName"],
-                 insiderTransactions[key]["transactionDate"],
-                 insiderTransactions[key]["transactionAmount"],
-                 insiderTransactions[key]["transactionPrice"],
-                 insiderTransactions[key]["transactionAcquiredDisposed"]
-                ]
-        insiderData.append(entry)
-    return [subjectLine, insiderData]
-
+    insiderTransactions = json.dumps(insiderTransactions, indent=4)
+    return insiderTransactions
+    
 ################################################################################
 ################################  Analyst Ratings ##############################
 ################################################################################
