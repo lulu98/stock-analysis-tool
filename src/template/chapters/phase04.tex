@@ -13,41 +13,41 @@ time the company sells its products for 100\$, it makes 70\$ in gross profit.\\
  \hline
  \multicolumn{4}{|c|}{Gross Profit Margin Ratio (GPMR)} \\
  \hline
- Year                      & __getYear(-11)                           & __getYear(-10)                           & __getYear(-9)                           \\
+ Year                      & \fundData[Years][-11]                           & \fundData[Years][-10]                           & \fundData[Years][-9]                           \\
  \hline
- Gross Profit              & __getGrossProfit(__getYear(-11))         & __getOperatingCashFlow(__getYear(-10))   & __getOperatingCashFlow(__getYear(-9))   \\
- Revenue                   & __getRevenue(__getYear(-11))             & __getRevenue(__getYear(-10))             & __getRevenue(__getYear(-9))             \\
- \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-11)) & __grossProfitMarginRatio(__getYear(-10)) & __grossProfitMarginRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                      & __getYear(-8)                           & __getYear(-7)                           & __getYear(-6)                           \\
- \hline
- Gross Profit              & __getGrossProfit(__getYear(-8))         & __getOperatingCashFlow(__getYear(-7))   & __getOperatingCashFlow(__getYear(-6))   \\
- Revenue                   & __getRevenue(__getYear(-8))             & __getRevenue(__getYear(-7))             & __getRevenue(__getYear(-6))             \\
- \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-8)) & __grossProfitMarginRatio(__getYear(-7)) & __grossProfitMarginRatio(__getYear(-6)) \\
+ Gross Profit              & \fundData[Financials][IncomeStatement][GrossProfit][-11]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-10]   & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-9]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-11]             & \fundData[Financials][IncomeStatement][Revenue][-10]             & \fundData[Financials][IncomeStatement][Revenue][-9]             \\
+ \rowcolor{lightgray} GPMR & \calcData[Ratios][GrossProfitMarginRatio][-11] & \calcData[Ratios][GrossProfitMarginRatio][-10] & \calcData[Ratios][GrossProfitMarginRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-5)                           & __getYear(-4)                           & __getYear(-3)                           \\
+ Year                      & \fundData[Years][-8]                           & \fundData[Years][-7]                           & \fundData[Years][-6]                           \\
  \hline
- Gross Profit              & __getGrossProfit(__getYear(-5))         & __getOperatingCashFlow(__getYear(-4))   & __getOperatingCashFlow(__getYear(-3))   \\
- Revenue                   & __getRevenue(__getYear(-5))             & __getRevenue(__getYear(-4))             & __getRevenue(__getYear(-3))             \\
- \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-5)) & __grossProfitMarginRatio(__getYear(-4)) & __grossProfitMarginRatio(__getYear(-3)) \\
+ Gross Profit              & \fundData[Financials][IncomeStatement][GrossProfit][-8]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-7]   & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-6]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-8]             & \fundData[Financials][IncomeStatement][Revenue][-7]             & \fundData[Financials][IncomeStatement][Revenue][-6]             \\
+ \rowcolor{lightgray} GPMR & \calcData[Ratios][GrossProfitMarginRatio][-8] & \calcData[Ratios][GrossProfitMarginRatio][-7] & \calcData[Ratios][GrossProfitMarginRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-2)                           & __getYear(-1)                           & __getYear(0)                           \\
+ Year                      & \fundData[Years][-5]                           & \fundData[Years][-4]                           & \fundData[Years][-3]                           \\
  \hline
- Gross Profit              & __getGrossProfit(__getYear(-2))         & __getOperatingCashFlow(__getYear(-1))   & __getOperatingCashFlow(__getYear(0))   \\
- Revenue                   & __getRevenue(__getYear(-2))             & __getRevenue(__getYear(-1))             & __getRevenue(__getYear(0))             \\
- \rowcolor{lightgray} GPMR & __grossProfitMarginRatio(__getYear(-2)) & __grossProfitMarginRatio(__getYear(-1)) & __grossProfitMarginRatio(__getYear(0)) \\
+ Gross Profit              & \fundData[Financials][IncomeStatement][GrossProfit][-5]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-4]   & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-3]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-5]             & \fundData[Financials][IncomeStatement][Revenue][-4]             & \fundData[Financials][IncomeStatement][Revenue][-3]             \\
+ \rowcolor{lightgray} GPMR & \calcData[Ratios][GrossProfitMarginRatio][-5] & \calcData[Ratios][GrossProfitMarginRatio][-4] & \calcData[Ratios][GrossProfitMarginRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & \fundData[Years][-2]                           & \fundData[Years][-1]                           & \fundData[Years][0]                           \\
+ \hline
+ Gross Profit              & \fundData[Financials][IncomeStatement][GrossProfit][-2]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-1]   & \fundData[Financials][CashFlowStatement][OperatingCashFlow][0]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-2]             & \fundData[Financials][IncomeStatement][Revenue][-1]             & \fundData[Financials][IncomeStatement][Revenue][0]             \\
+ \rowcolor{lightgray} GPMR & \calcData[Ratios][GrossProfitMarginRatio][-2] & \calcData[Ratios][GrossProfitMarginRatio][-1] & \calcData[Ratios][GrossProfitMarginRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -72,41 +72,41 @@ that every time the company sells its products for 100\$, it makes 60\$ in EBITD
  \hline
  \multicolumn{4}{|c|}{EBITDA Margin} \\
  \hline
- Year                               & __getYear(-11)                 & __getYear(-10)                 & __getYear(-9)                 \\
+ Year                               & \fundData[Years][-11]                 & \fundData[Years][-10]                 & \fundData[Years][-9]                 \\
  \hline
- EBITDA                             & __getEBITDA(__getYear(-11))    & __getEBITDA(__getYear(-10))    & __getEBITDA(__getYear(-9))    \\
- Revenue                            & __getRevenue(__getYear(-11))   & __getRevenue(__getYear(-10))   & __getRevenue(__getYear(-9))   \\
- \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-11)) & __ebitdaMargin(__getYear(-10)) & __ebitdaMargin(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                               & __getYear(-8)                 & __getYear(-7)                 & __getYear(-6)                 \\
- \hline
- EBITDA                             & __getEBITDA(__getYear(-8))    & __getEBITDA(__getYear(-7))    & __getEBITDA(__getYear(-6))    \\
- Revenue                            & __getRevenue(__getYear(-8))   & __getRevenue(__getYear(-7))   & __getRevenue(__getYear(-6))   \\
- \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-8)) & __ebitdaMargin(__getYear(-7)) & __ebitdaMargin(__getYear(-6)) \\
+ EBITDA                             & \fundData[Financials][IncomeStatement][EBITDA][-11]    & \fundData[Financials][IncomeStatement][EBITDA][-10]    & \fundData[Financials][IncomeStatement][EBITDA][-9]    \\
+ Revenue                            & \fundData[Financials][IncomeStatement][Revenue][-11]   & \fundData[Financials][IncomeStatement][Revenue][-10]   & \fundData[Financials][IncomeStatement][Revenue][-9]   \\
+ \rowcolor{lightgray} EBITDA Margin & \calcData[Ratios][EBITDAMarginRatio][-11] & \calcData[Ratios][EBITDAMarginRatio][-10] & \calcData[Ratios][EBITDAMarginRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                               & __getYear(-5)                 & __getYear(-4)                 & __getYear(-3)                 \\
+ Year                               & \fundData[Years][-8]                 & \fundData[Years][-7]                 & \fundData[Years][-6]                 \\
  \hline
- EBITDA                             & __getEBITDA(__getYear(-5))    & __getEBITDA(__getYear(-4))    & __getEBITDA(__getYear(-3))    \\
- Revenue                            & __getRevenue(__getYear(-5))   & __getRevenue(__getYear(-4))   & __getRevenue(__getYear(-3))   \\
- \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-5)) & __ebitdaMargin(__getYear(-4)) & __ebitdaMargin(__getYear(-3)) \\
+ EBITDA                             & \fundData[Financials][IncomeStatement][EBITDA][-8]    & \fundData[Financials][IncomeStatement][EBITDA][-7]    & \fundData[Financials][IncomeStatement][EBITDA][-6]    \\
+ Revenue                            & \fundData[Financials][IncomeStatement][Revenue][-8]   & \fundData[Financials][IncomeStatement][Revenue][-7]   & \fundData[Financials][IncomeStatement][Revenue][-6]   \\
+ \rowcolor{lightgray} EBITDA Margin & \calcData[Ratios][EBITDAMarginRatio][-8] & \calcData[Ratios][EBITDAMarginRatio][-7] & \calcData[Ratios][EBITDAMarginRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                               & __getYear(-2)                 & __getYear(-1)                 & __getYear(0)                 \\
+ Year                               & \fundData[Years][-5]                 & \fundData[Years][-4]                 & \fundData[Years][-3]                 \\
  \hline
- EBITDA                             & __getEBITDA(__getYear(-2))    & __getEBITDA(__getYear(-1))    & __getEBITDA(__getYear(0))    \\
- Revenue                            & __getRevenue(__getYear(-2))   & __getRevenue(__getYear(-1))   & __getRevenue(__getYear(0))   \\
- \rowcolor{lightgray} EBITDA Margin & __ebitdaMargin(__getYear(-2)) & __ebitdaMargin(__getYear(-1)) & __ebitdaMargin(__getYear(0)) \\
+ EBITDA                             & \fundData[Financials][IncomeStatement][EBITDA][-5]    & \fundData[Financials][IncomeStatement][EBITDA][-4]    & \fundData[Financials][IncomeStatement][EBITDA][-3]    \\
+ Revenue                            & \fundData[Financials][IncomeStatement][Revenue][-5]   & \fundData[Financials][IncomeStatement][Revenue][-4]   & \fundData[Financials][IncomeStatement][Revenue][-3]   \\
+ \rowcolor{lightgray} EBITDA Margin & \calcData[Ratios][EBITDAMarginRatio][-5] & \calcData[Ratios][EBITDAMarginRatio][-4] & \calcData[Ratios][EBITDAMarginRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                               & \fundData[Years][-2]                 & \fundData[Years][-1]                 & \fundData[Years][0]                 \\
+ \hline
+ EBITDA                             & \fundData[Financials][IncomeStatement][EBITDA][-2]    & \fundData[Financials][IncomeStatement][EBITDA][-1]    & \fundData[Financials][IncomeStatement][EBITDA][0]    \\
+ Revenue                            & \fundData[Financials][IncomeStatement][Revenue][-2]   & \fundData[Financials][IncomeStatement][Revenue][-1]   & \fundData[Financials][IncomeStatement][Revenue][0]   \\
+ \rowcolor{lightgray} EBITDA Margin & \calcData[Ratios][EBITDAMarginRatio][-2] & \calcData[Ratios][EBITDAMarginRatio][-1] & \calcData[Ratios][EBITDAMarginRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -121,41 +121,41 @@ time the company sells its products for 100\$, it makes 50\$ in operating profit
  \hline
  \multicolumn{4}{|c|}{Operating Margin Ratio (OMR)} \\
  \hline
- Year                      & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                         \\
+ Year                      & \fundData[Years][-11]                         & \fundData[Years][-10]                         & \fundData[Years][-9]                         \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-11))   & __getOperatingIncome(__getYear(-10))   & __getOperatingIncome(__getYear(-9))   \\
- Revenue                   & __getRevenue(__getYear(-11))           & __getRevenue(__getYear(-10))           & __getRevenue(__getYear(-9))           \\
- \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-11)) & __operatingMarginRatio(__getYear(-10)) & __operatingMarginRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                      & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                         \\
- \hline
- Operating Income          & __getOperatingIncome(__getYear(-8))   & __getOperatingIncome(__getYear(-7))   & __getOperatingIncome(__getYear(-6))   \\
- Revenue                   & __getRevenue(__getYear(-8))           & __getRevenue(__getYear(-7))           & __getRevenue(__getYear(-6))           \\
- \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-8)) & __operatingMarginRatio(__getYear(-7)) & __operatingMarginRatio(__getYear(-6)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-11]   & \fundData[Financials][IncomeStatement][OperatingIncome][-10]   & \fundData[Financials][IncomeStatement][OperatingIncome][-9]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-11]           & \fundData[Financials][IncomeStatement][Revenue][-10]           & \fundData[Financials][IncomeStatement][Revenue][-9]           \\
+ \rowcolor{lightgray} OMR  & \calcData[Ratios][OperatingMarginRatio][-11] & \calcData[Ratios][OperatingMarginRatio][-10] & \calcData[Ratios][OperatingMarginRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                         \\
+ Year                      & \fundData[Years][-8]                         & \fundData[Years][-7]                         & \fundData[Years][-6]                         \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-5))   & __getOperatingIncome(__getYear(-4))   & __getOperatingIncome(__getYear(-3))   \\
- Revenue                   & __getRevenue(__getYear(-5))           & __getRevenue(__getYear(-4))           & __getRevenue(__getYear(-3))           \\
- \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-5)) & __operatingMarginRatio(__getYear(-4)) & __operatingMarginRatio(__getYear(-3)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-8]   & \fundData[Financials][IncomeStatement][OperatingIncome][-7]   & \fundData[Financials][IncomeStatement][OperatingIncome][-6]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-8]           & \fundData[Financials][IncomeStatement][Revenue][-7]           & \fundData[Financials][IncomeStatement][Revenue][-6]           \\
+ \rowcolor{lightgray} OMR  & \calcData[Ratios][OperatingMarginRatio][-8] & \calcData[Ratios][OperatingMarginRatio][-7] & \calcData[Ratios][OperatingMarginRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                         \\
+ Year                      & \fundData[Years][-5]                         & \fundData[Years][-4]                         & \fundData[Years][-3]                         \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-2))   & __getOperatingIncome(__getYear(-1))   & __getOperatingIncome(__getYear(0))   \\
- Revenue                   & __getRevenue(__getYear(-2))           & __getRevenue(__getYear(-1))           & __getRevenue(__getYear(0))           \\
- \rowcolor{lightgray} OMR  & __operatingMarginRatio(__getYear(-2)) & __operatingMarginRatio(__getYear(-1)) & __operatingMarginRatio(__getYear(0)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-5]   & \fundData[Financials][IncomeStatement][OperatingIncome][-4]   & \fundData[Financials][IncomeStatement][OperatingIncome][-3]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-5]           & \fundData[Financials][IncomeStatement][Revenue][-4]           & \fundData[Financials][IncomeStatement][Revenue][-3]           \\
+ \rowcolor{lightgray} OMR  & \calcData[Ratios][OperatingMarginRatio][-5] & \calcData[Ratios][OperatingMarginRatio][-4] & \calcData[Ratios][OperatingMarginRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & \fundData[Years][-2]                         & \fundData[Years][-1]                         & \fundData[Years][0]                         \\
+ \hline
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-2]   & \fundData[Financials][IncomeStatement][OperatingIncome][-1]   & \fundData[Financials][IncomeStatement][OperatingIncome][0]   \\
+ Revenue                   & \fundData[Financials][IncomeStatement][Revenue][-2]           & \fundData[Financials][IncomeStatement][Revenue][-1]           & \fundData[Financials][IncomeStatement][Revenue][0]           \\
+ \rowcolor{lightgray} OMR  & \calcData[Ratios][OperatingMarginRatio][-2] & \calcData[Ratios][OperatingMarginRatio][-1] & \calcData[Ratios][OperatingMarginRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -170,41 +170,41 @@ time the company sells its products for 100\$, it makes 30\$ in profit.\\
  \hline
  \multicolumn{4}{|c|}{Net Income Margin Ratio (NIMR)} \\
  \hline
- Year                       & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                         \\
+ Year                       & \fundData[Years][-11]                         & \fundData[Years][-10]                         & \fundData[Years][-9]                         \\
  \hline
- Net Income                 & __getNetIncome(__getYear(-11))         & __getNetIncome(__getYear(-10))         & __getNetIncome(__getYear(-9))         \\
- Revenue                    & __getRevenue(__getYear(-11))           & __getRevenue(__getYear(-10))           & __getRevenue(__getYear(-9))           \\
- \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-11)) & __netIncomeMarginRatio(__getYear(-10)) & __netIncomeMarginRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                       & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                         \\
- \hline
- Net Income                 & __getNetIncome(__getYear(-8))         & __getNetIncome(__getYear(-7))         & __getNetIncome(__getYear(-6))         \\
- Revenue                    & __getRevenue(__getYear(-8))           & __getRevenue(__getYear(-7))           & __getRevenue(__getYear(-6))           \\
- \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-8)) & __netIncomeMarginRatio(__getYear(-7)) & __netIncomeMarginRatio(__getYear(-6)) \\
+ Net Income                 & \fundData[Financials][IncomeStatement][NetIncome][-11]         & \fundData[Financials][IncomeStatement][NetIncome][-10]         & \fundData[Financials][IncomeStatement][NetIncome][-9]         \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-11]           & \fundData[Financials][IncomeStatement][Revenue][-10]           & \fundData[Financials][IncomeStatement][Revenue][-9]           \\
+ \rowcolor{lightgray} NIMR  & \calcData[Ratios][NetIncomeMarginRatio][-11] & \calcData[Ratios][NetIncomeMarginRatio][-10] & \calcData[Ratios][NetIncomeMarginRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                         \\
+ Year                       & \fundData[Years][-8]                         & \fundData[Years][-7]                         & \fundData[Years][-6]                         \\
  \hline
- Net Income                 & __getNetIncome(__getYear(-5))         & __getNetIncome(__getYear(-4))         & __getNetIncome(__getYear(-3))         \\
- Revenue                    & __getRevenue(__getYear(-5))           & __getRevenue(__getYear(-4))           & __getRevenue(__getYear(-3))           \\
- \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-5)) & __netIncomeMarginRatio(__getYear(-4)) & __netIncomeMarginRatio(__getYear(-3)) \\
+ Net Income                 & \fundData[Financials][IncomeStatement][NetIncome][-8]         & \fundData[Financials][IncomeStatement][NetIncome][-7]         & \fundData[Financials][IncomeStatement][NetIncome][-6]         \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-8]           & \fundData[Financials][IncomeStatement][Revenue][-7]           & \fundData[Financials][IncomeStatement][Revenue][-6]           \\
+ \rowcolor{lightgray} NIMR  & \calcData[Ratios][NetIncomeMarginRatio][-8] & \calcData[Ratios][NetIncomeMarginRatio][-7] & \calcData[Ratios][NetIncomeMarginRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                         \\
+ Year                       & \fundData[Years][-5]                         & \fundData[Years][-4]                         & \fundData[Years][-3]                         \\
  \hline
- Net Income                 & __getNetIncome(__getYear(-2))         & __getNetIncome(__getYear(-1))         & __getNetIncome(__getYear(0))         \\
- Revenue                    & __getRevenue(__getYear(-2))           & __getRevenue(__getYear(-1))           & __getRevenue(__getYear(0))           \\
- \rowcolor{lightgray} NIMR  & __netIncomeMarginRatio(__getYear(-2)) & __netIncomeMarginRatio(__getYear(-1)) & __netIncomeMarginRatio(__getYear(0)) \\
+ Net Income                 & \fundData[Financials][IncomeStatement][NetIncome][-5]         & \fundData[Financials][IncomeStatement][NetIncome][-4]         & \fundData[Financials][IncomeStatement][NetIncome][-3]         \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-5]           & \fundData[Financials][IncomeStatement][Revenue][-4]           & \fundData[Financials][IncomeStatement][Revenue][-3]           \\
+ \rowcolor{lightgray} NIMR  & \calcData[Ratios][NetIncomeMarginRatio][-5] & \calcData[Ratios][NetIncomeMarginRatio][-4] & \calcData[Ratios][NetIncomeMarginRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & \fundData[Years][-2]                         & \fundData[Years][-1]                         & \fundData[Years][0]                         \\
+ \hline
+ Net Income                 & \fundData[Financials][IncomeStatement][NetIncome][-2]         & \fundData[Financials][IncomeStatement][NetIncome][-1]         & \fundData[Financials][IncomeStatement][NetIncome][0]         \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-2]           & \fundData[Financials][IncomeStatement][Revenue][-1]           & \fundData[Financials][IncomeStatement][Revenue][0]           \\
+ \rowcolor{lightgray} NIMR  & \calcData[Ratios][NetIncomeMarginRatio][-2] & \calcData[Ratios][NetIncomeMarginRatio][-1] & \calcData[Ratios][NetIncomeMarginRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -221,41 +221,41 @@ be able to pay the interest expenses as much as 30 times from the operating inco
  \hline
  \multicolumn{4}{|c|}{Interest Coverage Ratio (ICR)} \\
  \hline
- Year                      & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ Year                      & \fundData[Years][-11]                          & \fundData[Years][-10]                          & \fundData[Years][-9]                          \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-11))    & __getOperatingIncome(__getYear(-10))    & __getOperatingIncome(__getYear(-9))    \\
- Interest Expense          & __getInterestExpense(__getYear(-11))    & __getInterestExpense(__getYear(-10))    & __getInterestExpense(__getYear(-9))    \\
- \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-11)) & __interestCoverageRatio(__getYear(-10)) & __interestCoverageRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                      & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                          \\
- \hline
- Operating Income          & __getOperatingIncome(__getYear(-8))    & __getOperatingIncome(__getYear(-7))    & __getOperatingIncome(__getYear(-6))    \\
- Interest Expense          & __getInterestExpense(__getYear(-8))    & __getInterestExpense(__getYear(-7))    & __getInterestExpense(__getYear(-6))    \\
- \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-8)) & __interestCoverageRatio(__getYear(-7)) & __interestCoverageRatio(__getYear(-6)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-11]    & \fundData[Financials][IncomeStatement][OperatingIncome][-10]    & \fundData[Financials][IncomeStatement][OperatingIncome][-9]    \\
+ Interest Expense          & \fundData[Financials][IncomeStatement][InterestExpense][-11]    & \fundData[Financials][IncomeStatement][InterestExpense][-10]    & \fundData[Financials][IncomeStatement][InterestExpense][-9]    \\
+ \rowcolor{lightgray} ICR  & \calcData[Ratios][InterestCoverageRatio][-11] & \calcData[Ratios][InterestCoverageRatio][-10] & \calcData[Ratios][InterestCoverageRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ Year                      & \fundData[Years][-8]                          & \fundData[Years][-7]                          & \fundData[Years][-6]                          \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-5))    & __getOperatingIncome(__getYear(-4))    & __getOperatingIncome(__getYear(-3))    \\
- Interest Expense          & __getInterestExpense(__getYear(-5))    & __getInterestExpense(__getYear(-4))    & __getInterestExpense(__getYear(-3))    \\
- \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-5)) & __interestCoverageRatio(__getYear(-4)) & __interestCoverageRatio(__getYear(-3)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-8]    & \fundData[Financials][IncomeStatement][OperatingIncome][-7]    & \fundData[Financials][IncomeStatement][OperatingIncome][-6]    \\
+ Interest Expense          & \fundData[Financials][IncomeStatement][InterestExpense][-8]    & \fundData[Financials][IncomeStatement][InterestExpense][-7]    & \fundData[Financials][IncomeStatement][InterestExpense][-6]    \\
+ \rowcolor{lightgray} ICR  & \calcData[Ratios][InterestCoverageRatio][-8] & \calcData[Ratios][InterestCoverageRatio][-7] & \calcData[Ratios][InterestCoverageRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ Year                      & \fundData[Years][-5]                          & \fundData[Years][-4]                          & \fundData[Years][-3]                          \\
  \hline
- Operating Income          & __getOperatingIncome(__getYear(-2))    & __getOperatingIncome(__getYear(-1))    & __getOperatingIncome(__getYear(0))    \\
- Interest Expense          & __getInterestExpense(__getYear(-2))    & __getInterestExpense(__getYear(-1))    & __getInterestExpense(__getYear(0))    \\
- \rowcolor{lightgray} ICR  & __interestCoverageRatio(__getYear(-2)) & __interestCoverageRatio(__getYear(-1)) & __interestCoverageRatio(__getYear(0)) \\
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-5]    & \fundData[Financials][IncomeStatement][OperatingIncome][-4]    & \fundData[Financials][IncomeStatement][OperatingIncome][-3]    \\
+ Interest Expense          & \fundData[Financials][IncomeStatement][InterestExpense][-5]    & \fundData[Financials][IncomeStatement][InterestExpense][-4]    & \fundData[Financials][IncomeStatement][InterestExpense][-3]    \\
+ \rowcolor{lightgray} ICR  & \calcData[Ratios][InterestCoverageRatio][-5] & \calcData[Ratios][InterestCoverageRatio][-4] & \calcData[Ratios][InterestCoverageRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & \fundData[Years][-2]                          & \fundData[Years][-1]                          & \fundData[Years][0]                          \\
+ \hline
+ Operating Income          & \fundData[Financials][IncomeStatement][OperatingIncome][-2]    & \fundData[Financials][IncomeStatement][OperatingIncome][-1]    & \fundData[Financials][IncomeStatement][OperatingIncome][0]    \\
+ Interest Expense          & \fundData[Financials][IncomeStatement][InterestExpense][-2]    & \fundData[Financials][IncomeStatement][InterestExpense][-1]    & \fundData[Financials][IncomeStatement][InterestExpense][0]    \\
+ \rowcolor{lightgray} ICR  & \calcData[Ratios][InterestCoverageRatio][-2] & \calcData[Ratios][InterestCoverageRatio][-1] & \calcData[Ratios][InterestCoverageRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -279,41 +279,41 @@ earnings or intiial investments.\\
  \hline
  \multicolumn{4}{|c|}{Return-on-Equity (ROE)} \\
  \hline
- Year                     & __getYear(-11)                   & __getYear(-10)                   & __getYear(-9)                   \\
+ Year                     & \fundData[Years][-11]                   & \fundData[Years][-10]                   & \fundData[Years][-9]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-11))   & __getNetIncome(__getYear(-10))   & __getNetIncome(__getYear(-9))   \\
- Equity                   & __getTotalEquity(__getYear(-11)) & __getTotalEquity(__getYear(-10)) & __getTotalEquity(__getYear(-9)) \\
- \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-11)) & __returnOnEquity(__getYear(-10)) & __returnOnEquity(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                   & __getYear(-7)                   & __getYear(-6)                   \\
- \hline
- Net Income               & __getNetIncome(__getYear(-8))   & __getNetIncome(__getYear(-7))   & __getNetIncome(__getYear(-6))   \\
- Equity                   & __getTotalEquity(__getYear(-8)) & __getTotalEquity(__getYear(-7)) & __getTotalEquity(__getYear(-6)) \\
- \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-8)) & __returnOnEquity(__getYear(-7)) & __returnOnEquity(__getYear(-6)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-11]   & \fundData[Financials][IncomeStatement][NetIncome][-10]   & \fundData[Financials][IncomeStatement][NetIncome][-9]   \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-11] & \fundData[Financials][BalanceSheet][TotalEquity][-10] & \fundData[Financials][BalanceSheet][TotalEquity][-9] \\
+ \rowcolor{lightgray} ROE & \calcData[Ratios][ReturnOnEquity][-11] & \calcData[Ratios][ReturnOnEquity][-10] & \calcData[Ratios][ReturnOnEquity][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                   & __getYear(-4)                   & __getYear(-3)                   \\
+ Year                     & \fundData[Years][-8]                   & \fundData[Years][-7]                   & \fundData[Years][-6]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-5))   & __getNetIncome(__getYear(-4))   & __getNetIncome(__getYear(-3))   \\
- Equity                   & __getTotalEquity(__getYear(-5)) & __getTotalEquity(__getYear(-4)) & __getTotalEquity(__getYear(-3)) \\
- \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-5)) & __returnOnEquity(__getYear(-4)) & __returnOnEquity(__getYear(-3)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-8]   & \fundData[Financials][IncomeStatement][NetIncome][-7]   & \fundData[Financials][IncomeStatement][NetIncome][-6]   \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-8] & \fundData[Financials][BalanceSheet][TotalEquity][-7] & \fundData[Financials][BalanceSheet][TotalEquity][-6] \\
+ \rowcolor{lightgray} ROE & \calcData[Ratios][ReturnOnEquity][-8] & \calcData[Ratios][ReturnOnEquity][-7] & \calcData[Ratios][ReturnOnEquity][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                   & __getYear(-1)                  & __getYear(0)                   \\
+ Year                     & \fundData[Years][-5]                   & \fundData[Years][-4]                   & \fundData[Years][-3]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-2))   & __getNetIncome(__getYear(0))   & __getNetIncome(__getYear(0))   \\
- Equity                   & __getTotalEquity(__getYear(-2)) & __getTotalEquity(__getYear(0)) & __getTotalEquity(__getYear(0)) \\
- \rowcolor{lightgray} ROE & __returnOnEquity(__getYear(-2)) & __returnOnEquity(__getYear(0)) & __returnOnEquity(__getYear(0)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-5]   & \fundData[Financials][IncomeStatement][NetIncome][-4]   & \fundData[Financials][IncomeStatement][NetIncome][-3]   \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-5] & \fundData[Financials][BalanceSheet][TotalEquity][-4] & \fundData[Financials][BalanceSheet][TotalEquity][-3] \\
+ \rowcolor{lightgray} ROE & \calcData[Ratios][ReturnOnEquity][-5] & \calcData[Ratios][ReturnOnEquity][-4] & \calcData[Ratios][ReturnOnEquity][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                   & \fundData[Years][-1]                  & \fundData[Years][0]                   \\
+ \hline
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-2]   & \fundData[Financials][IncomeStatement][NetIncome][0]   & \fundData[Financials][IncomeStatement][NetIncome][0]   \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-2] & \fundData[Financials][BalanceSheet][TotalEquity][0] & \fundData[Financials][BalanceSheet][TotalEquity][0] \\
+ \rowcolor{lightgray} ROE & \calcData[Ratios][ReturnOnEquity][-2] & \calcData[Ratios][ReturnOnEquity][0] & \calcData[Ratios][ReturnOnEquity][0] \\
  \hline
 \end{tabularx}
 
@@ -333,41 +333,41 @@ The ROA will always be lower than the ROE if the company has debt.\\
  \hline
  \multicolumn{4}{|c|}{Return-on-Assets (ROA)} \\
  \hline
- Year                     & __getYear(-11)                   & __getYear(-10)                   & __getYear(-9)                   \\
+ Year                     & \fundData[Years][-11]                   & \fundData[Years][-10]                   & \fundData[Years][-9]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-11))   & __getNetIncome(__getYear(-10))   & __getNetIncome(__getYear(-9))   \\
- Total Assets             & __getTotalAssets(__getYear(-11)) & __getTotalAssets(__getYear(-10)) & __getTotalAssets(__getYear(-9)) \\
- \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-11)) & __returnOnAssets(__getYear(-10)) & __returnOnAssets(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                   & __getYear(-7)                   & __getYear(-6)                   \\
- \hline
- Net Income               & __getNetIncome(__getYear(-8))   & __getNetIncome(__getYear(-7))   & __getNetIncome(__getYear(-6))   \\
- Total Assets             & __getTotalAssets(__getYear(-8)) & __getTotalAssets(__getYear(-7)) & __getTotalAssets(__getYear(-6)) \\
- \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-8)) & __returnOnAssets(__getYear(-7)) & __returnOnAssets(__getYear(-6)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-11]   & \fundData[Financials][IncomeStatement][NetIncome][-10]   & \fundData[Financials][IncomeStatement][NetIncome][-9]   \\
+ Total Assets             & \fundData[Financials][BalanceSheet][TotalAssets][-11] & \fundData[Financials][BalanceSheet][TotalAssets][-10] & \fundData[Financials][BalanceSheet][TotalAssets][-9] \\
+ \rowcolor{lightgray} ROA & \calcData[Ratios][ReturnOnAssets][-11] & \calcData[Ratios][ReturnOnAssets][-10] & \calcData[Ratios][ReturnOnAssets][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                   & __getYear(-4)                   & __getYear(-3)                   \\
+ Year                     & \fundData[Years][-8]                   & \fundData[Years][-7]                   & \fundData[Years][-6]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-5))   & __getNetIncome(__getYear(-4))   & __getNetIncome(__getYear(-3))   \\
- Total Assets             & __getTotalAssets(__getYear(-5)) & __getTotalAssets(__getYear(-4)) & __getTotalAssets(__getYear(-3)) \\
- \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-5)) & __returnOnAssets(__getYear(-4)) & __returnOnAssets(__getYear(-3)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-8]   & \fundData[Financials][IncomeStatement][NetIncome][-7]   & \fundData[Financials][IncomeStatement][NetIncome][-6]   \\
+ Total Assets             & \fundData[Financials][BalanceSheet][TotalAssets][-8] & \fundData[Financials][BalanceSheet][TotalAssets][-7] & \fundData[Financials][BalanceSheet][TotalAssets][-6] \\
+ \rowcolor{lightgray} ROA & \calcData[Ratios][ReturnOnAssets][-8] & \calcData[Ratios][ReturnOnAssets][-7] & \calcData[Ratios][ReturnOnAssets][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                   & __getYear(-1)                   & __getYear(0)                   \\
+ Year                     & \fundData[Years][-5]                   & \fundData[Years][-4]                   & \fundData[Years][-3]                   \\
  \hline
- Net Income               & __getNetIncome(__getYear(-2))   & __getNetIncome(__getYear(-1))   & __getNetIncome(__getYear(0))   \\
- Total Assets             & __getTotalAssets(__getYear(-2)) & __getTotalAssets(__getYear(-1)) & __getTotalAssets(__getYear(0)) \\
- \rowcolor{lightgray} ROA & __returnOnAssets(__getYear(-2)) & __returnOnAssets(__getYear(-1)) & __returnOnAssets(__getYear(0)) \\
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-5]   & \fundData[Financials][IncomeStatement][NetIncome][-4]   & \fundData[Financials][IncomeStatement][NetIncome][-3]   \\
+ Total Assets             & \fundData[Financials][BalanceSheet][TotalAssets][-5] & \fundData[Financials][BalanceSheet][TotalAssets][-4] & \fundData[Financials][BalanceSheet][TotalAssets][-3] \\
+ \rowcolor{lightgray} ROA & \calcData[Ratios][ReturnOnAssets][-5] & \calcData[Ratios][ReturnOnAssets][-4] & \calcData[Ratios][ReturnOnAssets][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                   & \fundData[Years][-1]                   & \fundData[Years][0]                   \\
+ \hline
+ Net Income               & \fundData[Financials][IncomeStatement][NetIncome][-2]   & \fundData[Financials][IncomeStatement][NetIncome][-1]   & \fundData[Financials][IncomeStatement][NetIncome][0]   \\
+ Total Assets             & \fundData[Financials][BalanceSheet][TotalAssets][-2] & \fundData[Financials][BalanceSheet][TotalAssets][-1] & \fundData[Financials][BalanceSheet][TotalAssets][0] \\
+ \rowcolor{lightgray} ROA & \calcData[Ratios][ReturnOnAssets][-2] & \calcData[Ratios][ReturnOnAssets][-1] & \calcData[Ratios][ReturnOnAssets][0] \\
  \hline
 \end{tabularx}
 
@@ -394,41 +394,41 @@ use elsewhere.\\
  \hline
  \multicolumn{4}{|c|}{Current Ratio (CR)} \\
  \hline
- Year                    & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ Year                    & \fundData[Years][-11]                          & \fundData[Years][-10]                          & \fundData[Years][-9]                          \\
  \hline
- Current Assets          & __getCurrentAssets(__getYear(-11))      & __getCurrentAssets(__getYear(-10))      & __getCurrentAssets(__getYear(-9))      \\
- Current Liabilities     & __getCurrentLiabilities(__getYear(-11)) & __getCurrentLiabilities(__getYear(-10)) & __getCurrentLiabilities(__getYear(-9)) \\
- \rowcolor{lightgray} CR & __currentRatio(__getYear(-11))          & __currentRatio(__getYear(-10))          & __currentRatio(__getYear(-9))          \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                    & __getYear(-8)                          & __getYear(-8)                          & __getYear(-7)                          \\
- \hline
- Current Assets          & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-7))      \\
- Current Liabilities     & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-7)) \\
- \rowcolor{lightgray} CR & __currentRatio(__getYear(-8))          & __currentRatio(__getYear(-8))          & __currentRatio(__getYear(-7))          \\
+ Current Assets          & \fundData[Financials][BalanceSheet][CurrentAssets][-11]      & \fundData[Financials][BalanceSheet][CurrentAssets][-10]      & \fundData[Financials][BalanceSheet][CurrentAssets][-9]      \\
+ Current Liabilities     & \fundData[Financials][BalanceSheet][CurrentLiabilities][-11] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-10] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-9] \\
+ \rowcolor{lightgray} CR & \calcData[Ratios][CurrentRatio][-11]          & \calcData[Ratios][CurrentRatio][-10]          & \calcData[Ratios][CurrentRatio][-9]          \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                    & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ Year                    & \fundData[Years][-8]                          & \fundData[Years][-8]                          & \fundData[Years][-7]                          \\
  \hline
- Current Assets          & __getCurrentAssets(__getYear(-5))      & __getCurrentAssets(__getYear(-4))      & __getCurrentAssets(__getYear(-3))      \\
- Current Liabilities     & __getCurrentLiabilities(__getYear(-5)) & __getCurrentLiabilities(__getYear(-4)) & __getCurrentLiabilities(__getYear(-3)) \\
- \rowcolor{lightgray} CR & __currentRatio(__getYear(-5))          & __currentRatio(__getYear(-4))          & __currentRatio(__getYear(-3))          \\
+ Current Assets          & \fundData[Financials][BalanceSheet][CurrentAssets][-8]      & \fundData[Financials][BalanceSheet][CurrentAssets][-8]      & \fundData[Financials][BalanceSheet][CurrentAssets][-7]      \\
+ Current Liabilities     & \fundData[Financials][BalanceSheet][CurrentLiabilities][-8] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-8] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-7] \\
+ \rowcolor{lightgray} CR & \calcData[Ratios][CurrentRatio][-8]          & \calcData[Ratios][CurrentRatio][-8]          & \calcData[Ratios][CurrentRatio][-7]          \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                    & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ Year                    & \fundData[Years][-5]                          & \fundData[Years][-4]                          & \fundData[Years][-3]                          \\
  \hline
- Current Assets          & __getCurrentAssets(__getYear(-2))      & __getCurrentAssets(__getYear(-1))      & __getCurrentAssets(__getYear(0))      \\
- Current Liabilities     & __getCurrentLiabilities(__getYear(-2)) & __getCurrentLiabilities(__getYear(-1)) & __getCurrentLiabilities(__getYear(0)) \\
- \rowcolor{lightgray} CR & __currentRatio(__getYear(-2))          & __currentRatio(__getYear(-1))          & __currentRatio(__getYear(0))          \\
+ Current Assets          & \fundData[Financials][BalanceSheet][CurrentAssets][-5]      & \fundData[Financials][BalanceSheet][CurrentAssets][-4]      & \fundData[Financials][BalanceSheet][CurrentAssets][-3]      \\
+ Current Liabilities     & \fundData[Financials][BalanceSheet][CurrentLiabilities][-5] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-4] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-3] \\
+ \rowcolor{lightgray} CR & \calcData[Ratios][CurrentRatio][-5]          & \calcData[Ratios][CurrentRatio][-4]          & \calcData[Ratios][CurrentRatio][-3]          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                    & \fundData[Years][-2]                          & \fundData[Years][-1]                          & \fundData[Years][0]                          \\
+ \hline
+ Current Assets          & \fundData[Financials][BalanceSheet][CurrentAssets][-2]      & \fundData[Financials][BalanceSheet][CurrentAssets][-1]      & \fundData[Financials][BalanceSheet][CurrentAssets][0]      \\
+ Current Liabilities     & \fundData[Financials][BalanceSheet][CurrentLiabilities][-2] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-1] & \fundData[Financials][BalanceSheet][CurrentLiabilities][0] \\
+ \rowcolor{lightgray} CR & \calcData[Ratios][CurrentRatio][-2]          & \calcData[Ratios][CurrentRatio][-1]          & \calcData[Ratios][CurrentRatio][0]          \\
  \hline
 \end{tabularx}
 
@@ -452,45 +452,45 @@ should prefer this key ratio over the current ratio.\\
  \hline
  \multicolumn{4}{|c|}{Acid Test Ratio (ATR)} \\
  \hline
- Year                     & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                          \\
+ Year                     & \fundData[Years][-11]                          & \fundData[Years][-10]                          & \fundData[Years][-9]                          \\
  \hline
- Current Assets           & __getCurrentAssets(__getYear(-11))      & __getCurrentAssets(__getYear(-10))      & __getCurrentAssets(__getYear(-9))      \\
- Inventory                & __getInventory(__getYear(-11))          & __getInventory(__getYear(-10))          & __getInventory(__getYear(-9))          \\
- Current Liabilities      & __getCurrentLiabilities(__getYear(-11)) & __getCurrentLiabilities(__getYear(-10)) & __getCurrentLiabilities(__getYear(-9)) \\
- \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-11))         & __acidTestRatio(__getYear(-10))         & __acidTestRatio(__getYear(-9))         \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                          \\
- \hline
- Current Assets           & __getCurrentAssets(__getYear(-8))      & __getCurrentAssets(__getYear(-7))      & __getCurrentAssets(__getYear(-6))      \\
- Inventory                & __getInventory(__getYear(-8))          & __getInventory(__getYear(-7))          & __getInventory(__getYear(-6))          \\
- Current Liabilities      & __getCurrentLiabilities(__getYear(-8)) & __getCurrentLiabilities(__getYear(-7)) & __getCurrentLiabilities(__getYear(-6)) \\
- \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-8))         & __acidTestRatio(__getYear(-7))         & __acidTestRatio(__getYear(-6))         \\
+ Current Assets           & \fundData[Financials][BalanceSheet][CurrentAssets][-11]      & \fundData[Financials][BalanceSheet][CurrentAssets][-10]      & \fundData[Financials][BalanceSheet][CurrentAssets][-9]      \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-11]          & \fundData[Financials][BalanceSheet][Inventory][-10]          & \fundData[Financials][BalanceSheet][Inventory][-9]          \\
+ Current Liabilities      & \fundData[Financials][BalanceSheet][CurrentLiabilities][-11] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-10] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-9] \\
+ \rowcolor{lightgray} ATR & \calcData[Ratios][ACIDTestRatio][-11]         & \calcData[Ratios][ACIDTestRatio][-10]         & \calcData[Ratios][ACIDTestRatio][-9]         \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                          \\
+ Year                     & \fundData[Years][-8]                          & \fundData[Years][-7]                          & \fundData[Years][-6]                          \\
  \hline
- Current Assets           & __getCurrentAssets(__getYear(-5))      & __getCurrentAssets(__getYear(-4))      & __getCurrentAssets(__getYear(-3))      \\
- Inventory                & __getInventory(__getYear(-5))          & __getInventory(__getYear(-4))          & __getInventory(__getYear(-3))          \\
- Current Liabilities      & __getCurrentLiabilities(__getYear(-5)) & __getCurrentLiabilities(__getYear(-4)) & __getCurrentLiabilities(__getYear(-3)) \\
- \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-5))         & __acidTestRatio(__getYear(-4))         & __acidTestRatio(__getYear(-3))         \\
+ Current Assets           & \fundData[Financials][BalanceSheet][CurrentAssets][-8]      & \fundData[Financials][BalanceSheet][CurrentAssets][-7]      & \fundData[Financials][BalanceSheet][CurrentAssets][-6]      \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-8]          & \fundData[Financials][BalanceSheet][Inventory][-7]          & \fundData[Financials][BalanceSheet][Inventory][-6]          \\
+ Current Liabilities      & \fundData[Financials][BalanceSheet][CurrentLiabilities][-8] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-7] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-6] \\
+ \rowcolor{lightgray} ATR & \calcData[Ratios][ACIDTestRatio][-8]         & \calcData[Ratios][ACIDTestRatio][-7]         & \calcData[Ratios][ACIDTestRatio][-6]         \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                          \\
+ Year                     & \fundData[Years][-5]                          & \fundData[Years][-4]                          & \fundData[Years][-3]                          \\
  \hline
- Current Assets           & __getCurrentAssets(__getYear(-2))      & __getCurrentAssets(__getYear(-1))      & __getCurrentAssets(__getYear(0))      \\
- Inventory                & __getInventory(__getYear(-2))          & __getInventory(__getYear(-1))          & __getInventory(__getYear(0))          \\
- Current Liabilities      & __getCurrentLiabilities(__getYear(-2)) & __getCurrentLiabilities(__getYear(-1)) & __getCurrentLiabilities(__getYear(0)) \\
- \rowcolor{lightgray} ATR & __acidTestRatio(__getYear(-2))         & __acidTestRatio(__getYear(-1))         & __acidTestRatio(__getYear(0))         \\
+ Current Assets           & \fundData[Financials][BalanceSheet][CurrentAssets][-5]      & \fundData[Financials][BalanceSheet][CurrentAssets][-4]      & \fundData[Financials][BalanceSheet][CurrentAssets][-3]      \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-5]          & \fundData[Financials][BalanceSheet][Inventory][-4]          & \fundData[Financials][BalanceSheet][Inventory][-3]          \\
+ Current Liabilities      & \fundData[Financials][BalanceSheet][CurrentLiabilities][-5] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-4] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-3] \\
+ \rowcolor{lightgray} ATR & \calcData[Ratios][ACIDTestRatio][-5]         & \calcData[Ratios][ACIDTestRatio][-4]         & \calcData[Ratios][ACIDTestRatio][-3]         \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                          & \fundData[Years][-1]                          & \fundData[Years][0]                          \\
+ \hline
+ Current Assets           & \fundData[Financials][BalanceSheet][CurrentAssets][-2]      & \fundData[Financials][BalanceSheet][CurrentAssets][-1]      & \fundData[Financials][BalanceSheet][CurrentAssets][0]      \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-2]          & \fundData[Financials][BalanceSheet][Inventory][-1]          & \fundData[Financials][BalanceSheet][Inventory][0]          \\
+ Current Liabilities      & \fundData[Financials][BalanceSheet][CurrentLiabilities][-2] & \fundData[Financials][BalanceSheet][CurrentLiabilities][-1] & \fundData[Financials][BalanceSheet][CurrentLiabilities][0] \\
+ \rowcolor{lightgray} ATR & \calcData[Ratios][ACIDTestRatio][-2]         & \calcData[Ratios][ACIDTestRatio][-1]         & \calcData[Ratios][ACIDTestRatio][0]         \\
  \hline
 \end{tabularx}\\
 
@@ -511,41 +511,41 @@ turning the inventory into sales.\\
  \hline
  \multicolumn{4}{|c|}{Inventory Turnover Ratio (ITR)} \\
  \hline
- Year                     & __getYear(-11)                           & __getYear(-10)                           & __getYear(-9)                           \\
+ Year                     & \fundData[Years][-11]                           & \fundData[Years][-10]                           & \fundData[Years][-9]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-11))       & __getCostOfRevenue(__getYear(-10))       & __getCostOfRevenue(__getYear(-9))       \\
- Inventory                & __getInventory(__getYear(-11))           & __getInventory(__getYear(-10))           & __getInventory(__getYear(-9))           \\
- \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-11)) & __inventoryTurnoverRatio(__getYear(-10)) & __inventoryTurnoverRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                           & __getYear(-7)                           & __getYear(-6)                           \\
- \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-8))       & __getCostOfRevenue(__getYear(-7))       & __getCostOfRevenue(__getYear(-6))       \\
- Inventory                & __getInventory(__getYear(-8))           & __getInventory(__getYear(-7))           & __getInventory(__getYear(-6))           \\
- \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-8)) & __inventoryTurnoverRatio(__getYear(-7)) & __inventoryTurnoverRatio(__getYear(-6)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-11]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-10]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-9]       \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-11]           & \fundData[Financials][BalanceSheet][Inventory][-10]           & \fundData[Financials][BalanceSheet][Inventory][-9]           \\
+ \rowcolor{lightgray} ITR & \calcData[Ratios][InventoryTurnoverRatio][-11] & \calcData[Ratios][InventoryTurnoverRatio][-10] & \calcData[Ratios][InventoryTurnoverRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                           & __getYear(-4)                           & __getYear(-3)                           \\
+ Year                     & \fundData[Years][-8]                           & \fundData[Years][-7]                           & \fundData[Years][-6]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-5))       & __getCostOfRevenue(__getYear(-4))       & __getCostOfRevenue(__getYear(-3))       \\
- Inventory                & __getInventory(__getYear(-5))           & __getInventory(__getYear(-4))           & __getInventory(__getYear(-3))           \\
- \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-5)) & __inventoryTurnoverRatio(__getYear(-4)) & __inventoryTurnoverRatio(__getYear(-3)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-8]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-7]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-6]       \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-8]           & \fundData[Financials][BalanceSheet][Inventory][-7]           & \fundData[Financials][BalanceSheet][Inventory][-6]           \\
+ \rowcolor{lightgray} ITR & \calcData[Ratios][InventoryTurnoverRatio][-8] & \calcData[Ratios][InventoryTurnoverRatio][-7] & \calcData[Ratios][InventoryTurnoverRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                           & __getYear(-1)                           & __getYear(0)                           \\
+ Year                     & \fundData[Years][-5]                           & \fundData[Years][-4]                           & \fundData[Years][-3]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-2))       & __getCostOfRevenue(__getYear(-1))       & __getCostOfRevenue(__getYear(0))       \\
- Inventory                & __getInventory(__getYear(-2))           & __getInventory(__getYear(-1))           & __getInventory(__getYear(0))           \\
- \rowcolor{lightgray} ITR & __inventoryTurnoverRatio(__getYear(-2)) & __inventoryTurnoverRatio(__getYear(-1)) & __inventoryTurnoverRatio(__getYear(0)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-5]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-4]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-3]       \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-5]           & \fundData[Financials][BalanceSheet][Inventory][-4]           & \fundData[Financials][BalanceSheet][Inventory][-3]           \\
+ \rowcolor{lightgray} ITR & \calcData[Ratios][InventoryTurnoverRatio][-5] & \calcData[Ratios][InventoryTurnoverRatio][-4] & \calcData[Ratios][InventoryTurnoverRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                           & \fundData[Years][-1]                           & \fundData[Years][0]                           \\
+ \hline
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-2]       & \fundData[Financials][IncomeStatement][CostOfRevenue][-1]       & \fundData[Financials][IncomeStatement][CostOfRevenue][0]       \\
+ Inventory                & \fundData[Financials][BalanceSheet][Inventory][-2]           & \fundData[Financials][BalanceSheet][Inventory][-1]           & \fundData[Financials][BalanceSheet][Inventory][0]           \\
+ \rowcolor{lightgray} ITR & \calcData[Ratios][InventoryTurnoverRatio][-2] & \calcData[Ratios][InventoryTurnoverRatio][-1] & \calcData[Ratios][InventoryTurnoverRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -567,41 +567,41 @@ money a lot faster from vendors.\\
  \hline
  \multicolumn{4}{|c|}{Accounts Receivable Ratio (ARR)} \\
  \hline
- Year                     & __getYear(-11)                             & __getYear(-10)                             & __getYear(-9)                             \\
+ Year                     & \fundData[Years][-11]                             & \fundData[Years][-10]                             & \fundData[Years][-9]                             \\
  \hline
- Turnover                 & __getRevenue(__getYear(-11))               & __getRevenue(__getYear(-10))               & __getRevenue(__getYear(-9))               \\
- Accounts Receivables     & __getAccountsReceivables(__getYear(-11))   & __getAccountsReceivables(__getYear(-10))   & __getAccountsReceivables(__getYear(-9))   \\
- \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-11)) & __accountsReceivablesRatio(__getYear(-10)) & __accountsReceivablesRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                             & __getYear(-7)                             & __getYear(-6)                             \\
- \hline
- Turnover                 & __getRevenue(__getYear(-8))               & __getRevenue(__getYear(-7))               & __getRevenue(__getYear(-6))               \\
- Accounts Receivables     & __getAccountsReceivables(__getYear(-8))   & __getAccountsReceivables(__getYear(-7))   & __getAccountsReceivables(__getYear(-6))   \\
- \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-8)) & __accountsReceivablesRatio(__getYear(-7)) & __accountsReceivablesRatio(__getYear(-6)) \\
+ Turnover                 & \fundData[Financials][IncomeStatement][Revenue][-11]               & \fundData[Financials][IncomeStatement][Revenue][-10]               & \fundData[Financials][IncomeStatement][Revenue][-9]               \\
+ Accounts Receivables     & \fundData[Financials][BalanceSheet][AccountsReceivables][-11]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-10]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-9]   \\
+ \rowcolor{lightgray} ARR & \calcData[Ratios][AccountsReceivablesRatio][-11] & \calcData[Ratios][AccountsReceivablesRatio][-10] & \calcData[Ratios][AccountsReceivablesRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                             & __getYear(-4)                             & __getYear(-3)                             \\
+ Year                     & \fundData[Years][-8]                             & \fundData[Years][-7]                             & \fundData[Years][-6]                             \\
  \hline
- Turnover                 & __getRevenue(__getYear(-5))               & __getRevenue(__getYear(-4))               & __getRevenue(__getYear(-3))               \\
- Accounts Receivables     & __getAccountsReceivables(__getYear(-5))   & __getAccountsReceivables(__getYear(-4))   & __getAccountsReceivables(__getYear(-3))   \\
- \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-5)) & __accountsReceivablesRatio(__getYear(-4)) & __accountsReceivablesRatio(__getYear(-3)) \\
+ Turnover                 & \fundData[Financials][IncomeStatement][Revenue][-8]               & \fundData[Financials][IncomeStatement][Revenue][-7]               & \fundData[Financials][IncomeStatement][Revenue][-6]               \\
+ Accounts Receivables     & \fundData[Financials][BalanceSheet][AccountsReceivables][-8]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-7]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-6]   \\
+ \rowcolor{lightgray} ARR & \calcData[Ratios][AccountsReceivablesRatio][-8] & \calcData[Ratios][AccountsReceivablesRatio][-7] & \calcData[Ratios][AccountsReceivablesRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                             & __getYear(-1)                             & __getYear(0)                             \\
+ Year                     & \fundData[Years][-5]                             & \fundData[Years][-4]                             & \fundData[Years][-3]                             \\
  \hline
- Turnover                 & __getRevenue(__getYear(-2))               & __getRevenue(__getYear(-1))               & __getRevenue(__getYear(0))               \\
- Accounts Receivables     & __getAccountsReceivables(__getYear(-2))   & __getAccountsReceivables(__getYear(-1))   & __getAccountsReceivables(__getYear(0))   \\
- \rowcolor{lightgray} ARR & __accountsReceivablesRatio(__getYear(-2)) & __accountsReceivablesRatio(__getYear(-1)) & __accountsReceivablesRatio(__getYear(0)) \\
+ Turnover                 & \fundData[Financials][IncomeStatement][Revenue][-5]               & \fundData[Financials][IncomeStatement][Revenue][-4]               & \fundData[Financials][IncomeStatement][Revenue][-3]               \\
+ Accounts Receivables     & \fundData[Financials][BalanceSheet][AccountsReceivables][-5]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-4]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-3]   \\
+ \rowcolor{lightgray} ARR & \calcData[Ratios][AccountsReceivablesRatio][-5] & \calcData[Ratios][AccountsReceivablesRatio][-4] & \calcData[Ratios][AccountsReceivablesRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                             & \fundData[Years][-1]                             & \fundData[Years][0]                             \\
+ \hline
+ Turnover                 & \fundData[Financials][IncomeStatement][Revenue][-2]               & \fundData[Financials][IncomeStatement][Revenue][-1]               & \fundData[Financials][IncomeStatement][Revenue][0]               \\
+ Accounts Receivables     & \fundData[Financials][BalanceSheet][AccountsReceivables][-2]   & \fundData[Financials][BalanceSheet][AccountsReceivables][-1]   & \fundData[Financials][BalanceSheet][AccountsReceivables][0]   \\
+ \rowcolor{lightgray} ARR & \calcData[Ratios][AccountsReceivablesRatio][-2] & \calcData[Ratios][AccountsReceivablesRatio][-1] & \calcData[Ratios][AccountsReceivablesRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -625,41 +625,41 @@ time having no problem paying its obligations to suppliers.\\
  \hline
  \multicolumn{4}{|c|}{Accounts Payable Ratio (APR)} \\
  \hline
- Year                     & __getYear(-11)                         & __getYear(-10)                         & __getYear(-9)                           \\
+ Year                     & \fundData[Years][-11]                         & \fundData[Years][-10]                         & \fundData[Years][-9]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-11))     & __getCostOfRevenue(__getYear(-10))     & __getCostOfRevenue(__getYear(-9))       \\
- Accounts Payable         & __getAccountsPayable(__getYear(-11))   & __getAccountsPayable(__getYear(-10))   & __getAccountsPayable(__getYear(-9))     \\
- \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-11)) & __accountsPayableRatio(__getYear(-10)) & __inventoryTurnoverRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                         & __getYear(-7)                         & __getYear(-6)                           \\
- \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-8))     & __getCostOfRevenue(__getYear(-7))     & __getCostOfRevenue(__getYear(-6))       \\
- Accounts Payable         & __getAccountsPayable(__getYear(-8))   & __getAccountsPayable(__getYear(-7))   & __getAccountsPayable(__getYear(-6))     \\
- \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-8)) & __accountsPayableRatio(__getYear(-7)) & __inventoryTurnoverRatio(__getYear(-6)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-11]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-10]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-9]       \\
+ Accounts Payable         & \fundData[Financials][BalanceSheet][AccountsPayable][-11]   & \fundData[Financials][BalanceSheet][AccountsPayable][-10]   & \fundData[Financials][BalanceSheet][AccountsPayable][-9]     \\
+ \rowcolor{lightgray} APR & \calcData[Ratios][AccountsPayableRatio][-11] & \calcData[Ratios][AccountsPayableRatio][-10] & \calcData[Ratios][InventoryTurnoverRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                         & __getYear(-4)                         & __getYear(-3)                           \\
+ Year                     & \fundData[Years][-8]                         & \fundData[Years][-7]                         & \fundData[Years][-6]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-5))     & __getCostOfRevenue(__getYear(-4))     & __getCostOfRevenue(__getYear(-3))       \\
- Accounts Payable         & __getAccountsPayable(__getYear(-5))   & __getAccountsPayable(__getYear(-4))   & __getAccountsPayable(__getYear(-3))     \\
- \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-5)) & __accountsPayableRatio(__getYear(-4)) & __inventoryTurnoverRatio(__getYear(-3)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-8]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-7]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-6]       \\
+ Accounts Payable         & \fundData[Financials][BalanceSheet][AccountsPayable][-8]   & \fundData[Financials][BalanceSheet][AccountsPayable][-7]   & \fundData[Financials][BalanceSheet][AccountsPayable][-6]     \\
+ \rowcolor{lightgray} APR & \calcData[Ratios][AccountsPayableRatio][-8] & \calcData[Ratios][AccountsPayableRatio][-7] & \calcData[Ratios][InventoryTurnoverRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                         & __getYear(-1)                         & __getYear(0)                           \\
+ Year                     & \fundData[Years][-5]                         & \fundData[Years][-4]                         & \fundData[Years][-3]                           \\
  \hline
- Cost of Revenue          & __getCostOfRevenue(__getYear(-2))     & __getCostOfRevenue(__getYear(-1))     & __getCostOfRevenue(__getYear(0))       \\
- Accounts Payable         & __getAccountsPayable(__getYear(-2))   & __getAccountsPayable(__getYear(-1))   & __getAccountsPayable(__getYear(0))     \\
- \rowcolor{lightgray} APR & __accountsPayableRatio(__getYear(-2)) & __accountsPayableRatio(__getYear(-1)) & __inventoryTurnoverRatio(__getYear(0)) \\
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-5]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-4]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-3]       \\
+ Accounts Payable         & \fundData[Financials][BalanceSheet][AccountsPayable][-5]   & \fundData[Financials][BalanceSheet][AccountsPayable][-4]   & \fundData[Financials][BalanceSheet][AccountsPayable][-3]     \\
+ \rowcolor{lightgray} APR & \calcData[Ratios][AccountsPayableRatio][-5] & \calcData[Ratios][AccountsPayableRatio][-4] & \calcData[Ratios][InventoryTurnoverRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                         & \fundData[Years][-1]                         & \fundData[Years][0]                           \\
+ \hline
+ Cost of Revenue          & \fundData[Financials][IncomeStatement][CostOfRevenue][-2]     & \fundData[Financials][IncomeStatement][CostOfRevenue][-1]     & \fundData[Financials][IncomeStatement][CostOfRevenue][0]       \\
+ Accounts Payable         & \fundData[Financials][BalanceSheet][AccountsPayable][-2]   & \fundData[Financials][BalanceSheet][AccountsPayable][-1]   & \fundData[Financials][BalanceSheet][AccountsPayable][0]     \\
+ \rowcolor{lightgray} APR & \calcData[Ratios][AccountsPayableRatio][-2] & \calcData[Ratios][AccountsPayableRatio][-1] & \calcData[Ratios][InventoryTurnoverRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -689,45 +689,45 @@ on. This key ratio should definitely be below 0.5.\\
  \hline
  \multicolumn{4}{|c|}{Debt-to-Equity (D/E)} \\
  \hline
- Year                       & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                     \\
+ Year                       & \fundData[Years][-11]                        & \fundData[Years][-10]                        & \fundData[Years][-9]                     \\
  \hline
- Long Term Debt             & __getLongTermDebt(__getYear(-11))     & __getLongTermDebt(__getYear(-10))     & __getLongTermDebt(__getYear(-9))  \\
- Notes Payable              & __getShortTermDebt(__getYear(-11))    & __getShortTermDebt(__getYear(-10))    & __getShortTermDebt(__getYear(-9)) \\
- Equity                     & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))   \\
- \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-11))        & __debtToEquity(__getYear(-10))        & __debtToEquity(__getYear(-9))     \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                       & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                     \\
- \hline
- Long Term Debt             & __getLongTermDebt(__getYear(-8))     & __getLongTermDebt(__getYear(-7))     & __getLongTermDebt(__getYear(-6))  \\
- Notes Payable              & __getShortTermDebt(__getYear(-8))    & __getShortTermDebt(__getYear(-7))    & __getShortTermDebt(__getYear(-6)) \\
- Equity                     & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))   \\
- \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-8))        & __debtToEquity(__getYear(-7))        & __debtToEquity(__getYear(-6))     \\
+ Long Term Debt             & \fundData[Financials][BalanceSheet][LongTermDebt][-11]     & \fundData[Financials][BalanceSheet][LongTermDebt][-10]     & \fundData[Financials][BalanceSheet][LongTermDebt][-9]  \\
+ Notes Payable              & \fundData[Financials][BalanceSheet][ShortTermDebt][-11]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-10]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-9] \\
+ Equity                     & \fundData[Financials][BalanceSheet][TotalEquity][-11]      & \fundData[Financials][BalanceSheet][TotalEquity][-10]      & \fundData[Financials][BalanceSheet][TotalEquity][-9]   \\
+ \rowcolor{lightgray} D/E   & \calcData[Ratios][DebtToEquity][-11]        & \calcData[Ratios][DebtToEquity][-10]        & \calcData[Ratios][DebtToEquity][-9]     \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                     \\
+ Year                       & \fundData[Years][-8]                        & \fundData[Years][-7]                        & \fundData[Years][-6]                     \\
  \hline
- Long Term Debt             & __getLongTermDebt(__getYear(-5))     & __getLongTermDebt(__getYear(-4))     & __getLongTermDebt(__getYear(-3))  \\
- Notes Payable              & __getShortTermDebt(__getYear(-5))    & __getShortTermDebt(__getYear(-4))    & __getShortTermDebt(__getYear(-3)) \\
- Equity                     & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))   \\
- \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-5))        & __debtToEquity(__getYear(-4))        & __debtToEquity(__getYear(-3))     \\
+ Long Term Debt             & \fundData[Financials][BalanceSheet][LongTermDebt][-8]     & \fundData[Financials][BalanceSheet][LongTermDebt][-7]     & \fundData[Financials][BalanceSheet][LongTermDebt][-6]  \\
+ Notes Payable              & \fundData[Financials][BalanceSheet][ShortTermDebt][-8]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-7]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-6] \\
+ Equity                     & \fundData[Financials][BalanceSheet][TotalEquity][-8]      & \fundData[Financials][BalanceSheet][TotalEquity][-7]      & \fundData[Financials][BalanceSheet][TotalEquity][-6]   \\
+ \rowcolor{lightgray} D/E   & \calcData[Ratios][DebtToEquity][-8]        & \calcData[Ratios][DebtToEquity][-7]        & \calcData[Ratios][DebtToEquity][-6]     \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                     \\
+ Year                       & \fundData[Years][-5]                        & \fundData[Years][-4]                        & \fundData[Years][-3]                     \\
  \hline
- Long Term Debt             & __getLongTermDebt(__getYear(-2))     & __getLongTermDebt(__getYear(-1))     & __getLongTermDebt(__getYear(0))  \\
- Notes Payable              & __getShortTermDebt(__getYear(-2))    & __getShortTermDebt(__getYear(-1))    & __getShortTermDebt(__getYear(0)) \\
- Equity                     & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))   \\
- \rowcolor{lightgray} D/E   & __debtToEquity(__getYear(-2))        & __debtToEquity(__getYear(-1))        & __debtToEquity(__getYear(0))     \\
+ Long Term Debt             & \fundData[Financials][BalanceSheet][LongTermDebt][-5]     & \fundData[Financials][BalanceSheet][LongTermDebt][-4]     & \fundData[Financials][BalanceSheet][LongTermDebt][-3]  \\
+ Notes Payable              & \fundData[Financials][BalanceSheet][ShortTermDebt][-5]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-4]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-3] \\
+ Equity                     & \fundData[Financials][BalanceSheet][TotalEquity][-5]      & \fundData[Financials][BalanceSheet][TotalEquity][-4]      & \fundData[Financials][BalanceSheet][TotalEquity][-3]   \\
+ \rowcolor{lightgray} D/E   & \calcData[Ratios][DebtToEquity][-5]        & \calcData[Ratios][DebtToEquity][-4]        & \calcData[Ratios][DebtToEquity][-3]     \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & \fundData[Years][-2]                        & \fundData[Years][-1]                        & \fundData[Years][0]                     \\
+ \hline
+ Long Term Debt             & \fundData[Financials][BalanceSheet][LongTermDebt][-2]     & \fundData[Financials][BalanceSheet][LongTermDebt][-1]     & \fundData[Financials][BalanceSheet][LongTermDebt][0]  \\
+ Notes Payable              & \fundData[Financials][BalanceSheet][ShortTermDebt][-2]    & \fundData[Financials][BalanceSheet][ShortTermDebt][-1]    & \fundData[Financials][BalanceSheet][ShortTermDebt][0] \\
+ Equity                     & \fundData[Financials][BalanceSheet][TotalEquity][-2]      & \fundData[Financials][BalanceSheet][TotalEquity][-1]      & \fundData[Financials][BalanceSheet][TotalEquity][0]   \\
+ \rowcolor{lightgray} D/E   & \calcData[Ratios][DebtToEquity][-2]        & \calcData[Ratios][DebtToEquity][-1]        & \calcData[Ratios][DebtToEquity][0]     \\
  \hline
 \end{tabularx}
 
@@ -750,41 +750,41 @@ below 0.8 to be considered low-risk.\\
  \hline
  \multicolumn{4}{|c|}{Liabilities-to-Equity (L/E)} \\
  \hline
- Year                     & __getYear(-11)                        & __getYear(-10)                        & __getYear(-9)                        \\
+ Year                     & \fundData[Years][-11]                        & \fundData[Years][-10]                        & \fundData[Years][-9]                        \\
  \hline
- Liabilities              & __getTotalLiabilities(__getYear(-11)) & __getTotalLiabilities(__getYear(-10)) & __getTotalLiabilities(__getYear(-9)) \\
- Equity                   & __getTotalEquity(__getYear(-11))      & __getTotalEquity(__getYear(-10))      & __getTotalEquity(__getYear(-9))      \\
- \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-11)) & __liabilitiesToEquity(__getYear(-10)) & __liabilitiesToEquity(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                     & __getYear(-8)                        & __getYear(-7)                        & __getYear(-6)                        \\
- \hline
- Liabilities              & __getTotalLiabilities(__getYear(-8)) & __getTotalLiabilities(__getYear(-7)) & __getTotalLiabilities(__getYear(-6)) \\
- Equity                   & __getTotalEquity(__getYear(-8))      & __getTotalEquity(__getYear(-7))      & __getTotalEquity(__getYear(-6))      \\
- \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-8)) & __liabilitiesToEquity(__getYear(-7)) & __liabilitiesToEquity(__getYear(-6)) \\
+ Liabilities              & \fundData[Financials][BalanceSheet][TotalLiabilities][-11] & \fundData[Financials][BalanceSheet][TotalLiabilities][-10] & \fundData[Financials][BalanceSheet][TotalLiabilities][-9] \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-11]      & \fundData[Financials][BalanceSheet][TotalEquity][-10]      & \fundData[Financials][BalanceSheet][TotalEquity][-9]      \\
+ \rowcolor{lightgray} L/E & \calcData[Ratios][LiabilitiesToEquity][-11] & \calcData[Ratios][LiabilitiesToEquity][-10] & \calcData[Ratios][LiabilitiesToEquity][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-5)                        & __getYear(-4)                        & __getYear(-3)                        \\
+ Year                     & \fundData[Years][-8]                        & \fundData[Years][-7]                        & \fundData[Years][-6]                        \\
  \hline
- Liabilities              & __getTotalLiabilities(__getYear(-5)) & __getTotalLiabilities(__getYear(-4)) & __getTotalLiabilities(__getYear(-3)) \\
- Equity                   & __getTotalEquity(__getYear(-5))      & __getTotalEquity(__getYear(-4))      & __getTotalEquity(__getYear(-3))      \\
- \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-5)) & __liabilitiesToEquity(__getYear(-4)) & __liabilitiesToEquity(__getYear(-3)) \\
+ Liabilities              & \fundData[Financials][BalanceSheet][TotalLiabilities][-8] & \fundData[Financials][BalanceSheet][TotalLiabilities][-7] & \fundData[Financials][BalanceSheet][TotalLiabilities][-6] \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-8]      & \fundData[Financials][BalanceSheet][TotalEquity][-7]      & \fundData[Financials][BalanceSheet][TotalEquity][-6]      \\
+ \rowcolor{lightgray} L/E & \calcData[Ratios][LiabilitiesToEquity][-8] & \calcData[Ratios][LiabilitiesToEquity][-7] & \calcData[Ratios][LiabilitiesToEquity][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                     & __getYear(-2)                        & __getYear(-1)                        & __getYear(0)                        \\
+ Year                     & \fundData[Years][-5]                        & \fundData[Years][-4]                        & \fundData[Years][-3]                        \\
  \hline
- Liabilities              & __getTotalLiabilities(__getYear(-2)) & __getTotalLiabilities(__getYear(-1)) & __getTotalLiabilities(__getYear(0)) \\
- Equity                   & __getTotalEquity(__getYear(-2))      & __getTotalEquity(__getYear(-1))      & __getTotalEquity(__getYear(0))      \\
- \rowcolor{lightgray} L/E & __liabilitiesToEquity(__getYear(-2)) & __liabilitiesToEquity(__getYear(-1)) & __liabilitiesToEquity(__getYear(0)) \\
+ Liabilities              & \fundData[Financials][BalanceSheet][TotalLiabilities][-5] & \fundData[Financials][BalanceSheet][TotalLiabilities][-4] & \fundData[Financials][BalanceSheet][TotalLiabilities][-3] \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-5]      & \fundData[Financials][BalanceSheet][TotalEquity][-4]      & \fundData[Financials][BalanceSheet][TotalEquity][-3]      \\
+ \rowcolor{lightgray} L/E & \calcData[Ratios][LiabilitiesToEquity][-5] & \calcData[Ratios][LiabilitiesToEquity][-4] & \calcData[Ratios][LiabilitiesToEquity][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                     & \fundData[Years][-2]                        & \fundData[Years][-1]                        & \fundData[Years][0]                        \\
+ \hline
+ Liabilities              & \fundData[Financials][BalanceSheet][TotalLiabilities][-2] & \fundData[Financials][BalanceSheet][TotalLiabilities][-1] & \fundData[Financials][BalanceSheet][TotalLiabilities][0] \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][-2]      & \fundData[Financials][BalanceSheet][TotalEquity][-1]      & \fundData[Financials][BalanceSheet][TotalEquity][0]      \\
+ \rowcolor{lightgray} L/E & \calcData[Ratios][LiabilitiesToEquity][-2] & \calcData[Ratios][LiabilitiesToEquity][-1] & \calcData[Ratios][LiabilitiesToEquity][0] \\
  \hline
 \end{tabularx}
 
@@ -804,41 +804,41 @@ directly to the shareholders as dividends.\\
  \hline
  \multicolumn{4}{|c|}{FCF-to-Revenue Ratio (FCFR)} \\
  \hline
- Year                       & __getYear(-11)                      & __getYear(-10)                      & __getYear(-9)                      \\
+ Year                       & \fundData[Years][-11]                      & \fundData[Years][-10]                      & \fundData[Years][-9]                      \\
  \hline
- FCF                        & __getFreeCashFlow(__getYear(-11))   & __getFreeCashFlow(__getYear(-10))   & __getFreeCashFlow(__getYear(-9))   \\
- Revenue                    & __getRevenue(__getYear(-11))        & __getRevenue(__getYear(-10))        & __getRevenue(__getYear(-9))        \\
- \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-11)) & __fcfToRevenueRatio(__getYear(-10)) & __fcfToRevenueRatio(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                       & __getYear(-8)                      & __getYear(-7)                      & __getYear(-6)                      \\
- \hline
- FCF                        & __getFreeCashFlow(__getYear(-8))   & __getFreeCashFlow(__getYear(-7))   & __getFreeCashFlow(__getYear(-6))   \\
- Revenue                    & __getRevenue(__getYear(-8))        & __getRevenue(__getYear(-7))        & __getRevenue(__getYear(-6))        \\
- \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-8)) & __fcfToRevenueRatio(__getYear(-7)) & __fcfToRevenueRatio(__getYear(-6)) \\
+ FCF                        & \fundData[Financials][CashFlowStatement][FreeCashFlow][-11]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-10]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-9]   \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-11]        & \fundData[Financials][IncomeStatement][Revenue][-10]        & \fundData[Financials][IncomeStatement][Revenue][-9]        \\
+ \rowcolor{lightgray} FCFR  & \calcData[Ratios][FCFToRevenueRatio][-11] & \calcData[Ratios][FCFToRevenueRatio][-10] & \calcData[Ratios][FCFToRevenueRatio][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-5)                      & __getYear(-4)                      & __getYear(-3)                      \\
+ Year                       & \fundData[Years][-8]                      & \fundData[Years][-7]                      & \fundData[Years][-6]                      \\
  \hline
- FCF                        & __getFreeCashFlow(__getYear(-5))   & __getFreeCashFlow(__getYear(-4))   & __getFreeCashFlow(__getYear(-3))   \\
- Revenue                    & __getRevenue(__getYear(-5))        & __getRevenue(__getYear(-4))        & __getRevenue(__getYear(-3))        \\
- \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-5)) & __fcfToRevenueRatio(__getYear(-4)) & __fcfToRevenueRatio(__getYear(-3)) \\
+ FCF                        & \fundData[Financials][CashFlowStatement][FreeCashFlow][-8]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-7]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-6]   \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-8]        & \fundData[Financials][IncomeStatement][Revenue][-7]        & \fundData[Financials][IncomeStatement][Revenue][-6]        \\
+ \rowcolor{lightgray} FCFR  & \calcData[Ratios][FCFToRevenueRatio][-8] & \calcData[Ratios][FCFToRevenueRatio][-7] & \calcData[Ratios][FCFToRevenueRatio][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                       & __getYear(-2)                      & __getYear(-1)                      & __getYear(0)                      \\
+ Year                       & \fundData[Years][-5]                      & \fundData[Years][-4]                      & \fundData[Years][-3]                      \\
  \hline
- FCF                        & __getFreeCashFlow(__getYear(-2))   & __getFreeCashFlow(__getYear(-1))   & __getFreeCashFlow(__getYear(0))   \\
- Revenue                    & __getRevenue(__getYear(-2))        & __getRevenue(__getYear(-1))        & __getRevenue(__getYear(0))        \\
- \rowcolor{lightgray} FCFR  & __fcfToRevenueRatio(__getYear(-2)) & __fcfToRevenueRatio(__getYear(-1)) & __fcfToRevenueRatio(__getYear(0)) \\
+ FCF                        & \fundData[Financials][CashFlowStatement][FreeCashFlow][-5]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-4]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-3]   \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-5]        & \fundData[Financials][IncomeStatement][Revenue][-4]        & \fundData[Financials][IncomeStatement][Revenue][-3]        \\
+ \rowcolor{lightgray} FCFR  & \calcData[Ratios][FCFToRevenueRatio][-5] & \calcData[Ratios][FCFToRevenueRatio][-4] & \calcData[Ratios][FCFToRevenueRatio][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                       & \fundData[Years][-2]                      & \fundData[Years][-1]                      & \fundData[Years][0]                      \\
+ \hline
+ FCF                        & \fundData[Financials][CashFlowStatement][FreeCashFlow][-2]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][-1]   & \fundData[Financials][CashFlowStatement][FreeCashFlow][0]   \\
+ Revenue                    & \fundData[Financials][IncomeStatement][Revenue][-2]        & \fundData[Financials][IncomeStatement][Revenue][-1]        & \fundData[Financials][IncomeStatement][Revenue][0]        \\
+ \rowcolor{lightgray} FCFR  & \calcData[Ratios][FCFToRevenueRatio][-2] & \calcData[Ratios][FCFToRevenueRatio][-1] & \calcData[Ratios][FCFToRevenueRatio][0] \\
  \hline
 \end{tabularx}
 
@@ -859,40 +859,40 @@ that the company sold a formerly held asset which results in an inflow of cash.\
  \hline
  \multicolumn{4}{|c|}{ICF-to-OCF Ratio (ICFOCF)} \\
  \hline
- Year                        & __getYear(-11)                          & __getYear(-10)                          & __getYear(-9)                         \\
+ Year                        & \fundData[Years][-11]                          & \fundData[Years][-10]                          & \fundData[Years][-9]                         \\
  \hline
- ICF                         & __getInvestingCashFlow(__getYear(-11))  & __getInvestingCashFlow(__getYear(-10))  & __getInvestingCashFlow(__getYear(-9)) \\
- OCF                         & __getOperatingCashFlow(__getYear(-11))  & __getOperatingCashFlow(__getYear(-10))  & __getOperatingCashFlow(__getYear(-9)) \\
- \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-11))           & __ICFOCFRatio(__getYear(-10))           & __ICFOCFRatio(__getYear(-9))          \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                        & __getYear(-8)                          & __getYear(-7)                          & __getYear(-6)                         \\
- \hline
- ICF                         & __getInvestingCashFlow(__getYear(-8))  & __getInvestingCashFlow(__getYear(-7))  & __getInvestingCashFlow(__getYear(-6)) \\
- OCF                         & __getOperatingCashFlow(__getYear(-8))  & __getOperatingCashFlow(__getYear(-7))  & __getOperatingCashFlow(__getYear(-6)) \\
- \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-8))           & __ICFOCFRatio(__getYear(-7))           & __ICFOCFRatio(__getYear(-6))          \\
+ ICF                         & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-11]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-10]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-9] \\
+ OCF                         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-11]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-10]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-9] \\
+ \rowcolor{lightgray} ICFOCF & \calcData[Ratios][ICFOCFRatio][-11]           & \calcData[Ratios][ICFOCFRatio][-10]           & \calcData[Ratios][ICFOCFRatio][-9]          \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                        & __getYear(-5)                          & __getYear(-4)                          & __getYear(-3)                         \\
+ Year                        & \fundData[Years][-8]                          & \fundData[Years][-7]                          & \fundData[Years][-6]                         \\
  \hline
- ICF                         & __getInvestingCashFlow(__getYear(-5))  & __getInvestingCashFlow(__getYear(-4))  & __getInvestingCashFlow(__getYear(-3)) \\
- OCF                         & __getOperatingCashFlow(__getYear(-5))  & __getOperatingCashFlow(__getYear(-4))  & __getOperatingCashFlow(__getYear(-3)) \\
- \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-5))           & __ICFOCFRatio(__getYear(-4))           & __ICFOCFRatio(__getYear(-3))          \\
+ ICF                         & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-8]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-7]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-6] \\
+ OCF                         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-8]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-7]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-6] \\
+ \rowcolor{lightgray} ICFOCF & \calcData[Ratios][ICFOCFRatio][-8]           & \calcData[Ratios][ICFOCFRatio][-7]           & \calcData[Ratios][ICFOCFRatio][-6]          \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                        & __getYear(-2)                          & __getYear(-1)                          & __getYear(0)                         \\
+ Year                        & \fundData[Years][-5]                          & \fundData[Years][-4]                          & \fundData[Years][-3]                         \\
  \hline
- ICF                         & __getInvestingCashFlow(__getYear(-2))  & __getInvestingCashFlow(__getYear(-1))  & __getInvestingCashFlow(__getYear(0)) \\
- OCF                         & __getOperatingCashFlow(__getYear(-2))  & __getOperatingCashFlow(__getYear(-1))  & __getOperatingCashFlow(__getYear(0)) \\
- \rowcolor{lightgray} ICFOCF & __ICFOCFRatio(__getYear(-2))           & __ICFOCFRatio(__getYear(-1))           & __ICFOCFRatio(__getYear(0))          \\
+ ICF                         & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-5]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-4]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-3] \\
+ OCF                         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-5]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-4]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-3] \\
+ \rowcolor{lightgray} ICFOCF & \calcData[Ratios][ICFOCFRatio][-5]           & \calcData[Ratios][ICFOCFRatio][-4]           & \calcData[Ratios][ICFOCFRatio][-3]          \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                        & \fundData[Years][-2]                          & \fundData[Years][-1]                          & \fundData[Years][0]                         \\
+ \hline
+ ICF                         & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-2]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][-1]  & \fundData[Financials][CashFlowStatement][InvestingCashFlow][0] \\
+ OCF                         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-2]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-1]  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][0] \\
+ \rowcolor{lightgray} ICFOCF & \calcData[Ratios][ICFOCFRatio][-2]           & \calcData[Ratios][ICFOCFRatio][-1]           & \calcData[Ratios][ICFOCFRatio][0]          \\
  \hline
 \end{tabularx}

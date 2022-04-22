@@ -2,7 +2,7 @@
 
 \subsection{The Company}
 
-__getDescription()
+\fundData[General][Description]
 
 \subsection{General Information}
 
@@ -12,15 +12,15 @@ __getDescription()
  \hline
  \multicolumn{2}{|c|}{General Company Information} \\
  \hline
- Company Name     & __getCompanyName() \\
- Ticker Symbol    & __getCompanyCode() \\
- ISIN             & __getISIN() \\
- Address          & __getAddress() \\
- Sector           & __getSector() \\
- Industry         & __getIndustry() \\
- Employees        & __getNumEmployees() \\
- IPO              & __getIPODate() \\
- Fiscal Year Ends & __getFiscalYearEnd() \\
+    Company Name     & \fundData[General][Name]          \\
+    Ticker Symbol    & \fundData[General][Code]          \\
+    ISIN             & \fundData[General][ISIN]          \\
+    Address          & \fundData[General][Address]       \\
+    Sector           & \fundData[General][Sector]        \\
+    Industry         & \fundData[General][Industry]      \\
+    Employees        & \fundData[General][Employees]     \\
+    Fiscal Year Ends & \fundData[General][FiscalYearEnd] \\
+    IPO              & \fundData[General][IPODate]       \\
  \hline
 \end{tabularx}
 
@@ -30,12 +30,14 @@ __getDescription()
  \hline
  \multicolumn{2}{|c|}{General Stock Information} \\
  \hline
- Currency               & __getCurrency() \\
- Market Capitalization  & __getMarketCapitalization() \\
- Dividend Share         & __getDividendShare() \\
- Dividend Yield (in \%) & __getDividendYield() \\
+    Currency               & \fundData[General][Currency]                \\
+    Market Capitalization  & \fundData[Highlights][MarketCapitalization] \\
+    Dividend Share         & \fundData[Highlights][DividendShare]        \\
+    Dividend Yield (in \%) & \fundData[Highlights][DividendYield]        \\
  \hline
 \end{tabularx}
+
+\subsection{Stock Category}
 
 \subsection{Shareholder Structure}
 
@@ -43,26 +45,77 @@ __getDescription()
     \hline
     \multicolumn{2}{|c|}{General Shareholder Information} \\
     \hline
-    Shares Outstanding            & __getSharesOutstanding() \\
-    Shares Floating               & __getSharesFloat() \\
-    Float-to-Outstanding Ratio    & __getSharesFloatToOutstandingRatio() \\
-    Owned by Institutions (in \%) & __getSharesPercentInstitutions() \\
-    Owned by Insiders (in \%)     & __getSharesPercentInsiders() \\
-    Owned by Public (in \%)       & __getSharesPercentPublic() \\
+    Shares Outstanding            & \fundData[SharesStats][SharesOutstanding]   \\
+    Shares Floating               & \fundData[SharesStats][SharesFloat]         \\
+    Float-to-Outstanding Ratio    & \calcData[Ratios][FloatToOutstandingRatio]  \\
+    Owned by Institutions (in \%) & \fundData[SharesStats][PercentInstitutions] \\
+    Owned by Insiders (in \%)     & \fundData[SharesStats][PercentInsiders]     \\
+    Owned by Public (in \%)       & \fundData[SharesStats][PercentPublic]       \\
     \hline
 \end{tabularx}
 
 \subsubsection{Institutions}
 
-__getLatexTable("Institutions","getInstitutions()")
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+    \hline
+    \multicolumn{4}{|c|}{Institutions} \\
+    \hline
+    Name & Total Shares (\%) & Change (\%) & Total Assets (\%) \\
+    \hline
+    \fundData[Holders][Institutions][0][name] & \fundData[Holders][Institutions][0][totalShares] & \fundData[Holders][Institutions][0][change_p] & \fundData[Holders][Institutions][0][totalAssets] \\
+    \fundData[Holders][Institutions][1][name] & \fundData[Holders][Institutions][1][totalShares] & \fundData[Holders][Institutions][1][change_p] & \fundData[Holders][Institutions][1][totalAssets] \\
+    \fundData[Holders][Institutions][2][name] & \fundData[Holders][Institutions][2][totalShares] & \fundData[Holders][Institutions][2][change_p] & \fundData[Holders][Institutions][2][totalAssets] \\
+    \fundData[Holders][Institutions][3][name] & \fundData[Holders][Institutions][3][totalShares] & \fundData[Holders][Institutions][3][change_p] & \fundData[Holders][Institutions][3][totalAssets] \\
+    \fundData[Holders][Institutions][4][name] & \fundData[Holders][Institutions][4][totalShares] & \fundData[Holders][Institutions][4][change_p] & \fundData[Holders][Institutions][4][totalAssets] \\
+    \fundData[Holders][Institutions][5][name] & \fundData[Holders][Institutions][5][totalShares] & \fundData[Holders][Institutions][5][change_p] & \fundData[Holders][Institutions][5][totalAssets] \\
+    \fundData[Holders][Institutions][6][name] & \fundData[Holders][Institutions][6][totalShares] & \fundData[Holders][Institutions][6][change_p] & \fundData[Holders][Institutions][6][totalAssets] \\
+    \fundData[Holders][Institutions][7][name] & \fundData[Holders][Institutions][7][totalShares] & \fundData[Holders][Institutions][7][change_p] & \fundData[Holders][Institutions][7][totalAssets] \\
+    \fundData[Holders][Institutions][8][name] & \fundData[Holders][Institutions][8][totalShares] & \fundData[Holders][Institutions][8][change_p] & \fundData[Holders][Institutions][8][totalAssets] \\
+    \fundData[Holders][Institutions][9][name] & \fundData[Holders][Institutions][9][totalShares] & \fundData[Holders][Institutions][9][change_p] & \fundData[Holders][Institutions][9][totalAssets] \\
+    \hline
+\end{tabularx}
 
 \subsubsection{Funds}
 
-__getLatexTable("Funds","getFunds()")
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+    \hline
+    \multicolumn{4}{|c|}{Funds} \\
+    \hline
+    Name & Total Shares (\%) & Change (\%) & Total Assets (\%) \\
+    \hline
+    \fundData[Holders][Funds][0][name] & \fundData[Holders][Funds][0][totalShares] & \fundData[Holders][Funds][0][change_p] & \fundData[Holders][Funds][0][totalAssets] \\
+    \fundData[Holders][Funds][1][name] & \fundData[Holders][Funds][1][totalShares] & \fundData[Holders][Funds][1][change_p] & \fundData[Holders][Funds][1][totalAssets] \\
+    \fundData[Holders][Funds][2][name] & \fundData[Holders][Funds][2][totalShares] & \fundData[Holders][Funds][2][change_p] & \fundData[Holders][Funds][2][totalAssets] \\
+    \fundData[Holders][Funds][3][name] & \fundData[Holders][Funds][3][totalShares] & \fundData[Holders][Funds][3][change_p] & \fundData[Holders][Funds][3][totalAssets] \\
+    \fundData[Holders][Funds][4][name] & \fundData[Holders][Funds][4][totalShares] & \fundData[Holders][Funds][4][change_p] & \fundData[Holders][Funds][4][totalAssets] \\
+    \fundData[Holders][Funds][5][name] & \fundData[Holders][Funds][5][totalShares] & \fundData[Holders][Funds][5][change_p] & \fundData[Holders][Funds][5][totalAssets] \\
+    \fundData[Holders][Funds][6][name] & \fundData[Holders][Funds][6][totalShares] & \fundData[Holders][Funds][6][change_p] & \fundData[Holders][Funds][6][totalAssets] \\
+    \fundData[Holders][Funds][7][name] & \fundData[Holders][Funds][7][totalShares] & \fundData[Holders][Funds][7][change_p] & \fundData[Holders][Funds][7][totalAssets] \\
+    \fundData[Holders][Funds][8][name] & \fundData[Holders][Funds][8][totalShares] & \fundData[Holders][Funds][8][change_p] & \fundData[Holders][Funds][8][totalAssets] \\
+    \fundData[Holders][Funds][9][name] & \fundData[Holders][Funds][9][totalShares] & \fundData[Holders][Funds][9][change_p] & \fundData[Holders][Funds][9][totalAssets] \\
+    \hline
+\end{tabularx}
 
 \subsubsection{Insider Trading}
 
-__getLatexTable("Insider Trading","getInsiderTransactions()")
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \hline
+    \multicolumn{5}{|c|}{Insider Trading} \\
+    \hline
+    Name & Date & Amount & Price & (A)cquired or (D)isposed \\
+    \hline
+    \fundData[InsiderTransactions][0][ownerName] & \fundData[InsiderTransactions][0][transactionDate] & \fundData[InsiderTransactions][0][transactionAmount] & \fundData[InsiderTransactions][0][transactionPrice] & \fundData[InsiderTransactions][0][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][1][ownerName] & \fundData[InsiderTransactions][1][transactionDate] & \fundData[InsiderTransactions][1][transactionAmount] & \fundData[InsiderTransactions][1][transactionPrice] & \fundData[InsiderTransactions][1][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][2][ownerName] & \fundData[InsiderTransactions][2][transactionDate] & \fundData[InsiderTransactions][2][transactionAmount] & \fundData[InsiderTransactions][2][transactionPrice] & \fundData[InsiderTransactions][2][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][3][ownerName] & \fundData[InsiderTransactions][3][transactionDate] & \fundData[InsiderTransactions][3][transactionAmount] & \fundData[InsiderTransactions][3][transactionPrice] & \fundData[InsiderTransactions][3][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][4][ownerName] & \fundData[InsiderTransactions][4][transactionDate] & \fundData[InsiderTransactions][4][transactionAmount] & \fundData[InsiderTransactions][4][transactionPrice] & \fundData[InsiderTransactions][4][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][5][ownerName] & \fundData[InsiderTransactions][5][transactionDate] & \fundData[InsiderTransactions][5][transactionAmount] & \fundData[InsiderTransactions][5][transactionPrice] & \fundData[InsiderTransactions][5][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][6][ownerName] & \fundData[InsiderTransactions][6][transactionDate] & \fundData[InsiderTransactions][6][transactionAmount] & \fundData[InsiderTransactions][6][transactionPrice] & \fundData[InsiderTransactions][6][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][7][ownerName] & \fundData[InsiderTransactions][7][transactionDate] & \fundData[InsiderTransactions][7][transactionAmount] & \fundData[InsiderTransactions][7][transactionPrice] & \fundData[InsiderTransactions][7][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][8][ownerName] & \fundData[InsiderTransactions][8][transactionDate] & \fundData[InsiderTransactions][8][transactionAmount] & \fundData[InsiderTransactions][8][transactionPrice] & \fundData[InsiderTransactions][8][transactionAcquiredDisposed] \\
+    \fundData[InsiderTransactions][9][ownerName] & \fundData[InsiderTransactions][9][transactionDate] & \fundData[InsiderTransactions][9][transactionAmount] & \fundData[InsiderTransactions][9][transactionPrice] & \fundData[InsiderTransactions][9][transactionAcquiredDisposed] \\
+    \hline
+\end{tabularx}
 
 \subsection{Circle of Competence}
 
@@ -72,7 +125,24 @@ __getLatexTable("Insider Trading","getInsiderTransactions()")
 
 \subsection{Management}
 
-__getLatexTable("Officers","getOfficers()")
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    \multicolumn{2}{|c|}{Officers} \\
+    \hline
+    Title & Name \\
+    \hline
+    \fundData[General][Officers][0][Title] & \fundData[General][Officers][0][Name] \\
+    \fundData[General][Officers][1][Title] & \fundData[General][Officers][1][Name] \\
+    \fundData[General][Officers][2][Title] & \fundData[General][Officers][2][Name] \\
+    \fundData[General][Officers][3][Title] & \fundData[General][Officers][3][Name] \\
+    \fundData[General][Officers][4][Title] & \fundData[General][Officers][4][Name] \\
+    \fundData[General][Officers][5][Title] & \fundData[General][Officers][5][Name] \\
+    \fundData[General][Officers][6][Title] & \fundData[General][Officers][6][Name] \\
+    \fundData[General][Officers][7][Title] & \fundData[General][Officers][7][Name] \\
+    \fundData[General][Officers][8][Title] & \fundData[General][Officers][8][Name] \\
+    \fundData[General][Officers][9][Title] & \fundData[General][Officers][9][Name] \\
+    \hline
+\end{tabularx}
 
 \subsection{Future}
 
@@ -84,13 +154,13 @@ __getLatexTable("Officers","getOfficers()")
  \hline
  \multicolumn{2}{|c|}{Analyst Ratings} \\
  \hline
- Rating       & __getAnalystRating() \\
- Target Price & __getAnalystTargetPrice() \\
- Strong Buy   & __getAnalystStrongBuy() \\
- Buy          & __getAnalystBuy() \\
- Hold         & __getAnalystHold() \\
- Sell         & __getAnalystSell() \\
- Strong Sell  & __getAnalystStrongSell() \\
+    Rating       & \fundData[AnalystRatings][Rating]      \\
+    Target Price & \fundData[AnalystRatings][TargetPrice] \\
+    Strong Buy   & \fundData[AnalystRatings][StrongBuy]   \\
+    Buy          & \fundData[AnalystRatings][Buy]         \\
+    Hold         & \fundData[AnalystRatings][Hold]        \\
+    Sell         & \fundData[AnalystRatings][Sell]        \\
+    Strong Sell  & \fundData[AnalystRatings][StrongSell]  \\
  \hline
 \end{tabularx}
 

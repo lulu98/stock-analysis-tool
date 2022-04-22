@@ -9,11 +9,11 @@ This guarantees a return of at least $\frac{1}{15} = 6.67\%$.\\
  \hline
  \multicolumn{2}{|c|}{Price-to-Earnings Ratio (P/E)}                   \\
  \hline
- Market Price Per Share   & __get50DayMA()                             \\
- Earnings                 & __getNetIncome(__getYear(0))               \\
- Shares                   & __getCommonSharesOutstanding(__getYear(0)) \\
- EPS                      & __getEarningsPerShare(__getYear(0))        \\
- \rowcolor{lightgray} P/E & __priceToEarningsRatio()                   \\
+ Market Price Per Share   & \fundData[Highlights][50DayMA] \\
+ Earnings                 & \fundData[Financials][IncomeStatement][NetIncome][0]               \\
+ Shares                   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][0] \\
+ EPS                      & \fundData[Financials][IncomeStatement][EarningsPerShare][0]        \\
+ \rowcolor{lightgray} P/E & \calcData[Ratios][PriceToEarningsRatio]                   \\
  \hline
 \end{tabularx}
 
@@ -26,11 +26,11 @@ The BVPS is defined as $BVPS = \frac{Equity}{Shares}$.\\
  \hline
  \multicolumn{2}{|c|}{Price-to-Book Ratio (P/B)}                       \\
  \hline
- Market Price Per Share   & __get50DayMA()                             \\
- Equity                   & __getTotalEquity(__getYear(0))             \\
- Shares                   & __getCommonSharesOutstanding(__getYear(0)) \\
- BVPS                     & __getBookValuePerShare(getYear(0))         \\
- \rowcolor{lightgray} P/B & __priceToBookRatio()                       \\
+ Market Price Per Share   & \fundData[Highlights][50DayMA] \\
+ Equity                   & \fundData[Financials][BalanceSheet][TotalEquity][0]             \\
+ Shares                   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][0] \\
+ BVPS                     & \fundData[Financials][BalanceSheet][BookValuePerShare][0]         \\
+ \rowcolor{lightgray} P/B & \calcData[Ratios][PriceToBookRatio]                       \\
  \hline
 \end{tabularx}
 
@@ -67,15 +67,15 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  \multicolumn{2}{|c|}{Base Year Free Cash Flow (BYFCF)} \\
  \hline
- Operating Cash Flow        & __getOperatingCashFlow(__getYear(0))   \\
- CAPEX                      & __getCapitalExpenditures(__getYear(0)) \\
- \rowcolor{lightgray} BYFCF & __getFreeCashFlow(__getYear(0))        \\
+ Operating Cash Flow        & \fundData[Financials][CashFlowStatement][OperatingCashFlow][0]   \\
+ CAPEX                      & \fundData[Financials][CashFlowStatement][CapitalExpenditures][0] \\
+ \rowcolor{lightgray} BYFCF & \fundData[Financials][CashFlowStatement][FreeCashFlow][0]        \\
  \hline
 \end{tabularx}
 	\item Estimate the free cash flow for the next 10 years: $FCF_n = BYFCF \cdot (1+GR)^n$:
 	\begin{itemize}
-        \item BYFCF: __getFreeCashFlow(__getYear(0))
-        \item (Historical) FCF Growth Rate (GR): __fcfHistoricalGrowthRate()
+        \item BYFCF: \fundData[Financials][CashFlowStatement][FreeCashFlow][0]
+        \item (Historical) FCF Growth Rate (GR): \calcData[DCF][FCFHistoricalGrowthRate]
     \end{itemize}
 \begin{tabularx}{\textwidth}{|X|X|X|}
  \hline
@@ -83,7 +83,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 1 & 2 \\
  \hline
- \rowcolor{lightgray} $\text{FCF}_n$ & __fcfFutureEstimate(1) & __fcfFutureEstimate(2) \\
+    \rowcolor{lightgray} $\text{FCF}_n$ & \calcData[DCF][FCFFutureEstimate][1] & \calcData[DCF][FCFFutureEstimate][2] \\
  \hline
 \end{tabularx}\\
 
@@ -91,7 +91,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 3 & 4 \\
  \hline
- \rowcolor{lightgray} $\text{FCF}_n$ & __fcfFutureEstimate(3) & __fcfFutureEstimate(4) \\
+    \rowcolor{lightgray} $\text{FCF}_n$ & \calcData[DCF][FCFFutureEstimate][3] & \calcData[DCF][FCFFutureEstimate][4] \\
  \hline
 \end{tabularx}\\
 
@@ -99,7 +99,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 5 & 6 \\
  \hline
- \rowcolor{lightgray} $\text{FCF}_n$ & __fcfFutureEstimate(5) & __fcfFutureEstimate(6) \\
+    \rowcolor{lightgray} $\text{FCF}_n$ & \calcData[DCF][FCFFutureEstimate][5] & \calcData[DCF][FCFFutureEstimate][6] \\
  \hline
 \end{tabularx}\\
 
@@ -107,7 +107,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 7 & 8 \\
  \hline
- \rowcolor{lightgray} $\text{FCF}_n$ & __fcfFutureEstimate(7) & __fcfFutureEstimate(8) \\
+    \rowcolor{lightgray} $\text{FCF}_n$ & \calcData[DCF][FCFFutureEstimate][7] & \calcData[DCF][FCFFutureEstimate][8] \\
  \hline
 \end{tabularx}\\
 
@@ -115,12 +115,12 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 9 & 10 \\
  \hline
- \rowcolor{lightgray} $\text{FCF}_n$ & __fcfFutureEstimate(9) & __fcfFutureEstimate(10) \\
+    \rowcolor{lightgray} $\text{FCF}_n$ & \calcData[DCF][FCFFutureEstimate][9] & \calcData[DCF][FCFFutureEstimate][10] \\
  \hline
 \end{tabularx}\\
 	\item Estimate the discount factor for the next 10 years: $DF_n = (1+DR)^n$:
 	\begin{itemize}
-        \item Discount Rate (DR): __getDiscountRate()
+        \item Discount Rate (DR): \calcData[DCF][DiscountRate]
     \end{itemize}
 \begin{tabularx}{\textwidth}{|X|X|X|}
  \hline
@@ -128,7 +128,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 1 & 2 \\
  \hline
- \rowcolor{lightgray} $\text{DF}_n$ & __discountFactorEstimate(1) & __discountFactorEstimate(2) \\
+    \rowcolor{lightgray} $\text{DF}_n$ & \calcData[DCF][DiscountFactorEstimate][1] & \calcData[DCF][DiscountFactorEstimate][2] \\
  \hline
 \end{tabularx}\\
 
@@ -136,7 +136,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 3 & 4 \\
  \hline
- \rowcolor{lightgray} $\text{DF}_n$ & __discountFactorEstimate(3) & __discountFactorEstimate(4) \\
+    \rowcolor{lightgray} $\text{DF}_n$ & \calcData[DCF][DiscountFactorEstimate][3] & \calcData[DCF][DiscountFactorEstimate][4] \\
  \hline
 \end{tabularx}\\
 
@@ -144,7 +144,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 5 & 6 \\
  \hline
- \rowcolor{lightgray} $\text{DF}_n$ & __discountFactorEstimate(5) & __discountFactorEstimate(6) \\
+    \rowcolor{lightgray} $\text{DF}_n$ & \calcData[DCF][DiscountFactorEstimate][5] & \calcData[DCF][DiscountFactorEstimate][6] \\
  \hline
 \end{tabularx}\\
 
@@ -152,7 +152,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 7 & 8 \\
  \hline
- \rowcolor{lightgray} $\text{DF}_n$ & __discountFactorEstimate(7) & __discountFactorEstimate(8) \\
+    \rowcolor{lightgray} $\text{DF}_n$ & \calcData[DCF][DiscountFactorEstimate][7] & \calcData[DCF][DiscountFactorEstimate][8] \\
  \hline
 \end{tabularx}\\
 
@@ -160,7 +160,7 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 9 & 10 \\
  \hline
- \rowcolor{lightgray} $\text{DF}_n$ & __discountFactorEstimate(9) & __discountFactorEstimate(10) \\
+    \rowcolor{lightgray} $\text{DF}_n$ & \calcData[DCF][DiscountFactorEstimate][9] & \calcData[DCF][DiscountFactorEstimate][10] \\
  \hline
 \end{tabularx}\\
 	\item Calculate the discounted value of FCF for the next 10 years: $DFCF_n = \frac{FCF_n}{DF_n}$:\\
@@ -170,9 +170,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 1 & 2 \\
  \hline
- $\text{FCF}_n$                       & __fcfFutureEstimate(1)      & __fcfFutureEstimate(2)      \\
- $\text{DF}_n$                        & __discountFactorEstimate(1) & __discountFactorEstimate(2) \\
- \rowcolor{lightgray} $\text{DFCF}_n$ & __discountedCashFlow(1)     & __discountedCashFlow(2)     \\
+ $\text{FCF}_n$                       & \calcData[DCF][FCFFutureEstimate][1]      & \calcData[DCF][FCFFutureEstimate][2]      \\
+ $\text{DF}_n$                        & \calcData[DCF][DiscountFactorEstimate][1] & \calcData[DCF][DiscountFactorEstimate][2] \\
+ \rowcolor{lightgray} $\text{DFCF}_n$ & \calcData[DCF][DiscountedCashFlow][1]     & \calcData[DCF][DiscountedCashFlow][2]     \\
  \hline
 \end{tabularx}\\
 
@@ -180,9 +180,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 3 & 4 \\
  \hline
- $\text{FCF}_n$                       & __fcfFutureEstimate(3)      & __fcfFutureEstimate(4)      \\
- $\text{DF}_n$                        & __discountFactorEstimate(3) & __discountFactorEstimate(4) \\
- \rowcolor{lightgray} $\text{DFCF}_n$ & __discountedCashFlow(3)     & __discountedCashFlow(4)     \\
+ $\text{FCF}_n$                       & \calcData[DCF][FCFFutureEstimate][3]      & \calcData[DCF][FCFFutureEstimate][4]      \\
+ $\text{DF}_n$                        & \calcData[DCF][DiscountFactorEstimate][3] & \calcData[DCF][DiscountFactorEstimate][4] \\
+ \rowcolor{lightgray} $\text{DFCF}_n$ & \calcData[DCF][DiscountedCashFlow][3]     & \calcData[DCF][DiscountedCashFlow][4]     \\
  \hline
 \end{tabularx}\\
 
@@ -190,9 +190,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 5 & 6 \\
  \hline
- $\text{FCF}_n$                       & __fcfFutureEstimate(5)      & __fcfFutureEstimate(6)      \\
- $\text{DF}_n$                        & __discountFactorEstimate(5) & __discountFactorEstimate(6) \\
- \rowcolor{lightgray} $\text{DFCF}_n$ & __discountedCashFlow(5)     & __discountedCashFlow(6)     \\
+ $\text{FCF}_n$                       & \calcData[DCF][FCFFutureEstimate][5]      & \calcData[DCF][FCFFutureEstimate][6]      \\
+ $\text{DF}_n$                        & \calcData[DCF][DiscountFactorEstimate][5] & \calcData[DCF][DiscountFactorEstimate][6] \\
+ \rowcolor{lightgray} $\text{DFCF}_n$ & \calcData[DCF][DiscountedCashFlow][5]     & \calcData[DCF][DiscountedCashFlow][6]     \\
  \hline
 \end{tabularx}\\
 
@@ -200,9 +200,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 7 & 8 \\
  \hline
- $\text{FCF}_n$                       & __fcfFutureEstimate(7)      & __fcfFutureEstimate(8)      \\
- $\text{DF}_n$                        & __discountFactorEstimate(7) & __discountFactorEstimate(8) \\
- \rowcolor{lightgray} $\text{DFCF}_n$ & __discountedCashFlow(7)     & __discountedCashFlow(8)     \\
+ $\text{FCF}_n$                       & \calcData[DCF][FCFFutureEstimate][7]      & \calcData[DCF][FCFFutureEstimate][8]      \\
+ $\text{DF}_n$                        & \calcData[DCF][DiscountFactorEstimate][7] & \calcData[DCF][DiscountFactorEstimate][8] \\
+ \rowcolor{lightgray} $\text{DFCF}_n$ & \calcData[DCF][DiscountedCashFlow][7]     & \calcData[DCF][DiscountedCashFlow][8]     \\
  \hline
 \end{tabularx}\\
 
@@ -210,9 +210,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  n & 9 & 10 \\
  \hline
- $\text{FCF}_n$                       & __fcfFutureEstimate(9)      & __fcfFutureEstimate(10)      \\
- $\text{DF}_n$                        & __discountFactorEstimate(9) & __discountFactorEstimate(10) \\
- \rowcolor{lightgray} $\text{DFCF}_n$ & __discountedCashFlow(9)     & __discountedCashFlow(10)     \\
+ $\text{FCF}_n$                       & \calcData[DCF][FCFFutureEstimate][9]      & \calcData[DCF][FCFFutureEstimate][10]      \\
+ $\text{DF}_n$                        & \calcData[DCF][DiscountFactorEstimate][9] & \calcData[DCF][DiscountFactorEstimate][10] \\
+ \rowcolor{lightgray} $\text{DFCF}_n$ & \calcData[DCF][DiscountedCashFlow][9]     & \calcData[DCF][DiscountedCashFlow][10]     \\
  \hline
 \end{tabularx}\\
 
@@ -223,11 +223,11 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  \multicolumn{2}{|c|}{Discounted Perpetuity FCF (DPCF)} \\
  \hline
- BYFCF                             & __getFreeCashFlow(__getYear(0)) \\
- (Historical) FCF Growth Rate (GR) & __fcfHistoricalGrowthRate() \\
- Long-Term Growth Rate (LGR)       & __getLongTermGrowthRate() \\
- Discount Rate (DR)                & __getDiscountRate() \\
- \rowcolor{lightgray} DPCF         & __discountedPerpetuityCashFlow() \\
+ BYFCF                             & \fundData[Financials][CashFlowStatement][FreeCashFlow][0] \\
+ (Historical) FCF Growth Rate (GR) & \calcData[DCF][FCFHistoricalGrowthRate] \\
+ Long-Term Growth Rate (LGR)       & \calcData[DCF][LongTermGrowthRate] \\
+ Discount Rate (DR)                & \calcData[DCF][DiscountRate] \\
+ \rowcolor{lightgray} DPCF         & \calcData[DCF][DiscountedPerpetuityCashFlow] \\
  \hline
 \end{tabularx}\\
 	\item Calculate the intrinsic value: $\text{Intrinsic Value} = (\sum_{i=1}^n DFCF_n) + DPCF$:\\\\
@@ -235,9 +235,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  \multicolumn{2}{|c|}{Intrinsic Value} \\
  \hline
- $\sum_{i=1}^n DFCF_n$                & __sumDiscountedCashFlow() \\
- DPCF                                 & __discountedPerpetuityCashFlow() \\
- \rowcolor{lightgray} Intrinsic Value & __getIntrinsicValue() \\
+ $\sum_{i=1}^n DFCF_n$                & \calcData[DCF][SumDiscountedCashFlow] \\
+ DPCF                                 & \calcData[DCF][DiscountedPerpetuityCashFlow] \\
+ \rowcolor{lightgray} Intrinsic Value & \calcData[DCF][IntrinsicValue] \\
  \hline
 \end{tabularx}\\
 	\item Calculate the $\text{Intrinsic Value Per Share} = \frac{\text{Intrinsic Value}}{\text{Common Shares Outstanding}}$:\\\\
@@ -245,9 +245,9 @@ Discounted Cash Flow (DCF) Analysis:
  \hline
  \multicolumn{2}{|c|}{Intrinsic Value Per Share} \\
  \hline
- Intrinsic Value                                & __getIntrinsicValue() \\
- Common Shares Outstanding                      & __getCommonSharesOutstanding(__getYear(0)) \\
- \rowcolor{lightgray} Intrinsic Value Per Share & __getIntrinsicValuePerShare() \\
+ Intrinsic Value                                & \calcData[DCF][IntrinsicValue] \\
+ Common Shares Outstanding                      & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][0] \\
+ \rowcolor{lightgray} Intrinsic Value Per Share & \calcData[DCF][IntrinsicValuePerShare] \\
  \hline
 \end{tabularx}
 \end{enumerate}
@@ -261,7 +261,7 @@ price goes below half of the intrinsic value per share, this is a buy signal.\\
  \hline
  \multicolumn{2}{|c|}{Margin of Safety (MOS)} \\
  \hline
- Intrinsic Value Per Share & __getIntrinsicValuePerShare() \\
- \rowcolor{lightgray} MOS  & __getMarginOfSafety() \\
+ Intrinsic Value Per Share & \calcData[DCF][IntrinsicValuePerShare] \\
+ \rowcolor{lightgray} MOS  & \calcData[DCF][MarginOfSafety] \\
  \hline
 \end{tabularx}

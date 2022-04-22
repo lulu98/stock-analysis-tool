@@ -22,41 +22,41 @@ The Return-On-Invested-Capital (ROIC) is defined as: $\text{ROIC} = \frac{\text{
  \hline
  \multicolumn{4}{|c|}{Return-on-Invested-Capital (ROIC)} \\
  \hline
- Year                      & __getYear(-11)                            & __getYear(-10)                            & __getYear(-9)                            \\
+ Year                      & \fundData[Years][-11]                            & \fundData[Years][-10]                            & \fundData[Years][-9]                            \\
  \hline
- Net Income                & __getNetIncome(__getYear(-11))            & __getNetIncome(__getYear(-10))            & __getNetIncome(__getYear(-9))            \\
- Invested Capital          & __getInvestedCapital(__getYear(-11))      & __getInvestedCapital(__getYear(-10))      & __getInvestedCapital(__getYear(-9))      \\
- \rowcolor{lightgray} ROIC & __returnOnInvestedCapital(__getYear(-11)) & __returnOnInvestedCapital(__getYear(-10)) & __returnOnInvestedCapital(__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                      & __getYear(-8)                            & __getYear(-7)                            & __getYear(-6)                            \\
- \hline
- Net Income                & __getNetIncome(__getYear(-8))            & __getNetIncome(__getYear(-7))            & __getNetIncome(__getYear(-6))            \\
- Invested Capital          & __getInvestedCapital(__getYear(-8))      & __getInvestedCapital(__getYear(-7))      & __getInvestedCapital(__getYear(-6))      \\
- \rowcolor{lightgray} ROIC & __returnOnInvestedCapital(__getYear(-8)) & __returnOnInvestedCapital(__getYear(-7)) & __returnOnInvestedCapital(__getYear(-6)) \\
+ Net Income                & \fundData[Financials][IncomeStatement][NetIncome][-11]            & \fundData[Financials][IncomeStatement][NetIncome][-10]            & \fundData[Financials][IncomeStatement][NetIncome][-9]            \\
+ Invested Capital          & \fundData[Financials][BalanceSheet][InvestedCapital][-11]      & \fundData[Financials][BalanceSheet][InvestedCapital][-10]      & \fundData[Financials][BalanceSheet][InvestedCapital][-9]      \\
+ \rowcolor{lightgray} ROIC & \calcData[Ratios][ReturnOnInvestedCapital][-11] & \calcData[Ratios][ReturnOnInvestedCapital][-10] & \calcData[Ratios][ReturnOnInvestedCapital][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-5)                            & __getYear(-4)                            & __getYear(-3)                            \\
+ Year                      & \fundData[Years][-8]                            & \fundData[Years][-7]                            & \fundData[Years][-6]                            \\
  \hline
- Net Income                & __getNetIncome(__getYear(-5))            & __getNetIncome(__getYear(-4))            & __getNetIncome(__getYear(-3))            \\
- Invested Capital          & __getInvestedCapital(__getYear(-5))      & __getInvestedCapital(__getYear(-4))      & __getInvestedCapital(__getYear(-3))      \\
- \rowcolor{lightgray} ROIC & __returnOnInvestedCapital(__getYear(-5)) & __returnOnInvestedCapital(__getYear(-4)) & __returnOnInvestedCapital(__getYear(-3)) \\
+ Net Income                & \fundData[Financials][IncomeStatement][NetIncome][-8]            & \fundData[Financials][IncomeStatement][NetIncome][-7]            & \fundData[Financials][IncomeStatement][NetIncome][-6]            \\
+ Invested Capital          & \fundData[Financials][BalanceSheet][InvestedCapital][-8]      & \fundData[Financials][BalanceSheet][InvestedCapital][-7]      & \fundData[Financials][BalanceSheet][InvestedCapital][-6]      \\
+ \rowcolor{lightgray} ROIC & \calcData[Ratios][ReturnOnInvestedCapital][-8] & \calcData[Ratios][ReturnOnInvestedCapital][-7] & \calcData[Ratios][ReturnOnInvestedCapital][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                      & __getYear(-2)                            & __getYear(-1)                            & __getYear(0)                            \\
+ Year                      & \fundData[Years][-5]                            & \fundData[Years][-4]                            & \fundData[Years][-3]                            \\
  \hline
- Net Income                & __getNetIncome(__getYear(-2))            & __getNetIncome(__getYear(-1))            & __getNetIncome(__getYear(0))            \\
- Invested Capital          & __getInvestedCapital(__getYear(-2))      & __getInvestedCapital(__getYear(-1))      & __getInvestedCapital(__getYear(0))      \\
- \rowcolor{lightgray} ROIC & __returnOnInvestedCapital(__getYear(-2)) & __returnOnInvestedCapital(__getYear(-1)) & __returnOnInvestedCapital(__getYear(0)) \\
+ Net Income                & \fundData[Financials][IncomeStatement][NetIncome][-5]            & \fundData[Financials][IncomeStatement][NetIncome][-4]            & \fundData[Financials][IncomeStatement][NetIncome][-3]            \\
+ Invested Capital          & \fundData[Financials][BalanceSheet][InvestedCapital][-5]      & \fundData[Financials][BalanceSheet][InvestedCapital][-4]      & \fundData[Financials][BalanceSheet][InvestedCapital][-3]      \\
+ \rowcolor{lightgray} ROIC & \calcData[Ratios][ReturnOnInvestedCapital][-5] & \calcData[Ratios][ReturnOnInvestedCapital][-4] & \calcData[Ratios][ReturnOnInvestedCapital][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                      & \fundData[Years][-2]                            & \fundData[Years][-1]                            & \fundData[Years][0]                            \\
+ \hline
+ Net Income                & \fundData[Financials][IncomeStatement][NetIncome][-2]            & \fundData[Financials][IncomeStatement][NetIncome][-1]            & \fundData[Financials][IncomeStatement][NetIncome][0]            \\
+ Invested Capital          & \fundData[Financials][BalanceSheet][InvestedCapital][-2]      & \fundData[Financials][BalanceSheet][InvestedCapital][-1]      & \fundData[Financials][BalanceSheet][InvestedCapital][0]      \\
+ \rowcolor{lightgray} ROIC & \calcData[Ratios][ReturnOnInvestedCapital][-2] & \calcData[Ratios][ReturnOnInvestedCapital][-1] & \calcData[Ratios][ReturnOnInvestedCapital][0] \\
  \hline
 \end{tabularx}
 
@@ -68,37 +68,37 @@ The Equity Growth Rates are:\\
  \hline
  \multicolumn{4}{|c|}{Equity Growth Rates} \\
  \hline
- Year                                    & __getYear(-11)                                    & __getYear(-10)                                    & __getYear(-9)                                    \\
+ Year                                    & \fundData[Years][-11]                                    & \fundData[Years][-10]                                    & \fundData[Years][-9]                                    \\
  \hline
- Equity                                  & __getTotalEquity(__getYear(-11))                  & __getTotalEquity(__getYear(-10))                  & __getTotalEquity(__getYear(-9))                  \\
- \rowcolor{lightgray} Equity Growth Rate & __equityGrowthRate(__getYear(-12),__getYear(-11)) & __equityGrowthRate(__getYear(-11),__getYear(-10)) & __equityGrowthRate(__getYear(-10),__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                                    & __getYear(-8)                                   & __getYear(-7)                                   & __getYear(-6)                                   \\
- \hline
- Equity                                  & __getTotalEquity(__getYear(-8))                 & __getTotalEquity(__getYear(-7))                 & __getTotalEquity(__getYear(-6))                 \\
- \rowcolor{lightgray} Equity Growth Rate & __equityGrowthRate(__getYear(-9),__getYear(-8)) & __equityGrowthRate(__getYear(-8),__getYear(-7)) & __equityGrowthRate(__getYear(-7),__getYear(-6)) \\
+ Equity                                  & \fundData[Financials][BalanceSheet][TotalEquity][-11]                  & \fundData[Financials][BalanceSheet][TotalEquity][-10]                  & \fundData[Financials][BalanceSheet][TotalEquity][-9]                  \\
+ \rowcolor{lightgray} Equity Growth Rate & \calcData[GrowthRates][EquityGrowthRate][-11] & \calcData[GrowthRates][EquityGrowthRate][-10] & \calcData[GrowthRates][EquityGrowthRate][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                    & __getYear(-5)                                   & __getYear(-4)                                   & __getYear(-3)                                   \\
+ Year                                    & \fundData[Years][-8]                                   & \fundData[Years][-7]                                   & \fundData[Years][-6]                                   \\
  \hline
- Equity                                  & __getTotalEquity(__getYear(-5))                 & __getTotalEquity(__getYear(-4))                 & __getTotalEquity(__getYear(-3))                 \\
- \rowcolor{lightgray} Equity Growth Rate & __equityGrowthRate(__getYear(-6),__getYear(-5)) & __equityGrowthRate(__getYear(-5),__getYear(-4)) & __equityGrowthRate(__getYear(-4),__getYear(-3)) \\
+ Equity                                  & \fundData[Financials][BalanceSheet][TotalEquity][-8]                 & \fundData[Financials][BalanceSheet][TotalEquity][-7]                 & \fundData[Financials][BalanceSheet][TotalEquity][-6]                 \\
+ \rowcolor{lightgray} Equity Growth Rate & \calcData[GrowthRates][EquityGrowthRate][-8] & \calcData[GrowthRates][EquityGrowthRate][-7] & \calcData[GrowthRates][EquityGrowthRate][-6] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                    & __getYear(-2)                                   & __getYear(-1)                                   & __getYear(0)                                   \\
+ Year                                    & \fundData[Years][-5]                                   & \fundData[Years][-4]                                   & \fundData[Years][-3]                                   \\
  \hline
- Equity                                  & __getTotalEquity(__getYear(-2))                 & __getTotalEquity(__getYear(-1))                 & __getTotalEquity(__getYear(0))                 \\
- \rowcolor{lightgray} Equity Growth Rate & __equityGrowthRate(__getYear(-3),__getYear(-2)) & __equityGrowthRate(__getYear(-2),__getYear(-1)) & __equityGrowthRate(__getYear(-1),__getYear(0)) \\
+ Equity                                  & \fundData[Financials][BalanceSheet][TotalEquity][-5]                 & \fundData[Financials][BalanceSheet][TotalEquity][-4]                 & \fundData[Financials][BalanceSheet][TotalEquity][-3]                 \\
+ \rowcolor{lightgray} Equity Growth Rate & \calcData[GrowthRates][EquityGrowthRate][-5] & \calcData[GrowthRates][EquityGrowthRate][-4] & \calcData[GrowthRates][EquityGrowthRate][-3] \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                                    & \fundData[Years][-2]                                   & \fundData[Years][-1]                                   & \fundData[Years][0]                                   \\
+ \hline
+ Equity                                  & \fundData[Financials][BalanceSheet][TotalEquity][-2]                 & \fundData[Financials][BalanceSheet][TotalEquity][-1]                 & \fundData[Financials][BalanceSheet][TotalEquity][0]                 \\
+ \rowcolor{lightgray} Equity Growth Rate & \calcData[GrowthRates][EquityGrowthRate][-2] & \calcData[GrowthRates][EquityGrowthRate][-1] & \calcData[GrowthRates][EquityGrowthRate][0] \\
  \hline
 \end{tabularx}\\
 
@@ -108,10 +108,10 @@ The Equity Growth Rates are:\\
  \hline
  n & Growth Rate\\
  \hline
- 1-year & __equityGrowthRate(__getYear(-1),__getYear(0)) \\
- 3-year & __equityGrowthRate(__getYear(-3),__getYear(0)) \\
- 5-year & __equityGrowthRate(__getYear(-5),__getYear(0)) \\
- 9-year & __equityGrowthRate(__getYear(-9),__getYear(0)) \\
+    1-year & \calcData[GrowthRates][EquityGrowthRate][1-year] \\
+    3-year & \calcData[GrowthRates][EquityGrowthRate][3-year] \\
+    5-year & \calcData[GrowthRates][EquityGrowthRate][5-year] \\
+    9-year & \calcData[GrowthRates][EquityGrowthRate][9-year] \\
  \hline
 \end{tabularx}
 
@@ -124,45 +124,45 @@ The EPS Growth Rate is given as:\\
  \hline
  \multicolumn{4}{|c|}{Earnings-per-Share (EPS) Growth Rate} \\
  \hline
- Year                                 & __getYear(-11)                                 & __getYear(-10)                                 & __getYear(-9)                                 \\
+ Year                                 & \fundData[Years][-11]                                 & \fundData[Years][-10]                                 & \fundData[Years][-9]                                 \\
  \hline
- Earnings                             & __getNetIncome(__getYear(-11))                 & __getNetIncome(__getYear(-10))                 & __getNetIncome(__getYear(-9))                 \\
- Shares                               & __getCommonSharesOutstanding(__getYear(-11))   & __getCommonSharesOutstanding(__getYear(-10))   & __getCommonSharesOutstanding(__getYear(-9))   \\
- EPS                                  & __getEarningsPerShare(__getYear(-11))          & __getEarningsPerShare(__getYear(-10))          & __getEarningsPerShare(__getYear(-9))          \\
- \rowcolor{lightgray} EPS Growth Rate & __epsGrowthRate(__getYear(-12),__getYear(-11)) & __epsGrowthRate(__getYear(-11),__getYear(-10)) & __epsGrowthRate(__getYear(-10),__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                                 & __getYear(-8)                                 & __getYear(-7)                                 & __getYear(-6)                                 \\
- \hline
- Earnings                             & __getNetIncome(__getYear(-8))                 & __getNetIncome(__getYear(-7))                 & __getNetIncome(__getYear(-6))                 \\
- Shares                               & __getCommonSharesOutstanding(__getYear(-8))   & __getCommonSharesOutstanding(__getYear(-7))   & __getCommonSharesOutstanding(__getYear(-6))   \\
- EPS                                  & __getEarningsPerShare(__getYear(-8))          & __getEarningsPerShare(__getYear(-7))          & __getEarningsPerShare(__getYear(-6))          \\
- \rowcolor{lightgray} EPS Growth Rate & __epsGrowthRate(__getYear(-9),__getYear(-8))  & __epsGrowthRate(__getYear(-8),__getYear(-7))  & __epsGrowthRate(__getYear(-7),__getYear(-6))  \\
+ Earnings                             & \fundData[Financials][IncomeStatement][NetIncome][-11]                 & \fundData[Financials][IncomeStatement][NetIncome][-10]                 & \fundData[Financials][IncomeStatement][NetIncome][-9]                 \\
+ Shares                               & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-11]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-10]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-9]   \\
+ EPS                                  & \fundData[Financials][IncomeStatement][EarningsPerShare][-11]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-10]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-9]          \\
+ \rowcolor{lightgray} EPS Growth Rate & \calcData[GrowthRates][EPSGrowthRate][-11] & \calcData[GrowthRates][EPSGrowthRate][-10] & \calcData[GrowthRates][EPSGrowthRate][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                 & __getYear(-5)                                 & __getYear(-4)                                 & __getYear(-3)                                 \\
+ Year                                 & \fundData[Years][-8]                                 & \fundData[Years][-7]                                 & \fundData[Years][-6]                                 \\
  \hline
- Earnings                             & __getNetIncome(__getYear(-5))                 & __getNetIncome(__getYear(-4))                 & __getNetIncome(__getYear(-3))                 \\
- Shares                               & __getCommonSharesOutstanding(__getYear(-5))   & __getCommonSharesOutstanding(__getYear(-4))   & __getCommonSharesOutstanding(__getYear(-3))   \\
- EPS                                  & __getEarningsPerShare(__getYear(-5))          & __getEarningsPerShare(__getYear(-4))          & __getEarningsPerShare(__getYear(-3))          \\
- \rowcolor{lightgray} EPS Growth Rate & __epsGrowthRate(__getYear(-6),__getYear(-5))  & __epsGrowthRate(__getYear(-5),__getYear(-4))  & __epsGrowthRate(__getYear(-4),__getYear(-3))  \\
+ Earnings                             & \fundData[Financials][IncomeStatement][NetIncome][-8]                 & \fundData[Financials][IncomeStatement][NetIncome][-7]                 & \fundData[Financials][IncomeStatement][NetIncome][-6]                 \\
+ Shares                               & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-8]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-7]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-6]   \\
+ EPS                                  & \fundData[Financials][IncomeStatement][EarningsPerShare][-8]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-7]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-6]          \\
+ \rowcolor{lightgray} EPS Growth Rate & \calcData[GrowthRates][EPSGrowthRate][-8]  & \calcData[GrowthRates][EPSGrowthRate][-7]  & \calcData[GrowthRates][EPSGrowthRate][-6]  \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                 & __getYear(-2)                                 & __getYear(-1)                                 & __getYear(0)                                 \\
+ Year                                 & \fundData[Years][-5]                                 & \fundData[Years][-4]                                 & \fundData[Years][-3]                                 \\
  \hline
- Earnings                             & __getNetIncome(__getYear(-2))                 & __getNetIncome(__getYear(-1))                 & __getNetIncome(__getYear(0))                 \\
- Shares                               & __getCommonSharesOutstanding(__getYear(-2))   & __getCommonSharesOutstanding(__getYear(-1))   & __getCommonSharesOutstanding(__getYear(0))   \\
- EPS                                  & __getEarningsPerShare(__getYear(-2))          & __getEarningsPerShare(__getYear(-1))          & __getEarningsPerShare(__getYear(0))          \\
- \rowcolor{lightgray} EPS Growth Rate & __epsGrowthRate(__getYear(-3),__getYear(-2))  & __epsGrowthRate(__getYear(-2),__getYear(-1))  & __epsGrowthRate(__getYear(-1),__getYear(0))  \\
+ Earnings                             & \fundData[Financials][IncomeStatement][NetIncome][-5]                 & \fundData[Financials][IncomeStatement][NetIncome][-4]                 & \fundData[Financials][IncomeStatement][NetIncome][-3]                 \\
+ Shares                               & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-5]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-4]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-3]   \\
+ EPS                                  & \fundData[Financials][IncomeStatement][EarningsPerShare][-5]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-4]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-3]          \\
+ \rowcolor{lightgray} EPS Growth Rate & \calcData[GrowthRates][EPSGrowthRate][-5]  & \calcData[GrowthRates][EPSGrowthRate][-4]  & \calcData[GrowthRates][EPSGrowthRate][-3]  \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                                 & \fundData[Years][-2]                                 & \fundData[Years][-1]                                 & \fundData[Years][0]                                 \\
+ \hline
+ Earnings                             & \fundData[Financials][IncomeStatement][NetIncome][-2]                 & \fundData[Financials][IncomeStatement][NetIncome][-1]                 & \fundData[Financials][IncomeStatement][NetIncome][0]                 \\
+ Shares                               & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-2]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][-1]   & \fundData[Financials][BalanceSheet][CommonSharesOutstanding][0]   \\
+ EPS                                  & \fundData[Financials][IncomeStatement][EarningsPerShare][-2]          & \fundData[Financials][IncomeStatement][EarningsPerShare][-1]          & \fundData[Financials][IncomeStatement][EarningsPerShare][0]          \\
+ \rowcolor{lightgray} EPS Growth Rate & \calcData[GrowthRates][EPSGrowthRate][-2]  & \calcData[GrowthRates][EPSGrowthRate][-1]  & \calcData[GrowthRates][EPSGrowthRate][0]  \\
  \hline
 \end{tabularx}\\
 
@@ -172,10 +172,10 @@ The EPS Growth Rate is given as:\\
  \hline
  n & Growth Rate\\
  \hline
- 1-year & __epsGrowthRate(__getYear(-1),__getYear(0)) \\
- 3-year & __epsGrowthRate(__getYear(-3),__getYear(0)) \\
- 5-year & __epsGrowthRate(__getYear(-5),__getYear(0)) \\
- 9-year & __epsGrowthRate(__getYear(-9),__getYear(0)) \\
+ 1-year & \calcData[GrowthRates][EPSGrowthRate][1-year] \\
+ 3-year & \calcData[GrowthRates][EPSGrowthRate][3-year] \\
+ 5-year & \calcData[GrowthRates][EPSGrowthRate][5-year] \\
+ 9-year & \calcData[GrowthRates][EPSGrowthRate][9-year] \\
  \hline
 \end{tabularx}
 
@@ -187,37 +187,37 @@ The Sales/Revenue Growth Rate is given as:\\
  \hline
  \multicolumn{4}{|c|}{Sales/Revenue Growth Rate} \\
  \hline
- Year                                           & __getYear(-11)                                     & __getYear(-10)                                     & __getYear(-9)                                     \\
+ Year                                           & \fundData[Years][-11]                                     & \fundData[Years][-10]                                     & \fundData[Years][-9]                                     \\
  \hline
- Sales/Revenue                                  & __getRevenue(__getYear(-11))                       & __getRevenue(__getYear(-10))                       & __getRevenue(__getYear(-9))                       \\
- \rowcolor{lightgray} Sales/Revenue Growth Rate & __revenueGrowthRate(__getYear(-12),__getYear(-11)) & __revenueGrowthRate(__getYear(-11),__getYear(-10)) & __revenueGrowthRate(__getYear(-10),__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                                           & __getYear(-8)                                     & __getYear(-7)                                     & __getYear(-6)                                     \\
- \hline
- Sales/Revenue                                  & __getRevenue(__getYear(-8))                       & __getRevenue(__getYear(-7))                       & __getRevenue(__getYear(-6))                       \\
- \rowcolor{lightgray} Sales/Revenue Growth Rate & __revenueGrowthRate(__getYear(-9),__getYear(-8))  & __revenueGrowthRate(__getYear(-8),__getYear(-7))  & __revenueGrowthRate(__getYear(-7),__getYear(-6))  \\
+ Sales/Revenue                                  & \fundData[Financials][IncomeStatement][Revenue][-11]                       & \fundData[Financials][IncomeStatement][Revenue][-10]                       & \fundData[Financials][IncomeStatement][Revenue][-9]                       \\
+ \rowcolor{lightgray} Sales/Revenue Growth Rate & \calcData[GrowthRates][RevenueGrowthRate][-11] & \calcData[GrowthRates][RevenueGrowthRate][-10] & \calcData[GrowthRates][RevenueGrowthRate][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                           & __getYear(-5)                                     & __getYear(-4)                                     & __getYear(-3)                                     \\
+ Year                                           & \fundData[Years][-8]                                     & \fundData[Years][-7]                                     & \fundData[Years][-6]                                     \\
  \hline
- Sales/Revenue                                  & __getRevenue(__getYear(-5))                       & __getRevenue(__getYear(-4))                       & __getRevenue(__getYear(-3))                       \\
- \rowcolor{lightgray} Sales/Revenue Growth Rate & __revenueGrowthRate(__getYear(-6),__getYear(-5))  & __revenueGrowthRate(__getYear(-5),__getYear(-4))  & __revenueGrowthRate(__getYear(-4),__getYear(-3))  \\
+ Sales/Revenue                                  & \fundData[Financials][IncomeStatement][Revenue][-8]                       & \fundData[Financials][IncomeStatement][Revenue][-7]                       & \fundData[Financials][IncomeStatement][Revenue][-6]                       \\
+ \rowcolor{lightgray} Sales/Revenue Growth Rate & \calcData[GrowthRates][RevenueGrowthRate][-8]  & \calcData[GrowthRates][RevenueGrowthRate][-7]  & \calcData[GrowthRates][RevenueGrowthRate][-6]  \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                           & __getYear(-2)                                     & __getYear(-1)                                     & __getYear(0)                                     \\
+ Year                                           & \fundData[Years][-5]                                     & \fundData[Years][-4]                                     & \fundData[Years][-3]                                     \\
  \hline
- Sales/Revenue                                  & __getRevenue(__getYear(-2))                       & __getRevenue(__getYear(-1))                       & __getRevenue(__getYear(0))                       \\
- \rowcolor{lightgray} Sales/Revenue Growth Rate & __revenueGrowthRate(__getYear(-3),__getYear(-2))  & __revenueGrowthRate(__getYear(-2),__getYear(-1))  & __revenueGrowthRate(__getYear(-1),__getYear(0))  \\
+ Sales/Revenue                                  & \fundData[Financials][IncomeStatement][Revenue][-5]                       & \fundData[Financials][IncomeStatement][Revenue][-4]                       & \fundData[Financials][IncomeStatement][Revenue][-3]                       \\
+ \rowcolor{lightgray} Sales/Revenue Growth Rate & \calcData[GrowthRates][RevenueGrowthRate][-5]  & \calcData[GrowthRates][RevenueGrowthRate][-4]  & \calcData[GrowthRates][RevenueGrowthRate][-3]  \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                                           & \fundData[Years][-2]                                     & \fundData[Years][-1]                                     & \fundData[Years][0]                                     \\
+ \hline
+ Sales/Revenue                                  & \fundData[Financials][IncomeStatement][Revenue][-2]                       & \fundData[Financials][IncomeStatement][Revenue][-1]                       & \fundData[Financials][IncomeStatement][Revenue][0]                       \\
+ \rowcolor{lightgray} Sales/Revenue Growth Rate & \calcData[GrowthRates][RevenueGrowthRate][-2]  & \calcData[GrowthRates][RevenueGrowthRate][-1]  & \calcData[GrowthRates][RevenueGrowthRate][0]  \\
  \hline
 \end{tabularx}\\
 
@@ -227,10 +227,10 @@ The Sales/Revenue Growth Rate is given as:\\
  \hline
  n & Growth Rate\\
  \hline
- 1-year & __revenueGrowthRate(__getYear(-1),__getYear(0)) \\
- 3-year & __revenueGrowthRate(__getYear(-3),__getYear(0)) \\
- 5-year & __revenueGrowthRate(__getYear(-5),__getYear(0)) \\
- 9-year & __revenueGrowthRate(__getYear(-9),__getYear(0)) \\
+ 1-year & \calcData[GrowthRates][RevenueGrowthRate][1-year] \\
+ 3-year & \calcData[GrowthRates][RevenueGrowthRate][3-year] \\
+ 5-year & \calcData[GrowthRates][RevenueGrowthRate][5-year] \\
+ 9-year & \calcData[GrowthRates][RevenueGrowthRate][9-year] \\
  \hline
 \end{tabularx}
 
@@ -243,45 +243,45 @@ The FCF Growth Rate is given as:\\
  \hline
  \multicolumn{4}{|c|}{Free-Cash-Flow (FCF) Growth Rate} \\
  \hline
- Year                                 & __getYear(-11)                                 & __getYear(-10)                                 & __getYear(-9)                                 \\
+ Year                                 & \fundData[Years][-11]                                 & \fundData[Years][-10]                                 & \fundData[Years][-9]                                 \\
  \hline
- Operating Cash Flow                  & __getOperatingCashFlow(__getYear(-11))         & __getOperatingCashFlow(__getYear(-10))         & __getOperatingCashFlow(__getYear(-9))         \\
- CAPEX                                & __getCapitalExpenditures(__getYear(-11))       & __getCapitalExpenditures(__getYear(-10))       & __getCapitalExpenditures(__getYear(-9))       \\
- FCF                                  & __getFreeCashFlow(__getYear(-11))              & __getFreeCashFlow(__getYear(-10))              & __getFreeCashFlow(__getYear(-9))              \\
- \rowcolor{lightgray} FCF Growth Rate & __fcfGrowthRate(__getYear(-12),__getYear(-11)) & __fcfGrowthRate(__getYear(-11),__getYear(-10)) & __fcfGrowthRate(__getYear(-10),__getYear(-9)) \\
- \hline
-\end{tabularx}\\
-
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
- \hline
- Year                                 & __getYear(-8)                                 & __getYear(-7)                                 & __getYear(-6)                                 \\
- \hline
- Operating Cash Flow                  & __getOperatingCashFlow(__getYear(-8))         & __getOperatingCashFlow(__getYear(-7))         & __getOperatingCashFlow(__getYear(-6))         \\
- CAPEX                                & __getCapitalExpenditures(__getYear(-8))       & __getCapitalExpenditures(__getYear(-7))       & __getCapitalExpenditures(__getYear(-6))       \\
- FCF                                  & __getFreeCashFlow(__getYear(-8))              & __getFreeCashFlow(__getYear(-7))              & __getFreeCashFlow(__getYear(-6))              \\
- \rowcolor{lightgray} FCF Growth Rate & __fcfGrowthRate(__getYear(-9),__getYear(-8))  & __fcfGrowthRate(__getYear(-8),__getYear(-7))  & __fcfGrowthRate(__getYear(-7),__getYear(-6))  \\
+ Operating Cash Flow                  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-11]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-10]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-9]         \\
+ CAPEX                                & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-11]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-10]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-9]       \\
+ FCF                                  & \fundData[Financials][CashFlowStatement][FreeCashFlow][-11]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-10]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-9]              \\
+ \rowcolor{lightgray} FCF Growth Rate & \calcData[GrowthRates][FCFGrowthRate][-11] & \calcData[GrowthRates][FCFGrowthRate][-10] & \calcData[GrowthRates][FCFGrowthRate][-9] \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                 & __getYear(-5)                                 & __getYear(-4)                                 & __getYear(-3)                                 \\
+ Year                                 & \fundData[Years][-8]                                 & \fundData[Years][-7]                                 & \fundData[Years][-6]                                 \\
  \hline
- Operating Cash Flow                  & __getOperatingCashFlow(__getYear(-5))         & __getOperatingCashFlow(__getYear(-4))         & __getOperatingCashFlow(__getYear(-3))         \\
- CAPEX                                & __getCapitalExpenditures(__getYear(-5))       & __getCapitalExpenditures(__getYear(-4))       & __getCapitalExpenditures(__getYear(-3))       \\
- FCF                                  & __getFreeCashFlow(__getYear(-5))              & __getFreeCashFlow(__getYear(-4))              & __getFreeCashFlow(__getYear(-3))              \\
- \rowcolor{lightgray} FCF Growth Rate & __fcfGrowthRate(__getYear(-6),__getYear(-5))  & __fcfGrowthRate(__getYear(-5),__getYear(-4))  & __fcfGrowthRate(__getYear(-4),__getYear(-3))  \\
+ Operating Cash Flow                  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-8]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-7]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-6]         \\
+ CAPEX                                & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-8]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-7]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-6]       \\
+ FCF                                  & \fundData[Financials][CashFlowStatement][FreeCashFlow][-8]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-7]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-6]              \\
+ \rowcolor{lightgray} FCF Growth Rate & \calcData[GrowthRates][FCFGrowthRate][-8]  & \calcData[GrowthRates][FCFGrowthRate][-7]  & \calcData[GrowthRates][FCFGrowthRate][-6]  \\
  \hline
 \end{tabularx}\\
 
 \begin{tabularx}{\textwidth}{|X|X|X|X|}
  \hline
- Year                                 & __getYear(-2)                                 & __getYear(-1)                                 & __getYear(0)                                 \\
+ Year                                 & \fundData[Years][-5]                                 & \fundData[Years][-4]                                 & \fundData[Years][-3]                                 \\
  \hline
- Operating Cash Flow                  & __getOperatingCashFlow(__getYear(-2))         & __getOperatingCashFlow(__getYear(-1))         & __getOperatingCashFlow(__getYear(0))         \\
- CAPEX                                & __getCapitalExpenditures(__getYear(-2))       & __getCapitalExpenditures(__getYear(-1))       & __getCapitalExpenditures(__getYear(0))       \\
- FCF                                  & __getFreeCashFlow(__getYear(-2))              & __getFreeCashFlow(__getYear(-1))              & __getFreeCashFlow(__getYear(0))              \\
- \rowcolor{lightgray} FCF Growth Rate & __fcfGrowthRate(__getYear(-3),__getYear(-2))  & __fcfGrowthRate(__getYear(-2),__getYear(-1))  & __fcfGrowthRate(__getYear(-1),__getYear(0))  \\
+ Operating Cash Flow                  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-5]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-4]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-3]         \\
+ CAPEX                                & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-5]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-4]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-3]       \\
+ FCF                                  & \fundData[Financials][CashFlowStatement][FreeCashFlow][-5]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-4]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-3]              \\
+ \rowcolor{lightgray} FCF Growth Rate & \calcData[GrowthRates][FCFGrowthRate][-5]  & \calcData[GrowthRates][FCFGrowthRate][-4]  & \calcData[GrowthRates][FCFGrowthRate][-3]  \\
+ \hline
+\end{tabularx}\\
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+ \hline
+ Year                                 & \fundData[Years][-2]                                 & \fundData[Years][-1]                                 & \fundData[Years][0]                                 \\
+ \hline
+ Operating Cash Flow                  & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-2]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][-1]         & \fundData[Financials][CashFlowStatement][OperatingCashFlow][0]         \\
+ CAPEX                                & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-2]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][-1]       & \fundData[Financials][CashFlowStatement][CapitalExpenditures][0]       \\
+ FCF                                  & \fundData[Financials][CashFlowStatement][FreeCashFlow][-2]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][-1]              & \fundData[Financials][CashFlowStatement][FreeCashFlow][0]              \\
+ \rowcolor{lightgray} FCF Growth Rate & \calcData[GrowthRates][FCFGrowthRate][-2]  & \calcData[GrowthRates][FCFGrowthRate][-1]  & \calcData[GrowthRates][FCFGrowthRate][0]  \\
  \hline
 \end{tabularx}\\
 
@@ -291,9 +291,9 @@ The FCF Growth Rate is given as:\\
  \hline
  n & Growth Rate\\
  \hline
- 1-year & __fcfGrowthRate(__getYear(-1),__getYear(0)) \\
- 3-year & __fcfGrowthRate(__getYear(-3),__getYear(0)) \\
- 5-year & __fcfGrowthRate(__getYear(-5),__getYear(0)) \\
- 9-year & __fcfGrowthRate(__getYear(-9),__getYear(0)) \\
+ 1-year & \calcData[GrowthRates][FCFGrowthRate][1-year] \\
+ 3-year & \calcData[GrowthRates][FCFGrowthRate][3-year] \\
+ 5-year & \calcData[GrowthRates][FCFGrowthRate][5-year] \\
+ 9-year & \calcData[GrowthRates][FCFGrowthRate][9-year] \\
  \hline
 \end{tabularx}
