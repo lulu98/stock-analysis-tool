@@ -20,8 +20,7 @@ from scripts.calculations import *
 
 parser = argparse.ArgumentParser()
 
-# -k APIKEY -i ISIN
-parser.add_argument("-k", "--apikey", required=True, help="API key")
+# -i ISIN
 parser.add_argument("-i", "--isin", required=True, help="ISIN")
 
 args = parser.parse_args()
