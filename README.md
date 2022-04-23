@@ -1,10 +1,64 @@
 # Investing Calculator
 
-## Introduction 
+## Introduction
 
-This system should provide a procedural way to analyse financial data of a 
-company. It should provide a financial analysis. The analysis is integrated into 
-an analysis pipeline.
+When investing in the stock market, most people put their money into a company 
+based on news headlines and gut feelings. In order to gain more confidence in 
+your investments, it is recommended to put a potential company through a thorough
+financial background check and analyse the financial health of the company. This 
+requires going through financial statements of the company and gather as much 
+data as possible. The more data you have collected, the more confident you can 
+be in your investment. Nowadays, this data can be pulled from websites and public 
+APIs on the internet; manually collecting this data can still be tiresome. So 
+why not let a program calculate all the necessary numbers and ratios and put it 
+cleanly in a PDF document all in one place?
+
+This system provides a procedural way to get financial data for a publicly-traded
+company from a web API and create a financial analysis based on the fundamental
+data. This process is integrated into a pipeline to automate the process. At the 
+end of it, a PDF document with the financial analysis is produced. This is my own 
+personal investment strategy based on several sources, listed below. The process 
+can be adapted to anyone's personal investing strategy and should provide a good 
+starting point to construct your own streamlined process.
+
+## Origin of the idea
+
+Recently I got interested in the idea of investing your money in order to get a 
+return in the long term. Since I am really not interested in all the fuzz and 
+following the news 24/7, I mostly read up on the traditional ways of investing
+as the likes of Warren Buffett, Charlie Munger, Mohnish Pabrai, Peter Lynch and 
+Phil Town; I read some books and did my research. What striked me was that with 
+enough information, you can gain confidence in your investment decisions, simply
+based on information of the past. So, I started to learn how to read financial 
+statements and build my own investment strategy, mostly based on the aforementioned 
+people. The problem is I find reading these statements incredibly tiresome; for 
+my strategy to work, I have to gather a lot of data and make a lot of calculations
+though. But I don't really want to spend too much time on going through financial 
+statements. Luckily for me, there are websites that offer to get this data, but 
+this still does not relieve me of checking all these numbers and doing most 
+calculations by hand. The solution in the end is to pull the required data from 
+a Web API and construct the ratios and calculations locally via a script and put 
+this data inside a document. As a result, I have all the required data in one 
+place and don't waste my time on first finding and noting down all this data. 
+This saves a ton of time!
+
+## Current State of the Project
+
+There are currently two versions available:
+
+- v0.1: This version has the placeholders inside of the Latex files and stage 2
+replaces these placeholders with the data. The problem with this solution is, 
+that it restricts flexibility, because as soon as the placeholders are replaced,
+this is how the document will look like. What if I want to include the latest 
+data from the Web API one year later? My custom edits would need to be manually
+copied and the whole project rebuild for a specific stock.
+
+- v0.2: This version gives more flexibility; a middle layer is created that serves
+as glue code between the data from the API and the Latex files. The placeholders
+are in custom JSON files `fund_data.json` and `calc_data.json` and will be replaced
+in stage 2. If the latest financial data should be included, we can simply 
+replace the existing JSON file and rebuild the project. The actual Latex files 
+are kept clean from actual data.
 
 ## System Architecture
 
@@ -18,73 +72,85 @@ a financial analysis and creates a PDF. At the end of the pipeline, a PDF is
 generated with the corresponding financial data included. Additional custom text 
 additions can be included.
 
-## Components
+## Web API: EOD Historical Data
 
-- Python Script X (`stage01.py`): Get financial data from the Web API and put it 
-into the data store.
+I chose `EOD Historical Data`[3] as the Web API for this project. It provides 
+fundamental data over the last 30 years for most publicly-traded companies. At 
+the time of writing the subscription model has several tiers; the "Fundamentals
+Data Feed" can be purchased for 50 euros and lets you use the Search API as well
+as the Fundamentals API. This gives you access to fundamental data of publicly
+traded companies over the last 30 years. There is no need to also gain access to 
+Real-Time data for this project. 
 
-- Python Script Y (`stage02.py`): Transform latex template into company-specific 
-latex template and replace placeholders with the actual data from the JSON file. 
+Since I really don't intend to spend too much money on data that will only change 
+once a year, the project can be used by subscribing to the Web API for one month.
+During this month, it is possible to pull all the data of the required stocks. I
+store the data as JSON files in the `data` folder.
 
-- Latex Template with placeholders: The final company PDF will always have the 
-same structure and content. It is only the financial data that will be different.
-This template will be used to create company-specific templates.
-
-- Python Script Z (`search_api.py`): Uses the search API to get the ticker and 
-exchangeID that is needed for the EOD Fundamental Data API. Normally the script 
-`stage01.py` would be triggered first. If there is no entry for the ISIN in the 
-`stocks.json` file, we can use this script to get the symbol and exchange ID of 
-the stock. The data is uniquely identified by the ISIN and will be used by 
-`stage01.py` and `stage02.py`.
-
-## Stage 0: Preparation 
-
-In this first step, we prepare the directory structure for the upcoming stages
-and check if there is an entry for the ISIN of the company in the `stocks.json`
-file. This file documents for each ISIN the corresponding code and exchange ID
-that is needed for the fundamental data API. The fundamental data is stored in
-the `data.json` file and the latex template is created. Each company is uniquely
-identified by the ISIN as the folder name.
+In order to make use of this project, you have to subscribe to the API once. I 
+am sorry, but I will not provide any data here. If you want to get a feel for 
+how this project works, you can create a report for the company `Apple Inc.` since
+EOD provides the data for this company for free.
 
 ## Stage 1: Getting financial data and store it locally
 
-1. We have a Python Script X which queries a Web API for financial data and gets
-the requested financial data as a response. The data is formatted as JSON.
+After subscribing to the API, you can trigger stage 1 of the pipeline in order 
+to get fundamental data for a company. This stage can be triggered by the 
+`stage01.py` script in one of the following ways:
 
-2. The Python Script X writes this data into a JSON file located in the
-company-specific directory.
+- Pull data for one specific company:
+
+```bash
+./stage01.py -k <api_key> -i <isin>
+```
+
+- Pull data for all stocks listed in `stocks.json`:
+
+```bash
+./stage01.py -k <api_key>
+```
+
+Either command will pull the requested data as a JSON file into `src/data`. You
+can back up this data into a cloud of your choice.
+
+That is basically the dependence on the Web API. As soon as you have the data 
+locally, the reports can be build offline.
 
 ## Stage 2: PDF generation
 
-There are two types of placeholders in the Latex template:
+Stage 2 operates on the locally accessible data in `src/data`. Based on a specific
+company's data, the `stage02.py` script creates a latex document structure and 
+creates custom JSON files `fund_data.json` and `calc_data.json`. The JSON files 
+initially have placeholders that are replaced with extracted data from the company 
+JSON files. These custom JSON files form the backend, so in case the API changes, 
+it is quite straight forward to adapt the project. Stage 2 can be triggered as 
+follows:
 
-- Placeholder type A: These placeholders are used as keys into the company JSON
-file and will be replaced by looked up data.
+```bash
+./stage02.py -i <isin>
+```
 
-- Placeholder type B: These placeholders are reserved for calculated data, i.e. 
-data that is not directly readable from the JSON file, but needs to be calculated
-with the data retrieved from this file. 
-
-These two placeholder types should be distinguished with a different prefix.
- 
-1. The Python Script Y parses the Company latex template and uses the placeholders 
-of type A in the Latex template as key to look up the corresponding values in the JSON file.
-The looked up data is then fed back into the Latex template to replace the 
-placeholders of type A. We end up with a company latex directory that has the
-placeholders of type A replaced with the corresponding values from the JSON file.
-Only placeholders of type B are left.
-
-2. The looked up data from the previous step is also used to calculate ratios 
-and do the analysis. Any data that is generated as part of this step is also fed 
-back into the Latex template to replace the corresponding placeholders of type B. 
-We end up with a company latex directory that has no placeholders left.
+This stage uses the `json2latex`[5] python package in order to make it possible 
+to access data from the Latex file similar to a database access. Using a database
+in Latex is not as straight-forward as I wished for, so the `json2latex` package
+seems like a good alternative. According to sources like StackOverflow, it is 
+possible to use an SQL database with Luatex, but with my MikTex setup, it does 
+not compile.
 
 ## Stage 3: Manual Edit
 
 After stage 2, we have all the financial data and analysis completed and the 
 placeholders of the Latex template have been replaced by the corresponding real
-data. As part of the analysis, the user/analyst has the option to manually edit
-the corresponding Latex template. It is possible to manually trigger a PDF build. 
+data. As part of the analysis, the user has the option to manually edit the 
+corresponding Latex template. It is possible to manually trigger a PDF build with 
+the following command in the corresponding folder:
+
+```bash
+make pdf
+```
+
+This creates a `main.pdf` file in the `build` subfolder.
+
 
 ## What to use as Data Store?
 
@@ -126,12 +192,6 @@ pricing.
 
 More stock market APIs can be found at [4].
 
-## Why do we also use other information than only the ticker symbol for the directory creation?
-
-The problem with simply using stock ticker symbols is that it is easy to lose 
-overview when there are a lot of ticker symbols. So, the more information is already
-included in the file path, we can more easily find companies that compete etc.
-
 ## How to make the architecture more independent from the Web API?
 
 Different APIs will probably use different key names in their data/JSON files. 
@@ -154,7 +214,14 @@ itself does not have to be adapted.
 intermediate representation. Calculate the ratios to execute the analysis and 
 generate the PDF.
 
-All this is currently not implemented. I focus on the EOD API for now.
+A similar thing is realized via the `json2latex` package.
+
+## TODO
+
+- [ ] Create different versions of DCF based on different potential growth estimates.
+- [ ] Create documentation, e.g. using Doxygen.
+- [ ] Unit test python functions.
+- [ ] Create a CI/CD workflow.
 
 ## Sources
 
@@ -166,3 +233,4 @@ All this is currently not implemented. I focus on the EOD API for now.
 
 [4] [StockMarketAPIs](https://geekflare.com/best-stock-market-api/)
 
+[5] [JSON2Latex](https://pypi.org/project/json2latex/)
