@@ -331,49 +331,29 @@
         }
     },
     "DCF": {
+        "BaseYearFCF": __getFreeCashFlow(__getYear(0)),
         "DiscountRate": __getDiscountRate(),
         "LongTermGrowthRate": __getLongTermGrowthRate(),
         "FCFHistoricalGrowthRate": __fcfHistoricalGrowthRate(),
-        "FCFFutureEstimate": {
-            "1": __fcfFutureEstimate(1),
-            "2": __fcfFutureEstimate(2),
-            "3": __fcfFutureEstimate(3),
-            "4": __fcfFutureEstimate(4),
-            "5": __fcfFutureEstimate(5),
-            "6": __fcfFutureEstimate(6),
-            "7": __fcfFutureEstimate(7),
-            "8": __fcfFutureEstimate(8),
-            "9": __fcfFutureEstimate(9),
-            "10": __fcfFutureEstimate(10)
+        "IntrinsicValuePerShare": {
+            "-15Per": __getIntrinsicValuePerShare(-0.15),
+            "-10Per": __getIntrinsicValuePerShare(-0.10),
+            "-5Per": __getIntrinsicValuePerShare(-0.05),
+            "0Per": __getIntrinsicValuePerShare(0.00),
+            "5Per": __getIntrinsicValuePerShare(0.05),
+            "10Per": __getIntrinsicValuePerShare(0.10),
+            "15Per": __getIntrinsicValuePerShare(0.15),
+            "Hist": __getIntrinsicValuePerShare()
         },
-        "DiscountFactorEstimate": {
-            "1": __discountFactorEstimate(1),
-            "2": __discountFactorEstimate(2),
-            "3": __discountFactorEstimate(3),
-            "4": __discountFactorEstimate(4),
-            "5": __discountFactorEstimate(5),
-            "6": __discountFactorEstimate(6),
-            "7": __discountFactorEstimate(7),
-            "8": __discountFactorEstimate(8),
-            "9": __discountFactorEstimate(9),
-            "10": __discountFactorEstimate(10)
-        },
-        "DiscountedCashFlow": {
-            "1": __discountedCashFlow(1),
-            "2": __discountedCashFlow(2),
-            "3": __discountedCashFlow(3),
-            "4": __discountedCashFlow(4),
-            "5": __discountedCashFlow(5),
-            "6": __discountedCashFlow(6),
-            "7": __discountedCashFlow(7),
-            "8": __discountedCashFlow(8),
-            "9": __discountedCashFlow(9),
-            "10": __discountedCashFlow(10)
-        },
-        "DiscountedPerpetuityCashFlow": __discountedPerpetuityCashFlow(),
-        "SumDiscountedCashFlow": __sumDiscountedCashFlow(),
-        "IntrinsicValue": __getIntrinsicValue(),
-        "IntrinsicValuePerShare": __getIntrinsicValuePerShare(),
-        "MarginOfSafety": __getMarginOfSafety()
+        "MarginOfSafety": {
+            "-15Per": __getMarginOfSafety(-0.15),
+            "-10Per": __getMarginOfSafety(-0.10),
+            "-5Per": __getMarginOfSafety(-0.05),
+            "0Per": __getMarginOfSafety(0.00),
+            "5Per": __getMarginOfSafety(0.05),
+            "10Per": __getMarginOfSafety(0.10),
+            "15Per": __getMarginOfSafety(0.15),
+            "Hist": __getMarginOfSafety()
+        }
     }
 }
