@@ -332,28 +332,73 @@
     },
     "DCF": {
         "BaseYearFCF": __getFreeCashFlow(__getYear(0)),
-        "DiscountRate": __getDiscountRate(),
         "LongTermGrowthRate": __getLongTermGrowthRate(),
         "FCFHistoricalGrowthRate": __fcfHistoricalGrowthRate(),
-        "IntrinsicValuePerShare": {
-            "-15Per": __getIntrinsicValuePerShare(-0.15),
-            "-10Per": __getIntrinsicValuePerShare(-0.10),
-            "-5Per": __getIntrinsicValuePerShare(-0.05),
-            "0Per": __getIntrinsicValuePerShare(0.00),
-            "5Per": __getIntrinsicValuePerShare(0.05),
-            "10Per": __getIntrinsicValuePerShare(0.10),
-            "15Per": __getIntrinsicValuePerShare(0.15),
-            "Hist": __getIntrinsicValuePerShare()
+        "HighRisk": {
+            "IntrinsicValuePerShare": {
+                "-15Per": __getIntrinsicValuePerShare(0.20, -0.15),
+                "-10Per": __getIntrinsicValuePerShare(0.20, -0.10),
+                "-5Per": __getIntrinsicValuePerShare(0.20, -0.05),
+                "0Per": __getIntrinsicValuePerShare(0.20, 0.00),
+                "5Per": __getIntrinsicValuePerShare(0.20, 0.05),
+                "10Per": __getIntrinsicValuePerShare(0.20, 0.10),
+                "15Per": __getIntrinsicValuePerShare(0.20, 0.15),
+                "Hist": __getIntrinsicValuePerShare(0.20)
+            },
+            "MarginOfSafety": {
+                "-15Per": __getMarginOfSafety(0.20, -0.15),
+                "-10Per": __getMarginOfSafety(0.20, -0.10),
+                "-5Per": __getMarginOfSafety(0.20, -0.05),
+                "0Per": __getMarginOfSafety(0.20, 0.00),
+                "5Per": __getMarginOfSafety(0.20, 0.05),
+                "10Per": __getMarginOfSafety(0.20, 0.10),
+                "15Per": __getMarginOfSafety(0.20, 0.15),
+                "Hist": __getMarginOfSafety(0.20)
+            }
         },
-        "MarginOfSafety": {
-            "-15Per": __getMarginOfSafety(-0.15),
-            "-10Per": __getMarginOfSafety(-0.10),
-            "-5Per": __getMarginOfSafety(-0.05),
-            "0Per": __getMarginOfSafety(0.00),
-            "5Per": __getMarginOfSafety(0.05),
-            "10Per": __getMarginOfSafety(0.10),
-            "15Per": __getMarginOfSafety(0.15),
-            "Hist": __getMarginOfSafety()
+        "MediumRisk": {
+            "IntrinsicValuePerShare": {
+                "-15Per": __getIntrinsicValuePerShare(0.15, -0.15),
+                "-10Per": __getIntrinsicValuePerShare(0.15, -0.10),
+                "-5Per": __getIntrinsicValuePerShare(0.15, -0.05),
+                "0Per": __getIntrinsicValuePerShare(0.15, 0.00),
+                "5Per": __getIntrinsicValuePerShare(0.15, 0.05),
+                "10Per": __getIntrinsicValuePerShare(0.15, 0.10),
+                "15Per": __getIntrinsicValuePerShare(0.15, 0.15),
+                "Hist": __getIntrinsicValuePerShare(0.15)
+            },
+            "MarginOfSafety": {
+                "-15Per": __getMarginOfSafety(0.15, -0.15),
+                "-10Per": __getMarginOfSafety(0.15, -0.10),
+                "-5Per": __getMarginOfSafety(0.15, -0.05),
+                "0Per": __getMarginOfSafety(0.15, 0.00),
+                "5Per": __getMarginOfSafety(0.15, 0.05),
+                "10Per": __getMarginOfSafety(0.15, 0.10),
+                "15Per": __getMarginOfSafety(0.15, 0.15),
+                "Hist": __getMarginOfSafety(0.15)
+            }
+        },
+        "LowRisk": {
+            "IntrinsicValuePerShare": {
+                "-15Per": __getIntrinsicValuePerShare(0.10, -0.15),
+                "-10Per": __getIntrinsicValuePerShare(0.10, -0.10),
+                "-5Per": __getIntrinsicValuePerShare(0.10, -0.05),
+                "0Per": __getIntrinsicValuePerShare(0.10, 0.00),
+                "5Per": __getIntrinsicValuePerShare(0.10, 0.05),
+                "10Per": __getIntrinsicValuePerShare(0.10, 0.10),
+                "15Per": __getIntrinsicValuePerShare(0.10, 0.15),
+                "Hist": __getIntrinsicValuePerShare(0.10)
+            },
+            "MarginOfSafety": {
+                "-15Per": __getMarginOfSafety(0.10, -0.15),
+                "-10Per": __getMarginOfSafety(0.10, -0.10),
+                "-5Per": __getMarginOfSafety(0.10, -0.05),
+                "0Per": __getMarginOfSafety(0.10, 0.00),
+                "5Per": __getMarginOfSafety(0.10, 0.05),
+                "10Per": __getMarginOfSafety(0.10, 0.10),
+                "15Per": __getMarginOfSafety(0.10, 0.15),
+                "Hist": __getMarginOfSafety(0.10)
+            }
         }
     }
 }

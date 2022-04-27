@@ -80,24 +80,59 @@ Discounted Cash Flow (DCF) Analysis Description:
 Discounted Cash Flow (DCF) Analysis Calculation:
 \begin{itemize}
     \item Base Year Free Cash Flow (BYFCF): \calcData[DCF][BaseYearFCF]
-    \item Discount Rate (DR): \calcData[DCF][DiscountRate]
     \item Long-Term Growth Rate (LGR): \calcData[DCF][LongTermGrowthRate]
     \item Historical Growth Rate (GR): \calcData[DCF][FCFHistoricalGrowthRate]
-    \item Estimates:
+    \item Discount Rate (DR): The higher the DR, the more risk there is to the 
+        company.
+    \item 10\% discount rate: if low risk of investment \\\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
  \hline
- \multicolumn{3}{|c|}{DCF Estimates} \\
+ \multicolumn{3}{|c|}{DCF Low Risk Estimates} \\
  \hline
     Growth Rates & Intrinsic Value Per Share & Margin Of Safety (MOS) \\
  \hline
-    -15\% & \calcData[DCF][IntrinsicValuePerShare][-15Per] & \calcData[DCF][MarginOfSafety][-15Per] \\
-    -10\% & \calcData[DCF][IntrinsicValuePerShare][-10Per] & \calcData[DCF][MarginOfSafety][-10Per] \\
-    -5\% & \calcData[DCF][IntrinsicValuePerShare][-5Per] & \calcData[DCF][MarginOfSafety][-5Per] \\
-    0\% & \calcData[DCF][IntrinsicValuePerShare][0Per] & \calcData[DCF][MarginOfSafety][0Per] \\
-    5\% & \calcData[DCF][IntrinsicValuePerShare][5Per] & \calcData[DCF][MarginOfSafety][5Per] \\
-    10\% & \calcData[DCF][IntrinsicValuePerShare][10Per] & \calcData[DCF][MarginOfSafety][10Per] \\
-    15\% & \calcData[DCF][IntrinsicValuePerShare][15Per] & \calcData[DCF][MarginOfSafety][15Per] \\
-    \rowcolor{lightgray} Historical Growth Rate & \calcData[DCF][IntrinsicValuePerShare][Hist] & \calcData[DCF][MarginOfSafety][Hist] \\
+    -15\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][-15Per] & \calcData[DCF][LowRisk][MarginOfSafety][-15Per] \\
+    -10\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][-10Per] & \calcData[DCF][LowRisk][MarginOfSafety][-10Per] \\
+    -5\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][-5Per] & \calcData[DCF][LowRisk][MarginOfSafety][-5Per] \\
+    0\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][0Per] & \calcData[DCF][LowRisk][MarginOfSafety][0Per] \\
+    5\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][5Per] & \calcData[DCF][LowRisk][MarginOfSafety][5Per] \\
+    10\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][10Per] & \calcData[DCF][LowRisk][MarginOfSafety][10Per] \\
+    15\% & \calcData[DCF][LowRisk][IntrinsicValuePerShare][15Per] & \calcData[DCF][LowRisk][MarginOfSafety][15Per] \\
+    \rowcolor{lightgray} Historical Growth Rate & \calcData[DCF][LowRisk][IntrinsicValuePerShare][Hist] & \calcData[DCF][LowRisk][MarginOfSafety][Hist] \\
+ \hline
+\end{tabularx}
+    \item 15\% discount rate: if medium risk of investment \\\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+ \hline
+ \multicolumn{3}{|c|}{DCF Medium Risk Estimates} \\
+ \hline
+    Growth Rates & Intrinsic Value Per Share & Margin Of Safety (MOS) \\
+ \hline
+    -15\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][-15Per] & \calcData[DCF][MediumRisk][MarginOfSafety][-15Per] \\
+    -10\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][-10Per] & \calcData[DCF][MediumRisk][MarginOfSafety][-10Per] \\
+    -5\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][-5Per] & \calcData[DCF][MediumRisk][MarginOfSafety][-5Per] \\
+    0\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][0Per] & \calcData[DCF][MediumRisk][MarginOfSafety][0Per] \\
+    5\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][5Per] & \calcData[DCF][MediumRisk][MarginOfSafety][5Per] \\
+    10\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][10Per] & \calcData[DCF][MediumRisk][MarginOfSafety][10Per] \\
+    15\% & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][15Per] & \calcData[DCF][MediumRisk][MarginOfSafety][15Per] \\
+    \rowcolor{lightgray} Historical Growth Rate & \calcData[DCF][MediumRisk][IntrinsicValuePerShare][Hist] & \calcData[DCF][MediumRisk][MarginOfSafety][Hist] \\
+ \hline
+\end{tabularx}
+    \item 20\% discount rate: if high risk of investment \\\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+ \hline
+ \multicolumn{3}{|c|}{DCF High Risk Estimates} \\
+ \hline
+    Growth Rates & Intrinsic Value Per Share & Margin Of Safety (MOS) \\
+ \hline
+    -15\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][-15Per] & \calcData[DCF][HighRisk][MarginOfSafety][-15Per] \\
+    -10\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][-10Per] & \calcData[DCF][HighRisk][MarginOfSafety][-10Per] \\
+    -5\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][-5Per] & \calcData[DCF][HighRisk][MarginOfSafety][-5Per] \\
+    0\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][0Per] & \calcData[DCF][HighRisk][MarginOfSafety][0Per] \\
+    5\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][5Per] & \calcData[DCF][HighRisk][MarginOfSafety][5Per] \\
+    10\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][10Per] & \calcData[DCF][HighRisk][MarginOfSafety][10Per] \\
+    15\% & \calcData[DCF][HighRisk][IntrinsicValuePerShare][15Per] & \calcData[DCF][HighRisk][MarginOfSafety][15Per] \\
+    \rowcolor{lightgray} Historical Growth Rate & \calcData[DCF][HighRisk][IntrinsicValuePerShare][Hist] & \calcData[DCF][HighRisk][MarginOfSafety][Hist] \\
  \hline
 \end{tabularx}
 \end{itemize}

@@ -447,19 +447,19 @@ def fcfFutureEstimate(n, growthRate=None):
     fcfEstimate = BYFCF * ((1.0 + GR) ** n)
     return formatNumber(fcfEstimate, 2)
 
-def discountFactorEstimate(n):
-    discountFactor = (1.0 + getDiscountRate()) ** n
+def discountFactorEstimate(n, discountRate):
+    discountFactor = (1.0 + discountRate) ** n
     return formatNumber(discountFactor, 4)
 
-def discountedCashFlow(n, growthRate=None):
+def discountedCashFlow(n, discountRate, growthRate=None):
     fcf = float(fcfFutureEstimate(n, growthRate))
-    discountFactor = float(discountFactorEstimate(n))
+    discountFactor = float(discountFactorEstimate(n, discountRate))
     DCF = fcf / discountFactor
     return formatNumber(float(DCF), 2)
 
-def discountedPerpetuityCashFlow(growthRate=None):
+def discountedPerpetuityCashFlow(discountRate, growthRate=None):
     BYFCF = float(getFreeCashFlow(getYear(0)))
-    DR = float(getDiscountRate())
+    DR = float(discountRate)
     LGR = float(getLongTermGrowthRate())
     if growthRate == None:
         GR = float(fcfHistoricalGrowthRate())
@@ -468,25 +468,25 @@ def discountedPerpetuityCashFlow(growthRate=None):
     DPCF = 0.0 if DR == LGR else ((BYFCF * ((1.0 + GR) ** 11) * (1.0 + LGR)) / (DR - LGR)) * (1.0 / ((1.0 + DR) ** 11))
     return formatNumber(float(DPCF), 2)
 
-def sumDiscountedCashFlow(growthRate=None):
+def sumDiscountedCashFlow(discountRate, growthRate=None):
     cashFlow = 0.0
     for i in range(1, 11):
-        cashFlow += float(discountedCashFlow(i, growthRate))
+        cashFlow += float(discountedCashFlow(i, discountRate, growthRate))
     return formatNumber(cashFlow, 2)
 
-def getIntrinsicValue(growthRate=None):
-    sumDFCF = float(sumDiscountedCashFlow(growthRate))
-    DPCF = float(discountedPerpetuityCashFlow(growthRate))
+def getIntrinsicValue(discountRate, growthRate=None):
+    sumDFCF = float(sumDiscountedCashFlow(discountRate, growthRate))
+    DPCF = float(discountedPerpetuityCashFlow(discountRate, growthRate))
     intrinsicValue = sumDFCF + DPCF
     return formatNumber(float(intrinsicValue), 2)
 
-def getIntrinsicValuePerShare(growthRate=None):
-    intrinsicValue = float(getIntrinsicValue(growthRate))
+def getIntrinsicValuePerShare(discountRate, growthRate=None):
+    intrinsicValue = float(getIntrinsicValue(discountRate, growthRate))
     shares = float(getCommonSharesOutstanding(getYear(0)))
     intrinsicValuePerShare = 0.0 if shares == 0 else intrinsicValue / shares
     return formatNumber(float(intrinsicValuePerShare), 2)
 
-def getMarginOfSafety(growthRate=None):
-    intrinsicValuePerShare = float(getIntrinsicValuePerShare(growthRate))
+def getMarginOfSafety(discountRate, growthRate=None):
+    intrinsicValuePerShare = float(getIntrinsicValuePerShare(discountRate, growthRate))
     marginOfSafety = intrinsicValuePerShare * 0.5
     return formatNumber(float(marginOfSafety), 2)
