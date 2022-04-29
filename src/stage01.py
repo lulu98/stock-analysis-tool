@@ -13,14 +13,6 @@ import argparse
 
 from scripts.web_api import *
 
-parser = argparse.ArgumentParser()
-
-# -k APIKEY -i ISIN
-parser.add_argument("-k", "--apikey", required=True, help="API key")
-parser.add_argument("-i", "--isin", required=False, help="ISIN")
-
-args = parser.parse_args()
-
 def setEnvironmentVariables():
     rootDir = os.path.abspath(os.getcwd())
     dataDir = os.path.join(rootDir, "data")
@@ -65,8 +57,17 @@ def stage01(api_key, isin):
         exchangeID = config[isin]['ExchangeID']
         pullStockData(api_key, isin, symbol, exchangeID)
 
-setEnvironmentVariables()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
 
-print("Stage 1: started...")
-stage01(args.apikey, args.isin)
-print("Stage 1: done...\n")
+    # -k APIKEY -i ISIN
+    parser.add_argument("-k", "--apikey", required=True, help="API key")
+    parser.add_argument("-i", "--isin", required=False, help="ISIN")
+
+    args = parser.parse_args()
+
+    setEnvironmentVariables()
+
+    print("Stage 1: started...")
+    stage01(args.apikey, args.isin)
+    print("Stage 1: done...\n")

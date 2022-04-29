@@ -18,13 +18,6 @@ import filecmp
 from scripts.local_api import *
 from scripts.calculations import *
 
-parser = argparse.ArgumentParser()
-
-# -i ISIN
-parser.add_argument("-i", "--isin", required=True, help="ISIN")
-
-args = parser.parse_args()
-
 def setEnvironmentVariables(isin):
     rootDir = os.path.abspath(os.getcwd())
     templateDir = os.path.join(rootDir, "template")
@@ -114,8 +107,16 @@ def stage02():
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
 
 
-setEnvironmentVariables(args.isin)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
 
-print("Stage 2: started...")
-stage02()
-print("Stage 2: done...\n")
+    # -i ISIN
+    parser.add_argument("-i", "--isin", required=True, help="ISIN")
+
+    args = parser.parse_args()
+
+    setEnvironmentVariables(args.isin)
+
+    print("Stage 2: started...")
+    stage02()
+    print("Stage 2: done...\n")
