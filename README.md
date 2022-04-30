@@ -216,6 +216,39 @@ generate the PDF.
 
 A similar thing is realized via the `json2latex` package.
 
+## Documentation
+
+For this project, I decided to use Sphinx. According to the Internet, it seemed 
+to be the preferred option for Python code compared to for example Doxygen.
+
+The documentation for this project is located in the `./docs` directory and 
+uses the `sphinx_rtd_theme` that can be installed via `pip`. When first building 
+the project, the following command must be executed:
+
+```bash
+sphinx-quickstart
+```
+
+The documentation can be build with the following command when located in `docs`: 
+
+```bash
+sphinx-apidoc -o ./source ../src
+```
+
+And the HTML documentation can then be created via: 
+
+```bash
+make html
+```
+
+If the documentation is required as a PDF, execute the following command:
+
+```bash
+make latexpdf
+```
+
+PDF creation requires `latexmk` to be installed.
+
 ## TODO
 
 - [ ] Create different versions of DCF based on different potential growth estimates.
