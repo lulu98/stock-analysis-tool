@@ -251,9 +251,12 @@ PDF creation requires `latexmk` to be installed.
 
 ## TODO
 
-- [ ] Create different versions of DCF based on different potential growth estimates.
-- [ ] Create documentation, e.g. using Doxygen.
+- [ ] Add copyright notice in Github and file headers.
+- [ ] Add changelog.
+- [ ] Rename project to `stock analysis tool`.
+- [ ] Remove whitelines.
 - [ ] Unit test python functions.
+- [ ] Create another stage that tests formatting issues like whiteline and linters.
 - [ ] Create a CI/CD workflow.
 
 ## Sources
