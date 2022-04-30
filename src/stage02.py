@@ -3,7 +3,7 @@
 """
 Pipeline - Stage 2
 
-Finds patterns in the Latex template and replaces the pattern with a
+Finds patterns in the JSON data templates and replaces the pattern with a
 corresponding value from the local API.
 """
 
@@ -19,6 +19,13 @@ from scripts.local_api import *
 from scripts.calculations import *
 
 def setEnvironmentVariables(isin):
+    """
+    Sets environment variables required for stage 1 of the stock analysis 
+    pipeline.
+
+    Parameters:
+        isin (str): ISIN of the stock to be analysed.
+    """
     rootDir = os.path.abspath(os.getcwd())
     templateDir = os.path.join(rootDir, "template")
     dataDir = os.path.join(rootDir, "data", isin)
@@ -52,7 +59,14 @@ def setEnvironmentVariables(isin):
 
 def findPattern(regex, fileName):
     '''
-    Find pattern regex in file fileName.
+    Find pattern in a file.
+
+    Parameters:
+        regex (str): Pattern to be found in the file.
+        fileName (str): Name of the file.
+
+    Returns:
+        output (list): List of occurrences found.
     '''
     cmd = "sed -n -e 's/.*\({}\).*/\\1/p' {}".format(regex, fileName)
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
@@ -62,7 +76,12 @@ def findPattern(regex, fileName):
 
 def replacePattern(regex, output, fileName):
     '''
-    Replace pattern regex with output in file fileName.
+    Replace pattern with output in a file.
+
+    Parameters:
+        regex (str): Pattern to be used as replacement.
+        output (str): Pattern to be replaced.
+        fileName (str): Name of the file.
     '''
     output = str(output).replace("&", "\&") # sed pattern & should be replaced
     output = output.replace("/", "\/")      # sed pattern / should be replaced
@@ -74,6 +93,15 @@ def replacePattern(regex, output, fileName):
         f.write(output)
 
 def findAndReplacePattern(regex, fileName):
+    """
+    Find and replace pattern in file. The idea is that a pattern with two 
+    underscores is found and then evaluated via a Python function. This pattern 
+    is then replaced by the real value.
+
+    Parameters:
+        regex (str): Pattern to be found and replaced.
+        fileName (str): Name of the file.
+    """
     output = findPattern(regex, fileName)
 
     while(len(output) > 0): # while loop to cope with multiple placeholders in one line
@@ -84,6 +112,13 @@ def findAndReplacePattern(regex, fileName):
         output = findPattern(regex, fileName)
 
 def stage02():
+    """
+    Find and replace patterns with two underscores in the template JSON data 
+    files. After replacing all occurrences of patterns in the JSON files, this 
+    stage transforms the JSON files into Latex compatible files via json2latex.
+    As a result, we can access the data from the JSON files like an array access 
+    in the Latex files.
+    """
     dataDir = os.getenv('DATA_DIR')
     files = [os.path.join(dataDir, "fund_data.json"),
              os.path.join(dataDir, "calc_data.json")]
@@ -92,7 +127,7 @@ def stage02():
         print("File {}:".format(fileName))
         print("Processing started...")
 
-        # second replace all occurrences of placeholder __getYear
+        # first replace all occurrences of placeholder __getYear
         findAndReplacePattern("__getYear([^()]*)", fileName)
 
         # start evaluating functions
