@@ -20,12 +20,6 @@ def formatNumber(num, dec):
     """
     return ("{:." + str(dec) + "f}").format(num)
 
-def formatUnit(num, unit):
-    if unit == "i": return num
-    if unit == "t": return float(num)/1e3
-    if unit == "m": return float(num)/1e6
-    if unit == "b": return float(num)/1e9
-
 def getDataItem(query):
     """
     Get data item from JSON file.

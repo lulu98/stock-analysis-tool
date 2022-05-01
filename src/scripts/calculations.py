@@ -8,48 +8,6 @@ local API.
 from scripts.local_api import *
 
 ################################################################################
-##############################  Helper functions  ##############################
-################################################################################
-
-def stringToLatex(text):
-    text = str(text).encode("ascii", "ignore").decode() # ignore non-ascii characters
-    return text
-
-def stringToSed(text):
-    text = str(text).replace("\\", "\\\\")
-    return text
-
-def getLatexTable(title, func):
-    # get table data
-    [subjectLine, tableData] = eval(func)
-
-    if len(tableData) == 0:
-        return ""
-
-    numRows = len(tableData)
-    numCols = len(tableData[0])
-
-    # latex tables entries are separated with &, so we need to use \&
-    for row in range(0, numRows):
-        for col in range(0, numCols):
-            tableData[row][col] = str(tableData[row][col]).replace("&", "\\\\\&")
-            tableData[row][col] = str(tableData[row][col]).replace("'", "")
-            tableData[row][col] = stringToLatex(tableData[row][col])
-
-    # construct latex table
-    latexString = "\\\\begin{tabularx}{\\\\textwidth}{ |" + "X|" * numCols + " }\\n"
-    latexString += "\\\\hline \\n"
-    latexString += "\\\\multicolumn{" + str(numCols) + "}{|c|}{" + title + "} \\\\\\\\ \\n"
-    latexString += "\\\\hline \\n"
-    latexString += (" \\& ".join(subjectLine) + " \\\\\\\\ \\n")
-    latexString += "\\\\hline \\n"
-    for row in tableData:
-        latexString += (" \\& ".join(row) + " \\\\\\\\ \\n")
-    latexString += "\\\\hline \\n"
-    latexString += "\\\\end{tabularx} \\n"
-    return latexString
-
-################################################################################
 ##############################  Financial Ratios  ##############################
 ################################################################################
 
@@ -416,9 +374,6 @@ def fcfGrowthRate(yearStart, yearEnd):
 ################################################################################
 #########################  Intrinsic Value Calculation  ########################
 ################################################################################
-
-def getDiscountRate():
-    return 0.15
 
 def getLongTermGrowthRate():
     """Get Long Term growth rate."""
