@@ -13,47 +13,66 @@ import argparse
 
 from scripts.web_api import *
 
-def setEnvironmentVariables():
-    """
-    Sets environment variables required for stage 1 of the stock analysis 
-    pipeline.
-    """
-    rootDir = os.path.abspath(os.getcwd())
-    dataDir = os.path.join(rootDir, "data")
+DATA_DIR = "./data"
 
-    os.environ['ROOT_DIR'] = rootDir
-    os.environ['DATA_DIR'] = dataDir
-
-def getConfig(api_key, isin):
+def getAPIParameters(api_key):
     """
-    Get the configuration arguments required for stage 1 of the stock analysis
-    pipeline. The configuration arguments are required by the web API as arguments
-    to identify a specific stock. These arguments are the Symbol and ExchangeID. 
-    Since they are arbitrary, I use the ISIN locally in this project and have a 
-    mapping from ISIN to these configuration arguments in stocks.json. If the 
-    ISIN is not specified, i.e. is None, we will pull all stocks that are 
-    included in stocks.json.
+    Get the API parameters for all stocks in stocks.json.
+
+    Parameters:
+        api_key (str): The API key for the financial data API.
+
+    Returns:
+        apiParams (dict): Dictionary with API parameters for all stocks in 
+                          stocks.json.
+    """
+    jsonFile = "./stocks.json"
+
+    with open(jsonFile, "r") as f:
+        data = json.load(f)
+    
+    apiParams = data
+
+    return apiParams
+
+def triggerSearchAPI(api_key, isin):
+    """
+    Trigger Search API for ISIN and format output as feedback for the user.
+    """
+    print("Output of Search API for ISIN {}:\n".format(isin))
+    searchData = searchAPI_getData(api_key, isin)
+    print("{: <20} {: <20} {: <20}".format("Country" ,"Code", "Exchange"))
+    for entry in searchData:
+        print("{: <20} {: <20} {: <20}".format(entry["Country"], entry["Code"], entry["Exchange"]))
+    print("\n")
+
+def getAPIParametersForStock(api_key, isin):
+    """
+    Get the API parameters for a specific stock in stocks.json.
 
     Parameters:
         api_key (str): The API key for the financial data API.
         isin (str): The ISIN of the stock that should be pulled from the web API.
 
     Returns:
-        config (dict): Dictionary with configuration arguments for either the 
-                       stock specified by the ISIN or all stocks if ISIN is None.
+        apiParams (dict): Dictionary with API parameters for the stock specified 
+                          by the ISIN.
     """
     jsonFile = "./stocks.json"
 
     with open(jsonFile, "r") as f:
         data = json.load(f)
 
-    config = {}
-    if isin != None:
-        config[isin] = data[isin] # only get config for specific ISIN
-    else:
-        config = data # get config for all ISIN
+    if not isin in data:
+        # There is no entry for isin in stocks.json yet.
+        print("No data for company with ISIN {}.\n".format(isin))
+        triggerSearchAPI(api_key, isin)
+        sys.exit("Add entry for {} in {} before continuing...".format(isin, jsonFile))
 
-    return config
+    apiParams = {}
+    apiParams[isin] = data[isin] # only get API parameters for specific ISIN
+
+    return apiParams
 
 def pullStockData(api_key, isin, symbol, exchangeID):
     """
@@ -66,7 +85,7 @@ def pullStockData(api_key, isin, symbol, exchangeID):
         exchangeID (str): Name used to identify the stock exchange for a certain 
                           stock.
     """
-    dataDir = os.getenv('DATA_DIR')
+    dataDir = DATA_DIR
     stockDir = os.path.join(dataDir, isin)
     stockFile = os.path.join(stockDir, "data.json")
 
@@ -82,17 +101,20 @@ def pullStockData(api_key, isin, symbol, exchangeID):
 
 def stage01(api_key, isin):
     """
-    Pull financial data for each stock contained in config.
+    Pull financial data for each stock contained in apiParams.
     
     Parameters:
         api_key (str): The API key for the financial data API.
         isin (str): The ISIN of the stock that should be pulled from the web API.
     """
-    config = getConfig(api_key, isin)
+    if isin == None:
+        apiParams = getAPIParameters(api_key)
+    else:
+        apiParams = getAPIParametersForStock(api_key, isin)
 
-    for isin in config:
-        symbol = config[isin]['Symbol']
-        exchangeID = config[isin]['ExchangeID']
+    for isin in apiParams:
+        symbol = apiParams[isin]['Symbol']
+        exchangeID = apiParams[isin]['ExchangeID']
         pullStockData(api_key, isin, symbol, exchangeID)
 
 if __name__ == '__main__':
@@ -103,8 +125,6 @@ if __name__ == '__main__':
     parser.add_argument("-i", "--isin", required=False, help="ISIN")
 
     args = parser.parse_args()
-
-    setEnvironmentVariables()
 
     print("Stage 1: started...")
     stage01(args.apikey, args.isin)
