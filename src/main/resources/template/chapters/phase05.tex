@@ -43,7 +43,7 @@ The valuation provides a range of values for a company's equity by aggregating
 the standalone value of each of its business units and arriving at a single
 total enterprise value (TEV). The equity value is then derived by adjusting the
 company's net debt and other non-operating assets and expenses.\\
-The formula for SOTP is as follows: $SOTP = N_1 + N_2 + ... + ND - NL + NA$ with:
+The formula for SOTP is as follows: $SOTP = N_1 + N_2 + \cdots + ND - NL + NA$ with:
 \begin{itemize}
     \item $N_1$: value of first segment
     \item $N_2$: value of second segment
@@ -63,11 +63,11 @@ More information can be found at:
 Discounted Cash Flow (DCF) Analysis Description:
 \begin{enumerate}
 	\item Determine the current (base year) free cash flow: $BYFCF = \text{Operating Cash Flow} + \text{CAPEX}$.
-	\item Estimate the free cash flow for the next 10 years: $FCF_n = BYFCF \cdot (1+GR)^n$.
-	\item Estimate the discount factor for the next 10 years: $DF_n = (1+DR)^n$.
+    \item Estimate the free cash flow for the next 10 years: $FCF_n = BYFCF \cdot {(1+GR)}^n$.
+    \item Estimate the discount factor for the next 10 years: $DF_n = {(1+DR)}^n$.
 	\item Calculate the discounted value of FCF for the next 10 years: $DFCF_n = \frac{FCF_n}{DF_n}$.
 	\item Calculate the discounted perpetuity free cash flow (beyond 10 years):
-	$DPCF = \frac{BYFCF \cdot (1+GR)^{11} \cdot (1+LGR)}{DR-LGR} \cdot \frac{1}{(1+DR)^{11}}$.
+        $DPCF = \frac{BYFCF \cdot {(1+GR)}^{11} \cdot (1+LGR)}{DR-LGR} \cdot \frac{1}{{(1+DR)}^{11}}$.
 	The long-term growth rate (LGR) should be at 3\%.
 	\item Calculate the intrinsic value: $\text{Intrinsic Value} = (\sum_{i=1}^n DFCF_n) + DPCF$.
 	\item Calculate the $\text{Intrinsic Value Per Share} = \frac{\text{Intrinsic Value}}{\text{Common Shares Outstanding}}$.
