@@ -1,10 +1,11 @@
-src
-===
+code
+====
 
 .. toctree::
    :maxdepth: 4
 
-   scripts
-   search_stock
+   calculations
+   local_api
    stage01
    stage02
+   web_api

@@ -6,5 +6,5 @@ __pycache__/
 # Project-specific
 build/
 data/
-docs/_build/
+src/docs/_build/
 
