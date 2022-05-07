@@ -5,7 +5,7 @@ Includes functions that construct meaningful financial information based on the
 local API.
 """
 
-from scripts.local_api import *
+from local_api import *
 
 ################################################################################
 ##############################  Financial Ratios  ##############################

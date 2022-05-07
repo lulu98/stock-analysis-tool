@@ -11,9 +11,10 @@ import os
 import sys
 import argparse
 
-from scripts.web_api import *
+from web_api import *
 
-DATA_DIR = "./data"
+DATA_DIR = "../data"
+CONFIG_FILE = "../config/stocks.json"
 
 def getAPIParameters(api_key):
     """
@@ -26,7 +27,7 @@ def getAPIParameters(api_key):
         apiParams (dict): Dictionary with API parameters for all stocks in 
                           stocks.json.
     """
-    jsonFile = "./stocks.json"
+    jsonFile = CONFIG_FILE
 
     with open(jsonFile, "r") as f:
         data = json.load(f)
@@ -58,7 +59,7 @@ def getAPIParametersForStock(api_key, isin):
         apiParams (dict): Dictionary with API parameters for the stock specified 
                           by the ISIN.
     """
-    jsonFile = "./stocks.json"
+    jsonFile = CONFIG_FILE
 
     with open(jsonFile, "r") as f:
         data = json.load(f)

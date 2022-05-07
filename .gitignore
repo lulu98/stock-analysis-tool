@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # Project-specific
-stocks/
+build/
 data/
 docs/_build/
 

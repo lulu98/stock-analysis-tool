@@ -15,18 +15,18 @@ import shutil
 import argparse
 import filecmp
 
-from scripts.local_api import *
-from scripts.calculations import *
+from local_api import *
+from calculations import *
 
 def setEnvironmentVariables(isin):
     """
     Sets environment variables required by stage 2.
     """
-    rootDir = os.path.abspath(os.getcwd())
+    rootDir = os.path.join(os.path.abspath(os.getcwd()), "..")
 
-    templateDir = os.path.join(rootDir, "template")
+    templateDir = os.path.join(rootDir, "resources", "template")
     dataDir = os.path.join(rootDir, "data", isin)
-    buildDir = os.path.join(rootDir, "stocks", isin)
+    buildDir = os.path.join(rootDir, "build", isin)
 
     jsonFile = os.path.join(buildDir, "data", "data.json")
 
