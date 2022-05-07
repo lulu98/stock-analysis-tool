@@ -25,7 +25,7 @@ def setEnvironmentVariables(isin):
     rootDir = os.path.join(os.path.abspath(os.getcwd()), "..")
 
     templateDir = os.path.join(rootDir, "resources", "template")
-    dataDir = os.path.join(rootDir, "data", isin)
+    dataDir = os.path.join(rootDir, "resources", "data", isin)
     buildDir = os.path.join(rootDir, "build", isin)
 
     jsonFile = os.path.join(buildDir, "data", "data.json")

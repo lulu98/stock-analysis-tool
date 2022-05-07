@@ -13,7 +13,7 @@ import argparse
 
 from web_api import *
 
-DATA_DIR = "../data"
+DATA_DIR = "../resources/data"
 CONFIG_FILE = "../config/stocks.json"
 
 def getAPIParameters(api_key):
