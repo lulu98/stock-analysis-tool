@@ -16,8 +16,11 @@ def formatNumber(num, dec):
         dec (int): Number of decimal points.
 
     Returns:
-        output (str): Formatted string.
+        output (str): Formatted string. In case illegal input was parsed, 0.0 is
+                      returned.
     """
+    if dec <= 0: # illegal input
+        return "0.0"
     return ("{:." + str(dec) + "f}").format(num)
 
 def getDataItem(query):
