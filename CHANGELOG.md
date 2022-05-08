@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. 
+All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -28,10 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Separate folder structure for data (stage 1) and analysis data (stage 2).
-- Placeholders for financial data is now located in custom JSON files. The 
-replaced data can then be parsed in Latex files.
-- DCF for different FCF growth rates in order to get a better feeling for 
-potential gains for the company.
+- Placeholders for financial data is now located in custom JSON files. The
+  replaced data can then be parsed in Latex files.
+- DCF for different FCF growth rates in order to get a better feeling for
+  potential gains for the company.
 
 ### Changed
 
@@ -39,10 +39,10 @@ potential gains for the company.
 
 ## [0.1] - 2022-03-12
 
-### Added 
+### Added
 
 - Initial project outline.
 - Initial solution with placeholders in Latex template.
-- Python scripts for extracting data from JSON files and calculating composed 
-financial data.
+- Python scripts for extracting data from JSON files and calculating composed
+  financial data.
 - Mapping from ISIN to API parameters for EOD historical data API.
