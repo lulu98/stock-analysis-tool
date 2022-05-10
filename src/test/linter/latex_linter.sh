@@ -1,8 +1,10 @@
+#!/bin/bash
+
 CODE_DIR="../../main"
 LATEX_DIR="$CODE_DIR/resources/template"
 
 collect_sources () {
-    latex_files=($LATEX_DIR/chapters/*)
+    latex_files=("$LATEX_DIR/chapters/*")
 }
 
 execute_lacheck () {
