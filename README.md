@@ -59,6 +59,8 @@ Other packages include:
 - `jsonlint-php`
 - `lacheck`
 - `chktex`
+- `coverage`
+- `pytest`
 
 ## Project Structure
 
