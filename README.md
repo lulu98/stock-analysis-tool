@@ -1,4 +1,4 @@
-# Investing Calculator
+# Stock Analysis Tool
 
 ## Introduction
 

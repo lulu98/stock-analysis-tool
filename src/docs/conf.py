@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../main/code'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Investing Calculator'
+project = 'Stock Analysis Tool'
 copyright = '2022, Lukas Graber'
 author = 'Lukas Graber'
 
@@ -102,7 +102,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'InvestingCalculatordoc'
+htmlhelp_basename = 'StockAnalysisTooldoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -129,7 +129,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'InvestingCalculator.tex', 'Investing Calculator Documentation',
+    (master_doc, 'StockAnalysisTool.tex', 'Stock Analysis Tool Documentation',
      'Lukas Graber', 'manual'),
 ]
 
@@ -139,7 +139,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'investingcalculator', 'Investing Calculator Documentation',
+    (master_doc, 'investingcalculator', 'Stock Analysis Tool Documentation',
      [author], 1)
 ]
 
@@ -150,8 +150,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'InvestingCalculator', 'Investing Calculator Documentation',
-     author, 'InvestingCalculator', 'One line description of project.',
+    (master_doc, 'StockAnalysisTool', 'Stock Analysis Tool Documentation',
+     author, 'StockAnalysisTool', 'One line description of project.',
      'Miscellaneous'),
 ]
 
