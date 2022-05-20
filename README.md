@@ -240,7 +240,7 @@ The linters for Latex files is:
 
 ## TODO
 
-- Rename project to `stock analysis tool`.
+- Put a demo file (Apple) into the project
 - Add more unit test python functions
 - Clean code based on linter scripts
 - Create a CI/CD workflow.
