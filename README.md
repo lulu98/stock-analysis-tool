@@ -61,6 +61,11 @@ Other packages include:
 - `chktex`
 - `coverage`
 - `pytest`
+- `coverage`
+- `pycodestyle`
+- `pylint`
+- `pyflakes`
+- `mccabe`
 
 ## Project Structure
 
@@ -236,8 +241,8 @@ The linters for Latex files is:
 ## TODO
 
 - Rename project to `stock analysis tool`.
-- Unit test python functions
-- linters for project files
+- Add more unit test python functions
+- Clean code based on linter scripts
 - Create a CI/CD workflow.
 
 ## Sources
