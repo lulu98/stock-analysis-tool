@@ -14,255 +14,255 @@ from local_api import *
 def getSharesFloatToOutstandingRatio():
     """Shares-Floating-To-Outstanding Ratio = Floating / Outstanding"""
     sharesFloat = getSharesFloat()
-    sharesFloat = 0.0 if sharesFloat == "-" else float(sharesFloat)
+    sharesFloat = 0.0 if sharesFloat == "null" else float(sharesFloat)
 
     sharesOutstanding = getSharesOutstanding()
-    sharesOutstanding = 0.0 if sharesOutstanding == "-" else float(sharesOutstanding)
+    sharesOutstanding = 0.0 if sharesOutstanding == "null" else float(sharesOutstanding)
 
-    if sharesOutstanding == 0.0: return "-"
+    if sharesOutstanding == 0.0: return "\"-\""
 
     return formatNumber(sharesFloat / sharesOutstanding, 4)
 
 def debtToEquity(year):
     """Debt-to-Equity Ratio (D/E) = Debt / Equity"""
     totalDebt = getTotalDebt(year)
-    totalDebt = 0.0 if totalDebt == "-" else float(totalDebt)
+    totalDebt = 0.0 if totalDebt == "null" else float(totalDebt)
 
     totalEquity = getTotalEquity(year)
-    totalEquity = 0.0 if totalEquity == "-" else float(totalEquity)
+    totalEquity = 0.0 if totalEquity == "null" else float(totalEquity)
 
-    if totalEquity == 0.0: return "-"
+    if totalEquity == 0.0: return "\"-\""
 
     return formatNumber(totalDebt / totalEquity, 4)
 
 def debtToFCF(year):
     """Debt-to-FCF Ratio (D/FCF) = Debt / FCF"""
     totalDebt = getTotalDebt(year)
-    totalDebt = 0.0 if totalDebt == "-" else float(totalDebt)
+    totalDebt = 0.0 if totalDebt == "null" else float(totalDebt)
 
     freeCashFlow = getFreeCashFlow(year)
-    freeCashFlow = 0.0 if freeCashFlow == "-" else float(freeCashFlow)
+    freeCashFlow = 0.0 if freeCashFlow == "null" else float(freeCashFlow)
 
-    if freeCashFlow == 0.0: return "-"
+    if freeCashFlow == 0.0: return "\"-\""
 
     return formatNumber(totalDebt / freeCashFlow, 4)
 
 def liabilitiesToEquity(year):
     """Liabilities-to-Equity Ratio (L/E) = Liabilities / Equity"""
     totalLiabilities = getTotalLiabilities(year)
-    totalLiabilities = 0.0 if totalLiabilities == "-" else float(totalLiabilities)
+    totalLiabilities = 0.0 if totalLiabilities == "null" else float(totalLiabilities)
 
     totalEquity = getTotalEquity(year)
-    totalEquity = 0.0 if totalEquity == "-" else float(totalEquity)
+    totalEquity = 0.0 if totalEquity == "null" else float(totalEquity)
 
-    if totalEquity == 0.0: return "-"
+    if totalEquity == 0.0: return "\"-\""
 
     return formatNumber(totalLiabilities / totalEquity, 4)
 
 def currentRatio(year):
     """Current Ratio (CR) = Current Assets / Current Liabilities"""
     totalCurrentAssets = getCurrentAssets(year)
-    totalCurrentAssets = 0.0 if totalCurrentAssets == "-" else float(totalCurrentAssets)
+    totalCurrentAssets = 0.0 if totalCurrentAssets == "null" else float(totalCurrentAssets)
 
     totalCurrentLiabilities = getCurrentLiabilities(year)
-    totalCurrentLiabilities = 0.0 if totalCurrentLiabilities == "-" else float(totalCurrentLiabilities)
+    totalCurrentLiabilities = 0.0 if totalCurrentLiabilities == "null" else float(totalCurrentLiabilities)
 
-    if totalCurrentLiabilities == 0.0: return "-"
+    if totalCurrentLiabilities == 0.0: return "\"-\""
 
     return formatNumber(totalCurrentAssets / totalCurrentLiabilities, 4)
 
 def acidTestRatio(year):
     """Acid Test Ratio (ATR) = (Current Assets - Inventory) / Current Liabilities"""
     totalCurrentAssets = getCurrentAssets(year)
-    totalCurrentAssets = 0.0 if totalCurrentAssets == "-" else float(totalCurrentAssets)
+    totalCurrentAssets = 0.0 if totalCurrentAssets == "null" else float(totalCurrentAssets)
 
     inventory = getInventory(year)
-    inventory = 0.0 if inventory == "-" else float(inventory)
+    inventory = 0.0 if inventory == "null" else float(inventory)
 
     totalCurrentLiabilities = getCurrentLiabilities(year)
-    totalCurrentLiabilities = 0.0 if totalCurrentLiabilities == "-" else float(totalCurrentLiabilities)
+    totalCurrentLiabilities = 0.0 if totalCurrentLiabilities == "null" else float(totalCurrentLiabilities)
 
-    if totalCurrentLiabilities == 0.0: return "-"
+    if totalCurrentLiabilities == 0.0: return "\"-\""
 
     return formatNumber((totalCurrentAssets - inventory) / totalCurrentLiabilities, 4)
 
 def returnOnEquity(year):
     """Return-on-Equity (ROE) = Net Income / Equity"""
     netIncome = getNetIncome(year)
-    netIncome = 0.0 if netIncome == "-" else float(netIncome)
+    netIncome = 0.0 if netIncome == "null" else float(netIncome)
 
     totalEquity = getTotalEquity(year)
-    totalEquity = 0.0 if totalEquity == "-" else float(totalEquity)
+    totalEquity = 0.0 if totalEquity == "null" else float(totalEquity)
 
-    if totalEquity == 0.0: return "-"
+    if totalEquity == 0.0: return "\"-\""
 
     return formatNumber(netIncome / totalEquity, 4)
 
 def returnOnAssets(year):
     """Return-on-Assets (ROA) = Net Income / Total Assets"""
     netIncome = getNetIncome(year)
-    netIncome = 0.0 if netIncome == "-" else float(netIncome)
+    netIncome = 0.0 if netIncome == "null" else float(netIncome)
 
     totalAssets = getTotalAssets(year)
-    totalAssets = 0.0 if totalAssets == "-" else float(totalAssets)
+    totalAssets = 0.0 if totalAssets == "null" else float(totalAssets)
 
-    if totalAssets == 0.0: return "-"
+    if totalAssets == 0.0: return "\"-\""
 
     return formatNumber(netIncome / totalAssets, 4)
 
 def returnOnInvestedCapital(year):
     """Return-on-Invested-Capital (ROIC) = Net Income / Invested Capital"""
     netIncome = getNetIncome(year)
-    netIncome = 0.0 if netIncome == "-" else float(netIncome)
+    netIncome = 0.0 if netIncome == "null" else float(netIncome)
 
     investedCapital = getInvestedCapital(year)
-    investedCapital = 0.0 if investedCapital == "-" else float(investedCapital)
+    investedCapital = 0.0 if investedCapital == "null" else float(investedCapital)
 
-    if investedCapital == 0.0: return "-"
+    if investedCapital == 0.0: return "\"-\""
 
     return formatNumber(netIncome / investedCapital, 4)
 
 def grossProfitMarginRatio(year):
     """Gross-Profit-Margin-Ratio (GPMR) = Gross Profit / Revenue"""
     grossProfit = getGrossProfit(year)
-    grossProfit = 0.0 if grossProfit == "-" else float(grossProfit)
+    grossProfit = 0.0 if grossProfit == "null" else float(grossProfit)
 
     revenue = getRevenue(year)
-    revenue = 0.0 if revenue == "-" else float(revenue)
+    revenue = 0.0 if revenue == "null" else float(revenue)
 
-    if revenue == 0.0: return "-"
+    if revenue == 0.0: return "\"-\""
 
     return formatNumber(grossProfit / revenue, 4)
 
 def operatingMarginRatio(year):
     """Operating-Margin-Ratio (OMR) = Operating Income / Revenue"""
     operatingIncome = getOperatingIncome(year)
-    operatingIncome = 0.0 if operatingIncome == "-" else float(operatingIncome)
+    operatingIncome = 0.0 if operatingIncome == "null" else float(operatingIncome)
 
     revenue = getRevenue(year)
-    revenue = 0.0 if revenue == "-" else float(revenue)
+    revenue = 0.0 if revenue == "null" else float(revenue)
 
-    if revenue == 0.0: return "-"
+    if revenue == 0.0: return "\"-\""
 
     return formatNumber(operatingIncome / revenue, 4)
 
 def netIncomeMarginRatio(year):
     """Net-Income-Margin-Ratio (NIMR) = Net Income / Revenue"""
     netIncome = getNetIncome(year)
-    netIncome = 0.0 if netIncome == "-" else float(netIncome)
+    netIncome = 0.0 if netIncome == "null" else float(netIncome)
 
     revenue = getRevenue(year)
-    revenue = 0.0 if revenue == "-" else float(revenue)
+    revenue = 0.0 if revenue == "null" else float(revenue)
 
-    if revenue == 0.0: return "-"
+    if revenue == 0.0: return "\"-\""
 
     return formatNumber(netIncome / revenue, 4)
 
 def interestCoverageRatio(year):
     """Interest-Coverage-Ratio (ICR) = Operating Income / Interest Expense"""
     operatingIncome = getOperatingIncome(year)
-    operatingIncome = 0.0 if operatingIncome == "-" else float(operatingIncome)
+    operatingIncome = 0.0 if operatingIncome == "null" else float(operatingIncome)
 
     interestExpense = getInterestExpense(year)
-    interestExpense = 0.0 if interestExpense == "-" else float(interestExpense)
+    interestExpense = 0.0 if interestExpense == "null" else float(interestExpense)
 
-    if interestExpense == 0.0: return "-"
+    if interestExpense == 0.0: return "\"-\""
 
     return formatNumber(operatingIncome / interestExpense, 4)
 
 def inventoryTurnoverRatio(year):
     """Inventory-Turnover-Ratio (ITR) = Cost of Revenue / Inventory"""
     costOfRevenue = getCostOfRevenue(year)
-    costOfRevenue = 0.0 if costOfRevenue == "-" else float(costOfRevenue)
+    costOfRevenue = 0.0 if costOfRevenue == "null" else float(costOfRevenue)
 
     inventory = getInventory(year)
-    inventory = 0.0 if inventory == "-" else float(inventory)
+    inventory = 0.0 if inventory == "null" else float(inventory)
 
-    if inventory == 0.0: return "-"
+    if inventory == 0.0: return "\"-\""
 
     return formatNumber(costOfRevenue / inventory, 4)
 
 def accountsReceivablesRatio(year):
     """Accounts-Receivables-Ratio (ARR) = Turnover / Accounts Receivables"""
     turnover = getRevenue(year)
-    turnover = 0.0 if turnover == "-" else float(turnover)
+    turnover = 0.0 if turnover == "null" else float(turnover)
 
     accountsReceivables = getAccountsReceivables(year)
-    accountsReceivables = 0.0 if accountsReceivables == "-" else float(accountsReceivables)
+    accountsReceivables = 0.0 if accountsReceivables == "null" else float(accountsReceivables)
 
-    if accountsReceivables == 0.0: return "-"
+    if accountsReceivables == 0.0: return "\"-\""
 
     return formatNumber(turnover / accountsReceivables, 4)
 
 def accountsPayableRatio(year):
     """Accounts-Payable-Ratio (APR) = Cost of Revenue / Accounts Payable"""
     costOfRevenue = getCostOfRevenue(year)
-    costOfRevenue = 0.0 if costOfRevenue == "-" else float(costOfRevenue)
+    costOfRevenue = 0.0 if costOfRevenue == "null" else float(costOfRevenue)
 
     accountsPayable = getAccountsPayable(year)
-    accountsPayable = 0.0 if accountsPayable == "-" else float(accountsPayable)
+    accountsPayable = 0.0 if accountsPayable == "null" else float(accountsPayable)
 
-    if accountsPayable == 0.0: return "-"
+    if accountsPayable == 0.0: return "\"-\""
 
     return formatNumber(costOfRevenue / accountsPayable, 4)
 
 def fcfToRevenueRatio(year):
     """FCF-to-Revenue-Ratio (FCFR) = Free Cash Flow / Revenue"""
     freeCashFlow = getFreeCashFlow(year)
-    freeCashFlow = 0.0 if freeCashFlow == "-" else float(freeCashFlow)
+    freeCashFlow = 0.0 if freeCashFlow == "null" else float(freeCashFlow)
 
     revenue = getRevenue(year)
-    revenue = 0.0 if revenue == "-" else float(revenue)
+    revenue = 0.0 if revenue == "null" else float(revenue)
 
-    if revenue == 0.0: return "-"
+    if revenue == 0.0: return "\"-\""
 
     return formatNumber(freeCashFlow / revenue, 4)
 
 def ICFOCFRatio(year):
     """ICF-to-OCF-Ratio (ICFOCF) = Investing Cash Flow  / Operating Cash Flow"""
     icf = getInvestingCashFlow(year)
-    icf = 0.0 if icf == "-" else float(icf)
+    icf = 0.0 if icf == "null" else float(icf)
 
     ocf = getOperatingCashFlow(year)
-    ocf = 0.0 if ocf == "-" else float(ocf)
+    ocf = 0.0 if ocf == "null" else float(ocf)
 
-    if ocf == 0.0: return "-"
+    if ocf == 0.0: return "\"-\""
 
     return formatNumber(icf / ocf, 4)
 
 def priceToEarningsRatio():
     """Price-to-Earnings-Ratio (P/E) = Market Price Per Share  / Earnings Per Share"""
     marketPrice = get50DayMA()
-    marketPrice = 0.0 if marketPrice == "-" else float(marketPrice)
+    marketPrice = 0.0 if marketPrice == "null" else float(marketPrice)
 
     earningsPerShare = getEarningsPerShare(getYear(0))
-    earningsPerShare = 0.0 if earningsPerShare == "-" else float(earningsPerShare)
+    earningsPerShare = 0.0 if earningsPerShare == "null" else float(earningsPerShare)
 
-    if earningsPerShare == 0.0: return "-"
+    if earningsPerShare == 0.0: return "\"-\""
 
     return formatNumber(marketPrice / earningsPerShare, 4)
 
 def priceToBookRatio():
     """Price-to-Book-Ratio (P/B) = Market Price Per Share  / Book Value Per Share"""
     marketPrice = get50DayMA()
-    marketPrice = 0.0 if marketPrice == "-" else float(marketPrice)
+    marketPrice = 0.0 if marketPrice == "null" else float(marketPrice)
 
     bookValuePerShare = getBookValuePerShare(getYear(0))
-    bookValuePerShare = 0.0 if bookValuePerShare == "-" else float(bookValuePerShare)
+    bookValuePerShare = 0.0 if bookValuePerShare == "null" else float(bookValuePerShare)
 
-    if bookValuePerShare == 0.0: return "-"
+    if bookValuePerShare == 0.0: return "\"-\""
 
     return formatNumber(marketPrice / bookValuePerShare, 4)
 
 def ebitdaMargin(year):
     """EBITDA-Margin-Ratio = EBITDA  / Total Revenue"""
     ebitda = getEBITDA(year)
-    ebitda = 0.0 if ebitda == "-" else float(ebitda)
+    ebitda = 0.0 if ebitda == "null" else float(ebitda)
 
     revenue = getRevenue(year)
-    revenue = 0.0 if revenue == "-" else float(revenue)
+    revenue = 0.0 if revenue == "null" else float(revenue)
 
-    if revenue == 0.0: return "-"
+    if revenue == 0.0: return "\"-\""
 
     return formatNumber(ebitda / revenue, 4)
 
@@ -283,13 +283,13 @@ def equityGrowthRate(yearStart, yearEnd):
                           yearStart to yearEnd.
     """
     equityStart = getTotalEquity(yearStart)
-    equityStart = 0.0 if equityStart == "-" else float(equityStart)
+    equityStart = 0.0 if equityStart == "null" else float(equityStart)
 
     equityEnd = getTotalEquity(yearEnd)
-    equityEnd = 0.0 if equityEnd == "-" else float(equityEnd)
+    equityEnd = 0.0 if equityEnd == "null" else float(equityEnd)
 
     if equityStart * equityEnd <= 0: # both numbers must be the same sign and not 0
-        return "-"
+        return "\"-\""
 
     growthRate = (equityEnd / equityStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -308,13 +308,13 @@ def epsGrowthRate(yearStart, yearEnd):
                           yearStart to yearEnd.
     """
     epsStart = getEarningsPerShare(yearStart)
-    epsStart = 0.0 if epsStart == "-" else float(epsStart)
+    epsStart = 0.0 if epsStart == "null" else float(epsStart)
 
     epsEnd = getEarningsPerShare(yearEnd)
-    epsEnd = 0.0 if epsEnd == "-" else float(epsEnd)
+    epsEnd = 0.0 if epsEnd == "null" else float(epsEnd)
 
     if epsStart * epsEnd <= 0: # both numbers must be the same sign and not 0
-        return "-"
+        return "\"-\""
 
     growthRate = (epsEnd / epsStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -333,13 +333,13 @@ def revenueGrowthRate(yearStart, yearEnd):
                           yearStart to yearEnd.
     """
     revenueStart = getRevenue(yearStart)
-    revenueStart = 0.0 if revenueStart == "-" else float(revenueStart)
+    revenueStart = 0.0 if revenueStart == "null" else float(revenueStart)
 
     revenueEnd = getRevenue(yearEnd)
-    revenueEnd = 0.0 if revenueEnd == "-" else float(revenueEnd)
+    revenueEnd = 0.0 if revenueEnd == "null" else float(revenueEnd)
 
     if revenueStart * revenueEnd <= 0: # both numbers must be the same sign and not 0
-        return "-"
+        return "\"-\""
     
     growthRate = (revenueEnd / revenueStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -358,14 +358,14 @@ def fcfGrowthRate(yearStart, yearEnd):
                           yearStart to yearEnd.
     """
     fcfStart = getFreeCashFlow(yearStart)
-    fcfStart = 0.0 if fcfStart == "-" else float(fcfStart)
+    fcfStart = 0.0 if fcfStart == "null" else float(fcfStart)
 
     fcfEnd = getFreeCashFlow(yearEnd)
-    fcfEnd = 0.0 if fcfEnd == "-" else float(fcfEnd)
+    fcfEnd = 0.0 if fcfEnd == "null" else float(fcfEnd)
 
     # two numbers are the same sign if the multiplication is positive
     if fcfStart * fcfEnd <= 0: # both numbers must be the same sign and not 0
-        return "-"
+        return "\"-\""
     
     growthRate = (fcfEnd / fcfStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -388,7 +388,7 @@ def fcfHistoricalGrowthRate():
     avg = 0.0
     for i in range(-numYears, 0):
         growthRate = fcfGrowthRate(getYear(i), getYear(0))
-        if growthRate == "-":
+        if growthRate == "null":
             divider = divider - 1 # growthRate does not exist and should be ignored
         else:
             growthRate = float(growthRate)

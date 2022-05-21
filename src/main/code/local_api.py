@@ -48,7 +48,7 @@ def getDataItem(query):
         data = data[x]
 
     if data is None:
-        data = "-"
+        data = "null"
 
     return data
 
@@ -264,7 +264,7 @@ def getAnalystTargetPrice():
     """Get target price of analysts."""
     query = query_AnalystRatings + "TargetPrice"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -308,7 +308,7 @@ def getMarketCapitalization():
     """Get market capitalization of company."""
     query = query_Highlights + "MarketCapitalization"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -316,7 +316,7 @@ def getDividendShare():
     """Get dividend share of company."""
     query = query_Highlights + "DividendShare"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 4)
     return data
 
@@ -324,7 +324,7 @@ def getDividendYield():
     """Get dividend yield of company."""
     query = query_Highlights + "DividendYield"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 4)
     return data
 
@@ -350,7 +350,7 @@ def getSharesPercentInsiders():
     """Get percentage of shares owned by insiders."""
     query = query_SharesStats + "PercentInsiders"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 4)
     return data 
 
@@ -358,17 +358,17 @@ def getSharesPercentInstitutions():
     """Get percentage of shares owned by institutions."""
     query = query_SharesStats + "PercentInstitutions"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 4)
     return data
 
 def getSharesPercentPublic():
     """Get percentage of shares owned by the public."""
     percentInsiders = getSharesPercentInsiders()
-    percentInsiders = 0.0 if percentInsiders == "-" else float(percentInsiders)
+    percentInsiders = 0.0 if percentInsiders == "null" else float(percentInsiders)
     
     percentInstitutions = getSharesPercentInstitutions()
-    percentInstitutions = 0.0 if percentInstitutions == "-" else float(percentInstitutions)
+    percentInstitutions = 0.0 if percentInstitutions == "null" else float(percentInstitutions)
 
     percentPublic = 100.00 - (percentInsiders + percentInstitutions)
     return formatNumber(float(percentPublic), 4)
@@ -383,7 +383,7 @@ def get50DayMA():
     """Get 50 Day Moving Average of stock."""
     query = query_Technicals + "50DayMA"
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -397,7 +397,7 @@ def getInventory(year):
     """Get Inventory of stock."""
     query = query_BalanceSheet + "{}/inventory".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -405,7 +405,7 @@ def getAccountsReceivables(year):
     """Get Accounts Receivables."""
     query = query_BalanceSheet + "{}/netReceivables".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -413,7 +413,7 @@ def getAccountsPayable(year):
     """Get Accounts Payable."""
     query = query_BalanceSheet + "{}/accountsPayable".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -421,7 +421,7 @@ def getCurrentLiabilities(year):
     """Get Current Liabilities."""
     query = query_BalanceSheet + "{}/totalCurrentLiabilities".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -429,7 +429,7 @@ def getNonCurrentLiabilities(year):
     """Get Noncurrent Liabilities."""
     query = query_BalanceSheet + "{}/nonCurrentLiabilitiesTotal".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -440,10 +440,10 @@ def getTotalLiabilities(year):
     Total Liabilities = Current Liabilities + Noncurrent Liabilities
     """
     currentLiabilities = getCurrentLiabilities(year)
-    currentLiabilities = 0.0 if currentLiabilities == "-" else float(currentLiabilities)
+    currentLiabilities = 0.0 if currentLiabilities == "null" else float(currentLiabilities)
 
     nonCurrentLiabilities = getNonCurrentLiabilities(year)
-    nonCurrentLiabilities = 0.0 if nonCurrentLiabilities == "-" else float(nonCurrentLiabilities)
+    nonCurrentLiabilities = 0.0 if nonCurrentLiabilities == "null" else float(nonCurrentLiabilities)
 
     totalLiabilities = float(currentLiabilities) + float(nonCurrentLiabilities)
     return formatNumber(float(totalLiabilities), 2)
@@ -452,17 +452,17 @@ def getLiabilitiesAndEquity(year):
     """Get Liabilities and Equity."""
     query = query_BalanceSheet + "{}/liabilitiesAndStockholdersEquity".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
 def getTotalEquity(year):
     """Get Total Equity."""
     liabilitiesAndEquity = getLiabilitiesAndEquity(year)
-    liabilitiesAndEquity = 0.0 if liabilitiesAndEquity == "-" else float(liabilitiesAndEquity)
+    liabilitiesAndEquity = 0.0 if liabilitiesAndEquity == "null" else float(liabilitiesAndEquity)
 
     totalLiabilities = float(getTotalLiabilities(year))
-    totalLiabilities = 0.0 if totalLiabilities == "-" else float(totalLiabilities)
+    totalLiabilities = 0.0 if totalLiabilities == "null" else float(totalLiabilities)
 
     totalEquity = liabilitiesAndEquity - totalLiabilities
     return formatNumber(float(totalEquity), 2)
@@ -471,7 +471,7 @@ def getCurrentAssets(year):
     """Get Current Assets."""
     query = query_BalanceSheet + "{}/totalCurrentAssets".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -479,17 +479,17 @@ def getNonCurrentAssets(year):
     """Get Noncurrent Assets."""
     query = query_BalanceSheet + "{}/nonCurrentAssetsTotal".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
 def getTotalAssets(year):
     """Get Total Assets: Current Assets + Noncurrent Assets"""
     currentAssets = getCurrentAssets(year)
-    currentAssets = 0.0 if currentAssets == "-" else float(currentAssets)
+    currentAssets = 0.0 if currentAssets == "null" else float(currentAssets)
 
     nonCurrentAssets = getNonCurrentAssets(year)
-    nonCurrentAssets = 0.0 if nonCurrentAssets == "-" else float(nonCurrentAssets)
+    nonCurrentAssets = 0.0 if nonCurrentAssets == "null" else float(nonCurrentAssets)
 
     totalAssets = currentAssets + nonCurrentAssets
     return formatNumber(float(totalAssets), 2)
@@ -498,7 +498,7 @@ def getShortTermDebt(year):
     """Get Short-Term Debt."""
     query = query_BalanceSheet + "{}/shortTermDebt".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -506,17 +506,17 @@ def getLongTermDebt(year):
     """Get Long-Term Debt."""
     query = query_BalanceSheet + "{}/longTermDebt".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
 def getTotalDebt(year):
     """Get Total Debt: Short-Term Debt + Long-Term Debt"""
     shortTermDebt = getShortTermDebt(year)
-    shortTermDebt = 0.0 if shortTermDebt == "-" else float(shortTermDebt)
+    shortTermDebt = 0.0 if shortTermDebt == "null" else float(shortTermDebt)
 
     longTermDebt = getLongTermDebt(year)
-    longTermDebt = 0.0 if longTermDebt == "-" else float(longTermDebt)
+    longTermDebt = 0.0 if longTermDebt == "null" else float(longTermDebt)
 
     totalDebt = shortTermDebt + longTermDebt
     return formatNumber(float(totalDebt), 2)
@@ -524,10 +524,10 @@ def getTotalDebt(year):
 def getInvestedCapital(year):
     """Get Invested Capital: Debt + Equity"""
     debt = getTotalDebt(year)
-    debt = 0.0 if debt == "-" else float(debt)
+    debt = 0.0 if debt == "null" else float(debt)
 
     equity = getTotalEquity(year)
-    equity = 0.0 if equity == "-" else float(equity)
+    equity = 0.0 if equity == "null" else float(equity)
 
     investedCapital = debt + equity
     return formatNumber(float(investedCapital), 2)
@@ -536,17 +536,17 @@ def getCommonSharesOutstanding(year):
     """Get number of oustanding shares."""
     query = query_BalanceSheet + "{}/commonStockSharesOutstanding".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
 def getEarningsPerShare(year):
     """Get Earnings Per Shares (EPS): Earnings / Shares"""
     earnings = getNetIncome(year)
-    earnings = 0.0 if earnings == "-" else float(earnings)
+    earnings = 0.0 if earnings == "null" else float(earnings)
 
     sharesOutstanding = getCommonSharesOutstanding(year)
-    sharesOutstanding = 0.0 if sharesOutstanding == "-" else float(sharesOutstanding)
+    sharesOutstanding = 0.0 if sharesOutstanding == "null" else float(sharesOutstanding)
 
     earningsPerShare = 0.0 if sharesOutstanding == 0.0 else earnings / sharesOutstanding
     return formatNumber(float(earningsPerShare), 4)
@@ -554,10 +554,10 @@ def getEarningsPerShare(year):
 def getBookValuePerShare(year):
     """Get Book Value Per Share (BVPS): Equity / Shares"""
     equity = getTotalEquity(year)
-    equity = 0.0 if equity == "-" else float(equity)
+    equity = 0.0 if equity == "null" else float(equity)
 
     shares = getCommonSharesOutstanding(year)
-    shares = 0.0 if shares == "-" else float(shares)
+    shares = 0.0 if shares == "null" else float(shares)
 
     bookValuePerShare = 0.0 if shares == 0.0 else equity / shares
     return formatNumber(float(bookValuePerShare), 4)
@@ -572,7 +572,7 @@ def getNetIncome(year):
     """Get Net Income."""
     query = query_IncomeStatement + "{}/netIncome".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -580,7 +580,7 @@ def getRevenue(year):
     """Get Revenue."""
     query = query_IncomeStatement + "{}/totalRevenue".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -588,7 +588,7 @@ def getEBITDA(year):
     """Get EBITDA."""
     query = query_IncomeStatement + "{}/ebitda".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -596,7 +596,7 @@ def getGrossProfit(year):
     """Get Gross Profit."""
     query = query_IncomeStatement + "{}/grossProfit".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -604,7 +604,7 @@ def getOperatingIncome(year):
     """Get Operating Income."""
     query = query_IncomeStatement + "{}/operatingIncome".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -612,7 +612,7 @@ def getInterestExpense(year):
     """Get Interest Expense."""
     query = query_IncomeStatement + "{}/interestExpense".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -620,7 +620,7 @@ def getCostOfRevenue(year):
     """Get Cost Of Revenue."""
     query = query_IncomeStatement + "{}/costOfRevenue".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -634,7 +634,7 @@ def getOperatingCashFlow(year):
     """Get Operating Cash Flow (OCF)."""
     query = query_CashFlow + "{}/totalCashFromOperatingActivities".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -642,7 +642,7 @@ def getInvestingCashFlow(year):
     """Get Investing Cash Flow (ICF)."""
     query = query_CashFlow + "{}/totalCashflowsFromInvestingActivities".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -650,7 +650,7 @@ def getCapitalExpenditures(year):
     """Get Capital Expenditures."""
     query = query_CashFlow + "{}/capitalExpenditures".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
@@ -658,6 +658,6 @@ def getFreeCashFlow(year):
     """Get Free Cash Flow (FCF)."""
     query = query_CashFlow + "{}/freeCashFlow".format(getFinancialsDate(year))
     data = getDataItem(query)
-    if data != "-":
+    if data != "null":
         data = formatNumber(float(data), 2)
     return data
