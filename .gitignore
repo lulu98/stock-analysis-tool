@@ -5,6 +5,6 @@ __pycache__/
 
 # Project-specific
 build/
-data/
+src/main/resources/data/
 src/docs/_build/
 .coverage
