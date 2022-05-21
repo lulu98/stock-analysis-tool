@@ -156,7 +156,7 @@ def test_getAnalystStrongSell():
 def fixture_mock_getDataItem():
     """Mock getDataItem to simulate invalid query."""
     def _mock_func(param):
-        return "-"
+        return "null"
     return _mock_func
 
 def test_getMarketCapitalization_Valid():
@@ -166,7 +166,7 @@ def test_getMarketCapitalization_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert getMarketCapitalization() == "-"
+        assert getMarketCapitalization() == "null"
 
 def test_getDividendShare_Valid():
     assert getDividendShare() == "0.8650"
@@ -175,7 +175,7 @@ def test_getDividendShare_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert getDividendShare() == "-"
+        assert getDividendShare() == "null"
 
 def test_getDividendYield_Valid():
     assert getDividendYield() == "0.0053"
@@ -184,7 +184,7 @@ def test_getDividendYield_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert getDividendYield() == "-"
+        assert getDividendYield() == "null"
 
 
 # Shares stats tests
@@ -202,7 +202,7 @@ def test_getSharesPercentInsiders_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert getSharesPercentInsiders() == "-"
+        assert getSharesPercentInsiders() == "null"
 
 def test_getSharesPercentInstitutions_Valid():
     assert getSharesPercentInstitutions() == "59.3690"
@@ -211,7 +211,7 @@ def test_getSharesPercentInstitutions_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert getSharesPercentInstitutions() == "-"
+        assert getSharesPercentInstitutions() == "null"
 
 def test_getSharesPercentPublic_Valid():
     assert getSharesPercentPublic() == "40.5600"
@@ -230,7 +230,7 @@ def test_get50DayMA_Invalid(mock_getDataItem):
     mock_patch = "local_api.getDataItem"
     with mock.patch(mock_patch) as mck:
         mck.side_effect = mock_getDataItem
-        assert get50DayMA() == "-"
+        assert get50DayMA() == "null"
 
 # TODO: balance sheet
 # TODO: cash flow statement
