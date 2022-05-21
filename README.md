@@ -22,39 +22,15 @@ listed below. The process can be adapted to anyone's personal investing strategy
 and should provide a good starting point to construct your own streamlined
 process.
 
-## Origin of the idea
-
-Recently I got interested in the idea of investing your money in order to get a
-return in the long term. Since I am really not interested in all the fuzz and
-following the news 24/7, I mostly read up on the traditional ways of investing
-as the likes of Warren Buffett, Charlie Munger, Mohnish Pabrai, Peter Lynch and
-Phil Town; I read some books and did my research. What striked me was that with
-enough information, you can gain confidence in your investment decisions, simply
-based on information of the past. So, I started to learn how to read financial
-statements and build my own investment strategy, mostly based on the aforementioned
-people. The problem is I find reading these statements incredibly tiresome; for
-my strategy to work, I have to gather a lot of data and make a lot of calculations
-though. But I don't really want to spend too much time on going through financial
-statements. Luckily for me, there are websites that offer to get this data, but
-this still does not relieve me of checking all these numbers and doing most
-calculations by hand. The solution in the end is to pull the required data from
-a Web API and construct the ratios and calculations locally via a script and put
-this data inside a document. As a result, I have all the required data in one
-place and don't waste my time on first finding and noting down all this data.
-This saves a ton of time!
-
 ## Prerequisites
 
 Latex must be installed:
 
 - `miktex`
 
-The following Python packages are required:
+The following packages are required:
 
 - `json2latex`
-
-Other packages include:
-
 - `mdl`
 - `jsonlint-php`
 - `lacheck`
@@ -74,13 +50,18 @@ This project has the following structure:
 ```bash
 |__ README.md
 |__ CHANGELOG.md
+|__ demo
+|   |__ demo.pdf: examplery PDF output for Apple Inc stock
+|
 |__ src
     |__ docs: sphinx documentation for Python scripts
     |
     |__ main: source code
     |   |__ code: Python scripts
     |   |__ config: configuration files
-    |   |__ resources: template + data files
+    |   |__ resources:
+    |       |__ template: Latex template
+    |       |__ data: fundamental financial data stored as JSON files
     |
     |__ test: test code
         |__ linter: linter scripts
@@ -114,7 +95,7 @@ Real-Time data for this project.
 Since I really don't intend to spend too much money on data that will only change
 once a year, the project can be used by subscribing to the Web API for one month.
 During this month, it is possible to pull all the data of the required stocks. I
-store the data as JSON files in the `data` folder.
+store the data as JSON files in the `src/main/resources/data` folder.
 
 In order to make use of this project, you have to subscribe to the API once. I
 am sorry, but I will not provide any data here. If you want to get a feel for
@@ -133,33 +114,34 @@ to get fundamental data for a company. This stage can be triggered by the
 ./stage01.py -k <api_key> -i <isin>
 ```
 
-- Pull data for all stocks listed in `stocks.json`:
+- Pull data for all stocks listed in `src/main/config/stocks.json`:
 
 ```bash
 ./stage01.py -k <api_key>
 ```
 
-Either command will pull the requested data as a JSON file into `src/data`. You
-can back up this data into a cloud of your choice.
+Either command will pull the requested data as a JSON file into
+`src/main/resources/data`. You can back up this data into a cloud of your
+choice.
 
 That is basically the dependence on the Web API. As soon as you have the data
 locally, the reports can be build offline.
 
 ## Stage 2: PDF generation
 
-Stage 2 operates on the locally accessible data in `src/data`. Based on a specific
-company's data, the `stage02.py` script creates a latex document structure and
-creates custom JSON files `fund_data.json` and `calc_data.json`. The JSON files
-initially have placeholders that are replaced with extracted data from the company
-JSON files. These custom JSON files form the backend, so in case the API changes,
-it is quite straight forward to adapt the project. Stage 2 can be triggered as
-follows:
+Stage 2 operates on the locally accessible data in `src/main/resources/data`.
+Based on a specific company's data, the `stage02.py` script creates a latex
+document structure and creates custom JSON files `fund_data.json` and
+`calc_data.json`. The JSON files initially have placeholders that are replaced
+with extracted data from the company JSON files. These custom JSON files form
+the backend, so in case the API changes, it is quite straight forward to adapt
+the project. Stage 2 can be triggered as follows:
 
 ```bash
 ./stage02.py -i <isin>
 ```
 
-This stage uses the `json2latex`[2] python package in order to make it possible
+This stage uses the `json2latex`[2] Python package in order to make it possible
 to access data from the Latex file similar to a database access. Using a database
 in Latex is not as straight-forward as I wished for, so the `json2latex` package
 seems like a good alternative. According to sources like StackOverflow, it is
@@ -186,7 +168,7 @@ For this project, I decided to use Sphinx for the code documentation. According
 to the Internet, it seemed to be the preferred option for Python code compared
 to for example Doxygen.
 
-The documentation for this project is located in the `./docs` directory and
+The documentation for this project is located in the `src/docs` directory and
 uses the `sphinx_rtd_theme` that can be installed via `pip`. When first building
 the project, the following command must be executed:
 
@@ -221,27 +203,51 @@ linters.
 
 ### Markdown linter
 
-The linter for Markdown files is:
+The linters for Markdown files are:
 
 - `mdl`
 
 ### JSON linter
 
-The linter for JSON files is:
+The linters for JSON files are:
 
 - `jsonlint-php`
 
 ### Latex linter
 
-The linters for Latex files is:
+The linters for Latex files are:
 
 - `chktex`
 - `lacheck`
 
+### Bash linter
+
+The linters for Bash files are:
+
+- `shellcheck`
+
+### Python linter
+
+The linters for Python files are:
+
+- `pycodestyle`
+- `pylint`
+- `pyflakes`
+- `mccabe`
+
+## Unittests
+
+`Pytest` is used as the unit testing framework for this project.
+
+### Coverage
+
+The unit test stage is orchestrated via the `coverage` Python module.
+
+Current code coverage: 27%
+
 ## TODO
 
-- Put a demo file (Apple) into the project
-- Add more unit test python functions
+- Add more unit test Python functions
 - Clean code based on linter scripts
 - Create a CI/CD workflow.
 
