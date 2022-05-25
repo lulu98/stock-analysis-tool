@@ -2,9 +2,6 @@
 
 \subsection{Rule 1: Low Price-to-Earnings (P/E) ratio}
 
-The P/E ratio should be $P/E = \frac{\text{Market Price per Share}}{\text{Earnings Per Share (EPS)}} < 15$.
-This guarantees a return of at least $\frac{1}{15} = 6.67\%$.\\
-
 \begin{tabularx}{\textwidth}{|X|X|}
  \hline
  \multicolumn{2}{|c|}{Price-to-Earnings Ratio (P/E)}                   \\
@@ -18,9 +15,6 @@ This guarantees a return of at least $\frac{1}{15} = 6.67\%$.\\
 \end{tabularx}
 
 \subsection{Rule 2: Low Price-to-Book (P/B) ratio}
-
-The P/B ratio should be $P/B = \frac{\text{Market Price per Share}}{\text{Book Value per Share (BVPS)}} < 1.5$.
-The BVPS is defined as $BVPS = \frac{Equity}{Shares}$.\\
 
 \begin{tabularx}{\textwidth}{|X|X|}
  \hline
@@ -36,48 +30,8 @@ The BVPS is defined as $BVPS = \frac{Equity}{Shares}$.\\
 
 \subsection{Rule 3: Sum-of-the-Parts (SOTP) Valuation Method}
 
-The sum-of-the-parts valuation (SOTP) is a process of valuing a company by
-determining what its aggregate divisions would be worth if they were spun off or
-acquired by another company. It is also known as breakup value analysis.\\
-The valuation provides a range of values for a company's equity by aggregating
-the standalone value of each of its business units and arriving at a single
-total enterprise value (TEV). The equity value is then derived by adjusting the
-company's net debt and other non-operating assets and expenses.\\
-The formula for SOTP is as follows: $SOTP = N_1 + N_2 + \cdots + ND - NL + NA$ with:
-\begin{itemize}
-    \item $N_1$: value of first segment
-    \item $N_2$: value of second segment
-    \item $ND$: net debt
-    \item $NL$: nonoperating liabilities
-    \item $NA$: nonoperating assets
-\end{itemize}
-
-More information can be found at:
-\begin{itemize}
-    \item \url{https://www.investopedia.com/terms/s/sumofpartsvaluation.asp}
-    \item \url{https://www.investopedia.com/terms/b/breakup-value.asp}
-\end{itemize}
-
 \subsection{Rule 4: DCF Valuation Method}
 
-Discounted Cash Flow (DCF) Analysis Description:
-\begin{enumerate}
-	\item Determine the current (base year) free cash flow: $BYFCF = \text{Operating Cash Flow} + \text{CAPEX}$.
-    \item Estimate the free cash flow for the next 10 years: $FCF_n = BYFCF \cdot {(1+GR)}^n$.
-    \item Estimate the discount factor for the next 10 years: $DF_n = {(1+DR)}^n$.
-	\item Calculate the discounted value of FCF for the next 10 years: $DFCF_n = \frac{FCF_n}{DF_n}$.
-	\item Calculate the discounted perpetuity free cash flow (beyond 10 years):
-        $DPCF = \frac{BYFCF \cdot {(1+GR)}^{11} \cdot (1+LGR)}{DR-LGR} \cdot \frac{1}{{(1+DR)}^{11}}$.
-	The long-term growth rate (LGR) should be at 3\%.
-	\item Calculate the intrinsic value: $\text{Intrinsic Value} = (\sum_{i=1}^n DFCF_n) + DPCF$.
-	\item Calculate the $\text{Intrinsic Value Per Share} = \frac{\text{Intrinsic Value}}{\text{Common Shares Outstanding}}$.
-    \item Buy at a Wide Margin of Safety (MOS): $\text{MOS} = 0.5 * \text{Intrinsic Value Per Share}$.
-        The Margin of Safety should be 50\% lower than the intrinsic value. If 
-        the market price goes below half of the intrinsic value per share, this 
-        is a buy signal.\\
-\end{enumerate}
-
-Discounted Cash Flow (DCF) Analysis Calculation:
 \begin{itemize}
     \item Base Year Free Cash Flow (BYFCF): \calcData[DCF][BaseYearFCF]
     \item Long-Term Growth Rate (LGR): \calcData[DCF][LongTermGrowthRate]
