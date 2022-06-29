@@ -52,6 +52,7 @@ This project has the following structure:
 |__ CHANGELOG.md
 |__ demo
 |   |__ demo.pdf: examplery PDF output for Apple Inc stock
+|   |__ handbook.pdf: handbook PDF that explains ratios used in the stock analysis
 |
 |__ src
     |__ docs: sphinx documentation for Python scripts
@@ -244,6 +245,12 @@ The linters for Python files are:
 The unit test stage is orchestrated via the `coverage` Python module.
 
 Current code coverage: 27%
+
+## Handbook
+
+In the `/demo` folder, there is a handbook PDF file that explains the different
+ratios and metrics used in the company/stock analysis. This way, the explanatory
+texts could be removed from the actual analysis.
 
 ## TODO
 
