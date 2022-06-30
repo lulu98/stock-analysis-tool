@@ -4,7 +4,6 @@ OUT  := build
 .PHONY: pdf
 pdf:
 	latexmk -interaction=nonstopmode -outdir=$(OUT) -pdf -halt-on-error $(FILE)
-	# compile with Luatex: latexmk -interaction=nonstopmode -pdflatex=lualatex -outdir=$(OUT) -pdf -halt-on-error $(FILE)
 
 .PHONY: watch
 watch:
