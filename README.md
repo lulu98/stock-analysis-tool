@@ -252,11 +252,35 @@ In the `/demo` folder, there is a handbook PDF file that explains the different
 ratios and metrics used in the company/stock analysis. This way, the explanatory
 texts could be removed from the actual analysis.
 
+## CI/CD
+
+We leverage GitHub Actions for CI/CD with the following jobs:
+
+- Test job: unit tests the python functions
+- Build PDF job: execute stage 1 and stage 2 of the analysis pipeline
+- Build Handbook job: generate the handbook PDF
+
+The CI/CD pipeline makes sure that the codebase does not break.
+
+## Development Suggestions
+
+My development process for a new feature is as follows:
+
+1. For a new feature a `development` branch is opened. This keeps the `main`
+branch clean.
+2. Implement new feature.
+3. Execute linters and unit tests locally to validate that code base is not
+broken.
+4. Execute a CI/CD pipeline manually for the `development` branch.
+5. If CI/CD turns green, update the Readme and changelog.
+6. Rebase `main` branch and add version tag.
+7. Push on `main` will trigger CI/CD pipeline.
+8. When green, you can delete the `development` branch.
+
 ## TODO
 
 - Add more unit test Python functions
 - Clean code based on linter scripts
-- Create a CI/CD workflow.
 
 ## Sources
 
