@@ -262,6 +262,11 @@ We leverage GitHub Actions for CI/CD with the following jobs:
 
 The CI/CD pipeline makes sure that the codebase does not break.
 
+## Project Management
+
+The roadmap, backlog and ticketing system can be found in the `./organization/`
+directory to better plan and manage the development process.
+
 ## Development Suggestions
 
 My development process for a new feature is as follows:
@@ -276,11 +281,6 @@ broken.
 6. Rebase `main` branch and add version tag.
 7. Push on `main` will trigger CI/CD pipeline.
 8. When green, you can delete the `development` branch.
-
-## TODO
-
-- Add more unit test Python functions
-- Clean code based on linter scripts
 
 ## Sources
 
