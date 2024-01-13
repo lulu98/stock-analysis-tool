@@ -1,0 +1,10 @@
+jsonlint
+lacheck
+chktex
+latexmk
+texlive-latex-recommended
+texlive-latex-extra
+texlive-bibtex-extra
+texlive-lang-english
+biber
+shellcheck
