@@ -22,26 +22,45 @@ listed below. The process can be adapted to anyone's personal investing strategy
 and should provide a good starting point to construct your own streamlined
 process.
 
-## Prerequisites
+## Dependencies
 
-Latex must be installed:
+To automatically install all required system dependencies, packages and
+modules, we utilize files in the `requirements/` directory to easily create a
+reproducable development environment.
 
-- `miktex`
+### Python Dependencies
 
-The following packages are required:
+Create and activate a Python virtual environment to not mess with local
+environment:
 
-- `json2latex`
-- `mdl`
-- `jsonlint-php`
-- `lacheck`
-- `chktex`
-- `coverage`
-- `pytest`
-- `coverage`
-- `pycodestyle`
-- `pylint`
-- `pyflakes`
-- `mccabe`
+```bash
+$ python3 -m venv dev_env
+$ source dev_env/bin/activate
+```
+
+Install all required python modules:
+
+```bash
+$ python -m pip install -r requirements/requirements.txt
+```
+
+To deactivate the python virtual environment execute:
+
+```bash
+$ deactivate
+```
+
+### apt packages
+
+```bash
+$ cat ./requirements/requirements.apt | xargs sudo apt install -y
+```
+
+### snap packages
+
+```bash
+$ cat ./requirements/requirements.apt | xargs sudo snap install
+```
 
 ## Project Structure
 
@@ -50,9 +69,14 @@ This project has the following structure:
 ```bash
 |__ README.md
 |__ CHANGELOG.md
+|
 |__ demo
 |   |__ demo.pdf: examplery PDF output for Apple Inc stock
 |   |__ handbook.pdf: handbook PDF that explains ratios used in the stock analysis
+|
+|__ organization/: directory holding project management information
+|
+|__ requirements/: directory holding required package/module information
 |
 |__ src
     |__ docs: sphinx documentation for Python scripts
