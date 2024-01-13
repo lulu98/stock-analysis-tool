@@ -8,4 +8,5 @@
 - SAT-004 [To Do] : Increase test coverage
 - SAT-005 [To Do] : Fix linter scripts
 - SAT-006 [To Do] : Include linter scripts in CI
+- SAT-007 [Done] : Update workflows with latest versions of the actions which runs on Node16
 

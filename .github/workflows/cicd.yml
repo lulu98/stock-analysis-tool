@@ -21,7 +21,7 @@ jobs:
             pip install coverage
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Unittest code
         working-directory: ./src/test/unit_tests
@@ -39,7 +39,7 @@ jobs:
             pip install json2latex
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Execute stage 1
         working-directory: ./src/main/code
@@ -50,14 +50,14 @@ jobs:
         run: ./stage02.py -i US0378331005
 
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           working_directory: ./src/main/build/US0378331005
           root_file: main.tex
           args: -interaction=nonstopmode -outdir=build -pdf -halt-on-error main
 
       - name: Upload PDF output as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: ./src/main/build/US0378331005/build/main.pdf
@@ -69,17 +69,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           working_directory: ./src/main/resources/handbook
           root_file: main.tex
           args: -interaction=nonstopmode -outdir=build -pdf -halt-on-error main
 
       - name: Upload handbook PDF as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: HANDBOOK
           path: ./src/main/resources/handbook/build/main.pdf
