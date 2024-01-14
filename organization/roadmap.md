@@ -2,11 +2,11 @@
 
 ## v1.3
 
-- SAT-001 [Done] : Add project management
-- SAT-002 [Done] : Formalize the project requirements/dependencies
-- SAT-003 [To Do] : Clean up strategy.txt file
-- SAT-004 [To Do] : Increase test coverage
-- SAT-005 [To Do] : Fix linter scripts
-- SAT-006 [To Do] : Include linter scripts in CI
-- SAT-007 [Done] : Update workflows with latest versions of the actions which runs on Node16
+- [x] SAT-001: Add project management
+- [x] SAT-002: Formalize the project requirements/dependencies
+- [ ] SAT-003: Clean up strategy.txt file
+- [ ] SAT-004: Increase test coverage
+- [ ] SAT-005: Fix linter scripts
+- [ ] SAT-006: Include linter scripts in CI
+- [x] SAT-007: Update workflows with latest versions of the actions which runs on Node16
 
