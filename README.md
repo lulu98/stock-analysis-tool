@@ -291,20 +291,17 @@ The CI/CD pipeline makes sure that the codebase does not break.
 The roadmap, backlog and ticketing system can be found in the `./organization/`
 directory to better plan and manage the development process.
 
-## Development Suggestions
+## Development Workflow
 
-My development process for a new feature is as follows:
+My development workflow for a new feature is as follows:
 
-1. For a new feature a `development` branch is opened. This keeps the `main`
-branch clean.
+1. For a new feature a `development` branch is opened. The `main` branch is
+protected and your changes can only get applied if the pull request succeeds.
 2. Implement new feature.
 3. Execute linters and unit tests locally to validate that code base is not
 broken.
-4. Execute a CI/CD pipeline manually for the `development` branch.
-5. If CI/CD turns green, update the Readme and changelog.
-6. Rebase `main` branch and add version tag.
-7. Push on `main` will trigger CI/CD pipeline.
-8. When green, you can delete the `development` branch.
+4. Create a pull request.
+5. If CI goes green, merge with `merge and rebase` option.
 
 ## Sources
 
