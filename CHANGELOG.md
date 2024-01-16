@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add CI/CD pipeline in GitHub Actions that tests the codebase and runs the
-stock analysis pipeline for `Apple Inc.`.
+  stock analysis pipeline for `Apple Inc.`.
 
 ## [1.1.0] - 2022-06-29
 
@@ -25,7 +25,7 @@ stock analysis pipeline for `Apple Inc.`.
 ### Removed
 
 - Remove duplicate explanatory texts in analysis output that was moved to the
-handbook.
+  handbook.
 
 ## [1.0.0] - 2022-05-21
 

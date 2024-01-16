@@ -7,6 +7,7 @@ Retrieves basic financial data based on the company's corresponding JSON file.
 import os
 import json
 
+
 def formatNumber(num, dec):
     """
     Format number into an appropriate format.
@@ -16,12 +17,13 @@ def formatNumber(num, dec):
         dec (int): Number of decimal points.
 
     Returns:
-        output (str): Formatted string. In case illegal input was parsed, 0.0 is
-                      returned.
+        output (str): Formatted string. In case illegal input was parsed, 0.0
+                      is returned.
     """
-    if dec <= 0: # illegal input
+    if dec <= 0:  # illegal input
         return "0.0"
     return ("{:." + str(dec) + "f}").format(num)
+
 
 def getDataItem(query):
     """
@@ -54,6 +56,7 @@ def getDataItem(query):
 
 # helper functions
 
+
 def getYearOfDate(date):
     """
     Get year of a specific date string.
@@ -67,6 +70,7 @@ def getYearOfDate(date):
     date = date.split("-")
     return date[0]
 
+
 def getMonthOfDate(date):
     """
     Get month of a specific date string.
@@ -75,10 +79,12 @@ def getMonthOfDate(date):
         date (str): Date string in the form "<year>-<month>-<day>".
 
     Returns:
-        month (str): The month is specified as the second part of the date string.
+        month (str): The month is specified as the second part of the date
+                     string.
     """
     date = date.split("-")
     return date[1]
+
 
 def getDayOfDate(date):
     """
@@ -93,26 +99,31 @@ def getDayOfDate(date):
     date = date.split("-")
     return date[2]
 
+
 def getFinancialsDate(year):
     """
     Get date format for a specific year required to access fundamental data in
     the JSON file.
 
     Parameters:
-        year (str): Year for which a corresponding date format should be parsed.
+        year (str): Year for which a corresponding date format should be
+                    parsed.
 
     Returns:
-        output (str): Formatted date string required to access fundamental data.
+        output (str): Formatted date string required to access fundamental
+                      data.
     """
-    query = "Financials/Balance_Sheet/yearly" # we could also use the Income or Cash Flow Statement
-    date = list(getDataItem(query))[0] # get the latest entry
+    query = "Financials/Balance_Sheet/yearly"
+    date = list(getDataItem(query))[0]  # get the latest entry
     return "{}-{}-{}".format(year, getMonthOfDate(date), getDayOfDate(date))
 
-################################################################################
-###################################  General ###################################
-################################################################################
+###############################################################################
+#                                    General                                  #
+###############################################################################
+
 
 query_General = "General/"
+
 
 def getBaseYear():
     """
@@ -121,9 +132,10 @@ def getBaseYear():
     Returns:
         baseYear (int): Base year of the last release.
     """
-    query = "Financials/Balance_Sheet/yearly" # we could also use the Income or Cash Flow Statement
-    date = list(getDataItem(query))[0] # get the latest entry
+    query = "Financials/Balance_Sheet/yearly"
+    date = list(getDataItem(query))[0]  # get the latest entry
     return int(getYearOfDate(date))
+
 
 def getYear(offset):
     """
@@ -138,6 +150,7 @@ def getYear(offset):
     baseYear = getBaseYear()
     return baseYear + offset
 
+
 def getCompanyCode():
     """
     Get company ID/code of a stock.
@@ -150,11 +163,13 @@ def getCompanyCode():
     companyCode = getDataItem(query)
     return companyCode
 
+
 def getCompanyName():
     """Get company name of a stock."""
     query = query_General + "Name"
     companyName = getDataItem(query)
     return companyName
+
 
 def getAddress():
     """Get address of headquarter of company."""
@@ -162,11 +177,13 @@ def getAddress():
     address = getDataItem(query)
     return address
 
+
 def getDescription():
     """Get description of company profile."""
     query = query_General + "Description"
     description = getDataItem(query)
     return description
+
 
 def getISIN():
     """Get stock ISIN of company."""
@@ -174,11 +191,13 @@ def getISIN():
     data = getDataItem(query)
     return data
 
+
 def getIPODate():
     """Get IPO date of company."""
     query = query_General + "IPODate"
     data = getDataItem(query)
     return data
+
 
 def getSector():
     """Get sector in which company operates."""
@@ -186,11 +205,13 @@ def getSector():
     data = getDataItem(query)
     return data
 
+
 def getIndustry():
     """Get industry in which company operates."""
     query = query_General + "Industry"
     data = getDataItem(query)
     return data
+
 
 def getNumEmployees():
     """Get number of employees working for company."""
@@ -198,17 +219,20 @@ def getNumEmployees():
     data = getDataItem(query)
     return data
 
+
 def getFiscalYearEnd():
     """Get date when fiscal year ends."""
     query = query_General + "FiscalYearEnd"
     data = getDataItem(query)
     return data
 
+
 def getCurrency():
     """Get currency under which the financial data is represented."""
     query = query_General + "CurrencyCode"
     data = getDataItem(query)
     return data
+
 
 def getOfficers():
     """Get list of officers in charge of the company."""
@@ -217,11 +241,13 @@ def getOfficers():
     officers = json.dumps(officers, indent=4)
     return officers
 
-################################################################################
-###################################  Holders  ##################################
-################################################################################
+###############################################################################
+#                                    Holders                                  #
+###############################################################################
+
 
 query_Holders = "Holders/"
+
 
 def getInstitutions():
     """Get list of institutional investors."""
@@ -230,6 +256,7 @@ def getInstitutions():
     institutions = json.dumps(institutions, indent=4)
     return institutions
 
+
 def getFunds():
     """Get list of funds invested in the stock."""
     query = query_Holders + "Funds"
@@ -237,9 +264,10 @@ def getFunds():
     funds = json.dumps(funds, indent=4)
     return funds
 
-################################################################################
-##############################  InsiderTransactions  ###########################
-################################################################################
+###############################################################################
+#                               InsiderTransactions                           #
+###############################################################################
+
 
 def getInsiderTransactions():
     """Get list of insider transactions."""
@@ -247,18 +275,21 @@ def getInsiderTransactions():
     insiderTransactions = getDataItem(query)
     insiderTransactions = json.dumps(insiderTransactions, indent=4)
     return insiderTransactions
-    
-################################################################################
-################################  Analyst Ratings ##############################
-################################################################################
+
+###############################################################################
+#                                 Analyst Ratings                             #
+###############################################################################
+
 
 query_AnalystRatings = "AnalystRatings/"
+
 
 def getAnalystRating():
     """Get rating of analysts."""
     query = query_AnalystRatings + "Rating"
     data = getDataItem(query)
     return data
+
 
 def getAnalystTargetPrice():
     """Get target price of analysts."""
@@ -268,11 +299,13 @@ def getAnalystTargetPrice():
         data = formatNumber(float(data), 2)
     return data
 
+
 def getAnalystStrongBuy():
     """Get number of "strong buy" signals from analysts."""
     query = query_AnalystRatings + "StrongBuy"
     data = getDataItem(query)
     return data
+
 
 def getAnalystBuy():
     """Get number of "buy" signals from analysts."""
@@ -280,11 +313,13 @@ def getAnalystBuy():
     data = getDataItem(query)
     return data
 
+
 def getAnalystHold():
     """Get number of "hold" signals from analysts."""
     query = query_AnalystRatings + "Hold"
     data = getDataItem(query)
     return data
+
 
 def getAnalystSell():
     """Get number of "sell" signals from analysts."""
@@ -292,17 +327,20 @@ def getAnalystSell():
     data = getDataItem(query)
     return data
 
+
 def getAnalystStrongSell():
     """Get number of "strong sell" signals from analysts."""
     query = query_AnalystRatings + "StrongSell"
     data = getDataItem(query)
     return data
 
-################################################################################
-#################################  Highlights  #################################
-################################################################################
+###############################################################################
+#                                  Highlights                                 #
+###############################################################################
+
 
 query_Highlights = "Highlights/"
+
 
 def getMarketCapitalization():
     """Get market capitalization of company."""
@@ -312,6 +350,7 @@ def getMarketCapitalization():
         data = formatNumber(float(data), 2)
     return data
 
+
 def getDividendShare():
     """Get dividend share of company."""
     query = query_Highlights + "DividendShare"
@@ -319,6 +358,7 @@ def getDividendShare():
     if data != "null":
         data = formatNumber(float(data), 4)
     return data
+
 
 def getDividendYield():
     """Get dividend yield of company."""
@@ -328,11 +368,13 @@ def getDividendYield():
         data = formatNumber(float(data), 4)
     return data
 
-################################################################################
-################################  SharesStats  #################################
-################################################################################
+###############################################################################
+#                                 SharesStats                                 #
+###############################################################################
+
 
 query_SharesStats = "SharesStats/"
+
 
 def getSharesOutstanding():
     """Get number of shares outstanding."""
@@ -340,11 +382,13 @@ def getSharesOutstanding():
     data = getDataItem(query)
     return data
 
+
 def getSharesFloat():
     """Get number of shares floating."""
     query = query_SharesStats + "SharesFloat"
     data = getDataItem(query)
     return data
+
 
 def getSharesPercentInsiders():
     """Get percentage of shares owned by insiders."""
@@ -352,7 +396,8 @@ def getSharesPercentInsiders():
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 4)
-    return data 
+    return data
+
 
 def getSharesPercentInstitutions():
     """Get percentage of shares owned by institutions."""
@@ -362,22 +407,29 @@ def getSharesPercentInstitutions():
         data = formatNumber(float(data), 4)
     return data
 
+
 def getSharesPercentPublic():
     """Get percentage of shares owned by the public."""
     percentInsiders = getSharesPercentInsiders()
-    percentInsiders = 0.0 if percentInsiders == "null" else float(percentInsiders)
-    
+    percentInsiders = (0.0
+                       if percentInsiders == "null"
+                       else float(percentInsiders))
+
     percentInstitutions = getSharesPercentInstitutions()
-    percentInstitutions = 0.0 if percentInstitutions == "null" else float(percentInstitutions)
+    percentInstitutions = (0.0
+                           if percentInstitutions == "null"
+                           else float(percentInstitutions))
 
     percentPublic = 100.00 - (percentInsiders + percentInstitutions)
     return formatNumber(float(percentPublic), 4)
 
-################################################################################
-#################################  Technicals  #################################
-################################################################################
+###############################################################################
+#                                  Technicals                                 #
+###############################################################################
+
 
 query_Technicals = "Technicals/"
+
 
 def get50DayMA():
     """Get 50 Day Moving Average of stock."""
@@ -387,11 +439,13 @@ def get50DayMA():
         data = formatNumber(float(data), 2)
     return data
 
-################################################################################
-################################  Balance Sheet  ###############################
-################################################################################
+###############################################################################
+#                                 Balance Sheet                               #
+###############################################################################
+
 
 query_BalanceSheet = "Financials/Balance_Sheet/yearly/"
+
 
 def getInventory(year):
     """Get Inventory of stock."""
@@ -401,37 +455,46 @@ def getInventory(year):
         data = formatNumber(float(data), 2)
     return data
 
+
 def getAccountsReceivables(year):
     """Get Accounts Receivables."""
-    query = query_BalanceSheet + "{}/netReceivables".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/netReceivables".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getAccountsPayable(year):
     """Get Accounts Payable."""
-    query = query_BalanceSheet + "{}/accountsPayable".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/accountsPayable".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getCurrentLiabilities(year):
     """Get Current Liabilities."""
-    query = query_BalanceSheet + "{}/totalCurrentLiabilities".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/totalCurrentLiabilities".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
+
 def getNonCurrentLiabilities(year):
     """Get Noncurrent Liabilities."""
-    query = query_BalanceSheet + "{}/nonCurrentLiabilitiesTotal".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/nonCurrentLiabilitiesTotal".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getTotalLiabilities(year):
     """
@@ -440,75 +503,100 @@ def getTotalLiabilities(year):
     Total Liabilities = Current Liabilities + Noncurrent Liabilities
     """
     currentLiabilities = getCurrentLiabilities(year)
-    currentLiabilities = 0.0 if currentLiabilities == "null" else float(currentLiabilities)
+    currentLiabilities = (0.0
+                          if currentLiabilities == "null"
+                          else float(currentLiabilities))
 
     nonCurrentLiabilities = getNonCurrentLiabilities(year)
-    nonCurrentLiabilities = 0.0 if nonCurrentLiabilities == "null" else float(nonCurrentLiabilities)
+    nonCurrentLiabilities = (0.0
+                             if nonCurrentLiabilities == "null"
+                             else float(nonCurrentLiabilities))
 
     totalLiabilities = float(currentLiabilities) + float(nonCurrentLiabilities)
     return formatNumber(float(totalLiabilities), 2)
 
+
 def getLiabilitiesAndEquity(year):
     """Get Liabilities and Equity."""
-    query = query_BalanceSheet + "{}/liabilitiesAndStockholdersEquity".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/liabilitiesAndStockholdersEquity".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getTotalEquity(year):
     """Get Total Equity."""
     liabilitiesAndEquity = getLiabilitiesAndEquity(year)
-    liabilitiesAndEquity = 0.0 if liabilitiesAndEquity == "null" else float(liabilitiesAndEquity)
+    liabilitiesAndEquity = (0.0
+                            if liabilitiesAndEquity == "null"
+                            else float(liabilitiesAndEquity))
 
     totalLiabilities = float(getTotalLiabilities(year))
-    totalLiabilities = 0.0 if totalLiabilities == "null" else float(totalLiabilities)
+    totalLiabilities = (0.0
+                        if totalLiabilities == "null"
+                        else float(totalLiabilities))
 
     totalEquity = liabilitiesAndEquity - totalLiabilities
     return formatNumber(float(totalEquity), 2)
 
+
 def getCurrentAssets(year):
     """Get Current Assets."""
-    query = query_BalanceSheet + "{}/totalCurrentAssets".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/totalCurrentAssets".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
+
 def getNonCurrentAssets(year):
     """Get Noncurrent Assets."""
-    query = query_BalanceSheet + "{}/nonCurrentAssetsTotal".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/nonCurrentAssetsTotal".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getTotalAssets(year):
     """Get Total Assets: Current Assets + Noncurrent Assets"""
     currentAssets = getCurrentAssets(year)
-    currentAssets = 0.0 if currentAssets == "null" else float(currentAssets)
+    currentAssets = (0.0
+                     if currentAssets == "null"
+                     else float(currentAssets))
 
     nonCurrentAssets = getNonCurrentAssets(year)
-    nonCurrentAssets = 0.0 if nonCurrentAssets == "null" else float(nonCurrentAssets)
+    nonCurrentAssets = (0.0
+                        if nonCurrentAssets == "null"
+                        else float(nonCurrentAssets))
 
     totalAssets = currentAssets + nonCurrentAssets
     return formatNumber(float(totalAssets), 2)
 
+
 def getShortTermDebt(year):
     """Get Short-Term Debt."""
-    query = query_BalanceSheet + "{}/shortTermDebt".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/shortTermDebt".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
+
 def getLongTermDebt(year):
     """Get Long-Term Debt."""
-    query = query_BalanceSheet + "{}/longTermDebt".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/longTermDebt".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getTotalDebt(year):
     """Get Total Debt: Short-Term Debt + Long-Term Debt"""
@@ -521,6 +609,7 @@ def getTotalDebt(year):
     totalDebt = shortTermDebt + longTermDebt
     return formatNumber(float(totalDebt), 2)
 
+
 def getInvestedCapital(year):
     """Get Invested Capital: Debt + Equity"""
     debt = getTotalDebt(year)
@@ -532,13 +621,16 @@ def getInvestedCapital(year):
     investedCapital = debt + equity
     return formatNumber(float(investedCapital), 2)
 
+
 def getCommonSharesOutstanding(year):
     """Get number of oustanding shares."""
-    query = query_BalanceSheet + "{}/commonStockSharesOutstanding".format(getFinancialsDate(year))
+    query = query_BalanceSheet + "{}/commonStockSharesOutstanding".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getEarningsPerShare(year):
     """Get Earnings Per Shares (EPS): Earnings / Shares"""
@@ -546,10 +638,15 @@ def getEarningsPerShare(year):
     earnings = 0.0 if earnings == "null" else float(earnings)
 
     sharesOutstanding = getCommonSharesOutstanding(year)
-    sharesOutstanding = 0.0 if sharesOutstanding == "null" else float(sharesOutstanding)
+    sharesOutstanding = (0.0
+                         if sharesOutstanding == "null"
+                         else float(sharesOutstanding))
 
-    earningsPerShare = 0.0 if sharesOutstanding == 0.0 else earnings / sharesOutstanding
+    earningsPerShare = (0.0
+                        if sharesOutstanding == 0.0
+                        else earnings / sharesOutstanding)
     return formatNumber(float(earningsPerShare), 4)
+
 
 def getBookValuePerShare(year):
     """Get Book Value Per Share (BVPS): Equity / Shares"""
@@ -562,27 +659,33 @@ def getBookValuePerShare(year):
     bookValuePerShare = 0.0 if shares == 0.0 else equity / shares
     return formatNumber(float(bookValuePerShare), 4)
 
-################################################################################
-##############################  Income Statement  ##############################
-################################################################################
+###############################################################################
+#                               Income Statement                              #
+###############################################################################
+
 
 query_IncomeStatement = "Financials/Income_Statement/yearly/"
 
+
 def getNetIncome(year):
     """Get Net Income."""
-    query = query_IncomeStatement + "{}/netIncome".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/netIncome".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
+
 def getRevenue(year):
     """Get Revenue."""
-    query = query_IncomeStatement + "{}/totalRevenue".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/totalRevenue".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getEBITDA(year):
     """Get EBITDA."""
@@ -592,67 +695,83 @@ def getEBITDA(year):
         data = formatNumber(float(data), 2)
     return data
 
+
 def getGrossProfit(year):
     """Get Gross Profit."""
-    query = query_IncomeStatement + "{}/grossProfit".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/grossProfit".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getOperatingIncome(year):
     """Get Operating Income."""
-    query = query_IncomeStatement + "{}/operatingIncome".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/operatingIncome".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getInterestExpense(year):
     """Get Interest Expense."""
-    query = query_IncomeStatement + "{}/interestExpense".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/interestExpense".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getCostOfRevenue(year):
     """Get Cost Of Revenue."""
-    query = query_IncomeStatement + "{}/costOfRevenue".format(getFinancialsDate(year))
+    query = query_IncomeStatement + "{}/costOfRevenue".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
-################################################################################
-###########################  Cash Flow Statement  ##############################
-################################################################################
+###############################################################################
+#                            Cash Flow Statement                              #
+###############################################################################
+
 
 query_CashFlow = "Financials/Cash_Flow/yearly/"
 
+
 def getOperatingCashFlow(year):
     """Get Operating Cash Flow (OCF)."""
-    query = query_CashFlow + "{}/totalCashFromOperatingActivities".format(getFinancialsDate(year))
+    query = query_CashFlow + "{}/totalCashFromOperatingActivities".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getInvestingCashFlow(year):
     """Get Investing Cash Flow (ICF)."""
-    query = query_CashFlow + "{}/totalCashflowsFromInvestingActivities".format(getFinancialsDate(year))
+    query = query_CashFlow + "{}/totalCashflowsFromInvestingActivities".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
 
+
 def getCapitalExpenditures(year):
     """Get Capital Expenditures."""
-    query = query_CashFlow + "{}/capitalExpenditures".format(getFinancialsDate(year))
+    query = query_CashFlow + "{}/capitalExpenditures".format(
+            getFinancialsDate(year))
     data = getDataItem(query)
     if data != "null":
         data = formatNumber(float(data), 2)
     return data
+
 
 def getFreeCashFlow(year):
     """Get Free Cash Flow (FCF)."""

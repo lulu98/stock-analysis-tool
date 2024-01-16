@@ -34,32 +34,32 @@ Create and activate a Python virtual environment to not mess with local
 environment:
 
 ```bash
-$ python3 -m venv dev_env
-$ source dev_env/bin/activate
+python3 -m venv dev_env
+source dev_env/bin/activate
 ```
 
 Install all required python modules:
 
 ```bash
-$ python -m pip install -r requirements/requirements.txt
+python -m pip install -r requirements/requirements.txt
 ```
 
 To deactivate the python virtual environment execute:
 
 ```bash
-$ deactivate
+deactivate
 ```
 
 ### apt packages
 
 ```bash
-$ cat ./requirements/requirements.apt | xargs sudo apt install -y
+cat ./requirements/requirements.apt | xargs sudo apt install -y
 ```
 
 ### snap packages
 
 ```bash
-$ cat ./requirements/requirements.apt | xargs sudo snap install
+cat ./requirements/requirements.apt | xargs sudo snap install
 ```
 
 ## Project Structure
@@ -296,12 +296,12 @@ directory to better plan and manage the development process.
 My development workflow for a new feature is as follows:
 
 1. For a new feature a `development` branch is opened. The `main` branch is
-protected and your changes can only get applied if the pull request succeeds.
-2. Implement new feature.
-3. Execute linters and unit tests locally to validate that code base is not
-broken.
-4. Create a pull request.
-5. If CI goes green, merge with `merge and rebase` option.
+   protected and your changes can only get applied if the pull request succeeds.
+1. Implement new feature.
+1. Execute linters and unit tests locally to validate that code base is not
+   broken.
+1. Create a pull request.
+1. If CI goes green, merge with `merge and rebase` option.
 
 ## Sources
 

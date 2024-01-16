@@ -18,6 +18,7 @@ import filecmp
 from local_api import *
 from calculations import *
 
+
 def setEnvironmentVariables(isin):
     """
     Sets environment variables required by stage 2.
@@ -31,23 +32,27 @@ def setEnvironmentVariables(isin):
     jsonFile = os.path.join(buildDir, "data", "data.json")
 
     os.environ['ROOT_DIR'] = rootDir
-    os.environ['DATA_DIR'] = dataDir 
-    os.environ['TEMPLATE_DIR'] = templateDir 
+    os.environ['DATA_DIR'] = dataDir
+    os.environ['TEMPLATE_DIR'] = templateDir
     os.environ['BUILD_DIR'] = buildDir
     os.environ['JSON_FILE'] = jsonFile
+
 
 def isStage01Done():
     dataDir = os.getenv('DATA_DIR')
     return os.path.exists(dataDir)
+
 
 def isBuildDirectoryExists():
     """Returns if build directory exists."""
     buildDir = os.getenv('BUILD_DIR')
     return os.path.exists(buildDir)
 
+
 def isFilesTheSame(srcFile, dstFile):
     """Returns if srcFile and dstFile are the same."""
     return filecmp.cmp(srcFile, dstFile)
+
 
 def setupBuildDirectory(srcFile, dstFile):
     """Sets up build directory."""
@@ -59,6 +64,7 @@ def setupBuildDirectory(srcFile, dstFile):
     shutil.copytree(templateDir, buildDir, dirs_exist_ok=True)
     shutil.copyfile(srcFile, dstFile)
     print("Initial directory setup done.")
+
 
 def updateDataDirectory(srcFile, dstFile):
     """Updates data directory."""
@@ -74,15 +80,18 @@ def updateDataDirectory(srcFile, dstFile):
     shutil.copyfile(srcFile, dstFile)
     print("Rebuild data directory done.")
 
+
 def checkAndInitializeBuildDir(srcFile, dstFile):
     """Set up build directory once initially."""
     if not isBuildDirectoryExists():
         setupBuildDirectory(srcFile, dstFile)
 
+
 def checkAndUpdateDataDir(srcFile, dstFile):
-    """If the financial data changed, update the data directory of the build."""
+    """If financial data changed, update the data directory of the build."""
     if not isFilesTheSame(srcFile, dstFile):
         updateDataDirectory(srcFile, dstFile)
+
 
 def prepareBuildDir(isin):
     """Prepare build directory for stage 2 execution."""
@@ -90,15 +99,17 @@ def prepareBuildDir(isin):
     jsonDst = os.getenv('JSON_FILE')
 
     if not isStage01Done():
-        sys.exit("Data for company {} not available. Execute stage 1 first.".format(isin))
+        sys.exit("Data for company {} not available. "
+                 "Execute stage 1 first.".format(isin))
 
     checkAndInitializeBuildDir(jsonSrc, jsonDst)
 
     checkAndUpdateDataDir(jsonSrc, jsonDst)
 
+
 def prepareStage(isin):
     """
-    Prepares stage 2 of the stock analysis pipeline. 
+    Prepares stage 2 of the stock analysis pipeline.
 
     Parameters:
         isin (str): ISIN of the stock to be analysed.
@@ -106,18 +117,21 @@ def prepareStage(isin):
     setEnvironmentVariables(isin)
     prepareBuildDir(isin)
 
+
 def formatStringToSedInput(text):
     """Format string input into sed compliant input string."""
     output = text.replace("\\", "\\\\")
     return output
 
+
 def formatStringToSedOutput(text):
     """Format string input into sed compliant output string."""
-    output = text.replace("&", "\&")
-    output = output.replace("/", "\/")
+    output = text.replace("&", "\&")  # noqa: W605
+    output = output.replace("/", "\/")  # noqa: W605
     output = output.replace("\n", "\\n")
     output = output.replace("'", "'\"'\"'")
     return output
+
 
 def findPattern(regex, fileName):
     '''
@@ -130,11 +144,13 @@ def findPattern(regex, fileName):
     Returns:
         output (list): List of occurrences found.
     '''
-    cmd = "sed -n -e 's/.*\({}\).*/\\1/p' {}".format(regex, fileName)
+    cmd = "sed -n -e 's/.*\({}\).*/\\1/p' {}".format(regex, fileName)  # noqa: W605
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
     output = output.split("\n")
-    output = list(filter(lambda x: x != '', output)) # remove empty strings in array
+    # remove empty strings in array
+    output = list(filter(lambda x: x != '', output))
     return output
+
 
 def replacePattern(regex, output, fileName):
     '''
@@ -150,10 +166,11 @@ def replacePattern(regex, output, fileName):
     with open(fileName, "w") as f:
         f.write(output)
 
+
 def findAndReplacePattern(regex, fileName):
     """
-    Find and replace pattern in file. The idea is that a pattern with two 
-    underscores is found and then evaluated via a Python function. This pattern 
+    Find and replace pattern in file. The idea is that a pattern with two
+    underscores is found and then evaluated via a Python function. This pattern
     is then replaced by the real value.
 
     Parameters:
@@ -162,21 +179,23 @@ def findAndReplacePattern(regex, fileName):
     """
     output = findPattern(regex, fileName)
 
-    while(len(output) > 0): # while loop to cope with multiple placeholders in one line
+    while (len(output) > 0):  # cope with multiple placeholders in one line
         for placeholder in output:
             pattern = formatStringToSedInput(placeholder)
-            replacement = str(eval(placeholder.replace('__', ''))) # the first two underscores must be deleted
+            # the first two underscores must be deleted
+            replacement = str(eval(placeholder.replace('__', '')))
             replacement = formatStringToSedOutput(replacement)
             replacePattern(pattern, replacement, fileName)
         output = findPattern(regex, fileName)
 
+
 def executeStage(isin):
     """
-    Find and replace patterns with two underscores in the template JSON data 
-    files. After replacing all occurrences of patterns in the JSON files, this 
+    Find and replace patterns with two underscores in the template JSON data
+    files. After replacing all occurrences of patterns in the JSON files, this
     stage transforms the JSON files into Latex compatible files via json2latex.
-    As a result, we can access the data from the JSON files like an array access 
-    in the Latex files.
+    As a result, we can access the data from the JSON files like an array
+    access in the Latex files.
     """
     dataDir = os.path.join(os.getenv('BUILD_DIR'), "data")
     files = [os.path.join(dataDir, "fund_data.json"),
@@ -194,10 +213,14 @@ def executeStage(isin):
 
         print("Processing done.\n")
 
-    cmd = "json2latex {} fundData {}".format(os.path.join(dataDir, "fund_data.json"), os.path.join(dataDir, "fund_data.tex"))
+    cmd = "json2latex {} fundData {}".format(
+            os.path.join(dataDir, "fund_data.json"),
+            os.path.join(dataDir, "fund_data.tex"))
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
 
-    cmd = "json2latex {} calcData {}".format(os.path.join(dataDir, "calc_data.json"), os.path.join(dataDir, "calc_data.tex"))
+    cmd = "json2latex {} calcData {}".format(
+            os.path.join(dataDir, "calc_data.json"),
+            os.path.join(dataDir, "calc_data.tex"))
     output = subprocess.check_output(cmd, shell=True).decode('utf-8')
 
 
