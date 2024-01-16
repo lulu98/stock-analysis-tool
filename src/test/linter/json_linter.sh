@@ -1,17 +1,25 @@
 #!/bin/bash
 
-CODE_DIR="../../main"
-CONFIG_DIR="$CODE_DIR/config"
+status=0
 
 collect_sources () {
-    json_files=("$CONFIG_DIR/stocks.json")
+    json_files=("../../../src/main/config/stocks.json")
 }
 
 process () {
     for file in "${json_files[@]}"; do
-        jsonlint-php "$file"
+        echo "linting $file"
+        if ! jsonlint-php "$file"; then
+            status=1
+        fi
     done
 }
 
 collect_sources 
 process
+if [ $status -eq 0 ]; then
+    echo "$0 success"
+else
+    echo "$0 failure"
+fi
+exit $status

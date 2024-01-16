@@ -9,8 +9,46 @@ on:
   workflow_dispatch:
 
 jobs:
+  # apply various linters
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+            sudo apt-get install shellcheck
+            sudo apt-get install jsonlint
+            sudo apt-get install lacheck
+            sudo apt-get install chktex
+            sudo snap install mdl
+            pip install -r requirements/requirements.txt
+
+      - name: Bash linter (shellcheck)
+        working-directory: ./src/test/linter
+        run: bash bash_linter.sh
+
+      - name: JSON linter (jsonlint)
+        working-directory: ./src/test/linter
+        run: bash json_linter.sh
+
+      - name: Latex linter (lacheck, chktex)
+        working-directory: ./src/test/linter
+        run: bash latex_linter.sh
+
+      - name: Markdown linter (mdl)
+        working-directory: ./src/test/linter
+        run: bash markdown_linter.sh
+
+      - name: Python linter (pycodestyle, mccabe)
+        working-directory: ./src/test/linter
+        run: bash python_linter.sh
+
   # test the Python code
   test:
+    needs: lint
     runs-on: ubuntu-latest
 
     steps:
