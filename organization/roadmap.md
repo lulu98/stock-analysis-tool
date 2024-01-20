@@ -12,3 +12,6 @@
                on Node16
 - [ ] SAT-008: Extend Python linter to pylint and pyflakes
 - [ ] SAT-009: Check that pipeline generates correct `calc_data/fund_data.json`
+- [ ] SAT-010: Write a script that shows the competitors of a company
+- [ ] SAT-011: Add integration/system testing
+- [ ] SAT-012: Add code coverage information on GitHub
