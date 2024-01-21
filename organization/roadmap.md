@@ -4,7 +4,7 @@
 
 - [x] SAT-001: Add project management
 - [x] SAT-002: Formalize the project requirements/dependencies
-- [ ] SAT-003: Clean up strategy.txt file
+- [x] SAT-003: Clean up strategy.txt file
 - [ ] SAT-004: Increase test coverage
 - [x] SAT-005: Fix linter scripts
 - [ ] SAT-006: Include linter scripts in CI

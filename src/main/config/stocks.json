@@ -1,810 +1,1007 @@
 {
-    "AU000000BHP4":{
+    "AU000000BHP4": {
         "Symbol": "BHP",
-        "ExchangeID": "AU"
+        "ExchangeID": "AU",
+        "Name": "BHP Group"
     },
-    "BE0974293251":{
+    "BE0974293251": {
         "Symbol": "ABI",
-        "ExchangeID": "BR"
+        "ExchangeID": "BR",
+        "Name": "Anheuser-Busch InBev SA/NV"
     },
-    "BRVALEACNOR0":{
+    "BRVALEACNOR0": {
         "Symbol": "VALE3",
-        "ExchangeID": "SA"
+        "ExchangeID": "SA",
+        "Name": "Vale S.A"
     },
-    "CA82509L1076":{
-        "Symbol": "SHOP",
-        "ExchangeID": "US"
-    },
-    "CA0679011084":{
+    "CA0679011084": {
         "Symbol": "ABX",
-        "ExchangeID": "TO"
+        "ExchangeID": "TO",
+        "Name": "Barrick Gold Corporation"
     },
-    "CA76131D1033":{
+    "CA76131D1033": {
         "Symbol": "QSR",
-        "ExchangeID": "TO"
+        "ExchangeID": "TO",
+        "Name": "Restaurant Brands International Inc"
     },
-    "CA94106B1013":{
+    "CA82509L1076": {
+        "Symbol": "SHOP",
+        "ExchangeID": "US",
+        "Name": "Shopify Inc"
+    },
+    "CA94106B1013": {
         "Symbol": "WCN",
-        "ExchangeID": "TO"
+        "ExchangeID": "TO",
+        "Name": "Waste Connections Inc"
     },
-    "CH0012032048":{
-        "Symbol": "ROG",
-        "ExchangeID": "SW"
-    },
-    "CH0012005267":{
+    "CH0012005267": {
         "Symbol": "NOVN",
-        "ExchangeID": "SW"
+        "ExchangeID": "SW",
+        "Name": "Novartis AG"
     },
-    "CH0038863350":{
+    "CH0012032048": {
+        "Symbol": "ROG",
+        "ExchangeID": "SW",
+        "Name": "Roche Holding AG"
+    },
+    "CH0038863350": {
         "Symbol": "NESN",
-        "ExchangeID": "SW"
+        "ExchangeID": "SW",
+        "Name": "Nestl\u00e9 S.A"
     },
-    "CNE100000296":{
-        "Symbol": "BYDDF",
-        "ExchangeID": "US"
-    },
-    "CNE100000338":{
-        "Symbol": "GWLLF",
-        "ExchangeID": "US"
-    },
-    "CNE000000TY6":{
-        "Symbol": "600104",
-        "ExchangeID": "SHG"
-    },
-    "CNE000000R36":{
+    "CNE000000R36": {
         "Symbol": "000625",
-        "ExchangeID": "SHE"
+        "ExchangeID": "SHE",
+        "Name": "Chongqing Changan Automobile Company Limited"
     },
-    "CNE100000312":{
-        "Symbol": "DNFGF",
-        "ExchangeID": "US"
+    "CNE000000TY6": {
+        "Symbol": "600104",
+        "ExchangeID": "SHG",
+        "Name": "SAIC Motor Corporation Limited"
     },
-    "CNE100000L63":{
-        "Symbol": "002352",
-        "ExchangeID": "SHE"
-    },
-    "CNE1000003W8":{
-        "Symbol": "PCCYF",
-        "ExchangeID": "US"
-    },
-    "CNE0000018R8":{
-        "Symbol": "600519",
-        "ExchangeID": "SHG"
-    },
-    "CNE000000VQ8":{
+    "CNE000000VQ8": {
         "Symbol": "000858",
-        "ExchangeID": "SHE"
+        "ExchangeID": "SHE",
+        "Name": "Wuliangye Yibin Co.Ltd"
     },
-    "CNE100004272":{
-        "Symbol": "9633",
-        "ExchangeID": "HK"
+    "CNE0000018R8": {
+        "Symbol": "600519",
+        "ExchangeID": "SHG",
+        "Name": "Kweichow Moutai Co. Ltd"
     },
-    "CNE100000767":{
+    "CNE100000296": {
+        "Symbol": "BYDDF",
+        "ExchangeID": "US",
+        "Name": "BYD Company Limited"
+    },
+    "CNE100000312": {
+        "Symbol": "DNFGF",
+        "ExchangeID": "US",
+        "Name": "Dongfeng Motor Group Company Limited"
+    },
+    "CNE100000338": {
+        "Symbol": "GWLLF",
+        "ExchangeID": "US",
+        "Name": "Great Wall Motor Co Ltd"
+    },
+    "CNE1000003W8": {
+        "Symbol": "PCCYF",
+        "ExchangeID": "US",
+        "Name": "PetroChina Company Limited"
+    },
+    "CNE100000767": {
         "Symbol": "601088",
-        "ExchangeID": "SHG"
+        "ExchangeID": "SHG",
+        "Name": "China Shenhua Energy Company Limited"
     },
-    "CNE100001SL2":{
-        "Symbol": "603288",
-        "ExchangeID": "SHG"
+    "CNE100000L63": {
+        "Symbol": "002352",
+        "ExchangeID": "SHE",
+        "Name": "S.F. Holding Co. Ltd"
     },
-    "CNE100001RQ3":{
+    "CNE100001RQ3": {
         "Symbol": "002714",
-        "ExchangeID": "SHE"
+        "ExchangeID": "SHE",
+        "Name": "Muyuan Foods Co. Ltd"
     },
-    "DE0007664039":{
-        "Symbol": "VOW3",
-        "ExchangeID": "XETRA"
+    "CNE100001SL2": {
+        "Symbol": "603288",
+        "ExchangeID": "SHG",
+        "Name": "Foshan Haitian Flavouring and Food Company Ltd"
     },
-    "DE0007100000":{
-        "Symbol": "MBG",
-        "ExchangeID": "XETRA"
+    "CNE100004272": {
+        "Symbol": "9633",
+        "ExchangeID": "HK",
+        "Name": "Nongfu Spring Co. Ltd"
     },
-    "DE000DTR0CK8":{
-        "Symbol": "DTG",
-        "ExchangeID": "XETRA"
-    },
-    "DE0005190003":{
+    "DE0005190003": {
         "Symbol": "BMW",
-        "ExchangeID": "XETRA"
+        "ExchangeID": "XETRA",
+        "Name": "Bayerische Motoren Werke Aktiengesellschaft"
     },
-    "DE0005439004":{
+    "DE0005439004": {
         "Symbol": "CON",
-        "ExchangeID": "XETRA"
+        "ExchangeID": "XETRA",
+        "Name": "Continental Aktiengesellschaft"
     },
-    "DE0005552004":{
+    "DE0005552004": {
         "Symbol": "DPW",
-        "ExchangeID": "XETRA"
+        "ExchangeID": "XETRA",
+        "Name": "Deutsche Post AG"
     },
-    "DE000A1EWWW0":{
-        "Symbol": "ADS",
-        "ExchangeID": "XETRA"
-    },
-    "DE0006969603":{
-        "Symbol": "PUM",
-        "ExchangeID": "XETRA"
-    },
-    "DE000ZAL1111":{
-        "Symbol": "ZAL",
-        "ExchangeID": "XETRA"
-    },
-    "DE000ZAL1111":{
-        "Symbol": "ZAL",
-        "ExchangeID": "XETRA"
-    },
-    "DE0007164600":{
-        "Symbol": "SAP",
-        "ExchangeID": "XETRA"
-    },
-    "DE0006231004":{
-        "Symbol": "IFX",
-        "ExchangeID": "XETRA"
-    },
-    "DE0006599905":{
-        "Symbol": "MRK",
-        "ExchangeID": "XETRA"
-    },
-    "DE000BAY0017":{
-        "Symbol": "BAYN",
-        "ExchangeID": "XETRA"
-    },
-    "DE000BASF111":{
-        "Symbol": "BAS",
-        "ExchangeID": "XETRA"
-    },
-    "DE0006048408":{
+    "DE0006048408": {
         "Symbol": "HEN",
-        "ExchangeID": "XETRA"
-    },
-    "DE0008404005":{
-        "Symbol": "ALV",
-        "ExchangeID": "XETRA"
-    },
-    "DE0007236101":{
-        "Symbol": "SIE",
-        "ExchangeID": "XETRA"
-    },
-    "DE0007500001":{
-        "Symbol": "TKA",
-        "ExchangeID": "XETRA"
-    },
-    "ES0148396007":{
-        "Symbol": "ITX",
-        "ExchangeID": "MC"
-    },
-    "FR0000131906":{
-        "Symbol": "RNO",
-        "ExchangeID": "PA"
-    },
-    "FR0000121014":{
-        "Symbol": "MC",
-        "ExchangeID": "PA"
-    },
-    "FR0000130403":{
-        "Symbol": "CDI",
-        "ExchangeID": "PA"
-    },
-    "FR0000120644":{
-        "Symbol": "BN",
-        "ExchangeID": "PA"
-    },
-    "FR0000120073":{
-        "Symbol": "AI",
-        "ExchangeID": "PA"
-    },
-    "FR0000120321":{
-        "Symbol": "OR",
-        "ExchangeID": "PA"
-    },
-    "FR0000054470":{
-        "Symbol": "UBI",
-        "ExchangeID": "PA"
-    },
-    "GB00BN7CG237":{
-        "Symbol": "AML",
-        "ExchangeID": "LSE"
-    },
-    "GB00BP6MXD84":{
-        "Symbol": "SHEL",
-        "ExchangeID": "LSE"
-    },
-    "GB0002374006":{
-        "Symbol": "DGE",
-        "ExchangeID": "LSE"
-    },
-    "GB0007188757":{
-        "Symbol": "RIO",
-        "ExchangeID": "LSE"
-    },
-    "GB00B10RZP78":{
-        "Symbol": "ULVR",
-        "ExchangeID": "LSE"
-    },
-    "GB00BZ09BD16":{
-        "Symbol": "TEAM",
-        "ExchangeID": "US"
-    },
-    "GB0006776081":{
-        "Symbol": "PSON",
-        "ExchangeID": "LSE"
-    },
-    "GB00B24CGK77":{
-        "Symbol": "RKT",
-        "ExchangeID": "LSE"
-    },
-    "IE00BZ12WP82":{
-        "Symbol": "LIN",
-        "ExchangeID": "US"
-    },
-    "INE585B01010":{
-        "Symbol": "MARUTI",
-        "ExchangeID": "NSE"
-    },
-    "INE155A01022":{
-        "Symbol": "TATAMOTORS",
-        "ExchangeID": "NSE"
-    },
-    "INE101A01026":{
-        "Symbol": "M&M",
-        "ExchangeID": "NSE"
-    },
-    "INE388Y01029":{
-        "Symbol": "NYKAA",
-        "ExchangeID": "NSE"
-    },
-    "INE030A01027":{
-        "Symbol": "HINDUNILVR",
-        "ExchangeID": "NSE"
-    },
-    "IT0003874101":{
-        "Symbol": "1913",
-        "ExchangeID": "HK"
-    },
-    "JE00B4T3BW64":{
-        "Symbol": "GLCNF",
-        "ExchangeID": "US"
-    },
-    "JP3633400001":{
-        "Symbol": "TOYOF",
-        "ExchangeID": "US"
-    },
-    "JP3854600008":{
-        "Symbol": "HNDAF",
-        "ExchangeID": "US"
-    },
-    "JP3435000009":{
-        "Symbol": "SNEJF",
-        "ExchangeID": "US"
-    },
-    "KYG3777B1032":{
-        "Symbol": "GELYF",
-        "ExchangeID": "US"
-    },
-    "KYG596691041":{
-        "Symbol": "MPNGF",
-        "ExchangeID": "US"
-    },
-    "KYG210961051":{
-        "Symbol": "2139",
-        "ExchangeID": "HK"
-    },
-    "KYG7397A1067":{
-        "Symbol": "RAZFF",
-        "ExchangeID": "US"
-    },
-    "KYG875721634":{
-        "Symbol": "TCTZF",
-        "ExchangeID": "US"
-    },
-    "KR7000270009":{
-        "Symbol": "000270",
-        "ExchangeID": "KO"
-    },
-    "KR7005930003":{
-        "Symbol": "005930",
-        "ExchangeID": "KO"
-    },
-    "KR7000660001":{
-        "Symbol": "000660",
-        "ExchangeID": "KO"
-    },
-    "LU1778762911":{
-        "Symbol": "SPOT",
-        "ExchangeID": "US"
-    },
-    "NL00150001Q9":{
-        "Symbol": "STLA",
-        "ExchangeID": "US"
-    },
-    "NL0011585146":{
-        "Symbol": "RACE",
-        "ExchangeID": "MI"
-    },
-    "NL0000235190":{
-        "Symbol": "AIR",
-        "ExchangeID": "XETRA"
-    },
-    "NL0000009165":{
-        "Symbol": "HEIA",
-        "ExchangeID": "AS"
-    },
-    "NL0010273215":{
-        "Symbol": "ASML",
-        "ExchangeID": "AS"
-    },
-    "NL0009538784":{
-        "Symbol": "NXPI",
-        "ExchangeID": "US"
-    },
-    "PLOPTTC00011":{
-        "Symbol": "CDR",
-        "ExchangeID": "WAR"
-    },
-    "SA14TG012N13":{
-        "Symbol": "2222",
-        "ExchangeID": "SR"
-    },
-    "SA0007879139":{
-        "Symbol": "2020",
-        "ExchangeID": "SR"
-    },
-    "SE0000115420":{
-        "Symbol": "VOLV-A",
-        "ExchangeID": "ST"
-    },
-    "SE0000106270":{
-        "Symbol": "HM-B",
-        "ExchangeID": "ST"
-    },
-    "TW0002207008":{
-        "Symbol": "2207",
-        "ExchangeID": "TW"
-    },
-    "TW0002454006":{
-        "Symbol": "2454",
-        "ExchangeID": "TW"
-    },
-    "TW0002379005":{
-        "Symbol": "2379",
-        "ExchangeID": "TW"
-    },
-    "US0378331005":{
-        "Symbol": "AAPL",
-        "ExchangeID": "US"
-    },
-    "US88160R1014":{
-        "Symbol": "TSLA",
-        "ExchangeID": "US"
-    },
-    "US3453708600":{
-        "Symbol": "F",
-        "ExchangeID": "US"
-    },
-    "US37045V1008":{
-        "Symbol": "GM",
-        "ExchangeID": "US"
-    },
-    "US4128221086":{
-        "Symbol": "HOG",
-        "ExchangeID": "US"
-    },
-    "US86959X1072":{
-        "Symbol": "SZKMY",
-        "ExchangeID": "US"
-    },
-    "US86428V1044":{
-        "Symbol": "FUJHY",
-        "ExchangeID": "US"
-    },
-    "US5787871038":{
-        "Symbol": "MZDAY",
-        "ExchangeID": "US"
-    },
-    "US50202M1027":{
-        "Symbol": "LI",
-        "ExchangeID": "US"
-    },
-    "US98422D1054":{
-        "Symbol": "XPEV",
-        "ExchangeID": "US"
-    },
-    "USY384721251":{
-        "Symbol": "HYMTF",
-        "ExchangeID": "US"
-    },
-    "US5398301094":{
-        "Symbol": "LMT",
-        "ExchangeID": "US"
-    },
-    "US0970231058":{
-        "Symbol": "BA",
-        "ExchangeID": "US"
-    },
-    "US4781601046":{
-        "Symbol": "JNJ",
-        "ExchangeID": "US"
-    },
-    "US58933Y1055":{
+        "ExchangeID": "XETRA",
+        "Name": "Henkel AG & Co. KGaA"
+    },
+    "DE0006231004": {
+        "Symbol": "IFX",
+        "ExchangeID": "XETRA",
+        "Name": "Infineon Technologies AG"
+    },
+    "DE0006599905": {
         "Symbol": "MRK",
-        "ExchangeID": "US"
-    },
-    "US0231351067":{
-        "Symbol": "AMZN",
-        "ExchangeID": "US"
-    },
-    "US01609W1027":{
-        "Symbol": "BABA",
-        "ExchangeID": "US"
-    },
-    "US47215P1066":{
-        "Symbol": "JD",
-        "ExchangeID": "US"
-    },
-    "US7223041028":{
-        "Symbol": "PDD",
-        "ExchangeID": "US"
-    },
-    "US22266T1097":{
-        "Symbol": "CPNG",
-        "ExchangeID": "US"
-    },
-    "US75102W1080":{
-        "Symbol": "RKUNY",
-        "ExchangeID": "US"
-    },
-    "US9113121068":{
-        "Symbol": "UPS",
-        "ExchangeID": "US"
-    },
-    "US31428X1063":{
-        "Symbol": "FDX",
-        "ExchangeID": "US"
-    },
-    "US30231G1022":{
-        "Symbol": "XOM",
-        "ExchangeID": "US"
-    },
-    "US1667641005":{
-        "Symbol": "CVX",
-        "ExchangeID": "US"
-    },
-    "US1912161007":{
-        "Symbol": "KO",
-        "ExchangeID": "US"
-    },
-    "US7134481081":{
-        "Symbol": "PEP",
-        "ExchangeID": "US"
-    },
-    "US8552441094":{
-        "Symbol": "SBUX",
-        "ExchangeID": "US"
-    },
-    "US6541061031":{
-        "Symbol": "NKE",
-        "ExchangeID": "US"
-    },
-    "US8725401090":{
-        "Symbol": "TJX",
-        "ExchangeID": "US"
-    },
-    "US7782961038":{
-        "Symbol": "ROST",
-        "ExchangeID": "US"
-    },
-    "US1220171060":{
-        "Symbol": "BURL",
-        "ExchangeID": "US"
-    },
-    "US9043111072":{
-        "Symbol": "UAA",
-        "ExchangeID": "US"
-    },
-    "US8760301072":{
-        "Symbol": "TPR",
-        "ExchangeID": "US"
-    },
-    "US5500211090":{
-        "Symbol": "LULU",
-        "ExchangeID": "US"
-    },
-    "US31188H1014":{
-        "Symbol": "FRCOY",
-        "ExchangeID": "US"
-    },
-    "US6092071058":{
-        "Symbol": "MDLZ",
-        "ExchangeID": "US"
-    },
-    "US5007541064":{
-        "Symbol": "KHC",
-        "ExchangeID": "US"
-    },
-    "US3703341046":{
-        "Symbol": "GIS",
-        "ExchangeID": "US"
-    },
-    "US5797802064":{
-        "Symbol": "MKC",
-        "ExchangeID": "US"
-    },
-    "US4878361082":{
-        "Symbol": "K",
-        "ExchangeID": "US"
-    },
-    "US4278661081":{
-        "Symbol": "HSY",
-        "ExchangeID": "US"
-    },
-    "US9024941034":{
-        "Symbol": "TSN",
-        "ExchangeID": "US"
-    },
-    "US0097071007":{
-        "Symbol": "AJINY",
-        "ExchangeID": "US"
-    },
-    "US49387U1034":{
-        "Symbol": "KIKOY",
-        "ExchangeID": "US"
-    },
-    "US4661101034":{
-        "Symbol": "JBSAY",
-        "ExchangeID": "US"
-    },
-    "US5801351017":{
-        "Symbol": "MCD",
-        "ExchangeID": "US"
-    },
-    "US1696561059":{
-        "Symbol": "CMG",
-        "ExchangeID": "US"
-    },
-    "US98850P1093":{
-        "Symbol": "YUMC",
-        "ExchangeID": "US"
-    },
-    "US5949181045":{
-        "Symbol": "MSFT",
-        "ExchangeID": "US"
-    },
-    "US02079K3059":{
-        "Symbol": "GOOGL",
-        "ExchangeID": "US"
-    },
-    "US00724F1012":{
-        "Symbol": "ADBE",
-        "ExchangeID": "US"
-    },
-    "US79466L3024":{
-        "Symbol": "CRM",
-        "ExchangeID": "US"
-    },
-    "US81762P1021":{
-        "Symbol": "NOW",
-        "ExchangeID": "US"
-    },
-    "US68389X1054":{
-        "Symbol": "ORCL",
-        "ExchangeID": "US"
-    },
-    "US9285634021":{
-        "Symbol": "VMW",
-        "ExchangeID": "US"
-    },
-    "US4592001014":{
-        "Symbol": "IBM",
-        "ExchangeID": "US"
-    },
-    "US17275R1023":{
-        "Symbol": "CSCO",
-        "ExchangeID": "US"
-    },
-    "US40434L1052":{
-        "Symbol": "HPQ",
-        "ExchangeID": "US"
-    },
-    "US67066G1040":{
-        "Symbol": "NVDA",
-        "ExchangeID": "US"
-    },
-    "US0079031078":{
-        "Symbol": "AMD",
-        "ExchangeID": "US"
-    },
-    "US4581401001":{
-        "Symbol": "INTC",
-        "ExchangeID": "US"
-    },
-    "US11135F1012":{
-        "Symbol": "AVGO",
-        "ExchangeID": "US"
-    },
-    "US7475251036":{
-        "Symbol": "QCOM",
-        "ExchangeID": "US"
-    },
-    "US8825081040":{
-        "Symbol": "TXN",
-        "ExchangeID": "US"
-    },
-    "US0382221051":{
-        "Symbol": "AMAT",
-        "ExchangeID": "US"
-    },
-    "US5951121038":{
-        "Symbol": "MU",
-        "ExchangeID": "US"
-    },
-    "US5128071082":{
-        "Symbol": "LRCX",
-        "ExchangeID": "US"
-    },
-    "US0326541051":{
-        "Symbol": "ADI",
-        "ExchangeID": "US"
-    },
-    "US5738741041":{
-        "Symbol": "MRVL",
-        "ExchangeID": "US"
-    },
-    "US4824801009":{
-        "Symbol": "KLAC",
-        "ExchangeID": "US"
-    },
-    "US8716071076":{
-        "Symbol": "SNPS",
-        "ExchangeID": "US"
-    },
-    "US8740391003":{
-        "Symbol": "TSM",
-        "ExchangeID": "US"
-    },
-    "US92826C8394":{
-        "Symbol": "V",
-        "ExchangeID": "US"
-    },
-    "US57636Q1040":{
-        "Symbol": "MA",
-        "ExchangeID": "US"
-    },
-    "US70450Y1038":{
-        "Symbol": "PYPL",
-        "ExchangeID": "US"
-    },
-    "US0846707026":{
-        "Symbol": "BRK-B",
-        "ExchangeID": "US"
-    },
-    "US6174464486":{
-        "Symbol": "MS",
-        "ExchangeID": "US"
-    },
-    "US09247X1019":{
-        "Symbol": "BLK",
-        "ExchangeID": "US"
-    },
-    "US92343V1044":{
-        "Symbol": "VZ",
-        "ExchangeID": "US"
-    },
-    "US20030N1019":{
-        "Symbol": "CMCSA",
-        "ExchangeID": "US"
-    },
-    "US00206R1023":{
-        "Symbol": "T",
-        "ExchangeID": "US"
-    },
-    "US8725901040":{
-        "Symbol": "TMUS",
-        "ExchangeID": "US"
-    },
-    "US03027X1000":{
-        "Symbol": "AMT",
-        "ExchangeID": "US"
-    },
-    "US9311421039":{
-        "Symbol": "WMT",
-        "ExchangeID": "US"
-    },
-    "US4370761029":{
-        "Symbol": "HD",
-        "ExchangeID": "US"
-    },
-    "US22160K1051":{
-        "Symbol": "COST",
-        "ExchangeID": "US"
-    },
-    "US5486611073":{
-        "Symbol": "LOW",
-        "ExchangeID": "US"
-    },
-    "US1266501006":{
-        "Symbol": "CVS",
-        "ExchangeID": "US"
-    },
-    "US1491231015":{
-        "Symbol": "CAT",
-        "ExchangeID": "US"
-    },
-    "US2441991054":{
-        "Symbol": "DE",
-        "ExchangeID": "US"
-    },
-    "US94106L1098":{
-        "Symbol": "WM",
-        "ExchangeID": "US"
-    },
-    "US7607591002":{
-        "Symbol": "RSG",
-        "ExchangeID": "US"
-    },
-    "US64110L1061":{
-        "Symbol": "NFLX",
-        "ExchangeID": "US"
-    },
-    "US2546871060":{
-        "Symbol": "DIS",
-        "ExchangeID": "US"
-    },
-    "US25470F3029":{
-        "Symbol": "DISCK",
-        "ExchangeID": "US"
-    },
-    "US00164V1035":{
+        "ExchangeID": "XETRA",
+        "Name": "MERCK Kommanditgesellschaft auf Aktien"
+    },
+    "DE0006969603": {
+        "Symbol": "PUM",
+        "ExchangeID": "XETRA",
+        "Name": "PUMA SE"
+    },
+    "DE0007100000": {
+        "Symbol": "MBG",
+        "ExchangeID": "XETRA",
+        "Name": "Daimler AG"
+    },
+    "DE0007164600": {
+        "Symbol": "SAP",
+        "ExchangeID": "XETRA",
+        "Name": "SAP SE"
+    },
+    "DE0007236101": {
+        "Symbol": "SIE",
+        "ExchangeID": "XETRA",
+        "Name": "Siemens Aktiengesellschaft"
+    },
+    "DE0007500001": {
+        "Symbol": "TKA",
+        "ExchangeID": "XETRA",
+        "Name": "thyssenkrupp AG"
+    },
+    "DE0007664039": {
+        "Symbol": "VOW3",
+        "ExchangeID": "XETRA",
+        "Name": "Volkswagen AG"
+    },
+    "DE0008404005": {
+        "Symbol": "ALV",
+        "ExchangeID": "XETRA",
+        "Name": "Allianz SE"
+    },
+    "DE000A1EWWW0": {
+        "Symbol": "ADS",
+        "ExchangeID": "XETRA",
+        "Name": "adidas AG"
+    },
+    "DE000BASF111": {
+        "Symbol": "BAS",
+        "ExchangeID": "XETRA",
+        "Name": "BASF SE"
+    },
+    "DE000BAY0017": {
+        "Symbol": "BAYN",
+        "ExchangeID": "XETRA",
+        "Name": "Bayer Aktiengesellschaft"
+    },
+    "DE000DTR0CK8": {
+        "Symbol": "DTG",
+        "ExchangeID": "XETRA",
+        "Name": "Daimler Truck Holding AG"
+    },
+    "DE000ZAL1111": {
+        "Symbol": "ZAL",
+        "ExchangeID": "XETRA",
+        "Name": "Zalando SE"
+    },
+    "ES0148396007": {
+        "Symbol": "ITX",
+        "ExchangeID": "MC",
+        "Name": "Industria de Dise\u00f1o Textil S.A."
+    },
+    "FR0000054470": {
+        "Symbol": "UBI",
+        "ExchangeID": "PA",
+        "Name": "Ubisoft Entertainment SA"
+    },
+    "FR0000120073": {
+        "Symbol": "AI",
+        "ExchangeID": "PA",
+        "Name": "L'Air Liquide S.A"
+    },
+    "FR0000120321": {
+        "Symbol": "OR",
+        "ExchangeID": "PA",
+        "Name": "L'Or\u00e9al S.A."
+    },
+    "FR0000120644": {
+        "Symbol": "BN",
+        "ExchangeID": "PA",
+        "Name": "Danone S.A"
+    },
+    "FR0000121014": {
+        "Symbol": "MC",
+        "ExchangeID": "PA",
+        "Name": "LVMH Mo\u00ebt Hennessy - Louis Vuitton Soci\u00e9t\u00e9 Europ\u00e9enne"
+    },
+    "FR0000130403": {
+        "Symbol": "CDI",
+        "ExchangeID": "PA",
+        "Name": "Christian Dior SE"
+    },
+    "FR0000131906": {
+        "Symbol": "RNO",
+        "ExchangeID": "PA",
+        "Name": "Renault SA"
+    },
+    "GB0002374006": {
+        "Symbol": "DGE",
+        "ExchangeID": "LSE",
+        "Name": "Diageo plc"
+    },
+    "GB0006776081": {
+        "Symbol": "PSON",
+        "ExchangeID": "LSE",
+        "Name": "Pearson plc"
+    },
+    "GB0007188757": {
+        "Symbol": "RIO",
+        "ExchangeID": "LSE",
+        "Name": "Rio Tinto Group"
+    },
+    "GB00B10RZP78": {
+        "Symbol": "ULVR",
+        "ExchangeID": "LSE",
+        "Name": "Unilever PLC"
+    },
+    "GB00B24CGK77": {
+        "Symbol": "RKT",
+        "ExchangeID": "LSE",
+        "Name": "Reckitt Benckiser Group plc"
+    },
+    "GB00BN7CG237": {
+        "Symbol": "AML",
+        "ExchangeID": "LSE",
+        "Name": "Aston Martin Lagonda Global Holdings plc"
+    },
+    "GB00BP6MXD84": {
+        "Symbol": "SHEL",
+        "ExchangeID": "LSE",
+        "Name": "Royal Dutch Shell plc"
+    },
+    "GB00BZ09BD16": {
+        "Symbol": "TEAM",
+        "ExchangeID": "US",
+        "Name": "Atlassian Corporation Plc"
+    },
+    "IE00BZ12WP82": {
+        "Symbol": "LIN",
+        "ExchangeID": "US",
+        "Name": "Linde plc"
+    },
+    "INE030A01027": {
+        "Symbol": "HINDUNILVR",
+        "ExchangeID": "NSE",
+        "Name": "Hindustan Unilever Limited"
+    },
+    "INE101A01026": {
+        "Symbol": "M&M",
+        "ExchangeID": "NSE",
+        "Name": "Mahindra & Mahindra Limited"
+    },
+    "INE155A01022": {
+        "Symbol": "TATAMOTORS",
+        "ExchangeID": "NSE",
+        "Name": "Tata Motors Limited"
+    },
+    "INE388Y01029": {
+        "Symbol": "NYKAA",
+        "ExchangeID": "NSE",
+        "Name": "FSN E-Commerce Ventures Limited"
+    },
+    "INE585B01010": {
+        "Symbol": "MARUTI",
+        "ExchangeID": "NSE",
+        "Name": "Maruti Suzuki India Limited"
+    },
+    "IT0003874101": {
+        "Symbol": "1913",
+        "ExchangeID": "HK",
+        "Name": "Prada S.p.A"
+    },
+    "JE00B4T3BW64": {
+        "Symbol": "GLCNF",
+        "ExchangeID": "US",
+        "Name": "Glencore plc"
+    },
+    "JP3435000009": {
+        "Symbol": "SNEJF",
+        "ExchangeID": "US",
+        "Name": "Sony Group Corporation"
+    },
+    "JP3633400001": {
+        "Symbol": "TOYOF",
+        "ExchangeID": "US",
+        "Name": "Toyota Motor Corporation"
+    },
+    "JP3854600008": {
+        "Symbol": "HNDAF",
+        "ExchangeID": "US",
+        "Name": "Honda Motor Co. Ltd"
+    },
+    "KR7000270009": {
+        "Symbol": "000270",
+        "ExchangeID": "KO",
+        "Name": "KIA Motors"
+    },
+    "KR7000660001": {
+        "Symbol": "000660",
+        "ExchangeID": "KO",
+        "Name": "SK Hynix Inc"
+    },
+    "KR7005930003": {
+        "Symbol": "005930",
+        "ExchangeID": "KO",
+        "Name": "Samsung Electronics Co Ltd"
+    },
+    "KYG210961051": {
+        "Symbol": "2139",
+        "ExchangeID": "HK",
+        "Name": "Bank of Gansu Co. Ltd"
+    },
+    "KYG3777B1032": {
+        "Symbol": "GELYF",
+        "ExchangeID": "US",
+        "Name": "Geely Automobile Holdings Limited"
+    },
+    "KYG596691041": {
+        "Symbol": "MPNGF",
+        "ExchangeID": "US",
+        "Name": "Meituan"
+    },
+    "KYG7397A1067": {
+        "Symbol": "RAZFF",
+        "ExchangeID": "US",
+        "Name": "Razer Inc"
+    },
+    "KYG875721634": {
+        "Symbol": "TCTZF",
+        "ExchangeID": "US",
+        "Name": "Tencent Holdings Limited"
+    },
+    "LU1778762911": {
+        "Symbol": "SPOT",
+        "ExchangeID": "US",
+        "Name": "Spotify Technology S.A"
+    },
+    "NL0000009165": {
+        "Symbol": "HEIA",
+        "ExchangeID": "AS",
+        "Name": "Heineken N.V."
+    },
+    "NL0000235190": {
+        "Symbol": "AIR",
+        "ExchangeID": "XETRA",
+        "Name": "Airbus SE"
+    },
+    "NL0009538784": {
+        "Symbol": "NXPI",
+        "ExchangeID": "US",
+        "Name": "NXP Semiconductors N.V"
+    },
+    "NL0010273215": {
+        "Symbol": "ASML",
+        "ExchangeID": "AS",
+        "Name": "ASML Holding N.V."
+    },
+    "NL0011585146": {
+        "Symbol": "RACE",
+        "ExchangeID": "MI",
+        "Name": "Ferrari N.V"
+    },
+    "NL00150001Q9": {
+        "Symbol": "STLA",
+        "ExchangeID": "US",
+        "Name": "Stellantis N.V"
+    },
+    "PLOPTTC00011": {
+        "Symbol": "CDR",
+        "ExchangeID": "WAR",
+        "Name": "CD Projekt S.A."
+    },
+    "SA0007879139": {
+        "Symbol": "2020",
+        "ExchangeID": "SR",
+        "Name": "SABIC Agri-Nutrients Company"
+    },
+    "SA14TG012N13": {
+        "Symbol": "2222",
+        "ExchangeID": "SR",
+        "Name": "Saudi Arabian Oil Company"
+    },
+    "SE0000106270": {
+        "Symbol": "HM-B",
+        "ExchangeID": "ST",
+        "Name": "H & M Hennes & Mauritz AB (publ)"
+    },
+    "SE0000115420": {
+        "Symbol": "VOLV-A",
+        "ExchangeID": "ST",
+        "Name": "AB Volvo (publ)"
+    },
+    "TW0002207008": {
+        "Symbol": "2207",
+        "ExchangeID": "TW",
+        "Name": "Hotai Motor Co.Ltd"
+    },
+    "TW0002379005": {
+        "Symbol": "2379",
+        "ExchangeID": "TW",
+        "Name": "Realtek Semiconductor Corp"
+    },
+    "TW0002454006": {
+        "Symbol": "2454",
+        "ExchangeID": "TW",
+        "Name": "MediaTek Inc"
+    },
+    "US00164V1035": {
         "Symbol": "AMCX",
-        "ExchangeID": "US"
+        "ExchangeID": "US",
+        "Name": "AMC Networks Inc"
     },
-    "US62914V1061":{
-        "Symbol": "NIO",
-        "ExchangeID": "US"
+    "US00206R1023": {
+        "Symbol": "T",
+        "ExchangeID": "US",
+        "Name": "AT&T Inc"
     },
-    "US7427181091":{
-        "Symbol": "PG",
-        "ExchangeID": "US"
-    },
-    "US1941621039":{
-        "Symbol": "CL",
-        "ExchangeID": "US"
-    },
-    "US1713401024":{
-        "Symbol": "CHD",
-        "ExchangeID": "US"
-    },
-    "US1890541097":{
-        "Symbol": "CLX",
-        "ExchangeID": "US"
-    },
-    "US8248414075":{
-        "Symbol": "SSDOY",
-        "ExchangeID": "US"
-    },
-    "US91332U1016":{
-        "Symbol": "U",
-        "ExchangeID": "US"
-    },
-    "US2855121099":{
-        "Symbol": "EA",
-        "ExchangeID": "US"
-    },
-    "US00507V1098":{
+    "US00507V1098": {
         "Symbol": "ATVI",
-        "ExchangeID": "US"
+        "ExchangeID": "US",
+        "Name": "Activision Blizzard Inc"
     },
-    "US8740541094":{
-        "Symbol": "TTWO",
-        "ExchangeID": "US"
+    "US00724F1012": {
+        "Symbol": "ADBE",
+        "ExchangeID": "US",
+        "Name": "Adobe Inc"
     },
-    "US6544453037":{
-        "Symbol": "NTDOY",
-        "ExchangeID": "US"
+    "US0079031078": {
+        "Symbol": "AMD",
+        "ExchangeID": "US",
+        "Name": "Advanced Micro Devices Inc"
     },
-    "US64110W1027":{
+    "US0097071007": {
+        "Symbol": "AJINY",
+        "ExchangeID": "US",
+        "Name": "Ajinomoto Co. Inc"
+    },
+    "US01609W1027": {
+        "Symbol": "BABA",
+        "ExchangeID": "US",
+        "Name": "Alibaba Group Holding Limited"
+    },
+    "US02079K3059": {
+        "Symbol": "GOOGL",
+        "ExchangeID": "US",
+        "Name": "Alphabet Inc"
+    },
+    "US0231351067": {
+        "Symbol": "AMZN",
+        "ExchangeID": "US",
+        "Name": "Amazon.com Inc"
+    },
+    "US03027X1000": {
+        "Symbol": "AMT",
+        "ExchangeID": "US",
+        "Name": "American Tower Corporation (REIT)"
+    },
+    "US0326541051": {
+        "Symbol": "ADI",
+        "ExchangeID": "US",
+        "Name": "Analog Devices Inc"
+    },
+    "US0378331005": {
+        "Symbol": "AAPL",
+        "ExchangeID": "US",
+        "Name": "Apple Inc"
+    },
+    "US0382221051": {
+        "Symbol": "AMAT",
+        "ExchangeID": "US",
+        "Name": "Applied Materials Inc"
+    },
+    "US0846707026": {
+        "Symbol": "BRK-B",
+        "ExchangeID": "US",
+        "Name": "Berkshire Hathaway Inc"
+    },
+    "US09247X1019": {
+        "Symbol": "BLK",
+        "ExchangeID": "US",
+        "Name": "BlackRock Inc"
+    },
+    "US0970231058": {
+        "Symbol": "BA",
+        "ExchangeID": "US",
+        "Name": "The Boeing Company"
+    },
+    "US11135F1012": {
+        "Symbol": "AVGO",
+        "ExchangeID": "US",
+        "Name": "Broadcom Inc"
+    },
+    "US1220171060": {
+        "Symbol": "BURL",
+        "ExchangeID": "US",
+        "Name": "Burlington Stores Inc"
+    },
+    "US1266501006": {
+        "Symbol": "CVS",
+        "ExchangeID": "US",
+        "Name": "CVS Health Corporation"
+    },
+    "US1491231015": {
+        "Symbol": "CAT",
+        "ExchangeID": "US",
+        "Name": "Caterpillar Inc"
+    },
+    "US1667641005": {
+        "Symbol": "CVX",
+        "ExchangeID": "US",
+        "Name": "Chevron Corporation"
+    },
+    "US1696561059": {
+        "Symbol": "CMG",
+        "ExchangeID": "US",
+        "Name": "Chipotle Mexican Grill Inc"
+    },
+    "US1713401024": {
+        "Symbol": "CHD",
+        "ExchangeID": "US",
+        "Name": "Church & Dwight Co. Inc"
+    },
+    "US17275R1023": {
+        "Symbol": "CSCO",
+        "ExchangeID": "US",
+        "Name": "Cisco Systems Inc"
+    },
+    "US1890541097": {
+        "Symbol": "CLX",
+        "ExchangeID": "US",
+        "Name": "The Clorox Company"
+    },
+    "US1912161007": {
+        "Symbol": "KO",
+        "ExchangeID": "US",
+        "Name": "The Coca-Cola Company"
+    },
+    "US1941621039": {
+        "Symbol": "CL",
+        "ExchangeID": "US",
+        "Name": "Colgate-Palmolive Company"
+    },
+    "US20030N1019": {
+        "Symbol": "CMCSA",
+        "ExchangeID": "US",
+        "Name": "Comcast Corporation"
+    },
+    "US22160K1051": {
+        "Symbol": "COST",
+        "ExchangeID": "US",
+        "Name": "Costco Wholesale Corporation"
+    },
+    "US22266T1097": {
+        "Symbol": "CPNG",
+        "ExchangeID": "US",
+        "Name": "Coupang Inc"
+    },
+    "US2441991054": {
+        "Symbol": "DE",
+        "ExchangeID": "US",
+        "Name": "Deere & Company"
+    },
+    "US2546871060": {
+        "Symbol": "DIS",
+        "ExchangeID": "US",
+        "Name": "The Walt Disney Company"
+    },
+    "US25470F3029": {
+        "Symbol": "DISCK",
+        "ExchangeID": "US",
+        "Name": "Discovery Inc"
+    },
+    "US2855121099": {
+        "Symbol": "EA",
+        "ExchangeID": "US",
+        "Name": "Electronic Arts Inc"
+    },
+    "US30231G1022": {
+        "Symbol": "XOM",
+        "ExchangeID": "US",
+        "Name": "Exxon Mobil Corporation"
+    },
+    "US31188H1014": {
+        "Symbol": "FRCOY",
+        "ExchangeID": "US",
+        "Name": "Fast Retailing Co. Ltd"
+    },
+    "US31428X1063": {
+        "Symbol": "FDX",
+        "ExchangeID": "US",
+        "Name": "FedEx Corporation"
+    },
+    "US3453708600": {
+        "Symbol": "F",
+        "ExchangeID": "US",
+        "Name": "Ford Motor Company"
+    },
+    "US3703341046": {
+        "Symbol": "GIS",
+        "ExchangeID": "US",
+        "Name": "General Mills Inc"
+    },
+    "US37045V1008": {
+        "Symbol": "GM",
+        "ExchangeID": "US",
+        "Name": "General Motors Company"
+    },
+    "US40434L1052": {
+        "Symbol": "HPQ",
+        "ExchangeID": "US",
+        "Name": "HP Inc"
+    },
+    "US4128221086": {
+        "Symbol": "HOG",
+        "ExchangeID": "US",
+        "Name": "Harley-Davidson Inc"
+    },
+    "US4278661081": {
+        "Symbol": "HSY",
+        "ExchangeID": "US",
+        "Name": "The Hershey Company"
+    },
+    "US4370761029": {
+        "Symbol": "HD",
+        "ExchangeID": "US",
+        "Name": "The Home Depot Inc"
+    },
+    "US4581401001": {
+        "Symbol": "INTC",
+        "ExchangeID": "US",
+        "Name": "Intel Corporation"
+    },
+    "US4592001014": {
+        "Symbol": "IBM",
+        "ExchangeID": "US",
+        "Name": "International Business Machines Corporation"
+    },
+    "US4661101034": {
+        "Symbol": "JBSAY",
+        "ExchangeID": "US",
+        "Name": "JBS S.A"
+    },
+    "US47215P1066": {
+        "Symbol": "JD",
+        "ExchangeID": "US",
+        "Name": "JD.com Inc"
+    },
+    "US4781601046": {
+        "Symbol": "JNJ",
+        "ExchangeID": "US",
+        "Name": "Johnson & Johnson"
+    },
+    "US4824801009": {
+        "Symbol": "KLAC",
+        "ExchangeID": "US",
+        "Name": "KLA Corporation"
+    },
+    "US4878361082": {
+        "Symbol": "K",
+        "ExchangeID": "US",
+        "Name": "Kellogg Company"
+    },
+    "US49387U1034": {
+        "Symbol": "KIKOY",
+        "ExchangeID": "US",
+        "Name": "Kikkoman Corporation"
+    },
+    "US5007541064": {
+        "Symbol": "KHC",
+        "ExchangeID": "US",
+        "Name": "The Kraft Heinz Company"
+    },
+    "US50202M1027": {
+        "Symbol": "LI",
+        "ExchangeID": "US",
+        "Name": "Li Auto Inc"
+    },
+    "US5128071082": {
+        "Symbol": "LRCX",
+        "ExchangeID": "US",
+        "Name": "Lam Research Corporation"
+    },
+    "US5398301094": {
+        "Symbol": "LMT",
+        "ExchangeID": "US",
+        "Name": "Lockheed Martin Corporation"
+    },
+    "US5486611073": {
+        "Symbol": "LOW",
+        "ExchangeID": "US",
+        "Name": "Lowe's Companies Inc"
+    },
+    "US5500211090": {
+        "Symbol": "LULU",
+        "ExchangeID": "US",
+        "Name": "Lululemon Athletica Inc"
+    },
+    "US5738741041": {
+        "Symbol": "MRVL",
+        "ExchangeID": "US",
+        "Name": "Marvell Technology Inc"
+    },
+    "US57636Q1040": {
+        "Symbol": "MA",
+        "ExchangeID": "US",
+        "Name": "Mastercard Incorporated"
+    },
+    "US5787871038": {
+        "Symbol": "MZDAY",
+        "ExchangeID": "US",
+        "Name": "Mazda Motor Corporation"
+    },
+    "US5797802064": {
+        "Symbol": "MKC",
+        "ExchangeID": "US",
+        "Name": "McCormick & Company Incorporated"
+    },
+    "US5801351017": {
+        "Symbol": "MCD",
+        "ExchangeID": "US",
+        "Name": "McDonald's Corporation"
+    },
+    "US58933Y1055": {
+        "Symbol": "MRK",
+        "ExchangeID": "US",
+        "Name": "Merck & Co. Inc"
+    },
+    "US5949181045": {
+        "Symbol": "MSFT",
+        "ExchangeID": "US",
+        "Name": "Microsoft Corporation"
+    },
+    "US5951121038": {
+        "Symbol": "MU",
+        "ExchangeID": "US",
+        "Name": "Micron Technology Inc."
+    },
+    "US6092071058": {
+        "Symbol": "MDLZ",
+        "ExchangeID": "US",
+        "Name": "Mondelez International Inc"
+    },
+    "US6174464486": {
+        "Symbol": "MS",
+        "ExchangeID": "US",
+        "Name": "Morgan Stanley"
+    },
+    "US62914V1061": {
+        "Symbol": "NIO",
+        "ExchangeID": "US",
+        "Name": "NIO Inc"
+    },
+    "US64110L1061": {
+        "Symbol": "NFLX",
+        "ExchangeID": "US",
+        "Name": "Netflix Inc"
+    },
+    "US64110W1027": {
         "Symbol": "NTES",
-        "ExchangeID": "US"
+        "ExchangeID": "US",
+        "Name": "NetEase Inc"
     },
-    "ZAE000015889":{
+    "US6541061031": {
+        "Symbol": "NKE",
+        "ExchangeID": "US",
+        "Name": "NIKE Inc"
+    },
+    "US6544453037": {
+        "Symbol": "NTDOY",
+        "ExchangeID": "US",
+        "Name": "Nintendo Co. Ltd"
+    },
+    "US67066G1040": {
+        "Symbol": "NVDA",
+        "ExchangeID": "US",
+        "Name": "NVIDIA Corporation"
+    },
+    "US68389X1054": {
+        "Symbol": "ORCL",
+        "ExchangeID": "US",
+        "Name": "Oracle Corporation"
+    },
+    "US70450Y1038": {
+        "Symbol": "PYPL",
+        "ExchangeID": "US",
+        "Name": "PayPal Holdings Inc"
+    },
+    "US7134481081": {
+        "Symbol": "PEP",
+        "ExchangeID": "US",
+        "Name": "PepsiCo Inc"
+    },
+    "US7223041028": {
+        "Symbol": "PDD",
+        "ExchangeID": "US",
+        "Name": "Pinduoduo Inc"
+    },
+    "US7427181091": {
+        "Symbol": "PG",
+        "ExchangeID": "US",
+        "Name": "The Procter & Gamble Company"
+    },
+    "US7475251036": {
+        "Symbol": "QCOM",
+        "ExchangeID": "US",
+        "Name": "QUALCOMM Incorporated"
+    },
+    "US75102W1080": {
+        "Symbol": "RKUNY",
+        "ExchangeID": "US",
+        "Name": "Rakuten Group Inc"
+    },
+    "US7607591002": {
+        "Symbol": "RSG",
+        "ExchangeID": "US",
+        "Name": "Republic Services Inc"
+    },
+    "US7782961038": {
+        "Symbol": "ROST",
+        "ExchangeID": "US",
+        "Name": "Ross Stores Inc"
+    },
+    "US79466L3024": {
+        "Symbol": "CRM",
+        "ExchangeID": "US",
+        "Name": "salesforce.com inc"
+    },
+    "US81762P1021": {
+        "Symbol": "NOW",
+        "ExchangeID": "US",
+        "Name": "ServiceNow Inc"
+    },
+    "US8248414075": {
+        "Symbol": "SSDOY",
+        "ExchangeID": "US",
+        "Name": "Shiseido Company Limited"
+    },
+    "US8552441094": {
+        "Symbol": "SBUX",
+        "ExchangeID": "US",
+        "Name": "Starbucks Corporation"
+    },
+    "US86428V1044": {
+        "Symbol": "FUJHY",
+        "ExchangeID": "US",
+        "Name": "Subaru Corporation"
+    },
+    "US86959X1072": {
+        "Symbol": "SZKMY",
+        "ExchangeID": "US",
+        "Name": "Suzuki Motor Corporation"
+    },
+    "US8716071076": {
+        "Symbol": "SNPS",
+        "ExchangeID": "US",
+        "Name": "Synopsys Inc"
+    },
+    "US8725401090": {
+        "Symbol": "TJX",
+        "ExchangeID": "US",
+        "Name": "The TJX Companies Inc"
+    },
+    "US8725901040": {
+        "Symbol": "TMUS",
+        "ExchangeID": "US",
+        "Name": "T-Mobile US Inc"
+    },
+    "US8740391003": {
+        "Symbol": "TSM",
+        "ExchangeID": "US",
+        "Name": "Taiwan Semiconductor Manufacturing Company Limited"
+    },
+    "US8740541094": {
+        "Symbol": "TTWO",
+        "ExchangeID": "US",
+        "Name": "Take-Two Interactive Software Inc"
+    },
+    "US8760301072": {
+        "Symbol": "TPR",
+        "ExchangeID": "US",
+        "Name": "Tapestry Inc"
+    },
+    "US88160R1014": {
+        "Symbol": "TSLA",
+        "ExchangeID": "US",
+        "Name": "Tesla Inc"
+    },
+    "US8825081040": {
+        "Symbol": "TXN",
+        "ExchangeID": "US",
+        "Name": "Texas Instruments Incorporated"
+    },
+    "US9024941034": {
+        "Symbol": "TSN",
+        "ExchangeID": "US",
+        "Name": "Tyson Foods Inc"
+    },
+    "US9043111072": {
+        "Symbol": "UAA",
+        "ExchangeID": "US",
+        "Name": "Under Armour Inc"
+    },
+    "US9113121068": {
+        "Symbol": "UPS",
+        "ExchangeID": "US",
+        "Name": "United Parcel Service Inc"
+    },
+    "US91332U1016": {
+        "Symbol": "U",
+        "ExchangeID": "US",
+        "Name": "Unity Software Inc"
+    },
+    "US92343V1044": {
+        "Symbol": "VZ",
+        "ExchangeID": "US",
+        "Name": "Verizon Communications Inc"
+    },
+    "US92826C8394": {
+        "Symbol": "V",
+        "ExchangeID": "US",
+        "Name": "Visa Inc"
+    },
+    "US9285634021": {
+        "Symbol": "VMW",
+        "ExchangeID": "US",
+        "Name": "VMware Inc"
+    },
+    "US9311421039": {
+        "Symbol": "WMT",
+        "ExchangeID": "US",
+        "Name": "Walmart Inc"
+    },
+    "US94106L1098": {
+        "Symbol": "WM",
+        "ExchangeID": "US",
+        "Name": "Waste Management Inc"
+    },
+    "US98422D1054": {
+        "Symbol": "XPEV",
+        "ExchangeID": "US",
+        "Name": "XPeng Inc"
+    },
+    "US98850P1093": {
+        "Symbol": "YUMC",
+        "ExchangeID": "US",
+        "Name": "Yum China Holdings Inc"
+    },
+    "USY384721251": {
+        "Symbol": "HYMTF",
+        "ExchangeID": "US",
+        "Name": "Hyundai Motor Company"
+    },
+    "ZAE000015889": {
         "Symbol": "NPN",
-        "ExchangeID": "JSE"
+        "ExchangeID": "JSE",
+        "Name": "Naspers Limited"
     }
 }
