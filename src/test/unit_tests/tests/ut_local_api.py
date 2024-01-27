@@ -3,7 +3,7 @@ import os
 import json
 import pytest
 from unittest import mock
-sys.path.insert(1, '../../main/code/')
+sys.path.append('../../main/code/')
 from local_api import *  # noqa: E402
 
 
@@ -288,7 +288,153 @@ def test_get50DayMA_Invalid(mock_getDataItem):
         mck.side_effect = mock_getDataItem
         assert get50DayMA() == "null"
 
-# TODO: balance sheet
-# TODO: cash flow statement
-# TODO: income statement
-# TODO: calculated data
+# balance sheet
+
+
+def test_getInventory():
+    assert getInventory(2020) == "4061000000.00"
+    assert getInventory(2021) == "6580000000.00"
+
+
+def test_getAccountsReceivables():
+    assert getAccountsReceivables(2020) == "37445000000.00"
+    assert getAccountsReceivables(2021) == "51506000000.00"
+
+
+def test_getAccountsPayable():
+    assert getAccountsPayable(2020) == "42296000000.00"
+    assert getAccountsPayable(2021) == "54763000000.00"
+
+
+def test_getCurrentLiabilities():
+    assert getCurrentLiabilities(2020) == "105392000000.00"
+    assert getCurrentLiabilities(2021) == "125481000000.00"
+
+
+def test_getNonCurrentLiabilities():
+    assert getNonCurrentLiabilities(2020) == "153157000000.00"
+    assert getNonCurrentLiabilities(2021) == "162431000000.00"
+
+
+def test_getTotalLiabilities():
+    assert getTotalLiabilities(2020) == "258549000000.00"
+    assert getTotalLiabilities(2021) == "287912000000.00"
+
+
+def test_getLiabilitiesAndEquity():
+    assert getLiabilitiesAndEquity(2020) == "323888000000.00"
+    assert getLiabilitiesAndEquity(2021) == "351002000000.00"
+
+
+def test_getTotalEquity():
+    assert getTotalEquity(2020) == "65339000000.00"
+    assert getTotalEquity(2021) == "63090000000.00"
+
+
+def test_getCurrentAssets():
+    assert getCurrentAssets(2020) == "143713000000.00"
+    assert getCurrentAssets(2021) == "134836000000.00"
+
+
+def test_getNonCurrentAssets():
+    assert getNonCurrentAssets(2020) == "180175000000.00"
+    assert getNonCurrentAssets(2021) == "216166000000.00"
+
+
+def test_getTotalAssets():
+    assert getTotalAssets(2020) == "323888000000.00"
+    assert getTotalAssets(2021) == "351002000000.00"
+
+
+def test_getShortTermDebt():
+    assert getShortTermDebt(2020) == "13769000000.00"
+    assert getShortTermDebt(2021) == "15613000000.00"
+
+
+def test_getLongTermDebt():
+    assert getLongTermDebt(2020) == "98667000000.00"
+    assert getLongTermDebt(2021) == "109106000000.00"
+
+
+def test_getTotalDebt():
+    assert getTotalDebt(2020) == "112436000000.00"
+    assert getTotalDebt(2021) == "124719000000.00"
+
+
+def test_getInvestedCapital():
+    assert getInvestedCapital(2020) == "177775000000.00"
+    assert getInvestedCapital(2021) == "187809000000.00"
+
+
+def test_getCommonSharesOutstanding():
+    assert getCommonSharesOutstanding(2020) == "17528214000.00"
+    assert getCommonSharesOutstanding(2021) == "16864919000.00"
+
+
+def test_getEarningsPerShare():
+    assert getEarningsPerShare(2020) == "3.2753"
+    assert getEarningsPerShare(2021) == "5.6140"
+
+
+def test_getBookValuePerShare():
+    assert getBookValuePerShare(2020) == "3.7276"
+    assert getBookValuePerShare(2021) == "3.7409"
+
+# income statement
+
+
+def test_getNetIncome():
+    assert getNetIncome(2020) == "57411000000.00"
+    assert getNetIncome(2021) == "94680000000.00"
+
+
+def test_getRevenue():
+    assert getRevenue(2020) == "274515000000.00"
+    assert getRevenue(2021) == "365817000000.00"
+
+
+def test_getEBITDA():
+    assert getEBITDA(2020) == "81020000000.00"
+    assert getEBITDA(2021) == "123136000000.00"
+
+
+def test_getGrossProfit():
+    assert getGrossProfit(2020) == "104956000000.00"
+    assert getGrossProfit(2021) == "152836000000.00"
+
+
+def test_getOperatingIncome():
+    assert getOperatingIncome(2020) == "66288000000.00"
+    assert getOperatingIncome(2021) == "108949000000.00"
+
+
+def test_getInterestExpense():
+    assert getInterestExpense(2020) == "2873000000.00"
+    assert getInterestExpense(2021) == "2645000000.00"
+
+
+def test_getCostOfRevenue():
+    assert getCostOfRevenue(2020) == "169559000000.00"
+    assert getCostOfRevenue(2021) == "212981000000.00"
+
+# cash flow statement
+
+
+def test_getOperatingCashFlow():
+    assert getOperatingCashFlow(2020) == "80674000000.00"
+    assert getOperatingCashFlow(2021) == "104038000000.00"
+
+
+def test_getInvestingCashFlow():
+    assert getInvestingCashFlow(2020) == "-4289000000.00"
+    assert getInvestingCashFlow(2021) == "-14545000000.00"
+
+
+def test_getCapitalExpenditures():
+    assert getCapitalExpenditures(2020) == "7309000000.00"
+    assert getCapitalExpenditures(2021) == "11085000000.00"
+
+
+def test_getFreeCashFlow():
+    assert getFreeCashFlow(2020) == "73365000000.00"
+    assert getFreeCashFlow(2021) == "92953000000.00"
