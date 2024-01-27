@@ -1,6 +1,6 @@
 #!/bin/bash
 
 CODE_DIR="../../main/code"
-TEST_FILES="unit_tests.py"
+MIN_COVERAGE=90
 
-coverage run --source="$CODE_DIR" -m pytest -v "$TEST_FILES" && coverage report -m
+coverage run --source="$CODE_DIR" --omit="$CODE_DIR/stage01.py,$CODE_DIR/stage02.py,$CODE_DIR/web_api.py" -m pytest -v tests/* && coverage report -m --fail-under=$MIN_COVERAGE

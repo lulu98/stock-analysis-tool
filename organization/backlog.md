@@ -7,6 +7,26 @@
 - rewrite the entire python code as classes not these functions
 - probably have to rewrite also test cases
 
+## Add jinja templating to json files
+
+- current state: I use a complicated mechanism with sed and regex
+- goal: use jinja templates in JSON files to avoid sed scheme
+- motivation: sed is complicated an no one understands anything when looking at
+  the code 2 years later, with jinja can simply call python functions
+
+## Move testing environment into docker containers
+
+- current state: only unit tests, so it doesn't matter if I run it on the host
+  directly or in a container
+- goal: put system tests in containers to avoid doing something wrong with the
+  file system
+
+## Use docopt package in python code
+
+- current state: I parse the command line arguments
+- goal: use docopt python package
+- motivation: it's cleaner
+
 ## Automatically rank different stocks based on metrics
 
 - outcome: get list of interesting stocks

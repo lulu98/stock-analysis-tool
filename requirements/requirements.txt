@@ -16,6 +16,7 @@ pycodestyle==2.11.1
 pyflakes==3.2.0
 pylint==3.0.3
 pytest==7.4.4
+pytest-cov==4.1.0
 requests==2.31.0
 roman==4.1
 tomli==2.0.1
