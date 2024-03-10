@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 
-"""
-Pipeline - Stage 1
+"""Pipeline - Stage 1
+
+Description:
 
 Pulls financial data from the Web API (i.e. EOD historical data) and stores it
 in a JSON file.
+
+Usage:
+    stage01.py [-h] -k <api_key> [-i <isin>]
+
+Options:
+    -h, --help                      Show help menu.
+    -k <api_key>, --key <api_key>   API key for web API.
+    -i <isin>, --isin <isin>        ISIN of stock.
 """
+from docopt import docopt
 
 import os
 import sys
-import argparse
 
 from web_api import *
 
@@ -134,14 +143,11 @@ def stage01(api_key, isin):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    args = docopt(__doc__)
 
-    # -k APIKEY -i ISIN
-    parser.add_argument("-k", "--apikey", required=True, help="API key")
-    parser.add_argument("-i", "--isin", required=False, help="ISIN")
-
-    args = parser.parse_args()
+    key = args['--key']
+    isin = args['--isin']
 
     print("Stage 1: started...")
-    stage01(args.apikey, args.isin)
+    stage01(key, isin)
     print("Stage 1: done...\n")
