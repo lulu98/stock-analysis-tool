@@ -79,8 +79,6 @@ This project has the following structure:
 |__ requirements/: directory holding required package/module information
 |
 |__ src
-    |__ docs: sphinx documentation for Python scripts
-    |
     |__ main: source code
     |   |__ code: Python scripts
     |   |__ config: configuration files
@@ -91,8 +89,6 @@ This project has the following structure:
     |__ test: test code
         |__ linter: linter scripts
         |__ unit_test: unit test scripts
-        |__ ...
-
 ```
 
 ## System Architecture
@@ -186,40 +182,6 @@ make pdf
 ```
 
 This creates a `main.pdf` file in the `build` subfolder.
-
-## Documentation
-
-For this project, I decided to use Sphinx for the code documentation. According
-to the Internet, it seemed to be the preferred option for Python code compared
-to for example Doxygen.
-
-The documentation for this project is located in the `src/docs` directory and
-uses the `sphinx_rtd_theme` that can be installed via `pip`. When first building
-the project, the following command must be executed:
-
-```bash
-sphinx-quickstart
-```
-
-The documentation can be build with the following command when located in `docs`:
-
-```bash
-sphinx-apidoc -o ./source ../src
-```
-
-And the HTML documentation can then be created via:
-
-```bash
-make html
-```
-
-If the documentation is required as a PDF, execute the following command:
-
-```bash
-make latexpdf
-```
-
-PDF creation requires `latexmk` to be installed.
 
 ## Linters
 
