@@ -14,6 +14,11 @@
 - motivation: sed is complicated an no one understands anything when looking at
   the code 2 years later, with jinja can simply call python functions
 
+## Split stages into tools
+
+- instead of stage01 and stage02 create actual tools and have python code
+  separately
+
 ## Move testing environment into docker containers
 
 - current state: only unit tests, so it doesn't matter if I run it on the host

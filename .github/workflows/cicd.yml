@@ -73,7 +73,8 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-            sudo apt-get install -y python3-pip
+            sudo apt-get install python3-docopt
+            sudo apt-get install python3-pip
             pip install json2latex
 
       - name: Checkout repository

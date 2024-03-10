@@ -268,8 +268,6 @@ The linters for Python files are:
 
 The unit test stage is orchestrated via the `coverage` Python module.
 
-Current code coverage: 27%
-
 ## Handbook
 
 In the `/demo` folder, there is a handbook PDF file that explains the different

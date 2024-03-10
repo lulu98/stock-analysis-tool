@@ -15,3 +15,4 @@
 - [ ] SAT-010: Write a script that shows the competitors of a company
 - [ ] SAT-011: Add integration/system testing
 - [ ] SAT-012: Add code coverage information on GitHub
+- [x] SAT-013: Introduce docopt for argument parsing

@@ -8,3 +8,4 @@ texlive-bibtex-extra
 texlive-lang-english
 biber
 shellcheck
+python3-docopt

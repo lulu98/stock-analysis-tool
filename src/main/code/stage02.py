@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
 
-"""
-Pipeline - Stage 2
+"""Pipeline - Stage 2
+
+Description:
 
 Finds patterns in the JSON data templates and replaces the pattern with a
 corresponding value from the local API.
+
+Usage:
+    stage02.py [-h] -i <isin>
+
+Options:
+    -h, --help                  Show help menu.
+    -i <isin>, --isin <isin>    ISIN of stock.
 """
+from docopt import docopt
 
 import os
 import sys
@@ -225,15 +234,12 @@ def executeStage(isin):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    args = docopt(__doc__)
 
-    # -i ISIN
-    parser.add_argument("-i", "--isin", required=True, help="ISIN")
+    isin = args['--isin']
 
-    args = parser.parse_args()
-
-    prepareStage(args.isin)
+    prepareStage(isin)
 
     print("Stage 2: started...")
-    executeStage(args.isin)
+    executeStage(isin)
     print("Stage 2: done...\n")
