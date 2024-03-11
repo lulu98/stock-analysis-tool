@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Retrieves basic financial data based on the company's corresponding JSON file.
 """
