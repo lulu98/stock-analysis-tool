@@ -1,0 +1,1 @@
+cat ../resources/template/data/fund_data.json | sed 's/__getYear/years/g' | sed 's/years(\(.\+\)), /years["\1"], /g' | sed 's/years(\(.\+\)))/years["\1"])/g' | sed 's/years(\(.\+\))/years["\1"]/g' | sed 's/\(__.*)\),/{{ \1 }},/g'

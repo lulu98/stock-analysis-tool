@@ -24,8 +24,7 @@ import shutil
 import argparse
 import filecmp
 
-from local_api import *
-from calculations import *
+import render
 
 
 def setEnvironmentVariables(isin):
@@ -127,84 +126,13 @@ def prepareStage(isin):
     prepareBuildDir(isin)
 
 
-def formatStringToSedInput(text):
-    """Format string input into sed compliant input string."""
-    output = text.replace("\\", "\\\\")
-    return output
-
-
-def formatStringToSedOutput(text):
-    """Format string input into sed compliant output string."""
-    output = text.replace("&", "\&")  # noqa: W605
-    output = output.replace("/", "\/")  # noqa: W605
-    output = output.replace("\n", "\\n")
-    output = output.replace("'", "'\"'\"'")
-    return output
-
-
-def findPattern(regex, fileName):
-    '''
-    Find pattern in a file.
-
-    Parameters:
-        regex (str): Pattern to be found in the file.
-        fileName (str): Name of the file.
-
-    Returns:
-        output (list): List of occurrences found.
-    '''
-    cmd = "sed -n -e 's/.*\({}\).*/\\1/p' {}".format(regex, fileName)  # noqa: W605
-    output = subprocess.check_output(cmd, shell=True).decode('utf-8')
-    output = output.split("\n")
-    # remove empty strings in array
-    output = list(filter(lambda x: x != '', output))
-    return output
-
-
-def replacePattern(regex, output, fileName):
-    '''
-    Replace pattern with output in a file.
-
-    Parameters:
-        regex (str): Pattern to be used as replacement.
-        output (str): Pattern to be replaced.
-        fileName (str): Name of the file.
-    '''
-    cmd = "sed 's/{}/{}/g' {}".format(regex, output, fileName)
-    output = subprocess.check_output(cmd, shell=True).decode('utf-8')
-    with open(fileName, "w") as f:
-        f.write(output)
-
-
-def findAndReplacePattern(regex, fileName):
-    """
-    Find and replace pattern in file. The idea is that a pattern with two
-    underscores is found and then evaluated via a Python function. This pattern
-    is then replaced by the real value.
-
-    Parameters:
-        regex (str): Pattern to be found and replaced.
-        fileName (str): Name of the file.
-    """
-    output = findPattern(regex, fileName)
-
-    while (len(output) > 0):  # cope with multiple placeholders in one line
-        for placeholder in output:
-            pattern = formatStringToSedInput(placeholder)
-            # the first two underscores must be deleted
-            replacement = str(eval(placeholder.replace('__', '')))
-            replacement = formatStringToSedOutput(replacement)
-            replacePattern(pattern, replacement, fileName)
-        output = findPattern(regex, fileName)
-
-
 def executeStage(isin):
     """
-    Find and replace patterns with two underscores in the template JSON data
-    files. After replacing all occurrences of patterns in the JSON files, this
-    stage transforms the JSON files into Latex compatible files via json2latex.
-    As a result, we can access the data from the JSON files like an array
-    access in the Latex files.
+    Use Jinja to render financial data by replacing placeholders in the JSON
+    files (fund_data.json, calc_data.json). After replacing all occurrences of
+    patterns in the JSON files, this stage transforms the JSON files into Latex
+    compatible files via json2latex. As a result, we can access the financial
+    data that is stored in the JSON files from the Latex files.
     """
     dataDir = os.path.join(os.getenv('BUILD_DIR'), "data")
     files = [os.path.join(dataDir, "fund_data.json"),
@@ -214,11 +142,8 @@ def executeStage(isin):
         print("File {}:".format(fileName))
         print("Processing started...")
 
-        # first replace all occurrences of placeholder __getYear
-        findAndReplacePattern("__getYear([^()]*)", fileName)
-
-        # start evaluating functions
-        findAndReplacePattern("__.*(.*)", fileName)
+        data = render.render_data(fileName)
+        render.dump_data(data, fileName)
 
         print("Processing done.\n")
 
