@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 EOD Historical Data is used as the web API from which the financial data is
 pulled. This file comprises of local instantiations to call the web API.

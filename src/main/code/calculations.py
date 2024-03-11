@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Includes functions that construct meaningful financial information based on the
 local API.
