@@ -16,3 +16,4 @@
 - [ ] SAT-011: Add integration/system testing
 - [ ] SAT-012: Add code coverage information on GitHub
 - [x] SAT-013: Introduce docopt for argument parsing
+- [x] SAT-014: Use jinja for pattern replacement in json files
