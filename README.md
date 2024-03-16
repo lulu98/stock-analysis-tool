@@ -150,8 +150,16 @@ with extracted data from the company JSON files. These custom JSON files form
 the backend, so in case the API changes, it is quite straight forward to adapt
 the project. Stage 2 can be triggered as follows:
 
+- Generate financial data:
+
 ```bash
 ./stage02.py -i <isin>
+```
+
+- Prepare Latex structure:
+
+```bash
+./stage02.py -i <isin> --latex
 ```
 
 This stage uses the `json2latex`[2] Python package in order to make it possible

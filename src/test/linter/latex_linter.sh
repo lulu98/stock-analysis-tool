@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CODE_DIR="../../main"
-LATEX_DIR="$CODE_DIR/resources/template"
+LATEX_DIR="$CODE_DIR/resources/template/latex"
 status=0
 
 collect_sources () {

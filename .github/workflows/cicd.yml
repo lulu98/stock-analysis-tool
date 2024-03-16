@@ -89,7 +89,7 @@ jobs:
 
       - name: Execute stage 2
         working-directory: ./src/main/code
-        run: ./stage02.py -i US0378331005
+        run: ./stage02.py -i US0378331005 --latex
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
