@@ -19,11 +19,14 @@ from docopt import docopt
 
 import os
 import sys
+import logging
 
 from web_api import *
 
 DATA_DIR = "../resources/data"
 CONFIG_FILE = "../config/stocks.json"
+
+logging.basicConfig(level=logging.INFO)
 
 
 def getAPIParameters(api_key):
@@ -51,15 +54,18 @@ def triggerSearchAPI(api_key, isin):
     """
     Trigger Search API for ISIN and format output as feedback for the user.
     """
-    print("Output of Search API for ISIN {}:\n".format(isin))
+    logging.info("Output of Search API for ISIN {}:\n".format(isin))
     searchData = searchAPI_getData(api_key, isin)
-    print("{: <20} {: <20} {: <20}".format("Country", "Code", "Exchange"))
+    logging.info("{: <20} {: <20} {: <20}".format(
+        "Country",
+        "Code",
+        "Exchange"))
     for entry in searchData:
-        print("{: <20} {: <20} {: <20}".format(
+        logging.info("{: <20} {: <20} {: <20}".format(
             entry["Country"],
             entry["Code"],
             entry["Exchange"]))
-    print("\n")
+    logging.info("\n")
 
 
 def getAPIParametersForStock(api_key, isin):
@@ -82,7 +88,7 @@ def getAPIParametersForStock(api_key, isin):
 
     if isin not in data:
         # There is no entry for isin in stocks.json yet.
-        print("No data for company with ISIN {}.\n".format(isin))
+        logging.info("No data for company with ISIN {}.\n".format(isin))
         triggerSearchAPI(api_key, isin)
         sys.exit("Add entry for {} in {} before continuing...".format(
             isin,
@@ -115,10 +121,10 @@ def pullStockData(api_key, isin, symbol, exchangeID):
         os.makedirs(stockDir)
 
     if os.path.exists(stockFile):
-        print("File {} does already exist.".format(stockFile))
+        logging.info("File {} does already exist.".format(stockFile))
         return
 
-    print("Pull financial data for company {}".format(isin))
+    logging.info("Pull financial data for company {}".format(isin))
     fundamentalsAPI_downloadData(api_key, symbol, exchangeID, stockFile)
 
 
@@ -148,6 +154,6 @@ if __name__ == '__main__':
     key = args['--key']
     isin = args['--isin']
 
-    print("Stage 1: started...")
+    logging.info("Stage 1: started...")
     stage01(key, isin)
-    print("Stage 1: done...\n")
+    logging.info("Stage 1: done...\n")
