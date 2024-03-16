@@ -70,10 +70,6 @@ This project has the following structure:
 |__ README.md
 |__ CHANGELOG.md
 |
-|__ demo
-|   |__ demo.pdf: examplery PDF output for Apple Inc stock
-|   |__ handbook.pdf: handbook PDF that explains ratios used in the stock analysis
-|
 |__ organization/: directory holding project management information
 |
 |__ requirements/: directory holding required package/module information
@@ -90,10 +86,6 @@ This project has the following structure:
         |__ linter: linter scripts
         |__ unit_test: unit test scripts
 ```
-
-## System Architecture
-
-![Architecture Diagram](./images/workflow.png)
 
 ## Description
 
@@ -229,12 +221,6 @@ The linters for Python files are:
 ### Coverage
 
 The unit test stage is orchestrated via the `coverage` Python module.
-
-## Handbook
-
-In the `/demo` folder, there is a handbook PDF file that explains the different
-ratios and metrics used in the company/stock analysis. This way, the explanatory
-texts could be removed from the actual analysis.
 
 ## CI/CD
 
