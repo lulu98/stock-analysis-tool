@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+            sudo apt-get update
             sudo apt-get install shellcheck
             sudo apt-get install jsonlint
             sudo apt-get install lacheck
@@ -54,6 +55,7 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
+            sudo apt-get update
             sudo apt-get install -y python3-pip
             pip install pytest
             pip install coverage
@@ -73,6 +75,7 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
+            sudo apt-get update
             sudo apt-get install python3-docopt
             sudo apt-get install python3-pip
             pip install json2latex
