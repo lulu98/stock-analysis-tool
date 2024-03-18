@@ -8,12 +8,13 @@ Finds patterns in the JSON data templates and replaces the pattern with a
 corresponding value from the local API.
 
 Usage:
-    stage02.py [-h] -i <isin> [--latex]
+    stage02.py [-h] -i <isin> [--latex] [--clean]
 
 Options:
     -h, --help                  Show help menu.
     -i <isin>, --isin <isin>    ISIN of stock.
     --latex                     Generate Latex structure for PDF.
+    --clean                     Clean up directories.
 """
 from docopt import docopt
 
@@ -26,98 +27,67 @@ import argparse
 import filecmp
 import logging
 
+import config
 import render
 
 args = docopt(__doc__)
-logging.basicConfig(level=logging.INFO)
 
 
-def set_env_vars(isin):
-    """
-    Sets environment variables required by stage 2.
-    """
-    root_dir = os.path.join(os.path.abspath(os.getcwd()), "..")
+def init_stage02(isin):
+    # generate default config
+    run_conf = config.generate_default_config(isin)
 
-    template_dir = os.path.join(root_dir, "resources", "template")
-    json_template_dir = os.path.join(template_dir, "data")
-    latex_template_dir = os.path.join(template_dir, "latex")
-    data_dir = os.path.join(root_dir, "resources", "data", isin)
-    build_dir = os.path.join(root_dir, "build", isin)
+    # set log level
+    logging.basicConfig(level=run_conf["LOG_LEVEL"])
 
-    json_file = os.path.join(build_dir, "data", "data.json")
+    # Note: isin is required by docopt, so no need to check here - TODO: add check if extend for multiple ISIN
 
-    os.environ['ROOT_DIR'] = root_dir
-    os.environ['DATA_DIR'] = data_dir
-    os.environ['JSON_TEMPLATE_DIR'] = json_template_dir
-    os.environ['LATEX_TEMPLATE_DIR'] = latex_template_dir
-    os.environ['BUILD_DIR'] = build_dir
-    os.environ['JSON_FILE'] = json_file
+    # set env vars - TODO: remove this at some point
+    os.environ['JSON_FILE'] = run_conf["BUILD_DATA_FILE"]
 
+    if args['--clean']:
+        # clean up directories
+        if os.path.exists(run_conf["BUILD_DIR"]):
+            logging.info("Deleting {}".format(run_conf["BUILD_DIR"]))
+            shutil.rmtree(run_conf["BUILD_DIR"])
+        sys.exit(0)
+    else:
+        # sanity checks
+        if not os.path.exists(run_conf["RESOURCE_DATA_FILE"]):
+            logging.critical("{} not detected. Execute stage01 for ISIN {} first!".format(run_conf["RESOURCE_DATA_FILE"], isin))
+            sys.exit(-1)
 
-def is_stage01_done():
-    data_dir = os.getenv('DATA_DIR')
-    return os.path.exists(data_dir)
+        # create default directories
+        logging.info("Initial directory setup started...")
 
+        if not os.path.exists(run_conf["BUILD_DIR"]):
+            os.makedirs(run_conf["BUILD_DIR"])
+        if not os.path.exists(run_conf["BUILD_DATA_DIR"]):
+            os.makedirs(run_conf["BUILD_DATA_DIR"])
+        if not os.path.exists(run_conf["BUILD_CONFIG_DIR"]):
+            os.makedirs(run_conf["BUILD_CONFIG_DIR"])
 
-def is_build_dir_exists():
-    """Returns if build directory exists."""
-    build_dir = os.getenv('BUILD_DIR')
-    return os.path.exists(build_dir)
-
-
-def setup_build_dir(src_file, dst_file):
-    """Sets up build directory."""
-    build_dir = os.getenv('BUILD_DIR')
-    json_template_dir = os.getenv('JSON_TEMPLATE_DIR')
-    latex_template_dir = os.getenv('LATEX_TEMPLATE_DIR')
-
-    logging.info("Initial directory setup started...")
-    os.makedirs(build_dir)
-    shutil.copytree(
-            json_template_dir,
-            os.path.join(build_dir, "data"),
-            dirs_exist_ok=True)
-    shutil.copyfile(src_file, dst_file)
-    if args['--latex']:
+        # fill directory with content
+        if not os.path.exists(run_conf["BUILD_CONFIG_FILE"]):
+            with open(run_conf["BUILD_CONFIG_FILE"], "w") as f:
+                f.write(json.dumps(run_conf, indent=4))
         shutil.copytree(
-                latex_template_dir,
-                build_dir,
+                run_conf["JSON_TEMPLATE_DIR"],
+                run_conf["BUILD_DATA_DIR"],
                 dirs_exist_ok=True)
-    logging.info("Initial directory setup done.")
+        shutil.copyfile(
+                run_conf["RESOURCE_DATA_FILE"],
+                run_conf["BUILD_DATA_FILE"])
+        if args['--latex']:
+            shutil.copytree(
+                    run_conf["LATEX_TEMPLATE_DIR"],
+                    run_conf["BUILD_DIR"],
+                    dirs_exist_ok=True)
+
+        logging.info("Initial directory setup done.")
 
 
-def check_and_init_build_dir(src_file, dst_file):
-    """Set up build directory once initially."""
-    if not is_build_dir_exists():
-        setup_build_dir(src_file, dst_file)
-
-
-def prepare_build_dir(isin):
-    """Prepare build directory for stage 2 execution."""
-    json_src = os.path.join(os.getenv('DATA_DIR'), "data.json")
-    json_dst = os.getenv('JSON_FILE')
-
-    if not is_stage01_done():
-        logging.critical(
-                "Data for company {} not available."
-                "Execute stage 1 first.".format(isin))
-        sys.exit(1)
-
-    check_and_init_build_dir(json_src, json_dst)
-
-
-def prepare_stage(isin):
-    """
-    Prepares stage 2 of the stock analysis pipeline.
-
-    Parameters:
-        isin (str): ISIN of the stock to be analysed.
-    """
-    set_env_vars(isin)
-    prepare_build_dir(isin)
-
-
-def execute_stage(isin):
+def exec_stage02(isin):
     """
     Use Jinja to render financial data by replacing placeholders in the JSON
     files (fund_data.json, calc_data.json). After replacing all occurrences of
@@ -125,7 +95,8 @@ def execute_stage(isin):
     compatible files via json2latex. As a result, we can access the financial
     data that is stored in the JSON files from the Latex files.
     """
-    data_dir = os.path.join(os.getenv('BUILD_DIR'), "data")
+    run_conf = config.get_run_config()
+    data_dir = run_conf["BUILD_DATA_DIR"]
     files = [os.path.join(data_dir, "fund_data.json"),
              os.path.join(data_dir, "calc_data.json")]
 
@@ -154,7 +125,7 @@ if __name__ == '__main__':
 
     isin = args['--isin']
 
+    init_stage02(isin)
     logging.info("Stage 2: started...")
-    prepare_stage(isin)
-    execute_stage(isin)
+    exec_stage02(isin)
     logging.info("Stage 2: done...\n")

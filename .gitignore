@@ -5,6 +5,7 @@ __pycache__/
 
 # Project-specific
 build/
-src/main/resources/data/
+src/main/resources/data/*
+!src/main/resources/data/stocks.json
 src/docs/_build/
 .coverage
