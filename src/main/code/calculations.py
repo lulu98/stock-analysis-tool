@@ -23,7 +23,7 @@ def getSharesFloatToOutstandingRatio():
                          else float(sharesOutstanding))
 
     if sharesOutstanding == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(sharesFloat / sharesOutstanding, 4)
 
@@ -41,7 +41,7 @@ def debtToEquity(year):
                    else float(totalEquity))
 
     if totalEquity == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(totalDebt / totalEquity, 4)
 
@@ -59,7 +59,7 @@ def debtToFCF(year):
                     else float(freeCashFlow))
 
     if freeCashFlow == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(totalDebt / freeCashFlow, 4)
 
@@ -77,7 +77,7 @@ def liabilitiesToEquity(year):
                    else float(totalEquity))
 
     if totalEquity == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(totalLiabilities / totalEquity, 4)
 
@@ -95,13 +95,13 @@ def currentRatio(year):
                                else float(totalCurrentLiabilities))
 
     if totalCurrentLiabilities == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(totalCurrentAssets / totalCurrentLiabilities, 4)
 
 
 def acidTestRatio(year):
-    """Acid Test Ratio (ATR) = (Current Assets - Inventory) / Current Liabilities"""  # noqa: E501
+    """Acid Test Ratio (ATR) = (Current Assets - Inventory) / Current Liabilities"""
     totalCurrentAssets = getCurrentAssets(year)
     totalCurrentAssets = (0.0
                           if totalCurrentAssets == "null"
@@ -118,9 +118,9 @@ def acidTestRatio(year):
                                else float(totalCurrentLiabilities))
 
     if totalCurrentLiabilities == 0.0:
-        return "\"-\""
+        return "null"
 
-    return formatNumber((totalCurrentAssets - inventory) / totalCurrentLiabilities, 4)  # noqa: E501
+    return formatNumber((totalCurrentAssets - inventory) / totalCurrentLiabilities, 4)
 
 
 def returnOnEquity(year):
@@ -136,7 +136,7 @@ def returnOnEquity(year):
                    else float(totalEquity))
 
     if totalEquity == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(netIncome / totalEquity, 4)
 
@@ -154,7 +154,7 @@ def returnOnAssets(year):
                    else float(totalAssets))
 
     if totalAssets == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(netIncome / totalAssets, 4)
 
@@ -172,7 +172,7 @@ def returnOnInvestedCapital(year):
                        else float(investedCapital))
 
     if investedCapital == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(netIncome / investedCapital, 4)
 
@@ -190,7 +190,7 @@ def grossProfitMarginRatio(year):
                else float(revenue))
 
     if revenue == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(grossProfit / revenue, 4)
 
@@ -208,7 +208,7 @@ def operatingMarginRatio(year):
                else float(revenue))
 
     if revenue == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(operatingIncome / revenue, 4)
 
@@ -226,7 +226,7 @@ def netIncomeMarginRatio(year):
                else float(revenue))
 
     if revenue == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(netIncome / revenue, 4)
 
@@ -244,7 +244,7 @@ def interestCoverageRatio(year):
                        else float(interestExpense))
 
     if interestExpense == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(operatingIncome / interestExpense, 4)
 
@@ -262,7 +262,7 @@ def inventoryTurnoverRatio(year):
                  else float(inventory))
 
     if inventory == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(costOfRevenue / inventory, 4)
 
@@ -280,7 +280,7 @@ def accountsReceivablesRatio(year):
                            else float(accountsReceivables))
 
     if accountsReceivables == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(turnover / accountsReceivables, 4)
 
@@ -298,7 +298,7 @@ def accountsPayableRatio(year):
                        else float(accountsPayable))
 
     if accountsPayable == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(costOfRevenue / accountsPayable, 4)
 
@@ -316,13 +316,13 @@ def fcfToRevenueRatio(year):
                else float(revenue))
 
     if revenue == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(freeCashFlow / revenue, 4)
 
 
 def ICFOCFRatio(year):
-    """ICF-to-OCF-Ratio (ICFOCF) = Investing Cash Flow  / Operating Cash Flow"""  # noqa: E501
+    """ICF-to-OCF-Ratio (ICFOCF) = Investing Cash Flow  / Operating Cash Flow"""
     icf = getInvestingCashFlow(year)
     icf = (0.0
            if icf == "null"
@@ -334,13 +334,13 @@ def ICFOCFRatio(year):
            else float(ocf))
 
     if ocf == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(icf / ocf, 4)
 
 
 def priceToEarningsRatio():
-    """Price-to-Earnings-Ratio (P/E) = Market Price Per Share  / Earnings Per Share"""  # noqa: E501
+    """Price-to-Earnings-Ratio (P/E) = Market Price Per Share  / Earnings Per Share"""
     marketPrice = get50DayMA()
     marketPrice = (0.0
                    if marketPrice == "null"
@@ -352,13 +352,13 @@ def priceToEarningsRatio():
                         else float(earningsPerShare))
 
     if earningsPerShare == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(marketPrice / earningsPerShare, 4)
 
 
 def priceToBookRatio():
-    """Price-to-Book-Ratio (P/B) = Market Price Per Share  / Book Value Per Share"""  # noqa: E501
+    """Price-to-Book-Ratio (P/B) = Market Price Per Share  / Book Value Per Share"""
     marketPrice = get50DayMA()
     marketPrice = (0.0
                    if marketPrice == "null"
@@ -370,7 +370,7 @@ def priceToBookRatio():
                          else float(bookValuePerShare))
 
     if bookValuePerShare == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(marketPrice / bookValuePerShare, 4)
 
@@ -388,7 +388,7 @@ def ebitdaMargin(year):
                else float(revenue))
 
     if revenue == 0.0:
-        return "\"-\""
+        return "null"
 
     return formatNumber(ebitda / revenue, 4)
 
@@ -420,9 +420,9 @@ def equityGrowthRate(yearStart, yearEnd):
                  else float(equityEnd))
 
     if equityStart * equityEnd <= 0:  # numbers must be same sign and not 0
-        return "\"-\""
+        return "null"
 
-    growthRate = (equityEnd / equityStart) ** (1.0 / abs(yearEnd - yearStart)) - 1  # noqa: E501
+    growthRate = (equityEnd / equityStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
     return formatNumber(growthRate, 4)
 
@@ -450,7 +450,7 @@ def epsGrowthRate(yearStart, yearEnd):
               else float(epsEnd))
 
     if epsStart * epsEnd <= 0:  # numbers must be same sign and not 0
-        return "\"-\""
+        return "null"
 
     growthRate = (epsEnd / epsStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -480,9 +480,9 @@ def revenueGrowthRate(yearStart, yearEnd):
                   else float(revenueEnd))
 
     if revenueStart * revenueEnd <= 0:  # numbers must be same sign and not 0
-        return "\"-\""
+        return "null"
 
-    growthRate = (revenueEnd / revenueStart) ** (1.0 / abs(yearEnd - yearStart)) - 1  # noqa: E501
+    growthRate = (revenueEnd / revenueStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
     return formatNumber(growthRate, 4)
 
@@ -511,7 +511,7 @@ def fcfGrowthRate(yearStart, yearEnd):
 
     # two numbers are the same sign if the multiplication is positive
     if fcfStart * fcfEnd <= 0:  # both numbers must be the same sign and not 0
-        return "\"-\""
+        return "null"
 
     growthRate = (fcfEnd / fcfStart) ** (1.0 / abs(yearEnd - yearStart)) - 1
 
@@ -543,13 +543,19 @@ def fcfHistoricalGrowthRate():
                 growthRate = growthLimit
             avg += growthRate
 
-    avg /= divider
+    avg = (0.0
+           if divider == 0
+           else avg / divider)
+
     return formatNumber(avg, 4)
 
 
 def fcfFutureEstimate(n, growthRate=None):
     """FCF Future Estimate = BYFCF * (1 + GR)^n"""
-    BYFCF = float(getFreeCashFlow(getYear(0)))
+    BYFCF = getFreeCashFlow(getYear(0))
+    BYFCF = (0.0
+             if BYFCF == "null"
+             else float(BYFCF))
     if growthRate is None:
         GR = float(fcfHistoricalGrowthRate())
     else:
@@ -573,8 +579,11 @@ def discountedCashFlow(n, discountRate, growthRate=None):
 
 
 def discountedPerpetuityCashFlow(discountRate, growthRate=None):
-    """Discounted Perpetuity Cash Flow (DPCF) = (BYFCF * (1 + GR)^11 * (1 + LGR)) / (1 / (1 + DR)^11)"""  # noqa: E501
-    BYFCF = float(getFreeCashFlow(getYear(0)))
+    """Discounted Perpetuity Cash Flow (DPCF) = (BYFCF * (1 + GR)^11 * (1 + LGR)) / (1 / (1 + DR)^11)"""
+    BYFCF = getFreeCashFlow(getYear(0))
+    BYFCF = (0.0
+             if BYFCF == "null"
+             else float(BYFCF))
     DR = float(discountRate)
     LGR = float(getLongTermGrowthRate())
     if growthRate is None:
@@ -583,7 +592,7 @@ def discountedPerpetuityCashFlow(discountRate, growthRate=None):
         GR = growthRate
     DPCF = (0.0
             if DR == LGR
-            else ((BYFCF * ((1.0 + GR) ** 11) * (1.0 + LGR)) / (DR - LGR)) * (1.0 / ((1.0 + DR) ** 11)))  # noqa: E501
+            else ((BYFCF * ((1.0 + GR) ** 11) * (1.0 + LGR)) / (DR - LGR)) * (1.0 / ((1.0 + DR) ** 11)))
     return formatNumber(float(DPCF), 2)
 
 
@@ -606,7 +615,10 @@ def getIntrinsicValue(discountRate, growthRate=None):
 def getIntrinsicValuePerShare(discountRate, growthRate=None):
     """Intrinsic Value Per Share = Intrinsic Value / Shares"""
     intrinsicValue = float(getIntrinsicValue(discountRate, growthRate))
-    shares = float(getCommonSharesOutstanding(getYear(0)))
+    shares = getCommonSharesOutstanding(getYear(0))
+    shares = (0.0
+              if shares == "null"
+              else float(shares))
     intrinsicValuePerShare = (0.0
                               if shares == 0
                               else intrinsicValue / shares)

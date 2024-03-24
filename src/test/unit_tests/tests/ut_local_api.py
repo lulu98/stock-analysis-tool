@@ -12,6 +12,7 @@ def setup():
     UNITTEST_DIR = os.path.abspath(os.getcwd())
     RESOURCE_DIR = os.path.join(UNITTEST_DIR, "resources")
     os.environ['JSON_FILE'] = os.path.join(RESOURCE_DIR, "data.json")
+    os.environ['ISIN'] = "US0378331005"
 
 # formatNumber tests
 
@@ -82,7 +83,7 @@ def test_getAddress():
 
 
 def test_getDescription():
-    partOfDescription = "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide."  # noqa: E501
+    partOfDescription = "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide."
     assert partOfDescription in getDescription()
 
 

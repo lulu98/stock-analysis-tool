@@ -92,7 +92,7 @@ func_dict = {
     "__getInvestingCashFlow": local_api.getInvestingCashFlow,
     "__getCapitalExpenditures": local_api.getCapitalExpenditures,
     "__getFreeCashFlow": local_api.getFreeCashFlow,
-    "__getSharesFloatToOutstandingRatio": calculations.getSharesFloatToOutstandingRatio,  # noqa: E501
+    "__getSharesFloatToOutstandingRatio": calculations.getSharesFloatToOutstandingRatio,
     "__debtToEquity": calculations.debtToEquity,
     "__debtToFCF": calculations.debtToFCF,
     "__liabilitiesToEquity": calculations.liabilitiesToEquity,
@@ -122,7 +122,7 @@ func_dict = {
     "__fcfFutureEstimate": calculations.fcfFutureEstimate,
     "__discountFactorEstimate": calculations.discountFactorEstimate,
     "__discountedCashFlow": calculations.discountedCashFlow,
-    "__discountedPerpetuityCashFlow": calculations.discountedPerpetuityCashFlow,  # noqa: E501
+    "__discountedPerpetuityCashFlow": calculations.discountedPerpetuityCashFlow,
     "__sumDiscountedCashFlow": calculations.sumDiscountedCashFlow,
     "__getIntrinsicValue": calculations.getIntrinsicValue,
     "__getIntrinsicValuePerShare": calculations.getIntrinsicValuePerShare,

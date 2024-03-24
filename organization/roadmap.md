@@ -17,4 +17,4 @@
 - [ ] SAT-012: Add code coverage information on GitHub
 - [x] SAT-013: Introduce docopt for argument parsing
 - [x] SAT-014: Use jinja for pattern replacement in json files
-- [x] SAT-015: Split data generation from latex generation
+- [x] SAT-015: Implement several new features

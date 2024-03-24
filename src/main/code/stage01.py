@@ -18,15 +18,17 @@ Options:
 """
 from docopt import docopt
 
-import os
-import sys
-import logging
 import config
+import helper
+import logging
+import os
 import shutil
+import sys
 
 from web_api import *
 
 args = docopt(__doc__)
+
 
 def init_stage01(isin):
     # generate default config
@@ -51,77 +53,6 @@ def init_stage01(isin):
             # create default directories
             if not os.path.exists(run_conf["RESOURCE_DATA_DIR"]):
                 os.makedirs(run_conf["RESOURCE_DATA_DIR"])
-
-
-def getAPIParameters(api_key):
-    """
-    Get the API parameters for all stocks in stocks.json.
-
-    Parameters:
-        api_key (str): The API key for the financial data API.
-
-    Returns:
-        apiParams (dict): Dictionary with API parameters for all stocks in
-                          stocks.json.
-    """
-    jsonFile = config.get_run_config_item("STOCKS_FILE")
-
-    with open(jsonFile, "r") as f:
-        data = json.load(f)
-
-    apiParams = data
-
-    return apiParams
-
-
-def triggerSearchAPI(api_key, isin):
-    """
-    Trigger Search API for ISIN and format output as feedback for the user.
-    """
-    logging.info("Output of Search API for ISIN {}:\n".format(isin))
-    searchData = searchAPI_getData(api_key, isin)
-    logging.info("{: <20} {: <20} {: <20}".format(
-        "Country",
-        "Code",
-        "Exchange"))
-    for entry in searchData:
-        logging.info("{: <20} {: <20} {: <20}".format(
-            entry["Country"],
-            entry["Code"],
-            entry["Exchange"]))
-    logging.info("\n")
-
-
-def getAPIParametersForStock(api_key, isin):
-    """
-    Get the API parameters for a specific stock in stocks.json.
-
-    Parameters:
-        api_key (str): The API key for the financial data API.
-        isin (str): The ISIN of the stock that should be pulled from the web
-                    API.
-
-    Returns:
-        apiParams (dict): Dictionary with API parameters for the stock
-                          specified by the ISIN.
-    """
-    jsonFile = config.get_run_config_item("STOCKS_FILE")
-
-    with open(jsonFile, "r") as f:
-        data = json.load(f)
-
-    if isin not in data:
-        # There is no entry for isin in stocks.json yet.
-        logging.info("No data for company with ISIN {}.\n".format(isin))
-        triggerSearchAPI(api_key, isin)
-        sys.exit("Add entry for {} in {} before continuing...".format(
-            isin,
-            jsonFile))
-
-    apiParams = {}
-    apiParams[isin] = data[isin]  # only get API parameters for specific ISIN
-
-    return apiParams
 
 
 def pullStockData(api_key, isin, symbol, exchangeID):
@@ -157,10 +88,7 @@ def exec_stage01(api_key, isin):
         isin (str): The ISIN of the stock that should be pulled from the web
                     API.
     """
-    if isin is None:
-        apiParams = getAPIParameters(api_key)
-    else:
-        apiParams = getAPIParametersForStock(api_key, isin)
+    apiParams = helper.get_api_params(api_key, isin)
 
     for isin in apiParams:
         symbol = apiParams[isin]['Symbol']

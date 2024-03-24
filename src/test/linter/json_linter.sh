@@ -3,7 +3,7 @@
 status=0
 
 collect_sources () {
-    json_files=("../../../src/main/config/stocks.json")
+    json_files=("../../../src/main/resources/data/stocks.json")
 }
 
 process () {

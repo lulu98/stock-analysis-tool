@@ -13,9 +13,10 @@ def setup():
     RESOURCE_DIR = os.path.join(UNITTEST_DIR, "resources")
     os.environ['JSON_FILE'] = os.path.join(RESOURCE_DIR, "data.json")
     os.environ['FUND_DATA'] = os.path.join(RESOURCE_DIR, "fund_data.json")
-    os.environ['FUND_DATA_REF'] = os.path.join(RESOURCE_DIR, "fund_data_ref.json")  # noqa: E501
+    os.environ['FUND_DATA_REF'] = os.path.join(RESOURCE_DIR, "fund_data_ref.json")
     os.environ['CALC_DATA'] = os.path.join(RESOURCE_DIR, "calc_data.json")
-    os.environ['CALC_DATA_REF'] = os.path.join(RESOURCE_DIR, "calc_data_ref.json")  # noqa: E501
+    os.environ['CALC_DATA_REF'] = os.path.join(RESOURCE_DIR, "calc_data_ref.json")
+    os.environ['ISIN'] = "US0378331005"
 
 
 def test_render_data():
