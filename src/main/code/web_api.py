@@ -26,7 +26,7 @@ def fundamentalsAPI_downloadData(api_key, symbol, exchangeID, filePath):
                           certain stock.
         filePath (str): Path to the file that should store the returned data.
     """
-    url = 'https://eodhistoricaldata.com/api/fundamentals/{}.{}?api_token={}'.format(symbol, exchangeID, api_key)  # noqa: E501
+    url = 'https://eodhistoricaldata.com/api/fundamentals/{}.{}?api_token={}'.format(symbol, exchangeID, api_key)
     r = requests.get(url)
     data = r.json()
     with open(filePath, "w") as f:
@@ -50,7 +50,7 @@ def fundamentalsAPI_getData(api_key, symbol, exchangeID, filters):
         data (json): JSON string of what is retruend from the Fundamentals Data
                      API.
     """
-    url = 'https://eodhistoricaldata.com/api/fundamentals/{}.{}?api_token={}&filter={}'.format(symbol, exchangeID, api_key, filters)  # noqa: E501
+    url = 'https://eodhistoricaldata.com/api/fundamentals/{}.{}?api_token={}&filter={}'.format(symbol, exchangeID, api_key, filters)
     r = requests.get(url)
     data = r.text.replace('"', '')  # remove quotes
     return data
@@ -72,9 +72,7 @@ def searchAPI_getData(api_key, isin):
     Returns:
         data (json): JSON string of what is returned from the Search API.
     """
-    url = 'https://eodhistoricaldata.com/api/search/{}?api_token={}'.format(
-            isin,
-            api_key)
+    url = 'https://eodhistoricaldata.com/api/search/{}?api_token={}'.format(isin, api_key)
     r = requests.get(url)
     data = r.json()
     return data

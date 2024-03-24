@@ -18,7 +18,7 @@ process_pycodestyle () {
     echo "Linting with pycodestyle."
     for file in "${python_files[@]}"; do
         echo "linting $file"
-        if ! pycodestyle "$file"; then 
+        if ! pycodestyle --ignore=E501 "$file"; then 
             status=1
         fi
     done

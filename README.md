@@ -133,6 +133,12 @@ to get fundamental data for a company. This stage can be triggered by the
 ./stage01.py -k <api_key>
 ```
 
+- Clean for one ISIN:
+
+```bash
+./stage01.py -i <isin> --clean
+```
+
 Either command will pull the requested data as a JSON file into
 `src/main/resources/data`. You can back up this data into a cloud of your
 choice.
@@ -160,6 +166,18 @@ the project. Stage 2 can be triggered as follows:
 
 ```bash
 ./stage02.py -i <isin> --latex
+```
+
+- Clean for one ISIN:
+
+```bash
+./stage02.py -i <isin> --clean
+```
+
+- Clean all ISIN in build folder:
+
+```bash
+./stage02.py --clean-all
 ```
 
 This stage uses the `json2latex`[2] Python package in order to make it possible

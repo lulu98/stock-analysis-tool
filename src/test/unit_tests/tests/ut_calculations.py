@@ -12,6 +12,7 @@ def setup():
     UNITTEST_DIR = os.path.abspath(os.getcwd())
     RESOURCE_DIR = os.path.join(UNITTEST_DIR, "resources")
     os.environ['JSON_FILE'] = os.path.join(RESOURCE_DIR, "data.json")
+    os.environ['ISIN'] = "US0378331005"
 
 
 def test_getSharesFloatToOutstandingRatio():
